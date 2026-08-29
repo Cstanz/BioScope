@@ -29,28 +29,62 @@ const BIOSCOPE_DATA = {
       ],
       "quiz": [
         [
-          "Ciri yang paling mendasar untuk menempatkan organisme dalam Monera adalah…",
+          "Ciri utama yang membedakan Monera dari kingdom lain dalam sistem klasifikasi 5 kingdom adalah...",
           [
-            "Memiliki jaringan sejati",
-            "Bersifat prokariotik",
-            "Menghasilkan bunga",
-            "Memiliki sistem saraf"
+            "Bersifat multiseluler",
+            "Bersifat prokariotik (tidak memiliki membran inti)",
+            "Dapat berfotosintesis",
+            "Memiliki dinding sel dari selulosa"
           ],
-          "Bersifat prokariotik",
-          "Monera dalam kerangka ini berisi organisme prokariotik."
+          "Bersifat prokariotik (tidak memiliki membran inti)",
+          "Sel Monera tidak memiliki membran inti sejati, sehingga materi genetiknya tersebar bebas di sitoplasma."
         ],
         [
-          "Struktur apa yang membedakan sel prokariotik dari sel eukariotik?",
+          "Sistem klasifikasi 5 kingdom, termasuk Monera di dalamnya, pertama kali diperkenalkan oleh...",
           [
-            "Tidak ada materi genetik",
-            "Tidak memiliki inti bermembran",
-            "Selalu memiliki kloroplas",
-            "Selalu multiseluler"
+            "Carl Woese",
+            "Charles Darwin",
+            "Robert H. Whittakers",
+            "Carl Linnaeus"
           ],
-          "Tidak memiliki inti bermembran",
-          "Materi genetik prokariotik tidak berada di dalam inti yang dibatasi membran."
+          "Robert H. Whittakers",
+          "Robert H. Whittaker memperkenalkan sistem klasifikasi 5 kingdom pada tahun 1969."
+        ],
+        [
+          "Berdasarkan penelitian Carl Woese, Monera sebenarnya terdiri dari dua kelompok yang secara evolusi sangat berbeda, yaitu...",
+          [
+            "Eubacteria dan Archaebacteria",
+            "Protozoa dan Algae",
+            "Jamur dan Ganggang",
+            "Virus dan Bakteri"
+          ],
+          "Eubacteria dan Archaebacteria",
+          "Woese menunjukkan bahwa Eubacteria (bakteri sejati) dan Archaebacteria (bakteri purba) memiliki garis evolusi yang berbeda meski sama-sama prokariotik."
+        ],
+        [
+          "Salah satu ciri organisasi tubuh yang umum dimiliki oleh anggota Monera adalah...",
+          [
+            "Multiseluler dengan jaringan kompleks",
+            "Umumnya uniseluler",
+            "Selalu berkoloni membentuk organ",
+            "Memiliki banyak inti sel"
+          ],
+          "Umumnya uniseluler",
+          "Sebagian besar anggota Monera hanya tersusun atas satu sel (uniseluler)."
+        ],
+        [
+          "Mengapa keragaman metabolisme pada Monera dianggap sangat tinggi?",
+          [
+            "Karena semua anggotanya berfotosintesis",
+            "Karena Monera mampu hidup di berbagai lingkungan dengan cara memperoleh energi yang beragam",
+            "Karena semua anggotanya bersifat parasit",
+            "Karena Monera tidak memerlukan energi"
+          ],
+          "Karena Monera mampu hidup di berbagai lingkungan dengan cara memperoleh energi yang beragam",
+          "Anggota Monera memiliki cara memperoleh energi yang bervariasi, mulai dari fotosintesis, kemosintesis, hingga menyerap bahan organik, sehingga mampu hidup di lingkungan yang sangat beragam."
         ]
       ],
+      
       "unlock_text": "Tersedia sejak awal."
     },
     "protista": {

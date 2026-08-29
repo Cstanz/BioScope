@@ -640,16 +640,17 @@ function renderQuiz(kingdomId) {
       ${kingdom.quiz
         .map(
           (question, index) => `
-            <fieldset>
+            <fieldset id="question-${index}">
               <legend>${index + 1}. ${question[0]}</legend>
               ${question[1]
                 .map(
                   (option, optionIndex) => `
-                    <label class="option">
+                    <label class="option" data-option="${option}">
                       <input
                         type="radio"
                         name="q${index}"
                         value="${option}"
+                        required
                       />
                       <span>${String.fromCharCode(65 + optionIndex)}</span>
                       ${option}
@@ -665,7 +666,7 @@ function renderQuiz(kingdomId) {
       <button class="btn btn-primary" type="submit">Hitung Skor</button>
     </form>
 
-    <div id="quiz-result" class="feedback" aria-live="polite"></div>
+    <div id="quiz-result" aria-live="polite"></div>
   `;
 
   document.querySelector("#quiz-form").addEventListener("submit", (event) => {
@@ -675,9 +676,43 @@ function renderQuiz(kingdomId) {
     let correctAnswers = 0;
 
     kingdom.quiz.forEach((question, index) => {
-      if (formData.get(`q${index}`) === question[2]) {
+      const [, , correctAnswer, explanation] = question;
+      const selected = formData.get(`q${index}`);
+      const isCorrect = selected === correctAnswer;
+
+      if (isCorrect) {
         correctAnswers += 1;
       }
+
+      const fieldset = document.querySelector(`#question-${index}`);
+
+      // Highlight jawaban benar/salah pada tiap opsi
+      fieldset.querySelectorAll(".option").forEach((label) => {
+        const optionValue = label.dataset.option;
+        label.classList.remove("option-correct", "option-incorrect");
+
+        if (optionValue === correctAnswer) {
+          label.classList.add("option-correct");
+        } else if (optionValue === selected && !isCorrect) {
+          label.classList.add("option-incorrect");
+        }
+      });
+
+      // Buat elemen feedback baru hanya setelah submit — tidak pernah
+      // ada di DOM sebelumnya, jadi jawaban tidak bisa dilihat sebelum dijawab.
+      let questionFeedback = fieldset.querySelector(".question-feedback");
+      if (!questionFeedback) {
+        questionFeedback = document.createElement("div");
+        questionFeedback.className = "feedback question-feedback";
+        questionFeedback.setAttribute("aria-live", "polite");
+        fieldset.appendChild(questionFeedback);
+      }
+
+      questionFeedback.className = `feedback question-feedback ${isCorrect ? "correct" : "incorrect"}`;
+      questionFeedback.innerHTML = `
+        <strong>${isCorrect ? "Benar." : "Belum tepat."}</strong>
+        ${explanation ? explanation : ""}
+      `;
     });
 
     const score = Math.round((correctAnswers / kingdom.quiz.length) * 100);

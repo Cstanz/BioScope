@@ -401,8 +401,13 @@ h3 {
   font-size: 8px;
 }
 
-/* ---------- Sections ---------- */
-/* Styling Utama Hero Section */
+/* =====================================================
+   HERO VIDEO SECTION
+   Section hero halaman utama dengan video background
+   (floating header, overlay gelap, konten teks, tombol CTA)
+   ===================================================== */
+
+/* ---------- Hero video: floating header di atas video ---------- */
 .hero-video-section {
     position: relative;
     width: 100%;
@@ -504,7 +509,7 @@ h3 {
     border-bottom: 2px solid var(--accent);
 }
 
-/* Responsif untuk layar kecil / HP */
+/* Responsif floating header untuk layar kecil / HP */
 @media (max-width: 700px) {
     .floating-header {
         padding: 16px 20px;
@@ -526,6 +531,7 @@ h3 {
         display: flex;
     }
 }
+/* ---------- Hero video: video background & overlay ---------- */
 /* Mengatur Video agar menutupi seluruh area section secara proporsional */
 .hero-video {
     position: absolute;
@@ -559,6 +565,7 @@ h3 {
     padding: 0 20px;
 }
 
+/* ---------- Hero video: konten teks (badge, judul, subjudul) ---------- */
 .hero-badge {
     display: inline-block;
     font-size: 0.85rem;
@@ -620,7 +627,13 @@ h3 {
     margin-top: 2rem;
 }
 
-/* Mengikuti gaya tombol yang sudah lu buat sebelumnya */
+/* ---------- Hero video: tombol CTA (pill button) ---------- */
+/* CATATAN: .btn-primary & .btn-secondary sudah didefinisikan di atas
+   pada bagian "Buttons" (style kotak, untuk tombol umum di seluruh situs).
+   Blok di bawah ini MENIMPA sebagian propertinya (jadi bentuk pill/lonjong)
+   khusus supaya tombol di hero video terlihat berbeda. Kalau mau tombol
+   pill ini cuma berlaku di hero video, ganti selector jadi
+   ".hero-buttons .btn-primary" / ".hero-buttons .btn-secondary" saja. */
 .btn-primary {
     background-color: #1b4332; /* Hijau hutan yang dalam dan elegan */
     color: #ffffff;
@@ -659,6 +672,12 @@ h3 {
     transform: translateY(-2px);
     color: #ffffff;
 }
+/* =====================================================
+   GENERIC SECTION UTILITIES
+   Dipakai di banyak halaman: pembungkus section, heading,
+   dan paragraf intro editorial.
+   ===================================================== */
+
 .section {
   padding: 100px 0;
 }
@@ -908,7 +927,11 @@ h3 {
   color: var(--muted);
 }
 
-/* --- Editorial Taxonomy Map --- */
+/* =====================================================
+   EDITORIAL TAXONOMY MAP
+   Diagram interaktif 5 kingdom (dipakai di halaman
+   "Dasar Klasifikasi") — root node, cabang, popup hover.
+   ===================================================== */
 .editorial-tax-map {
     position: relative;
     display: flex;
@@ -1207,6 +1230,11 @@ h3 {
     .k-popup p { color: rgba(255, 255, 255, 0.7); }
 }
 
+/* =====================================================
+   OBSERVATION CARDS (obs-*)
+   Grid kartu "cara mengenali" / observasi ciri kelompok.
+   ===================================================== */
+
 .section-observation {
     padding-bottom: 120px;
 }
@@ -1366,6 +1394,7 @@ h3 {
   font-size: 18px;
 }
 
+/* ---------- Map placeholder (encyclopedia sidebar) ---------- */
 .map-placeholder {
   height: 240px;
   display: grid;
@@ -1484,6 +1513,38 @@ legend {
 
 .quiz-panel .option {
   border-color: var(--line);
+}
+
+/* Feedback "benar" secara eksplisit (sebelumnya cuma mengandalkan
+   style .feedback default — dibuat eksplisit biar jelas & gampang diubah) */
+.feedback.correct {
+  border-left-color: var(--success);
+  background: var(--sage-light);
+  color: var(--ink-soft);
+}
+
+/* Highlight pilihan jawaban setelah quiz di-submit */
+.option.option-correct {
+  border-color: var(--success);
+  background: var(--sage-light);
+}
+
+.option.option-incorrect {
+  border-color: var(--danger);
+  background: #f6e8e5;
+}
+
+/* Feedback per soal (muncul di bawah pilihan jawaban setelah submit) */
+.question-feedback {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.question-feedback strong {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--serif);
+  font-size: 15px;
 }
 
 /* ---------- Progress ---------- */
@@ -1781,7 +1842,16 @@ legend {
 }
 
 
-/* ---------- Home refinements ---------- */
+/* =====================================================
+   HOME REFINEMENTS
+   CATATAN: beberapa rule di bawah ini (misalnya .section-dark,
+   .site-footer, .footer-grid) sudah pernah didefinisikan di atas.
+   Karena taruh belakangan di file, rule di sini yang menang untuk
+   properti yang sama (cascade CSS). Dibiarkan terpisah karena ini
+   memang override khusus untuk penyesuaian halaman Home — kalau mau
+   digabung ke definisi aslinya, cek dulu satu per satu supaya nggak
+   ada properti yang hilang.
+   ===================================================== */
 
 .section-dark {
   background: #164333;
