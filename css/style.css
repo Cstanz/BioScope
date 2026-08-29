@@ -203,9 +203,11 @@ h3 {
 }
 
 .lede {
-  max-width: 720px;
+  max-width: 65ich;
   color: var(--ink-soft);
   font-size: 19px;
+  margin-inline: auto;
+  line-height: 1.6;
 }
 
 .eyebrow {

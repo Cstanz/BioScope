@@ -340,7 +340,8 @@ function renderKingdomPage() {
         </div>
 
         <div class="prose">
-          <p>${kingdom.summary}</p>
+          <!-- Gunakan kingdom.overview (jika ada), kalau tidak ada fallback ke kingdom.summary -->
+          <p>${kingdom.overview || kingdom.summary}</p>
 
           <h3>Ciri utama</h3>
           <ul>

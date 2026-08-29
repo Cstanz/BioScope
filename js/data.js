@@ -4,7 +4,13 @@ const BIOSCOPE_DATA = {
       "name": "Monera",
       "eyebrow": "Kingdom 01",
       "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1",
-      "summary": " Monera adalah kelompok organisme yang seluruh anggotanya bersifat prokariotik — sel-selnya tidak memiliki membran inti sejati. Konsep ini pertama kali diperkenalkan oleh Robert H. Whittaker pada tahun 1969 sebagai bagian dari sistem klasifikasi lima kingdom, yang mengelompokkan semua makhluk hidup ke dalam Monera, Protista, Fungi, Plantae, dan Animalia. Namun, penelitian lanjutan oleh Carl Woese pada tahun 1977 (dipertegas lagi pada 1990) menunjukkan bahwa organisme dalam Monera sebenarnya terdiri dari dua kelompok yang secara evolusi sangat berbeda. Melalui analisis materi genetik (RNA ribosom), Woese membuktikan bahwa Monera perlu dipecah menjadi dua kingdom terpisah: Eubacteria (bakteri sejati) dan Archaebacteria (bakteri purba)",
+      
+      // Teks pengantar ringkas di atas 3D
+      "summary": "Selamat datang di materi Monera. Putar dan perbesar model 3D di samping untuk melihat bagian-bagian sel prokariotik secara detail.",
+      
+      // Teks lengkap khusus untuk Overview bawah
+      "overview": "Monera adalah kelompok organisme yang seluruh anggotanya bersifat prokariotik — sel-selnya tidak memiliki membran inti sejati. Konsep ini pertama kali diperkenalkan oleh Robert H. Whittaker pada tahun 1969 (sistem 5 kingdom). Namun, penelitian lanjutan oleh Carl Woese (1977 & 1990) menunjukkan bahwa Monera terdiri dari dua kelompok yang secara evolusi sangat berbeda: Eubacteria (bakteri sejati) dan Archaebacteria (bakteri purba).",
+      
       "chars": [
         "Prokariotik",
         "Umumnya uniseluler",
