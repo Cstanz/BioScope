@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="BioScope &mdash; platform pembelajaran klasifikasi biologi." name="description"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer="" src="js/data.js">
+  </script>
+  <script defer="" src="js/main.js">
+  </script>
+  <title>
+   Mengapa Klasifikasi &mdash; BioScope
+  </title>
+ </head>
+ <body class="">
+    <header class="site-header">
+   <div class="container nav-wrap">
+    <div class="logo-container">
+        <a href="index.html" class="logo-link">
+            <img src="Assets/DarkLogo.svg" alt="BioScope Logo" class="brand-logo-img">
+        </a>
+    </div>
+    <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">
+     Menu
+    </button>
+    <nav id="site-nav">
+     <a data-nav="" href="index.html">
+      Home
+     </a>
+     <a data-nav="" href="why-classify.html">
+      Dasar Klasifikasi
+     </a>
+     <a data-nav="" href="monera.html">
+      Materi
+     </a>
+     <a data-nav="" href="progress.html">
+      Progress
+     </a>
+     <a data-nav="" href="classification-challenge.html">
+      Challenge
+     </a>
+     <a data-nav="" href="about.html">
+      Tentang
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <div data-why="">
+   </div>
+   <section class="chapter-hero">
+    <div class="container narrow">
+     <span class="eyebrow">
+      Scientific Chapter 01
+     </span>
+     <h1>
+      Mengapa kita mengklasifikasikan makhluk hidup?
+     </h1>
+     <p class="lede">
+      Keanekaragaman hayati terlalu luas untuk dipahami sebagai daftar nama. Klasifikasi memberi kita cara yang terstruktur untuk mengenali pola.
+     </p>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container two-col">
+     <div>
+      <span class="eyebrow">
+       The problem
+      </span>
+      <h2>
+       Dari keragaman menuju pola
+      </h2>
+     </div>
+     <div class="prose">
+      <p>
+       Ilmuwan mengelompokkan organisme berdasarkan karakter yang dimiliki bersama. Dengan begitu, identifikasi dan komunikasi menjadi lebih konsisten, dan perbandingan biologis menjadi lebih bermakna.
+      </p>
+      <p>
+       Dalam prototipe ini, kita menggunakan hierarki
+       <strong>
+        Kingdom &rarr; Division/Phylum &rarr; tingkat takson lebih rendah bila relevan
+       </strong>
+       . Istilah Division lazim digunakan pada tumbuhan dan fungi, sedangkan Phylum banyak digunakan untuk hewan dan konteks lainnya.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+        <span class="eyebrow">Taxonomy Tree</span>
+        <h2>Melihat hierarki</h2>
+        <h3>Klasifikasi bergerak dari kelompok yang luas menuju kelompok yang semakin spesifik</h3>
+    <div class="editorial-tax-map">
+    <!-- 4. Background pattern dikurangi opacity-nya biar subtle -->
+    <div class="tax-texture"></div>
+
+    <div class="tax-root-node">
+        <span>KEHIDUPAN</span>
+    </div>
+
+    <!-- Garis percabangan SVG -->
+    <svg class="tax-branches" viewBox="0 0 1000 120" preserveAspectRatio="none">
+        <path d="M500,0 C500,60 100,60 100,120" />
+        <path d="M500,0 C500,70 300,60 300,120" />
+        <path d="M500,0 C500,80 500,40 500,120" />
+        <path d="M500,0 C500,70 700,60 700,120" />
+        <path d="M500,0 C500,60 900,60 900,120" />
+    </svg>
+
+    <div class="tax-kingdoms">
+        <!-- 01 MONERA -->
+        <div class="tax-k-node">
+            <span class="k-number">01</span>
+            <span class="k-name">MONERA</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-trait">PROKARIOTIK</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-explore">EXPLORE</span>
+            
+            <!-- 3. Floating Annotation (Muncul ke samping) -->
+            <div class="k-annotation">
+                <div class="anno-row">
+                    <span class="anno-label">DINDING SEL</span>
+                    <span class="anno-value">Peptidoglikan</span>
+                </div>
+                <div class="anno-row">
+                    <span class="anno-label">INTI SEL</span>
+                    <span class="anno-value">Tanpa Membran</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 PROTISTA -->
+        <div class="tax-k-node">
+            <span class="k-number">02</span>
+            <span class="k-name">PROTISTA</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-trait">EUKARIOTIK AWAL</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-explore">EXPLORE</span>
+            
+            <div class="k-annotation">
+                <div class="anno-row">
+                    <span class="anno-label">KARAKTER</span>
+                    <span class="anno-value">Sangat Beragam</span>
+                </div>
+                <div class="anno-row">
+                    <span class="anno-label">ORGANISASI</span>
+                    <span class="anno-value">Uni/Multiseluler Sederhana</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 FUNGI -->
+        <div class="tax-k-node">
+            <span class="k-number">03</span>
+            <span class="k-name">FUNGI</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-trait">ABSORPTIF</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-explore">EXPLORE</span>
+            
+            <div class="k-annotation">
+                <div class="anno-row">
+                    <span class="anno-label">DINDING SEL</span>
+                    <span class="anno-value">Kitin</span>
+                </div>
+                <div class="anno-row">
+                    <span class="anno-label">NUTRISI</span>
+                    <span class="anno-value">Absorptif (Hifa)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 PLANTAE -->
+        <div class="tax-k-node">
+            <span class="k-number">04</span>
+            <span class="k-name">PLANTAE</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-trait">FOTOSINTETIK</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-explore">EXPLORE</span>
+            
+            <div class="k-annotation align-left">
+                <div class="anno-row">
+                    <span class="anno-label">DINDING SEL</span>
+                    <span class="anno-value">Selulosa</span>
+                </div>
+                <div class="anno-row">
+                    <span class="anno-label">NUTRISI</span>
+                    <span class="anno-value">Autotrof (Klorofil)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 05 ANIMALIA -->
+        <div class="tax-k-node">
+            <span class="k-number">05</span>
+            <span class="k-name">ANIMALIA</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-trait">HETEROTROF</span>
+            <div class="k-line-vertical"></div>
+            <span class="k-explore">EXPLORE</span>
+            
+            <div class="k-annotation align-left">
+                <div class="anno-row">
+                    <span class="anno-label">STRUKTUR</span>
+                    <span class="anno-value">Tanpa Dinding Sel</span>
+                </div>
+                <div class="anno-row">
+                    <span class="anno-label">ORGANISASI</span>
+                    <span class="anno-value">Jaringan Kompleks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</section>
+   <section class="section section-observation">
+    <div class="container">
+        <div class="obs-header">
+            <span class="eyebrow">Observe &rarr; classify</span>
+            <h2>Ciri yang bisa diamati</h2>
+            <p class="obs-intro">
+                Sebelum mengelompokkan organisme, kita perlu melihat karakter yang membedakan satu kelompok dengan kelompok lainnya.
+            </p>
+        </div>
+
+        <div class="obs-grid">
+            <!-- Card 01 -->
+            <div class="obs-card">
+                <span class="obs-number">01</span>
+                <h3 class="obs-title">TIPE SEL</h3>
+                <p class="obs-desc">Prokariotik atau eukariotik.</p>
+            </div>
+            
+            <!-- Card 02 -->
+            <div class="obs-card">
+                <span class="obs-number">02</span>
+                <h3 class="obs-title">ORGANISASI</h3>
+                <p class="obs-desc">Uniseluler, jaringan, organ, atau sistem organ.</p>
+            </div>
+            
+            <!-- Card 03 -->
+            <div class="obs-card">
+                <span class="obs-number">03</span>
+                <h3 class="obs-title">NUTRISI</h3>
+                <p class="obs-desc">Cara memperoleh nutrisi.</p>
+            </div>
+            
+            <!-- Card 04 -->
+            <div class="obs-card">
+                <span class="obs-number">04</span>
+                <h3 class="obs-title">STRUKTUR & REPRODUKSI</h3>
+                <p class="obs-desc">Bentuk tubuh dan siklus reproduksi.</p>
+            </div>
+            
+            <!-- Card 05 -->
+            <div class="obs-card">
+                <span class="obs-number">05</span>
+                <h3 class="obs-title">HABITAT & PERAN</h3>
+                <p class="obs-desc">Konteks ekologis organisme.</p>
+            </div>
+        </div>
+    </div>
+</section>
+   <section class="cta-band">
+    <div class="container">
+     <div>
+      <span class="eyebrow">
+       Next
+      </span>
+      <h2>
+       Mulai eksplorasi kingdom.
+      </h2>
+     </div>
+     <a class="btn btn-primary" href="monera.html">
+      Mulai Eksplorasi Kingdom
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-grid">
+    <div class="footer-logo">
+        <a href="index.html" class="logo-link">
+            <img src="Assets/Logo.svg" alt="BioScope Logo" class="brand-logo-img">
+        </a>
+     <p>
+      Belajar klasifikasi biologis melalui konsep, ensiklopedia, dan tantangan penalaran.
+     </p>
+    </div>  
+    <div>
+     <span class="eyebrow">
+      BIOSCOPE
+     </span>
+     <p>
+        <a href="about.html">TENTANG BIOSCOPE</a>
+     </p>
+     <p>
+        KONTAK
+     </p>
+     <p>
+        KREDIT
+     </p>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
+
