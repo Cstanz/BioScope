@@ -51,7 +51,7 @@ const BIOSCOPE_DATA = {
           "Robert H. Whittaker memperkenalkan sistem klasifikasi 5 kingdom pada tahun 1969."
         ],
         [
-          "Berdasarkan penelitian Carl Woese, Monera sebenarnya terdiri dari dua kelompok yang secara evolusi sangat berbeda, yaitu...",
+          "Monera kemudian dipecah menjadi dua kingdom terpisah berdasarkan penelitian Carl Woese, yaitu... ",
           [
             "Eubacteria dan Archaebacteria",
             "Protozoa dan Algae",
@@ -62,23 +62,23 @@ const BIOSCOPE_DATA = {
           "Woese menunjukkan bahwa Eubacteria (bakteri sejati) dan Archaebacteria (bakteri purba) memiliki garis evolusi yang berbeda meski sama-sama prokariotik."
         ],
         [
-          "Salah satu ciri organisasi tubuh yang umum dimiliki oleh anggota Monera adalah...",
+          "Dasar utama yang digunakan Woese untuk memisahkan Monera menjadi dua kingdom adalah...",
           [
-            "Multiseluler dengan jaringan kompleks",
-            "Umumnya uniseluler",
-            "Selalu berkoloni membentuk organ",
-            "Memiliki banyak inti sel"
+            "Perbedaan bentuk sel",
+            "Perbedaan ukuran tubuh",
+            "Analisis materi genetik (RNA ribosom)",
+            "Perbedaan habitat"
           ],
-          "Umumnya uniseluler",
-          "Sebagian besar anggota Monera hanya tersusun atas satu sel (uniseluler)."
+          "Analisis materi genetik (RNA ribosom)",
+          "Woese membandingkan urutan basa pada molekul RNA ribosom 16S dari berbagai organisme. Perbedaan signifikan pada urutan ini menunjukkan bahwa Eubacteria dan Archaebacteria memiliki garis keturunan yang berbeda."
         ],
         [
-          "Mengapa keragaman metabolisme pada Monera dianggap sangat tinggi?",
+          "Berikut yang BUKAN merupakan kriteria yang digunakan untuk mengklasifikasikan Monera adalah...",
           [
-            "Karena semua anggotanya berfotosintesis",
-            "Karena Monera mampu hidup di berbagai lingkungan dengan cara memperoleh energi yang beragam",
+            "Tipe sel",
+            "Dinding sel dan membran",
             "Karena semua anggotanya bersifat parasit",
-            "Karena Monera tidak memerlukan energi"
+            "Warna organisme"
           ],
           "Karena Monera mampu hidup di berbagai lingkungan dengan cara memperoleh energi yang beragam",
           "Anggota Monera memiliki cara memperoleh energi yang bervariasi, mulai dari fotosintesis, kemosintesis, hingga menyerap bahan organik, sehingga mampu hidup di lingkungan yang sangat beragam."
