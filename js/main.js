@@ -5,6 +5,48 @@
 
 const STORE_KEY = "bioscopeProgress";
 const ROLE_KEY = "bioscopeRole";
+const THEME_KEY = "bioscopeTheme";
+
+// ---------- Night mode ----------
+
+function getPreferredTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+
+  if (saved === "dark" || saved === "light") {
+    return saved;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function applyTheme(theme) {
+  if (theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+}
+
+function setupThemeToggle() {
+  // Terapkan tema tersimpan/preferensi sistem sedari awal
+  applyTheme(getPreferredTheme());
+
+  const toggle = document.querySelector("#theme-toggle");
+
+  if (!toggle) {
+    return;
+  }
+
+  toggle.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const nextTheme = isDark ? "light" : "dark";
+
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
 document.addEventListener("DOMContentLoaded", function() {
     const textElement = document.getElementById("typing-text");
     if (!textElement) return;
@@ -901,6 +943,7 @@ function renderGlobalChallenges() {
 // ---------- Initialization ----------
 
 function init() {
+  setupThemeToggle();
   setActiveNav();
   setupMenu();
   renderKingdomCards();
@@ -919,5 +962,3 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
-// ---------- Embed ----------

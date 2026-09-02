@@ -27,6 +27,127 @@
 
   --radius: 4px;
   --shadow: 0 14px 40px rgba(24, 54, 43, 0.08);
+
+  /* Warna "permukaan" kartu/panel — sama dengan --white di mode terang,
+     tapi jadi gelap di mode malam (lihat blok [data-theme="dark"] di bawah) */
+  --surface: #ffffff;
+}
+
+/* =====================================================
+   DARK MODE (NIGHT MODE)
+   Override variable warna saja — karena hampir semua elemen
+   di file ini sudah pakai var(--ink), var(--paper), dst,
+   cukup ganti nilainya di sini dan seluruh halaman ikut berubah.
+   ===================================================== */
+[data-theme="dark"] {
+  --ink: #eef3ef;
+  --ink-soft: #c3d0c9;
+  --muted: #8fa199;
+  --paper: #0e1613;
+  --paper-2: #141f1a;
+  --paper-3: #1a2822;
+  --surface: #16211c;
+  --forest: #55a17c;
+  --forest-dark: #2f6b52;
+  --sage: #5c8b74;
+  --sage-light: #1e2e26;
+  --accent: #e0a377;
+  --line: #263129;
+  --line-dark: #384a41;
+  --danger: #e2897b;
+  --success: #6fc394;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] body {
+  background: var(--paper);
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Beberapa elemen pakai warna hardcoded (bukan variable) — disesuaikan
+   khusus untuk mode gelap di sini */
+[data-theme="dark"] .site-header {
+  background: rgba(14, 22, 19, 0.92);
+}
+
+[data-theme="dark"] .editorial-intro p {
+  color: var(--ink-soft);
+}
+
+[data-theme="dark"] .prose ul li {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .feedback.incorrect,
+[data-theme="dark"] .option.option-incorrect {
+  background: rgba(226, 137, 123, 0.14);
+}
+
+[data-theme="dark"] .kingdom-card:first-child,
+[data-theme="dark"] .kingdom-card.active {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .stat,
+[data-theme="dark"] .site-footer {
+  background: #10201a;
+}
+
+/* ---------- Theme toggle button ---------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 8px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: inline-flex;
+}
+
+/* Varian khusus untuk floating-header (di atas video, transparan) */
+.floating-header .theme-toggle {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+.floating-header .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 button:active,
@@ -177,7 +298,7 @@ nav a.active {
   padding: 8px 12px;
   border: 1px solid var(--line-dark);
   border-radius: var(--radius);
-  background: var(--white);
+  background: var(--surface);
   color: var(--ink);
 }
 
@@ -270,7 +391,7 @@ h3 {
 }
 
 .btn-secondary {
-  background: var(--white);
+  background: var(--surface);
 }
 
 .text-link {
@@ -734,7 +855,7 @@ h3 {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--white);
+  background: var(--surface);
   box-shadow: 0 8px 26px rgba(24, 54, 43, 0.04);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease,
     background 180ms ease, opacity 180ms ease;
@@ -750,7 +871,7 @@ h3 {
 /* Active / available kingdom */
 .kingdom-card:first-child,
 .kingdom-card.active {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid #8bb19b;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   opacity: 1;
@@ -897,7 +1018,7 @@ h3 {
 
 .division-card {
   min-height: 350px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 /* ---------- Status ---------- */
@@ -1272,7 +1393,7 @@ h3 {
 .obs-card:hover {
     transform: translateY(-4px);
     border-color: var(--forest);
-    background: var(--white);
+    background: var(--surface);
     border-style: solid; /* Mengubah dashed menjadi solid saat dihover */
     box-shadow: var(--shadow);
 }
@@ -1421,7 +1542,7 @@ h3 {
   display: grid;
   grid-template-columns: 0.55fr 1.45fr;
   border: 1px solid var(--line-dark);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .challenge-visual {
@@ -1494,7 +1615,7 @@ h3 {
   gap: 50px;
   padding: 45px;
   border: 1px solid var(--line-dark);
-  background: var(--white);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -1923,4 +2044,21 @@ legend {
   .kingdom-card {
     min-height: 300px;
   }
+}
+
+
+.prose ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.prose ul li {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--forest); 
+  border-radius: var(--radius);
+  line-height: 1.75;
 }

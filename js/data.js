@@ -12,16 +12,16 @@ const BIOSCOPE_DATA = {
       "overview": "Monera adalah kelompok organisme yang seluruh anggotanya bersifat prokariotik — sel-selnya tidak memiliki membran inti sejati. Konsep ini pertama kali diperkenalkan oleh Robert H. Whittaker pada tahun 1969 (sistem 5 kingdom). Namun, penelitian lanjutan oleh Carl Woese (1977 & 1990) menunjukkan bahwa Monera terdiri dari dua kelompok yang secara evolusi sangat berbeda: Eubacteria (bakteri sejati) dan Archaebacteria (bakteri purba).",
       
       "chars": [
-        "Prokariotik",
-        "Umumnya uniseluler",
-        "Tidak memiliki membran inti",
-        "Keragaman metabolisme sangat tinggi"
+        "<strong>Organisasi Prokariotik Murni:</strong> Sel tidak memiliki membran inti sejati (nucleus), melainkan wilayah nukleoid sirkular bebas. Ketiadaan organel bermembran membuat seluruh aktivitas transkripsi dan translasi terjadi secara simultan di sitoplasma.",
+        "<strong>Diferensiasi Dinding Sel:</strong> Komposisi biokimia dinding sel sangat bervariasi; Eubacteria kaya akan peptidoglikan yang rentan terhadap antibiotik beta-laktam, sementara Archaea menggunakan pseudomurein atau protein kompleks yang kebal.",
+        "<strong>Arsitektur Membran Sel:</strong> Membran plasma Eubacteria tersusun dari ikatan ester dengan rantai asam lemak lurus, kontras tajam dengan Archaea yang menggunakan ikatan eter rantai isoprenoid bercabang untuk bertahan di suhu ekstrem.",
+        "<strong>Mesin Genetik & Translasi:</strong> Proses sintesis protein pada Eubacteria diawali oleh asam amino khusus berupa formilmetionin (fMet), sedangkan Archaea menggunakan metionin murni, menunjukkan kedekatan evolusioner unik dengan domain Eukarya."
       ],
       "criteria": [
-        "Tipe sel",
-        "Dinding sel dan membran",
-        "Metabolisme",
-        "Lingkungan hidup"
+        "<strong>Filogeni Molekuler (rRNA 16S):</strong> Klasifikasi modern sepenuhnya meninggalkan morfologi luar dan beralih pada perbandingan sekuens basa RNA ribosom 16S untuk melacak jarak kekerabatan evolusi yang akurat.",
+        "<strong>Profil Biokimiawi & Lipid:</strong> Pengelompokan didasarkan pada cetak biru biokimia fundamental, khususnya struktur kimia penyusun membran lipid dan kerentanan terhadap agen antimikroba.",
+        "<strong>Diversitas Jalur Metabolik:</strong> Klasifikasi mencakup spektrum luas cara memperoleh energi—mulai dari fotoautotrof, kemolitotrof (mengoksidasi senyawa anorganik), hingga chemoheterotrof parasit.",
+        "<strong>Ekofisiologi Spesifik:</strong> Pemetaan habitat ekstrim tempat organisme beradaptasi, meliputi kelompok metanogen anaerob, halofil ekstrem, hingga termoasidofil vulkanik."
       ],
       "division_ids": [
         "eubacteria",
