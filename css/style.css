@@ -150,6 +150,20 @@ body {
   background: rgba(255, 255, 255, 0.18);
 }
 
+/* ---------- Logo terang/gelap otomatis ikut tema ---------- */
+
+.logo-dark-mode {
+  display: none;
+}
+
+[data-theme="dark"] .logo-light-mode {
+  display: none;
+}
+
+[data-theme="dark"] .logo-dark-mode {
+  display: block;
+}
+
 button:active,
 .btn:active,
 .kingdom-card:active,
@@ -1059,7 +1073,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     padding: 80px 20px;
-    background: var(--ink); /* Latar gelap kontras tinggi */
+    background: var(--forest-dark); /* Latar gelap kontras tinggi — tetap gelap di kedua tema */
     color: var(--white);
     border-radius: 16px;
     overflow: hidden;
