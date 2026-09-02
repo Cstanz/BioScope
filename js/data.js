@@ -90,6 +90,7 @@ const BIOSCOPE_DATA = {
     "protista": {
       "name": "Protista",
       "eyebrow": "Kingdom 02",
+      "embedUrl": "https://sketchfab.com/models/8df6e9add2c24beaa989b3278d96245a/embed?autostart=1",
       "summary": "Kelompok eukariotik yang secara tradisional digunakan untuk mengorganisasi beragam organisme yang bukan hewan, tumbuhan, atau fungi dalam sistem lima kingdom. Keragamannya membuat ciri sel dan cara hidup menjadi penting untuk dibandingkan.",
       "chars": [
         "Eukariotik",
@@ -137,6 +138,7 @@ const BIOSCOPE_DATA = {
     "fungi": {
       "name": "Fungi",
       "eyebrow": "Kingdom 03",
+      "embedUrl": "https://sketchfab.com/models/0dc381077a0e48cdb211b4505ab0be09/embed?autostart=1",
       "summary": "Kelompok eukariotik yang memperoleh nutrisi secara absorptif. Tubuh fungi sering tersusun atas hifa yang membentuk miselium, meskipun bentuk dan siklus hidupnya sangat beragam.",
       "chars": [
         "Eukariotik",
