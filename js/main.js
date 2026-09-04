@@ -547,7 +547,16 @@ function initDivisionPage() {
             <dd>${division.label}</dd>
 
             <dt>Examples</dt>
-            <dd>${division.examples}</dd>
+            <dd>${
+              division.exampleNotes
+                ? `<ul class="example-tags">${division.exampleNotes
+                    .map(
+                      (ex) =>
+                        `<li><strong>${ex.name}</strong><span>${ex.note}</span></li>`,
+                    )
+                    .join("")}</ul>`
+                : division.examples
+            }</dd>
           </dl>
         </aside>
 
@@ -598,13 +607,23 @@ function renderEditorialSections(division) {
     {
       eyebrow: "Body organization",
       heading: "Struktur & morfologi",
-      body: division.body ? `<p>${division.body}</p>` : "",
+      body: division.body
+        ? `<p>${division.body}</p>${
+            division.morphologyProfile
+              ? renderInfoCards(division.morphologyProfile)
+              : ""
+          }`
+        : "",
     },
     {
       eyebrow: "Habitat",
       heading: "Habitat & distribusi",
       body: division.habitat
-        ? `<p>${division.habitat}</p>${renderHabitatVisual()}`
+        ? `<p>${division.habitat}</p>${
+            division.habitatProfile
+              ? renderInfoCards(division.habitatProfile)
+              : ""
+          }`
         : "",
     },
     {
@@ -625,7 +644,11 @@ function renderEditorialSections(division) {
     {
       eyebrow: "Recognition",
       heading: "Bagaimana mengenalinya?",
-      body: division.recognize ? `<p>${division.recognize}</p>` : "",
+      body: division.recognizeSteps
+        ? `<ul>${division.recognizeSteps.map((step) => `<li>${step}</li>`).join("")}</ul>`
+        : division.recognize
+          ? `<p>${division.recognize}</p>`
+          : "",
     },
   ].filter((section) => section.body);
 
@@ -678,29 +701,29 @@ function renderEcology(division) {
   return division.ecology ? `<p>${division.ecology}</p>` : "";
 }
 
-// Generic, easily-replicated habitat icon — used instead of a literal map,
-// since most kingdom/division-level groups (e.g. Bacteria) are cosmopolitan
-// and don't have a meaningful geographic distribution to plot.
-function renderHabitatVisual() {
+// Generic info-card row — used for morphology (01) and habitat (02) sections.
+// Driven by division data (`morphologyProfile` / `habitatProfile`), so content
+// is always specific to that division instead of one hardcoded set of cards
+// being reused (and often wrong) across every kingdom/division.
+// items: [{ label, value, desc }]
+function renderInfoCards(items) {
+  if (!items || !items.length) {
+    return "";
+  }
+
   return `
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px;">
-      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
-        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Oksigen (O₂)</span>
-        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">Aerob & Anaerob</strong>
-        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Mampu hidup mutlak memerlukan oksigen, toleran, hingga anaerob obligat.</span>
-      </div>
-
-      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
-        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Derajat Keasaman</span>
-        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">pH 6.5 – 7.5 (Neutrofil)</strong>
-        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Sebagian besar tumbuh optimal pada kisaran pH netral, meski ada acidofil/alkalifil.</span>
-      </div>
-
-      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
-        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Termal & Suhu</span>
-        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">Mesofilik (20°–45°C)</strong>
-        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Dominan pada suhu moderat, dengan variasi psikrofil (dingin) dan termofil.</span>
-      </div>
+    <div class="info-card-grid">
+      ${items
+        .map(
+          (item) => `
+            <div class="info-card">
+              <span class="info-card-label">${item.label}</span>
+              <strong class="info-card-value">${item.value}</strong>
+              <span class="info-card-desc">${item.desc}</span>
+            </div>
+          `,
+        )
+        .join("")}
     </div>
   `;
 }
@@ -769,6 +792,205 @@ function renderChallenge(divisionId) {
       markChallenge(division.kingdom, divisionId);
     }
   });
+}
+
+// ---------- Dichotomous key ----------
+
+function markDichotomous(kingdomId) {
+  const progress = getProgress();
+  const kingdom = progress.kingdoms[kingdomId];
+
+  if (!kingdom) {
+    return;
+  }
+
+  kingdom.dichotomousCompleted = true;
+  saveProgress(progress);
+}
+
+function attachSwipe(cardEl, onLeft, onRight) {
+  let startX = 0;
+  let currentX = 0;
+
+  function move(e) {
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    currentX = clientX - startX;
+    const rotate = currentX / 14;
+    cardEl.style.transform = `translateX(${currentX}px) rotate(${rotate}deg)`;
+    cardEl.classList.toggle("swipe-left-active", currentX < -40);
+    cardEl.classList.toggle("swipe-right-active", currentX > 40);
+  }
+
+  function up() {
+    document.removeEventListener("mousemove", move);
+    document.removeEventListener("mouseup", up);
+    document.removeEventListener("touchmove", move);
+    document.removeEventListener("touchend", up);
+
+    const threshold = 110;
+    cardEl.style.transition = "transform 0.35s ease, opacity 0.35s ease";
+
+    if (currentX < -threshold) {
+      cardEl.style.transform = "translateX(-700px) rotate(-24deg)";
+      cardEl.style.opacity = "0";
+      setTimeout(onLeft, 220);
+    } else if (currentX > threshold) {
+      cardEl.style.transform = "translateX(700px) rotate(24deg)";
+      cardEl.style.opacity = "0";
+      setTimeout(onRight, 220);
+    } else {
+      cardEl.style.transform = "translateX(0) rotate(0)";
+      cardEl.classList.remove("swipe-left-active", "swipe-right-active");
+    }
+
+    currentX = 0;
+  }
+
+  function down(e) {
+    startX = e.touches ? e.touches[0].clientX : e.clientX;
+    cardEl.style.transition = "none";
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseup", up);
+    document.addEventListener("touchmove", move, { passive: true });
+    document.addEventListener("touchend", up);
+  }
+
+  cardEl.addEventListener("mousedown", down);
+  cardEl.addEventListener("touchstart", down, { passive: true });
+}
+
+function renderDichotomousKey() {
+  const container = document.querySelector("[data-dichotomous-key]");
+
+  if (!container) {
+    return;
+  }
+
+  const params = new URLSearchParams(location.search);
+  const kingdomId = params.get("kingdom") || "monera";
+  const kingdom = BIOSCOPE_DATA.kingdoms[kingdomId];
+  const key = kingdom && kingdom.dichotomousKey;
+
+  if (!kingdom || !key) {
+    container.innerHTML = `
+      <section class="section">
+        <div class="container narrow">
+          <span class="eyebrow">Kunci dikotomi</span>
+          <h1>Belum tersedia</h1>
+          <p>Kunci dikotomi untuk kelompok ini belum disiapkan.</p>
+          <a class="btn btn-primary" href="classification-challenge.html">Kembali ke Challenge</a>
+        </div>
+      </section>
+    `;
+    return;
+  }
+
+  let currentStepId = key.start;
+  const trail = [];
+
+  function renderStep() {
+    const step = key.steps[currentStepId];
+
+    container.innerHTML = `
+      <section class="section">
+        <div class="container narrow">
+          <span class="eyebrow">${kingdom.name} &middot; Kunci Dikotomi</span>
+          <h1>${key.title}</h1>
+          <p class="lede">${key.scenario}</p>
+
+          ${
+            trail.length
+              ? `<p class="key-trail">${trail
+                  .map((t) => `<span>${t}</span>`)
+                  .join(" &rarr; ")}</p>`
+              : ""
+          }
+
+          <div class="swipe-stage">
+            <div class="swipe-label swipe-label-left">
+              <span>${step.number}a</span>
+              ${step.couplet[0].text}
+            </div>
+
+            <div class="swipe-card" id="swipe-card">
+              <span class="key-step-number">Langkah ${step.number}</span>
+              <p class="swipe-instruction">Geser kartu ke kiri jika ciri sebelah kiri sesuai, atau ke kanan jika ciri sebelah kanan sesuai.</p>
+              <div class="swipe-stamp swipe-stamp-left">${step.number}a</div>
+              <div class="swipe-stamp swipe-stamp-right">${step.number}b</div>
+            </div>
+
+            <div class="swipe-label swipe-label-right">
+              <span>${step.number}b</span>
+              ${step.couplet[1].text}
+            </div>
+          </div>
+
+          <p class="swipe-fallback-hint">Kesulitan menggeser? Ketuk langsung salah satu kotak ciri di atas.</p>
+        </div>
+      </section>
+    `;
+
+    function choose(index) {
+      const item = step.couplet[index];
+      trail.push(item.text);
+
+      if (key.steps[item.next]) {
+        currentStepId = item.next;
+        renderStep();
+      } else {
+        renderResult(item.next);
+      }
+    }
+
+    const card = container.querySelector("#swipe-card");
+    attachSwipe(
+      card,
+      () => choose(0),
+      () => choose(1),
+    );
+
+    container
+      .querySelector(".swipe-label-left")
+      .addEventListener("click", () => choose(0));
+    container
+      .querySelector(".swipe-label-right")
+      .addEventListener("click", () => choose(1));
+  }
+
+  function renderResult(resultId) {
+    const result = key.results[resultId];
+
+    markDichotomous(kingdomId);
+
+    container.innerHTML = `
+      <section class="section">
+        <div class="container narrow">
+          <span class="eyebrow">${kingdom.name} &middot; Kunci Dikotomi</span>
+          <h1>${key.title}</h1>
+
+          <p class="key-trail">${trail.map((t) => `<span>${t}</span>`).join(" &rarr; ")}</p>
+
+          <div class="feedback correct key-result">
+            <strong>Hasil identifikasi: ${result.label}</strong>
+            <p>${result.description}</p>
+          </div>
+
+          <div class="key-actions">
+            <a class="btn btn-primary" href="${result.link}">${result.linkLabel}</a>
+            <button type="button" class="btn key-restart-btn" id="key-restart">Coba lagi</button>
+          </div>
+        </div>
+      </section>
+    `;
+
+    document.querySelector("#key-restart").addEventListener("click", () => {
+      currentStepId = key.start;
+      trail.length = 0;
+      renderStep();
+    });
+  }
+
+  renderStep();
 }
 
 // ---------- Kingdom quiz ----------
@@ -1038,6 +1260,26 @@ function renderGlobalChallenges() {
                 `;
               })
               .join("")}
+            ${
+              kingdom.dichotomousKey
+                ? (() => {
+                    const unlocked = adminAwareUnlock(kingdomId, progress);
+                    const kState = progress.kingdoms[kingdomId];
+                    return `
+                      <a
+                        class="compact-item ${unlocked ? "" : "disabled"}"
+                        href="${unlocked ? `dichotomous-key.html?kingdom=${kingdomId}` : "#"}"
+                      >
+                        <span>Kunci Dikotomi</span>
+                        <strong>${kingdom.dichotomousKey.title}</strong>
+                        <em>
+                          ${kState.dichotomousCompleted ? "Completed" : unlocked ? "Open" : "Locked"}
+                        </em>
+                      </a>
+                    `;
+                  })()
+                : ""
+            }
           </div>
         </section>
       `;
@@ -1087,6 +1329,7 @@ function init() {
   initDivisionPage();
   renderProgress();
   renderGlobalChallenges();
+  renderDichotomousKey();
 
   const whyPage = document.querySelector("[data-why]");
 

@@ -85,7 +85,42 @@ const BIOSCOPE_DATA = {
         ]
       ],
       
-      "unlock_text": "Tersedia sejak awal."
+      "unlock_text": "Tersedia sejak awal.",
+
+      "dichotomousKey": {
+        "title": "Kunci Dikotomi: Kelompok Monera",
+        "scenario": "Seorang mahasiswa mengamati mikroorganisme prokariotik yang diisolasi dari sampel tanah kebun. Gunakan kunci dikotomi berikut untuk menentukan kelompok organisme tersebut.",
+        "start": "k1",
+        "steps": {
+          "k1": {
+            "number": "1",
+            "couplet": [
+              {
+                "text": "Dinding sel mengandung peptidoglikan",
+                "next": "eubacteria"
+              },
+              {
+                "text": "Dinding sel tidak mengandung peptidoglikan (tersusun dari pseudomurin)",
+                "next": "archaea"
+              }
+            ]
+          }
+        },
+        "results": {
+          "eubacteria": {
+            "label": "Eubacteria (Bakteri Sejati)",
+            "description": "Spesimen tergolong Eubacteria. Dinding selnya mengandung peptidoglikan &mdash; ciri utama yang membedakannya dari Archaea, sekaligus menjadi target kerja sebagian besar antibiotik seperti penisilin.",
+            "link": "divisions/eubacteria.html",
+            "linkLabel": "Pelajari Eubacteria"
+          },
+          "archaea": {
+            "label": "Archaea (Archaebacteria)",
+            "description": "Spesimen tergolong Archaea. Dinding selnya tersusun dari pseudomurin, bukan peptidoglikan &mdash; itulah sebabnya Archaea tidak terpengaruh oleh antibiotik yang menyasar peptidoglikan.",
+            "link": "divisions/archaea.html",
+            "linkLabel": "Pelajari Archaea"
+          }
+        }
+      }
     },
     "protista": {
       "name": "Protista",
@@ -363,16 +398,16 @@ const BIOSCOPE_DATA = {
         "<strong>Lanjutkan dengan uji biokimia</strong> (misalnya uji katalase, oksidase, atau fermentasi gula) untuk memastikan identifikasi hingga ke tingkat genus atau spesies."
       ],
       "challenge": {
-        "question": "Seorang peneliti menemukan dua sampel bakteri patogen dari pasien berbeda. Sampel A tetap bertahan hidup meski diberi penisilin dosis tinggi, sedangkan Sampel B mati total dengan pengobatan yang sama. Ketika keduanya diuji pewarnaan Gram, Sampel A berwarna merah muda dan Sampel B berwarna ungu pekat. Kelompok manakah yang paling sesuai untuk menjelaskan mengapa Sampel A lebih resisten terhadap penisilin?",
+        "question": "Seorang peneliti mikrobiologi menganalisis dinding sel bakteri patogen dan menemukan struktur membran luar yang kaya akan lipopolisakarida (LPS) serta lapisan peptidoglikan yang tipis. Ketika diuji dengan pewarnaan Gram, bakteri ini dipastikan akan berwarna...",
         "options": [
-        "Sampel A tergolong Gram-negatif; membran luar berlapis LPS-nya menghalangi penisilin mencapai target di lapisan peptidoglikan",
-        "Sampel A tergolong Gram-positif sehingga peptidoglikannya yang tebal membuatnya lebih tahan penisilin",
-        "Warna hasil pewarnaan Gram tidak berkaitan dengan resistensi antibiotik, sehingga perbedaan ini murni kebetulan",
-        "Sampel B lebih resisten karena memiliki kapsul tambahan yang tidak dimiliki Sampel A"
-       ],
-        "answer": "Sampel A tergolong Gram-negatif; membran luar berlapis LPS-nya menghalangi penisilin mencapai target di lapisan peptidoglikan",
-        "explanation": "Warna merah muda menunjukkan Sampel A adalah Gram-negatif. Lapisan membran luar yang mengandung LPS berfungsi sebagai penghalang tambahan yang mempersulit penisilin menembus dinding sel untuk mencapai target sintesis peptidoglikan, sehingga bakteri Gram-negatif secara umum cenderung lebih resisten terhadap penisilin dibanding Gram-positif yang hanya memiliki lapisan peptidoglikan tanpa pelindung tambahan."
-  }
+          "Merah atau merah muda (Gram-negatif)",
+          "Ungu pekat (Gram-positif)",
+          "Hijau transparan (Bakteri tahan asam)",
+          "Kuning keemasan"
+        ],
+        "answer": "Merah atau merah muda (Gram-negatif)",
+        "explanation": "Bakteri Gram-negatif memiliki lapisan peptidoglikan tipis dengan membran luar LPS yang melunturkan warna kristal violet saat dekolorisasi, sehingga menyerap safranin menjadi merah."
+      }
     },
     "archaea": {
       "id": "archaea",
