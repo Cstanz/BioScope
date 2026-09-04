@@ -498,6 +498,8 @@ function initDivisionPage() {
   markMaterial(division.kingdom, divisionId);
 
   container.innerHTML = `
+    ${renderBreadcrumb(kingdom, division)}
+
     <section class="ency-hero">
       <div class="container hero-grid">
         <div>
@@ -507,15 +509,28 @@ function initDivisionPage() {
           <p class="lede">${division.definition}</p>
         </div>
 
-        <div
-          class="specimen specimen-${division.kingdom}"
-          role="img"
-          aria-label="Placeholder spesimen ${division.title}"
-        >
-          <span>
-            SPECIMEN<br />
-            <small>${division.label.toUpperCase()}</small>
-          </span>
+       <div class="specimen specimen-${division.kingdom}">
+          ${
+            division.embedUrl 
+            ? `<iframe 
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; border: none; background: #f2f2f2;"
+                 title="3D Model ${division.title}" 
+                 frameborder="0" 
+                 allowfullscreen 
+                 mozallowfullscreen="true" 
+                 webkitallowfullscreen="true" 
+                 allow="autoplay; fullscreen; xr-spatial-tracking" 
+                 xr-spatial-tracking 
+                 execution-while-out-of-viewport 
+                 execution-while-not-rendered 
+                 web-share 
+                 src="${division.embedUrl}">
+               </iframe>`
+            : `<span>
+                 SPECIMEN<br />
+                 <small>${division.label.toUpperCase()}</small>
+               </span>`
+          }
         </div>
       </div>
     </section>
@@ -537,49 +552,7 @@ function initDivisionPage() {
         </aside>
 
         <div class="prose">
-          <section class="editorial-section">
-            <span class="eyebrow">01 · Body organization</span>
-            <h2>Struktur & morfologi</h2>
-            <p>${division.body}</p>
-          </section>
-
-          <section class="editorial-section">
-            <span class="eyebrow">02 · Habitat</span>
-            <h2>Habitat & distribusi</h2>
-            <p>${division.habitat}</p>
-            <div
-              class="map-placeholder"
-              role="img"
-              aria-label="Placeholder peta distribusi"
-            >
-              DISTRIBUTION FIELD<br />
-              <small>MAP PLACEHOLDER</small>
-            </div>
-          </section>
-
-          <section class="editorial-section">
-            <span class="eyebrow">03 · Mode of life</span>
-            <h2>Nutrisi & cara hidup</h2>
-            <p>${division.nutrition}</p>
-          </section>
-
-          <section class="editorial-section">
-            <span class="eyebrow">04 · Life cycle</span>
-            <h2>Reproduksi</h2>
-            <p>${division.reproduction}</p>
-          </section>
-
-          <section class="editorial-section">
-            <span class="eyebrow">05 · Ecology</span>
-            <h2>Peran ekologis</h2>
-            <p>${division.ecology}</p>
-          </section>
-
-          <section class="editorial-section">
-            <span class="eyebrow">06 · Recognition</span>
-            <h2>Bagaimana mengenalinya?</h2>
-            <p>${division.recognize}</p>
-          </section>
+          ${renderEditorialSections(division)}
         </div>
       </div>
     </section>
@@ -602,6 +575,136 @@ function initDivisionPage() {
   renderChallenge(divisionId);
 }
 
+// ---------- Breadcrumb ----------
+
+function renderBreadcrumb(kingdom, division) {
+  return `
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="../${division.kingdom}.html">${kingdom.name}</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">${division.label}</span>
+      </div>
+    </nav>
+  `;
+}
+
+// ---------- Editorial sections (auto-hides sections with no data) ----------
+
+function renderEditorialSections(division) {
+  const sections = [
+    {
+      eyebrow: "Body organization",
+      heading: "Struktur & morfologi",
+      body: division.body ? `<p>${division.body}</p>` : "",
+    },
+    {
+      eyebrow: "Habitat",
+      heading: "Habitat & distribusi",
+      body: division.habitat
+        ? `<p>${division.habitat}</p>${renderHabitatVisual()}`
+        : "",
+    },
+    {
+      eyebrow: "Mode of life",
+      heading: "Nutrisi & cara hidup",
+      body: division.nutrition ? `<p>${division.nutrition}</p>` : "",
+    },
+    {
+      eyebrow: "Life cycle",
+      heading: "Reproduksi",
+      body: division.reproduction ? `<p>${division.reproduction}</p>` : "",
+    },
+    {
+      eyebrow: "Ecology",
+      heading: "Peran ekologis",
+      body: renderEcology(division),
+    },
+    {
+      eyebrow: "Recognition",
+      heading: "Bagaimana mengenalinya?",
+      body: division.recognize ? `<p>${division.recognize}</p>` : "",
+    },
+  ].filter((section) => section.body);
+
+  return sections
+    .map(
+      (section, index) => `
+        <section class="editorial-section">
+          <span class="eyebrow">${String(index + 1).padStart(2, "0")} · ${section.eyebrow}</span>
+          <h2>${section.heading}</h2>
+          ${section.body}
+        </section>
+      `,
+    )
+    .join("");
+}
+
+// Renders ecology as a plain paragraph, or — when a division supplies
+// `ecologyRoles: { benefits: [...], harms: [...] }` — as a two-column
+// menguntungkan/merugikan list for easier scanning.
+function renderEcology(division) {
+  if (division.ecologyRoles) {
+    const { benefits = [], harms = [] } = division.ecologyRoles;
+
+    return `
+      <div class="ecology-grid">
+        ${
+          benefits.length
+            ? `
+              <div class="ecology-col ecology-col-benefit">
+                <span class="ecology-col-label">Menguntungkan</span>
+                <ul>${benefits.map((item) => `<li>${item}</li>`).join("")}</ul>
+              </div>
+            `
+            : ""
+        }
+        ${
+          harms.length
+            ? `
+              <div class="ecology-col ecology-col-harm">
+                <span class="ecology-col-label">Merugikan</span>
+                <ul>${harms.map((item) => `<li>${item}</li>`).join("")}</ul>
+              </div>
+            `
+            : ""
+        }
+      </div>
+    `;
+  }
+
+  return division.ecology ? `<p>${division.ecology}</p>` : "";
+}
+
+// Generic, easily-replicated habitat icon — used instead of a literal map,
+// since most kingdom/division-level groups (e.g. Bacteria) are cosmopolitan
+// and don't have a meaningful geographic distribution to plot.
+function renderHabitatVisual() {
+  return `
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px;">
+      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
+        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Oksigen (O₂)</span>
+        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">Aerob & Anaerob</strong>
+        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Mampu hidup mutlak memerlukan oksigen, toleran, hingga anaerob obligat.</span>
+      </div>
+
+      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
+        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Derajat Keasaman</span>
+        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">pH 6.5 – 7.5 (Neutrofil)</strong>
+        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Sebagian besar tumbuh optimal pada kisaran pH netral, meski ada acidofil/alkalifil.</span>
+      </div>
+
+      <div style="padding: 18px; border: 1px solid var(--line-dark); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);">
+        <span style="font-size: 9px; color: var(--accent); font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px;">Termal & Suhu</span>
+        <strong style="font-family: var(--serif); font-size: 17px; display: block; margin-bottom: 4px;">Mesofilik (20°–45°C)</strong>
+        <span style="font-size: 11px; color: var(--muted); line-height: 1.4; display: block;">Dominan pada suhu moderat, dengan variasi psikrofil (dingin) dan termofil.</span>
+      </div>
+    </div>
+  `;
+}
+
 function renderChallenge(divisionId) {
   const container = document.querySelector("[data-challenge]");
 
@@ -613,11 +716,13 @@ function renderChallenge(divisionId) {
   const challenge = division.challenge;
 
   container.innerHTML = `
-    <div class="challenge-visual">
-      <span>
-        FIELD<br />
-        OBSERVATION
-      </span>
+    <div class="challenge-visual" aria-hidden="true">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="12"></circle>
+        <path d="M29 29 40 40"></path>
+        <path d="M20 14v12M14 20h12"></path>
+      </svg>
+      <span>Studi kasus</span>
     </div>
 
     <div class="challenge-question">
@@ -940,12 +1045,43 @@ function renderGlobalChallenges() {
     .join("");
 }
 
+// ---------- Floating scroll-to-top button ----------
+
+function setupScrollTopButton() {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "scroll-top-btn";
+  btn.setAttribute("aria-label", "Kembali ke navbar");
+  btn.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  `;
+  document.body.appendChild(btn);
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("is-visible");
+    } else {
+      btn.classList.remove("is-visible");
+    }
+  };
+
+  window.addEventListener("scroll", toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
 // ---------- Initialization ----------
 
 function init() {
   setupThemeToggle();
   setActiveNav();
   setupMenu();
+  setupScrollTopButton();
   renderKingdomCards();
   renderKingdomPage();
   initDivisionPage();

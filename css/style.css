@@ -78,7 +78,9 @@ body {
 }
 
 [data-theme="dark"] .prose ul li {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface);
+  border-color: var(--line-dark);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 [data-theme="dark"] .feedback.incorrect,
@@ -162,6 +164,57 @@ body {
 
 [data-theme="dark"] .logo-dark-mode {
   display: block;
+}
+
+/* ---------- Floating scroll-to-top button ---------- */
+
+.scroll-top-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  background: var(--forest);
+  color: #ffffff;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  background: var(--forest-dark);
+}
+
+.scroll-top-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+@media (max-width: 700px) {
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+  }
 }
 
 button:active,
@@ -1340,17 +1393,55 @@ h3 {
 
 /* Responsif untuk layar HP */
 @media (max-width: 800px) {
+    .editorial-tax-map {
+        padding: 48px 20px;
+    }
+
     .tax-kingdoms {
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        align-items: stretch;
+        gap: 0;
     }
+
     .tax-branches {
         display: none; /* Sembunyikan SVG lengkung di HP */
     }
+
     .tax-k-node {
         width: 100%;
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        cursor: default;
     }
+
+    .tax-k-node:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .tax-k-node:first-child {
+        padding-top: 0;
+    }
+
+    /* Di HP, tampilkan detail langsung (bukan pas hover, karena tidak ada mouse) */
+    .k-annotation {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        width: 100%;
+        max-width: 220px;
+        margin: 16px auto 0;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .k-annotation.align-left {
+        left: auto;
+        right: auto;
+    }
+
     .k-popup {
         position: relative;
         top: 0;
@@ -1529,19 +1620,216 @@ h3 {
   font-size: 18px;
 }
 
-/* ---------- Map placeholder (encyclopedia sidebar) ---------- */
-.map-placeholder {
-  height: 240px;
-  display: grid;
-  place-items: center;
+/* ---------- Breadcrumb ---------- */
+.breadcrumb-nav {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.breadcrumb-nav .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.breadcrumb-nav a {
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--forest);
+}
+
+.breadcrumb-nav .breadcrumb-sep {
+  color: var(--line-dark);
+}
+
+.breadcrumb-nav .breadcrumb-current {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Generic decorative icon visuals ----------
+   Used instead of literal photo/map placeholders so this template can be
+   duplicated across every division page without needing per-page assets. */
+.habitat-visual {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin-top: 25px;
   padding: 20px;
   border: 1px solid var(--line-dark);
   background: var(--paper-2);
   color: var(--muted);
+}
+
+.habitat-visual svg {
+  width: 56px;
+  height: 56px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.75;
+}
+
+.habitat-visual span {
   text-align: center;
   font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ---------- Ecology: menguntungkan / merugikan list ---------- */
+.ecology-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+  max-width: 720px;
+}
+
+.ecology-col-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ecology-col-benefit .ecology-col-label {
+  color: var(--success);
+}
+
+.ecology-col-harm .ecology-col-label {
+  color: var(--danger);
+}
+
+.ecology-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.ecology-col li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ecology-col-benefit li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: 800;
+}
+
+.ecology-col-harm li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 800;
+}
+
+.ecology-col-benefit li {
+  border-left-color: var(--success);
+}
+
+.ecology-col-harm li {
+  border-left-color: var(--danger);
+}
+
+/* ---------- Info cards (used for morphology & habitat profile rows) ---------- */
+
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.info-card {
+  padding: 18px;
+  border: 1px solid var(--line-dark);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.info-card-label {
+  font-size: 9px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.info-card-value {
+  font-family: var(--serif);
+  font-size: 17px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-card-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .info-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Example species tags (sidebar) ---------- */
+
+.example-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.example-tags li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.example-tags strong {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.example-tags span {
+  font-size: 12px;
+  color: var(--muted);
 }
 
 /* ---------- Challenge ---------- */
@@ -1561,15 +1849,33 @@ h3 {
 
 .challenge-visual {
   min-height: 420px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   border-right: 1px solid var(--line-dark);
   background: var(--sage-light);
   color: var(--forest);
   text-align: center;
+}
+
+.challenge-visual svg {
+  width: 64px;
+  height: 64px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+
+.challenge-visual span {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .challenge-question {
@@ -1958,6 +2264,11 @@ legend {
     border-bottom: 1px solid var(--line-dark);
   }
 
+  .ecology-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .challenge-question {
     padding: 25px;
   }
@@ -2061,18 +2372,65 @@ legend {
 }
 
 
+.prose {
+  max-width: 760px;
+}
+
 .prose ul {
   padding-left: 0;
   list-style: none;
 }
 
+.prose ul {
+  padding-left: 0;
+  list-style: none;
+  counter-reset: prose-item;
+}
+
 .prose ul li {
   position: relative;
   margin-bottom: 20px;
-  padding: 16px 20px;
+  padding: 18px 20px 18px 52px;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--forest); 
+  border-left: 3px solid var(--forest);
   border-radius: var(--radius);
   line-height: 1.75;
+  counter-increment: prose-item;
+}
+
+.prose ul li::before {
+  content: counter(prose-item, decimal-leading-zero);
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.prose ul li strong {
+  color: var(--accent);
+}
+
+.specimen {
+  background: var(--paper-2) !important;
+}
+
+[data-theme="dark"] .specimen {
+  background: var(--paper-2) !important;
+}
+
+.specimen {
+  background: var(--paper-2) !important;
+}
+
+.specimen iframe {
+  background: var(--paper-2) !important;
+}
+
+[data-theme="dark"] .specimen,
+[data-theme="dark"] .specimen iframe {
+  background: var(--paper-2) !important;
 }

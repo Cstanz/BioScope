@@ -3,7 +3,7 @@ const BIOSCOPE_DATA = {
     "monera": {
       "name": "Monera",
       "eyebrow": "Kingdom 01",
-      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1",
+      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1&",
       
       // Teks pengantar ringkas di atas 3D
       "summary": "Selamat datang di materi Monera. Putar dan perbesar model 3D di samping untuk melihat bagian-bagian sel prokariotik secara detail.",
@@ -138,7 +138,7 @@ const BIOSCOPE_DATA = {
     "fungi": {
       "name": "Fungi",
       "eyebrow": "Kingdom 03",
-      "embedUrl": "https://sketchfab.com/models/0dc381077a0e48cdb211b4505ab0be09/embed?autostart=1",
+      "embedUrl": "https://sketchfab.com/models/0dc381077a0e48cdb211b4505ab0be09/embed?autostart=1&transparent=1",
       "summary": "Kelompok eukariotik yang memperoleh nutrisi secara absorptif. Tubuh fungi sering tersusun atas hifa yang membentuk miselium, meskipun bentuk dan siklus hidupnya sangat beragam.",
       "chars": [
         "Eukariotik",
@@ -291,27 +291,88 @@ const BIOSCOPE_DATA = {
       "id": "eubacteria",
       "kingdom": "monera",
       "label": "Bacteria",
-      "title": "Bakteri sejati",
+      "title": "Bakteri sejati (Eubacteria)",
       "scientific": "Eubacteria",
-      "definition": "Prokariotik; bentuk sel beragam; dinding sel umumnya mengandung peptidoglikan.",
-      "body": "Sel sederhana tanpa inti bermembran; metabolisme sangat beragam.",
-      "habitat": "Beragam habitat; dari tanah dan air hingga tubuh organisme lain.",
-      "nutrition": "Nutrisi dapat autotrof atau heterotrof, bergantung kelompok.",
-      "reproduction": "Reproduksi terutama melalui pembelahan biner.",
-      "ecology": "Berperan sebagai pengurai, simbion, produsen, dan patogen.",
-      "examples": "Bacillus, Escherichia coli, cyanobacteria",
-      "recognize": "Cari sel kecil tanpa inti bermembran dan perhatikan bentuk serta susunan koloninya.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari sel kecil tanpa inti bermembran dan perhatikan bentuk serta susunan koloninya.",
-        "options": [
-          "Bacteria",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Domain organisme prokariotik uniseluler dengan dinding sel kaya peptidoglikan dan membran plasma berbasis ikatan ester asam lemak rantai lurus.",
+      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1",
+      "body": "Secara sitologis, sel Eubacteria berukuran 1 sampai 5 mikrometer dan tidak memiliki sistem endomembran maupun nukleus sejati. Materi genetiknya berupa DNA sirkular ganda di area nukleoid, sering kali disertai plasmid. Arsitektur dinding selnya didominasi oleh polimer peptidoglikan yang tersusun atas NAG dan NAM. Berdasarkan uji pewarnaan Gram, dinding sel ini membagi bakteri menjadi Gram-positif (lapisan tebal) dan Gram-negatif (lapisan tipis dengan membran luar lipopolisakarida).",
+      "morphologyProfile": [
+        {
+          "label": "Bentuk Sel",
+          "value": "Kokus, Basil, Spiral",
+          "desc": "Bentuk dasar dapat tersusun tunggal, berpasangan (diplo-), berantai (strepto-), atau bergerombol (stafilo-)."
+        },
+        {
+          "label": "Materi Genetik",
+          "value": "Nukleoid & Plasmid",
+          "desc": "DNA sirkular ganda tanpa membran inti, sering disertai plasmid ekstra-kromosomal."
+        },
+        {
+          "label": "Dinding Sel",
+          "value": "Gram-positif / Gram-negatif",
+          "desc": "Dibedakan dari ketebalan lapisan peptidoglikan lewat uji pewarnaan Gram."
+        }
+      ],
+      "habitat": "Eubacteria memiliki sebaran kosmopolitan yang sangat luas di biosfer—mulai dari tanah terestrial, perairan tawar dan laut, hingga zona interseluler atau permukaan mukosa organisme inang. Sebagian besar bersifat mesofilik dengan kisaran toleransi pH netral, namun beberapa kelompok khusus mampu beradaptasi pada lingkungan ekstrem.",
+      "habitatProfile": [
+        {
+          "label": "Oksigen (O₂)",
+          "value": "Aerob & Anaerob",
+          "desc": "Mampu hidup mutlak memerlukan oksigen, toleran, hingga anaerob obligat."
+        },
+        {
+          "label": "Derajat Keasaman",
+          "value": "pH 6.5 – 7.5 (Neutrofil)",
+          "desc": "Sebagian besar tumbuh optimal pada kisaran pH netral, meski ada acidofil/alkalifil."
+        },
+        {
+          "label": "Termal & Suhu",
+          "value": "Mesofilik (20°–45°C)",
+          "desc": "Dominan pada suhu moderat, dengan variasi psikrofil (dingin) dan termofil."
+        }
+      ],
+      "nutrition": "Strategi metabolik Eubacteria sangat variatif. Kelompok autotrof mencakup fotoautotrof (seperti Cyanobacteria yang melakukan fotosintesis oksigenik) dan kemolitotrof. Sementara itu, mayoritas merupakan heterotrof (saprofit pengurai atau parasit patogen) yang menyerap nutrien organik melalui transpor aktif.",
+      "reproduction": "Reproduksi generatif murni tidak ditemukan; perkembangbiakan utama berlangsung secara aseksual melalui pembelahan biner amitosis. Keragaman genetik dijaga melalui transfer gen horizontal (transformasi, transduksi, dan konjugasi). Pada kondisi ekstrem, beberapa genus membentuk endospora yang sangat resisten.",
+      "ecology": "Dalam siklus biogeokimia global, Eubacteria memegang kendali utama sebagai agen dekomposisi pengurai materi organik mati. Kelompok simbiotik seperti Rhizobium berperan krusial dalam fiksasi nitrogen atmosfer menjadi amonia yang dapat diserap tanaman.",
+      "ecologyRoles": {
+        "benefits": [
+          "Dekomposisi biogeokimia &mdash; mendaur ulang karbon, sulfur, dan nitrogen di ekosistem.",
+          "Fiksasi nitrogen biologis &mdash; simbiosis mutualisme Rhizobium pada nodul akar legum.",
+          "Bioteknologi & industri &mdash; pemanfaatan Lactobacillus dalam fermentasi pangan.",
+          "Mikrobiota normal &mdash; menjaga homeostasis pencernaan manusia."
         ],
-        "answer": "Bacteria",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari sel kecil tanpa inti bermembran dan perhatikan bentuk serta susunan koloninya."
-      }
+        "harms": [
+          "Infeksi akut &mdash; Mycobacterium tuberculosis penyebab tuberkulosis paru.",
+          "Penyakit saluran cerna &mdash; Vibrio cholerae dan Salmonella typhi.",
+          "Toksikogenesis &mdash; pelepasan endotoksin LPS yang memicu syok septik."
+        ]
+      },
+      "examples": "Escherichia coli, Bacillus subtilis, Staphylococcus aureus, Rhizobium leguminosarum, Cyanobacteria, Clostridium botulinum",
+      "exampleNotes": [
+        { "name": "Escherichia coli", "note": "Flora normal usus, sebagian galur bersifat patogen" },
+        { "name": "Bacillus subtilis", "note": "Bakteri tanah, penghasil enzim & endospora" },
+        { "name": "Staphylococcus aureus", "note": "Patogen kulit oportunistik" },
+        { "name": "Rhizobium leguminosarum", "note": "Simbion pengikat nitrogen pada akar legum" },
+        { "name": "Cyanobacteria", "note": "Produsen primer fotosintetik di perairan" },
+        { "name": "Clostridium botulinum", "note": "Penghasil toksin botulinum pada makanan kaleng" }
+      ],
+      "recognize": "Identifikasi mikrobiologis dilakukan melalui tahapan komprehensif: pengamatan morfologi sel lewat mikroskop, konfirmasi dinding sel dengan pewarnaan Gram, serta uji biokimia metabolik lanjutan.",
+      "recognizeSteps": [
+        "<strong>Amati morfologi sel</strong> di bawah mikroskop cahaya &mdash; tentukan bentuk dasar (kokus, basil, atau spiral) dan pola susunan koloninya (tunggal, berantai, atau bergerombol).",
+        "<strong>Lakukan uji pewarnaan Gram</strong> untuk mengonfirmasi struktur dinding sel &mdash; Gram-positif menyerap warna ungu, Gram-negatif menyerap warna merah muda.",
+        "<strong>Lanjutkan dengan uji biokimia</strong> (misalnya uji katalase, oksidase, atau fermentasi gula) untuk memastikan identifikasi hingga ke tingkat genus atau spesies."
+      ],
+      "challenge": {
+        "question": "Seorang peneliti menemukan dua sampel bakteri patogen dari pasien berbeda. Sampel A tetap bertahan hidup meski diberi penisilin dosis tinggi, sedangkan Sampel B mati total dengan pengobatan yang sama. Ketika keduanya diuji pewarnaan Gram, Sampel A berwarna merah muda dan Sampel B berwarna ungu pekat. Kelompok manakah yang paling sesuai untuk menjelaskan mengapa Sampel A lebih resisten terhadap penisilin?",
+        "options": [
+        "Sampel A tergolong Gram-negatif; membran luar berlapis LPS-nya menghalangi penisilin mencapai target di lapisan peptidoglikan",
+        "Sampel A tergolong Gram-positif sehingga peptidoglikannya yang tebal membuatnya lebih tahan penisilin",
+        "Warna hasil pewarnaan Gram tidak berkaitan dengan resistensi antibiotik, sehingga perbedaan ini murni kebetulan",
+        "Sampel B lebih resisten karena memiliki kapsul tambahan yang tidak dimiliki Sampel A"
+       ],
+        "answer": "Sampel A tergolong Gram-negatif; membran luar berlapis LPS-nya menghalangi penisilin mencapai target di lapisan peptidoglikan",
+        "explanation": "Warna merah muda menunjukkan Sampel A adalah Gram-negatif. Lapisan membran luar yang mengandung LPS berfungsi sebagai penghalang tambahan yang mempersulit penisilin menembus dinding sel untuk mencapai target sintesis peptidoglikan, sehingga bakteri Gram-negatif secara umum cenderung lebih resisten terhadap penisilin dibanding Gram-positif yang hanya memiliki lapisan peptidoglikan tanpa pelindung tambahan."
+  }
     },
     "archaea": {
       "id": "archaea",

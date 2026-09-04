@@ -15,19 +15,14 @@
   </title>
  </head>
  <body class="">
-  <header class="site-header">
+      <header class="site-header">
    <div class="container nav-wrap">
-    <a class="brand" href="../index.html">
-     <span class="brand-mark">
-      B
-     </span>
-     <span>
-      BioScope
-      <small>
-       Classification Challenge
-      </small>
-     </span>
-    </a>
+    <div class="logo-container">
+        <a href="../index.html" class="logo-link">
+            <img src="../Assets/DarkLogo.svg" alt="BioScope Logo" class="brand-logo-img logo-light-mode">
+            <img src="../Assets/LightLogo.svg" alt="BioScope Logo" class="brand-logo-img logo-dark-mode">
+        </a>
+    </div>
     <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">
      Menu
     </button>
@@ -36,7 +31,7 @@
       Home
      </a>
      <a data-nav="" href="../why-classify.html">
-      Mengapa Klasifikasi
+      Dasar Klasifikasi
      </a>
      <a data-nav="" href="../monera.html">
       Materi
@@ -51,6 +46,15 @@
       Tentang
      </a>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti mode terang/gelap">
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"></path>
+        </svg>
+    </button>
    </div>
   </header>
   <main>

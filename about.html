@@ -14,22 +14,36 @@
   </title>
  </head>
  <body class="">
-    <header class="floating-header">
+    <header class="site-header">
+   <div class="container nav-wrap">
     <div class="logo-container">
         <a href="index.html" class="logo-link">
-            <img src="Assets/Logo.svg" alt="BioScope Logo" class="brand-logo-img">
+            <img src="Assets/DarkLogo.svg" alt="BioScope Logo" class="brand-logo-img logo-light-mode">
+            <img src="Assets/LightLogo.svg" alt="BioScope Logo" class="brand-logo-img logo-dark-mode">
         </a>
     </div>
     <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">
-        Menu
+     Menu
     </button>
-    <nav id="site-nav" class="nav-links">
-        <a data-nav="" href="index.html" class="active">Home</a>
-        <a data-nav="" href="why-classify.html">Dasar Klasifikasi</a>
-        <a data-nav="" href="monera.html">Materi</a>
-        <a data-nav="" href="progress.html">Progress</a>
-        <a data-nav="" href="classification-challenge.html">Challenge</a>
-        <a data-nav="" href="about.html">Tentang</a>
+    <nav id="site-nav">
+     <a data-nav="" href="index.html">
+      Home
+     </a>
+     <a data-nav="" href="why-classify.html">
+      Dasar Klasifikasi
+     </a>
+     <a data-nav="" href="monera.html">
+      Materi
+     </a>
+     <a data-nav="" href="progress.html">
+      Progress
+     </a>
+     <a data-nav="" href="classification-challenge.html">
+      Challenge
+     </a>
+     <a data-nav="" href="about.html">
+      Tentang
+     </a>
     </nav>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti mode terang/gelap">
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +54,8 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"></path>
         </svg>
     </button>
-    </header>
+   </div>
+  </header>
   <main>
    <section class="chapter-hero">
     <div class="container narrow">
@@ -59,19 +74,88 @@
     <div class="container two-col">
      <div>
       <span class="eyebrow">
-       Design principles
+       Tim & pembimbing
       </span>
       <h2>
-       Scientific, editorial, restrained.
+       Siapa di balik BioScope
+      </h2>
+     </div>
+     <div class="prose">
+      <div class="info-card-grid">
+        <div class="info-card">
+          <span class="info-card-label">Penyusun</span>
+          <strong class="info-card-value">Syawali Putra Hafidin</strong>
+          <span class="info-card-desc">24030204121 &middot; Pendidikan Biologi</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-label">Dosen Pembimbing 1</span>
+          <strong class="info-card-value">Dwi Setyo Pratiwi, S.Pd., M.Ed.</strong>
+          <span class="info-card-desc">&nbsp;</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-label">Dosen Pembimbing 2</span>
+          <strong class="info-card-value">Mochammad Ichsan, S.Si., M.Pd., M.Eng.</strong>
+          <span class="info-card-desc">&nbsp;</span>
+        </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section class="section">
+    <div class="container two-col">
+     <div>
+      <span class="eyebrow">
+       Tools & teknologi
+      </span>
+      <h2>
+       Dibangun dengan
       </h2>
      </div>
      <div class="prose">
       <p>
-       Antarmuka menggunakan HTML, CSS, dan JavaScript vanilla. Tidak ada backend, login, leaderboard, pencarian, chatbot, atau library UI eksternal. State pembelajaran disimpan di localStorage browser.
+       BioScope dikembangkan sebagai antarmuka statis tanpa backend, login, maupun database eksternal. Seluruh progres belajar disimpan langsung di <em>localStorage</em> browser pengguna.
       </p>
+      <div class="info-card-grid">
+        <div class="info-card">
+          <span class="info-card-label">Frontend</span>
+          <strong class="info-card-value">HTML5, CSS3, Vanilla JavaScript</strong>
+          <span class="info-card-desc">Tanpa framework atau library UI eksternal.</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-label">AI Assistant</span>
+          <strong class="info-card-value">Claude (Anthropic) & ChatGPT (OpenAI)</strong>
+          <span class="info-card-desc">Membantu proses pengembangan kode dan penyusunan konten.</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-label">Aset Visual</span>
+          <strong class="info-card-value">Sketchfab</strong>
+          <span class="info-card-desc">Model 3D interaktif spesimen pada halaman ensiklopedia.</span>
+        </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section class="section">
+    <div class="container two-col">
+     <div>
+      <span class="eyebrow">
+       Referensi
+      </span>
+      <h2>
+       Sumber rujukan materi
+      </h2>
+     </div>
+     <div class="prose">
       <p>
-       Placeholder visual disiapkan agar gambar biologis nyata dapat ditambahkan kemudian tanpa mengganti konten HTML.
+       <em>Daftar referensi berikut masih berupa kerangka dan akan dilengkapi pada revisi berikutnya.</em>
       </p>
+      <ul>
+        <li>Nama Belakang, Inisial. (Tahun). <em>Judul buku atau artikel</em> (Edisi ke-n). Kota: Penerbit.</li>
+        <li>Nama Belakang, Inisial., & Nama Belakang, Inisial. (Tahun). Judul artikel jurnal. <em>Nama Jurnal, Volume</em>(Nomor), halaman&ndash;halaman.</li>
+        <li>Nama Belakang, Inisial. (Tahun). Judul halaman/sumber daring. <em>Nama Situs</em>. URL</li>
+      </ul>
      </div>
     </div>
    </section>
@@ -98,4 +182,3 @@
   </footer>
  </body>
 </html>
-
