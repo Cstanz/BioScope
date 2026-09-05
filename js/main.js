@@ -309,6 +309,61 @@ function renderKingdomCards() {
 
 // ---------- Kingdom pages ----------
 
+// ---------- Specimen 3D embed: lazy-load on tap (biar nggak berat di HP) ----------
+
+function buildSpecimenMarkup(embedUrl, title, fallbackLabel, fallbackSmall) {
+  if (!embedUrl) {
+    return `<span>
+               ${fallbackLabel}<br />
+               <small>${fallbackSmall}</small>
+             </span>`;
+  }
+
+  return `<button
+             type="button"
+             class="specimen-load-btn"
+             data-embed-url="${embedUrl}"
+             data-embed-title="${title}"
+             aria-label="Muat ${title}">
+             <span class="specimen-load-icon">&#9654;</span>
+             <span class="specimen-load-text">Ketuk untuk memuat model 3D</span>
+           </button>`;
+}
+
+function setupSpecimenLazyLoad() {
+  document.addEventListener("click", (event) => {
+    const btn = event.target.closest(".specimen-load-btn");
+    if (!btn) return;
+
+    const embedUrl = btn.dataset.embedUrl;
+    const title = btn.dataset.embedTitle;
+    if (!embedUrl) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.style.position = "absolute";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.zIndex = "20";
+    iframe.style.border = "none";
+    iframe.style.background = "transparent";
+    iframe.title = title;
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "");
+    iframe.setAttribute("mozallowfullscreen", "true");
+    iframe.setAttribute("webkitallowfullscreen", "true");
+    iframe.setAttribute("allow", "autoplay; fullscreen; xr-spatial-tracking");
+    iframe.setAttribute("xr-spatial-tracking", "");
+    iframe.setAttribute("execution-while-out-of-viewport", "");
+    iframe.setAttribute("execution-while-not-rendered", "");
+    iframe.setAttribute("web-share", "");
+    iframe.src = embedUrl;
+
+    btn.replaceWith(iframe);
+  });
+}
+
 function renderKingdomPage() {
   const container = document.querySelector("[data-kingdom]");
 
@@ -349,27 +404,7 @@ function renderKingdomPage() {
         </div>
 
         <div class="specimen specimen-${kingdomId}">
-          ${
-            kingdom.embedUrl 
-            ? `<iframe 
-                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; border: none; background: transparent;"
-                 title="3D Model ${kingdom.name}" 
-                 frameborder="0" 
-                 allowfullscreen 
-                 mozallowfullscreen="true" 
-                 webkitallowfullscreen="true" 
-                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                 xr-spatial-tracking 
-                 execution-while-out-of-viewport 
-                 execution-while-not-rendered 
-                 web-share 
-                 src="${kingdom.embedUrl}">
-               </iframe>`
-            : `<span>
-                 KINGDOM<br />
-                 <small>${kingdom.name.toUpperCase()}</small>
-               </span>`
-          }
+          ${buildSpecimenMarkup(kingdom.embedUrl, `3D Model ${kingdom.name}`, "KINGDOM", kingdom.name.toUpperCase())}
         </div>
       </div>
     </section>
@@ -510,27 +545,7 @@ function initDivisionPage() {
         </div>
 
        <div class="specimen specimen-${division.kingdom}">
-          ${
-            division.embedUrl 
-            ? `<iframe 
-                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; border: none; background: #f2f2f2;"
-                 title="3D Model ${division.title}" 
-                 frameborder="0" 
-                 allowfullscreen 
-                 mozallowfullscreen="true" 
-                 webkitallowfullscreen="true" 
-                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                 xr-spatial-tracking 
-                 execution-while-out-of-viewport 
-                 execution-while-not-rendered 
-                 web-share 
-                 src="${division.embedUrl}">
-               </iframe>`
-            : `<span>
-                 SPECIMEN<br />
-                 <small>${division.label.toUpperCase()}</small>
-               </span>`
-          }
+          ${buildSpecimenMarkup(division.embedUrl, `3D Model ${division.title}`, "SPECIMEN", division.label.toUpperCase())}
         </div>
       </div>
     </section>
@@ -1324,6 +1339,7 @@ function init() {
   setActiveNav();
   setupMenu();
   setupScrollTopButton();
+  setupSpecimenLazyLoad();
   renderKingdomCards();
   renderKingdomPage();
   initDivisionPage();
