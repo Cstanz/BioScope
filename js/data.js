@@ -3,7 +3,7 @@ const BIOSCOPE_DATA = {
     "monera": {
       "name": "Monera",
       "eyebrow": "Kingdom 01",
-      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1&",
+      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1&transparent=1",
       
       // Teks pengantar ringkas di atas 3D
       "summary": "Selamat datang di materi Monera. Putar dan perbesar model 3D di samping untuk melihat bagian-bagian sel prokariotik secara detail.",
@@ -326,113 +326,177 @@ const BIOSCOPE_DATA = {
       "id": "eubacteria",
       "kingdom": "monera",
       "label": "Bacteria",
-      "title": "Bakteri sejati (Eubacteria)",
+      "title": "Eubacteria: Bakteri Sejati",
       "scientific": "Eubacteria",
-      "definition": "Domain organisme prokariotik uniseluler dengan dinding sel kaya peptidoglikan dan membran plasma berbasis ikatan ester asam lemak rantai lurus.",
-      "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1",
-      "body": "Secara sitologis, sel Eubacteria berukuran 1 sampai 5 mikrometer dan tidak memiliki sistem endomembran maupun nukleus sejati. Materi genetiknya berupa DNA sirkular ganda di area nukleoid, sering kali disertai plasmid. Arsitektur dinding selnya didominasi oleh polimer peptidoglikan yang tersusun atas NAG dan NAM. Berdasarkan uji pewarnaan Gram, dinding sel ini membagi bakteri menjadi Gram-positif (lapisan tebal) dan Gram-negatif (lapisan tipis dengan membran luar lipopolisakarida).",
+      "definition": "Eubacteria adalah kelompok mikroorganisme prokariotik uniseluler yang paling beragam dan tersebar luas di Bumi. Lewat sekuens gen 16S rRNA, sudah teridentifikasi lebih dari 80 filum berbeda. Meski begitu, sebagian besar bakteri yang berhasil dibiakkan di laboratorium hanya berasal dari empat filum utama: Proteobacteria, Actinobacteria, Firmicutes, dan Bacteroidetes.",
+      "embedUrl": "https://sketchfab.com/models/1e085616d0ff43c3bfd1f86cdbdb5755/embed?autostart=1&transparent=1",
+      "body": "Seperti prokariotik lain, sel Eubacteria tidak memiliki organel yang dibungkus membran. Materi genetiknya tersebar bebas di sitoplasma dalam bentuk nukleoid, bukan di dalam inti sel yang terpisah. Namun gambaran ini tidak selalu sesederhana itu. Lewat teknik pencitraan cryo-electron tomography, para peneliti menemukan bahwa filum Planctomycetes ternyata memiliki lipatan membran dalam yang mengelilingi materi genetiknya, bahkan membentuk kompartemen khusus bernama anammoxosome. Temuan ini sempat memunculkan dugaan bahwa Planctomycetes adalah bentuk transisi menuju sel eukariotik &mdash; sebelum akhirnya terbantahkan, karena kelompok ini tetap memiliki peptidoglikan seperti Eubacteria lainnya.",
       "morphologyProfile": [
         {
           "label": "Bentuk Sel",
-          "value": "Kokus, Basil, Spiral",
-          "desc": "Bentuk dasar dapat tersusun tunggal, berpasangan (diplo-), berantai (strepto-), atau bergerombol (stafilo-)."
+          "value": "Kokus, Basil, Spiral, & Filamen",
+          "desc": "Selain tiga bentuk dasar ini, ada variasi menarik seperti filamen bercabang pada Streptomyces yang menyerupai hifa jamur, sel yang tumbuh dengan cara bertunas, dan sel yang memiliki apendiks."
+        },
+        {
+          "label": "Dinding Sel",
+          "value": "Peptidoglikan (dengan pengecualian)",
+          "desc": "Peptidoglikan umumnya tersusun dari tiga komponen utama: N-acetylglucosamine (NAG), N-acetylmuramic acid (NAM), dan asam diaminopimelat. Tapi ada pengecualian: Mycoplasma sama sekali tidak berdinding sel, sedangkan Deinococcus radiodurans berstruktur Gram-negatif namun hasil pewarnaannya justru Gram-positif."
         },
         {
           "label": "Materi Genetik",
           "value": "Nukleoid & Plasmid",
-          "desc": "DNA sirkular ganda tanpa membran inti, sering disertai plasmid ekstra-kromosomal."
-        },
-        {
-          "label": "Dinding Sel",
-          "value": "Gram-positif / Gram-negatif",
-          "desc": "Dibedakan dari ketebalan lapisan peptidoglikan lewat uji pewarnaan Gram."
+          "desc": "Genom utama berupa satu DNA sirkular ganda yang bebas tanpa membran inti. Bakteri juga sering membawa plasmid tambahan seperti R-plasmid, yang bisa mengodekan resistensi antibiotik dan berpindah antarsel."
         }
       ],
-      "habitat": "Eubacteria memiliki sebaran kosmopolitan yang sangat luas di biosfer—mulai dari tanah terestrial, perairan tawar dan laut, hingga zona interseluler atau permukaan mukosa organisme inang. Sebagian besar bersifat mesofilik dengan kisaran toleransi pH netral, namun beberapa kelompok khusus mampu beradaptasi pada lingkungan ekstrem.",
+      "habitat": "Eubacteria adalah organisme kosmopolit yang bisa ditemukan hampir di seluruh biosfer Bumi &mdash; dari tanah dan perairan, hingga hidup berasosiasi erat dengan organisme eukariotik. Beberapa kelompok bahkan sudah beradaptasi dengan lingkungan ekstrem sejak awal kehidupan di Bumi. Aquificae dan Thermotogae, misalnya, adalah garis keturunan hipertermofilik purba yang menempati cabang paling dalam pada pohon filogenetik bakteri, sebuah petunjuk bahwa nenek moyang mereka sudah terbiasa hidup di lingkungan panas dan kaya belerang.",
       "habitatProfile": [
         {
-          "label": "Oksigen (O₂)",
-          "value": "Aerob & Anaerob",
-          "desc": "Mampu hidup mutlak memerlukan oksigen, toleran, hingga anaerob obligat."
+          "label": "Kebutuhan Oksigen",
+          "value": "Sangat bervariasi",
+          "desc": "Ada bakteri yang benar-benar membutuhkan oksigen (aerob obligat), ada yang bisa hidup dengan atau tanpa oksigen (aerob fakultatif), ada yang hanya bertahan pada kadar oksigen rendah (mikroaerofil, 3&ndash;15%), hingga yang justru mati jika terpapar oksigen (anaerob obligat). Bakteri asam laktat termasuk kelompok anaerob yang tetap toleran terhadap oksigen."
         },
         {
           "label": "Derajat Keasaman",
-          "value": "pH 6.5 – 7.5 (Neutrofil)",
-          "desc": "Sebagian besar tumbuh optimal pada kisaran pH netral, meski ada acidofil/alkalifil."
+          "value": "pH 2 &ndash; 10",
+          "desc": "Rentangnya sangat luas: Sarcina ventriculi tergolong asidofil ekstrem yang tumbuh optimal pada pH serendah 2, sedangkan Sporosarcina ureae adalah alkalifil yang justru nyaman hidup di lingkungan basa dengan pH mendekati 10."
         },
         {
-          "label": "Termal & Suhu",
-          "value": "Mesofilik (20°–45°C)",
-          "desc": "Dominan pada suhu moderat, dengan variasi psikrofil (dingin) dan termofil."
+          "label": "Ketahanan Termal",
+          "value": "Psikrofilik &ndash; Hipertermofilik",
+          "desc": "Bakteri psikrofilik hidup nyaman di perairan kutub yang dingin, di bawah 20°C. Di ujung yang berlawanan, Aquifex justru tumbuh optimal pada suhu di atas 80°C dan masih bertahan hingga 95°C."
         }
       ],
-      "nutrition": "Strategi metabolik Eubacteria sangat variatif. Kelompok autotrof mencakup fotoautotrof (seperti Cyanobacteria yang melakukan fotosintesis oksigenik) dan kemolitotrof. Sementara itu, mayoritas merupakan heterotrof (saprofit pengurai atau parasit patogen) yang menyerap nutrien organik melalui transpor aktif.",
-      "reproduction": "Reproduksi generatif murni tidak ditemukan; perkembangbiakan utama berlangsung secara aseksual melalui pembelahan biner amitosis. Keragaman genetik dijaga melalui transfer gen horizontal (transformasi, transduksi, dan konjugasi). Pada kondisi ekstrem, beberapa genus membentuk endospora yang sangat resisten.",
-      "ecology": "Dalam siklus biogeokimia global, Eubacteria memegang kendali utama sebagai agen dekomposisi pengurai materi organik mati. Kelompok simbiotik seperti Rhizobium berperan krusial dalam fiksasi nitrogen atmosfer menjadi amonia yang dapat diserap tanaman.",
+      "nutrition": "Dari semua makhluk hidup, bakteri punya keragaman cara memperoleh energi yang paling luas. Sebagian besar bersifat heterotrof (chemoorganotroph) &mdash; mereka memperoleh energi dengan mengoksidasi senyawa organik lewat respirasi atau fermentasi. Ada juga kelompok yang lebih unik: chemolithotroph memperoleh energi dari senyawa anorganik seperti hidrogen, hidrogen sulfida, atau ion besi, bukan dari senyawa organik. Bakteri autotrof lain mengikat karbon dioksida lewat jalur seperti Siklus Calvin, atau siklus asam sitrat terbalik pada kelompok hipertermofilik seperti Aquifex. Beberapa kelompok bahkan memanfaatkan cahaya sebagai sumber energi lewat pigmen bakterioklorofil &mdash; termasuk bakteri fotosintetik anoksigenik yang uniknya tidak menghasilkan oksigen sebagai produk sampingan. Ada pula methylotroph, yang mampu hidup hanya dengan mengandalkan senyawa satu karbon seperti metanol.",
+      "reproduction": "Bakteri bereproduksi secara aseksual lewat pembelahan biner, proses yang membutuhkan protein sitoskeleton bernama FtsZ untuk membentuk sekat pemisah di tengah sel. Ada beberapa variasi menarik dari pola dasar ini: Planctomyces membelah diri dengan cara bertunas tanpa melibatkan FtsZ sama sekali, Arthrobacter melakukan snapping division yang membentuk pola huruf V, sementara bakteri bertangkai seperti Caulobacter membelah secara asimetris. Perlu dibedakan antara reproduksi dan cara bakteri menjaga keragaman genetiknya: reproduksi hanya menghasilkan sel yang identik secara genetik dengan induknya, sedangkan keragaman genetik justru muncul lewat transfer gen horizontal &mdash; konjugasi, transduksi, atau transformasi &mdash; yang berperan penting menyebarkan gen fiksasi nitrogen maupun resistensi antibiotik antarbakteri. Dalam kondisi yang tidak menguntungkan, beberapa bakteri Gram-positif seperti Bacillus dan Clostridium membentuk endospora, struktur dorman yang sangat tahan terhadap kondisi ekstrem, sedangkan Streptomyces membentuk conidia dari hifa udaranya untuk menyebar ke lingkungan baru.",
+      "ecology": "Eubacteria memegang peran kunci dalam siklus biogeokimia global, terutama sebagai pengurai utama materi organik yang sudah mati dan sebagai mitra fiksasi nitrogen secara simbiosis. Di luar peran ekologisnya, kelompok ini juga punya kontribusi ekonomi yang besar, mulai dari produksi antibiotik hingga bioteknologi molekuler modern.",
       "ecologyRoles": {
         "benefits": [
-          "Dekomposisi biogeokimia &mdash; mendaur ulang karbon, sulfur, dan nitrogen di ekosistem.",
-          "Fiksasi nitrogen biologis &mdash; simbiosis mutualisme Rhizobium pada nodul akar legum.",
-          "Bioteknologi & industri &mdash; pemanfaatan Lactobacillus dalam fermentasi pangan.",
-          "Mikrobiota normal &mdash; menjaga homeostasis pencernaan manusia."
+          "Dekomposisi & siklus karbon &mdash; Bacteroidetes (seperti Cytophaga) dan Clostridium yang selulolitik membantu mendegradasi selulosa dan kitin di tanah maupun perairan.",
+          "Fiksasi nitrogen &mdash; Rhizobium dan Bradyrhizobium hidup bersimbiosis dengan akar tanaman legum, sementara Azospirillum melakukannya secara bebas tanpa inang.",
+          "Produksi antibiotik &mdash; Streptomyces menghasilkan lebih dari separuh antibiotik klinis yang dipakai di dunia, termasuk streptomycin, tetracycline, dan eritromisin.",
+          "Bioteknologi &mdash; Taq polymerase dari Thermus aquaticus merevolusi teknik PCR, sedangkan Bt-toxin dari Bacillus thuringiensis dipakai sebagai bioinsektisida ramah lingkungan."
         ],
         "harms": [
-          "Infeksi akut &mdash; Mycobacterium tuberculosis penyebab tuberkulosis paru.",
-          "Penyakit saluran cerna &mdash; Vibrio cholerae dan Salmonella typhi.",
-          "Toksikogenesis &mdash; pelepasan endotoksin LPS yang memicu syok septik."
+          "Patogen manusia &mdash; beberapa contoh utamanya adalah Mycobacterium tuberculosis penyebab TBC, Vibrio cholerae penyebab kolera, dan Neisseria meningitidis penyebab meningitis.",
+          "Produksi toksin &mdash; Clostridium tetani dan Clostridium botulinum menghasilkan toksin berbahaya, begitu juga E. coli galur O157:H7 yang bisa menyebabkan keracunan makanan akut.",
+          "Infeksi nosokomial &mdash; Pseudomonas aeruginosa dikenal sulit diobati karena resistensinya terhadap banyak antibiotik sekaligus, yang diwariskan lewat R-plasmid.",
+          "Fitopatogen &mdash; Pseudomonas syringae dan Burkholderia cepacia dapat merusak jaringan tanaman."
         ]
       },
-      "examples": "Escherichia coli, Bacillus subtilis, Staphylococcus aureus, Rhizobium leguminosarum, Cyanobacteria, Clostridium botulinum",
+      "examples": "Escherichia coli, Streptomyces griseus, Rhizobium leguminosarum, Deinococcus radiodurans, Mycoplasma pneumoniae, Clostridium botulinum",
       "exampleNotes": [
-        { "name": "Escherichia coli", "note": "Flora normal usus, sebagian galur bersifat patogen" },
-        { "name": "Bacillus subtilis", "note": "Bakteri tanah, penghasil enzim & endospora" },
-        { "name": "Staphylococcus aureus", "note": "Patogen kulit oportunistik" },
-        { "name": "Rhizobium leguminosarum", "note": "Simbion pengikat nitrogen pada akar legum" },
-        { "name": "Cyanobacteria", "note": "Produsen primer fotosintetik di perairan" },
-        { "name": "Clostridium botulinum", "note": "Penghasil toksin botulinum pada makanan kaleng" }
+        { "name": "Escherichia coli", "note": "Umumnya hidup sebagai flora normal di usus manusia, meski beberapa galur seperti O157:H7 bisa bersifat patogen dan menghasilkan enterotoksin" },
+        { "name": "Streptomyces griseus", "note": "Bakteri tanah dari filum Actinobacteria, dikenal sebagai penghasil antibiotik streptomycin" },
+        { "name": "Rhizobium leguminosarum", "note": "Bersimbiosis dengan akar tanaman legum untuk membantu proses fiksasi nitrogen" },
+        { "name": "Deinococcus radiodurans", "note": "Sangat tahan terhadap radiasi ekstrem; strukturnya Gram-negatif, tapi hasil pewarnaannya justru Gram-positif" },
+        { "name": "Mycoplasma pneumoniae", "note": "Tidak memiliki dinding sel sama sekali; koloninya punya bentuk khas yang disebut 'fried-egg'" },
+        { "name": "Clostridium botulinum", "note": "Penghasil toksin botulinum, sering ditemukan pada makanan kaleng yang terkontaminasi" }
       ],
-      "recognize": "Identifikasi mikrobiologis dilakukan melalui tahapan komprehensif: pengamatan morfologi sel lewat mikroskop, konfirmasi dinding sel dengan pewarnaan Gram, serta uji biokimia metabolik lanjutan.",
+      "recognize": "Untuk mengenali dan mengidentifikasi bakteri, ada tiga langkah yang biasanya dilakukan secara berurutan: mengamati morfologi sel dan koloninya, melakukan pewarnaan diferensial, lalu memastikan identitasnya lewat uji biokimia hingga ke tingkat genus atau spesies.",
       "recognizeSteps": [
-        "<strong>Amati morfologi sel</strong> di bawah mikroskop cahaya &mdash; tentukan bentuk dasar (kokus, basil, atau spiral) dan pola susunan koloninya (tunggal, berantai, atau bergerombol).",
-        "<strong>Lakukan uji pewarnaan Gram</strong> untuk mengonfirmasi struktur dinding sel &mdash; Gram-positif menyerap warna ungu, Gram-negatif menyerap warna merah muda.",
-        "<strong>Lanjutkan dengan uji biokimia</strong> (misalnya uji katalase, oksidase, atau fermentasi gula) untuk memastikan identifikasi hingga ke tingkat genus atau spesies."
+        "<strong>Amati morfologi sel dan koloni</strong> &mdash; perhatikan bentuknya, misalnya diplokokus pada Neisseria atau rantai sel pada Streptococcus. Bentuk koloni juga bisa jadi petunjuk, seperti koloni 'fried-egg' pada Mycoplasma, koloni berkerut pada Mycobacterium, pola swarming melingkar pada Proteus, atau warna merah dari pigmen prodigiosin pada Serratia.",
+        "<strong>Lakukan pewarnaan diferensial</strong> &mdash; pewarnaan Gram membantu membedakan bakteri Gram-positif (berwarna ungu) dari Gram-negatif (berwarna merah). Untuk kasus khusus, pewarnaan tahan asam (Ziehl-Neelsen) bisa mendeteksi asam mikolat pada Mycobacterium, sementara pewarnaan spora dipakai untuk memastikan keberadaan endospora.",
+        "<strong>Lanjutkan dengan uji biokimia</strong> &mdash; misalnya uji katalase (positif pada Staphylococcus, negatif pada Streptococcus), uji oksidase (membedakan Pseudomonas/Vibrio dari bakteri enterik), atau uji fermentasi gula untuk melihat pola metabolisme, seperti mixed-acid pada E. coli dibandingkan butanediol pada Enterobacter."
       ],
       "challenge": {
-        "question": "Seorang peneliti mikrobiologi menganalisis dinding sel bakteri patogen dan menemukan struktur membran luar yang kaya akan lipopolisakarida (LPS) serta lapisan peptidoglikan yang tipis. Ketika diuji dengan pewarnaan Gram, bakteri ini dipastikan akan berwarna...",
+        "question": "Seorang mahasiswa mengamati dua isolat bakteri. Isolat P memiliki struktur dinding sel Gram-negatif lengkap dengan membran luar, tetapi hasil pewarnaan Gram-nya justru menunjukkan warna ungu pekat. Isolat Q sama sekali tidak memiliki dinding sel, namun tetap stabil karena membrannya diperkuat oleh sterol dan lipoglikan. Berdasarkan informasi ini, kesimpulan manakah yang paling tepat mengenai kedua isolat tersebut?",
         "options": [
-          "Merah atau merah muda (Gram-negatif)",
-          "Ungu pekat (Gram-positif)",
-          "Hijau transparan (Bakteri tahan asam)",
-          "Kuning keemasan"
+          "Kedua isolat pasti salah identifikasi karena hasil pewarnaan Gram selalu 100% konsisten dengan struktur dinding sel",
+          "Isolat P kemungkinan besar Deinococcus radiodurans dengan peptidoglikan atipikal beresidu ornitin, sedangkan Isolat Q kemungkinan Mycoplasma (Tenericutes) yang memang tidak berdinding sel",
+          "Isolat P pasti Gram-negatif biasa dan Isolat Q pasti tergolong jamur, karena hanya jamur yang tidak berdinding sel",
+          "Kedua isolat tidak dapat digolongkan sebagai Eubacteria karena tidak mengikuti aturan dinding sel standar"
         ],
-        "answer": "Merah atau merah muda (Gram-negatif)",
-        "explanation": "Bakteri Gram-negatif memiliki lapisan peptidoglikan tipis dengan membran luar LPS yang melunturkan warna kristal violet saat dekolorisasi, sehingga menyerap safranin menjadi merah."
+        "answer": "Isolat P kemungkinan besar Deinococcus radiodurans dengan peptidoglikan atipikal beresidu ornitin, sedangkan Isolat Q kemungkinan Mycoplasma (Tenericutes) yang memang tidak berdinding sel",
+        "explanation": "Pewarnaan Gram adalah alat bantu, bukan penentu mutlak dari struktur dinding sel. Deinococcus radiodurans, misalnya, secara struktural tergolong Gram-negatif karena memiliki membran luar, tapi hasil pewarnaannya tetap Gram-positif akibat kandungan peptidoglikan unik dengan residu ornitin. Di sisi lain, Mycoplasma (filum Tenericutes) memang tidak memiliki dinding sel sama sekali, namun tetap digolongkan sebagai Eubacteria berdasarkan ciri prokariotik dan filogeninya. Stabilitas membrannya dijaga oleh sterol dan lipoglikan, menggantikan fungsi dinding sel yang hilang."
       }
     },
-    "archaea": {
+    
+"archaea": {
       "id": "archaea",
       "kingdom": "monera",
       "label": "Archaea",
-      "title": "Archaea",
+      "title": "Archaea: Domain Prokariotik yang Unik",
       "scientific": "Archaea",
-      "definition": "Prokariotik; membran dan dinding sel memiliki ciri kimia yang berbeda dari banyak bakteri.",
-      "body": "Sel prokariotik dengan biokimia khas; beberapa memiliki metabolisme ekstrem.",
-      "habitat": "Ditemukan di lingkungan biasa maupun ekstrem, termasuk habitat asin, panas, atau anaerob.",
-      "nutrition": "Metabolisme beragam; sebagian menghasilkan metana atau menggunakan sumber energi anorganik.",
-      "reproduction": "Umumnya membelah secara aseksual.",
-      "ecology": "Penting dalam siklus biogeokimia dan ekosistem ekstrem.",
-      "examples": "Methanogens, halophiles, thermophiles",
-      "recognize": "Perhatikan ciri prokariotik dan konteks habitat/metabolisme; jangan mengandalkan bentuk saja.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Perhatikan ciri prokariotik dan konteks habitat/metabolisme; jangan mengandalkan bentuk saja.",
-        "options": [
-          "Archaea",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Archaea adalah domain organisme prokariotik uniseluler yang berbeda secara evolusioner dari Bacteria maupun Eukarya. Dulu, Archaea dikenal sebagai organisme purba yang hanya mampu bertahan hidup di lingkungan ekstrem. Penelitian molekuler modern menunjukkan anggapan itu keliru, Archaea sebenarnya tersebar luas di seluruh biosfer, termasuk di tanah dan lautan yang kondisinya biasa saja.",
+      "embedUrl": "https://sketchfab.com/models/8df6e9add2c24beaa989b3278d96245a/embed?autostart=1&transparent=1",
+      "body": "Seperti prokariotik lainnya, sel Archaea tidak memiliki organel yang dibungkus membran. Namun ada satu kemiripan menarik dengan sel eukariotik: enzim RNA polimerase pada Archaea secara struktural mirip dengan RNA polimerase pada Eukarya. Materi genetiknya umumnya berbentuk sirkular dan tersebar bebas di wilayah nukleoid. Pada kelompok haloarchaea yang hidup di lingkungan sangat asin, plasmid tambahan bahkan bisa menyusun hingga 30% dari total DNA sel. Ciri paling khas dari Archaea justru ada pada dinding selnya: berbeda dari Bacteria, dinding sel Archaea sama sekali tidak mengandung peptidoglikan. Sebagai gantinya, Archaea memakai bahan penyusun lain seperti pseudomurein, glikoprotein, atau lapisan protein kristalin yang disebut S-layer. Beberapa Archaea yang hidup di suhu sangat tinggi (hipertermofil) juga punya mekanisme khusus untuk menjaga kestabilan DNA-nya. Protein tertentu membantu mengemas DNA menjadi struktur yang menyerupai nukleosom pada sel eukariotik, sedangkan enzim seperti reverse DNA gyrase membantu mencegah DNA rusak akibat panas ekstrem.",
+      "morphologyProfile": [
+        {
+          "label": "Bentuk Sel",
+          "value": "Sangat beragam (kokoid, batang, filamen, hingga kotak)",
+          "desc": "Archaea punya variasi bentuk yang sangat luas: ada yang bulat tak beraturan seperti Nitrososphaera, berbentuk batang seperti Methanopyrus dan Thermoproteus, atau filamen tipis dan panjang seperti Korarchaeum. Salah satu yang paling unik adalah Haloquadratum, yang selnya berbentuk kotak sempurna dan dilengkapi vesikel gas supaya bisa mengapung."
+        },
+        {
+          "label": "Dinding Sel",
+          "value": "Tanpa peptidoglikan (pseudomurein / glikoprotein / S-layer)",
+          "desc": "Ketiadaan peptidoglikan inilah yang membedakan Archaea secara mendasar dari Bacteria. Sebagai gantinya, beberapa kelompok memakai pseudomurein (seperti pada Methanobacterium dan Methanopyrus), glikoprotein (seperti pada Halobacterium dan Pyrodictium), atau lapisan protein kristalin yang disebut S-layer."
+        },
+        {
+          "label": "Lipid Membran",
+          "value": "Ikatan eter (ether-linked), bukan ester",
+          "desc": "Pada Bacteria dan Eukarya, gliserol pada membran sel dihubungkan ke rantai lipid lewat ikatan ester. Archaea justru memakai ikatan eter untuk menghubungkan gliserol dengan rantai fitanil. Pada kelompok hipertermofilik, lipid ini bahkan bisa membentuk lapisan tunggal (monolayer) yang jauh lebih tahan terhadap panas ekstrem."
+        }
+      ],
+      "habitat": "Archaea adalah organisme kosmopolit yang bisa ditemukan hampir di seluruh biosfer Bumi. Dulu, Archaea paling dikenal karena kemampuannya mendominasi lingkungan yang sangat ekstrem, seperti kolam garam hipersalin, kawasan vulkanik yang penuh belerang, atau lubang hidrotermal di dasar laut. Namun gambaran itu berubah setelah para peneliti mulai memakai teknik genetika yang tidak memerlukan pembiakan di laboratorium. Ternyata, Archaea juga hidup melimpah di lingkungan yang biasa-biasa saja. Filum Thaumarchaeota, misalnya, bersifat mesofilik dan netral, tapi jumlahnya sangat besar &mdash; organisme ini menyusun sekitar seperlima populasi picoplankton di lautan dunia, dan bahkan ditemukan melimpah di perairan Antartika yang sangat dingin.",
+      "habitatProfile": [
+        {
+          "label": "Kebutuhan Oksigen",
+          "value": "Sangat bervariasi",
+          "desc": "Metanogen termasuk anaerob obligat &mdash; mereka tidak bisa hidup jika terpapar oksigen, karena kofaktor yang dipakai dalam metanogenesisnya sangat sensitif terhadap oksigen. Sebaliknya, sebagian besar haloarchaea justru bersifat aerob obligat dan memerlukan oksigen untuk hidup."
+        },
+        {
+          "label": "Derajat Keasaman",
+          "value": "pH &lt;0 &ndash; 11",
+          "desc": "Rentang pH hidup Archaea sangat lebar. Picrophilus, misalnya, tetap tumbuh optimal pada pH 0,7 dan bahkan bertahan hidup pada pH di bawah nol, sementara Ferroplasma juga tergolong asidofil ekstrem yang biasa ditemukan di area tambang. Di ujung yang berlawanan, Natronobacterium justru nyaman hidup di danau soda yang sangat basa, dengan pH optimal 9 sampai 11."
+        },
+        {
+          "label": "Ketahanan Termal",
+          "value": "Psikrofilik &ndash; Hipertermofilik ekstrem",
+          "desc": "Archaea psikrofilik hidup di perairan kutub yang sangat dingin, sekitar 0 hingga 4°C. Di sisi lain, Methanopyrus kandleri memegang rekor sebagai organisme dengan suhu pertumbuhan tertinggi yang pernah tercatat di Bumi &mdash; ia masih bisa membelah diri pada suhu 122°C."
+        }
+      ],
+      "nutrition": "Archaea punya cara memperoleh energi yang sangat beragam. Salah satu yang paling khas adalah metanogenesis, jalur metabolisme yang sejauh ini hanya ditemukan pada Archaea. Lewat bantuan koenzim khusus bernama koenzim M, metanogen bisa mengubah karbon dioksida, metanol, atau asetat menjadi gas metana. Kelompok Thaumarchaeota memperoleh energi dengan cara yang berbeda lagi: mereka mengoksidasi amonia menjadi nitrit di lingkungan samudra terbuka yang kaya oksigen. Sementara itu, kelompok hipertermofilik seperti Sulfolobus memperoleh energi dari oksidasi sulfur menjadi asam sulfat. Ada juga haloarchaea yang memanfaatkan cahaya sebagai sumber energi, tetapi caranya berbeda dari fotosintesis pada tumbuhan &mdash; mereka memakai protein bernama bacteriorhodopsin, bukan klorofil, untuk menangkap energi cahaya. Salah satu kasus paling ekstrem ditemukan pada Nanoarchaeum equitans: genomnya sangat kecil dan sudah kehilangan banyak gen penting, sehingga ia hanya bisa bertahan hidup sebagai parasit metabolik pada inangnya, Ignicoccus hospitalis.",
+      "reproduction": "Archaea bereproduksi murni secara aseksual. Cara utamanya adalah pembelahan biner: sel membelah secara simetris setelah materi genetiknya selesai direplikasi. Ada satu pengecualian menarik, yaitu Nanoarchaeum equitans, yang hanya bisa bereplikasi selama ia menempel pada sel inangnya. Berbeda dari Bacteria, Archaea tidak membentuk endospora atau tahapan istirahat lainnya. Untuk bertahan dalam kondisi ekstrem, Archaea justru mengandalkan struktur selnya sendiri &mdash; misalnya lipid monolayer pada membrannya yang tahan mendidih, atau protein pelindung bernama thermosome yang bisa memperbaiki protein-protein yang rusak akibat panas. Perlu dicatat, reproduksi bukan satu-satunya cara Archaea memperoleh keragaman genetik. Meski tidak bereproduksi secara seksual, Archaea tetap bisa bertukar materi genetik lewat transfer gen horizontal, proses yang terpisah dari reproduksi itu sendiri. Salah satu contohnya adalah gen reduksi sulfat yang diperkirakan berpindah dari bakteri Deltaproteobacteria ke leluhur Archaeoglobus.",
+      "ecology": "Archaea berperan penting dalam siklus biogeokimia global. Thaumarchaeota, misalnya, menjadi salah satu penggerak utama siklus nitrogen lewat oksidasi amonia di tanah dan lautan &mdash; bahkan di beberapa tanah asam, perannya jauh lebih besar dibandingkan bakteri nitrifikasi. Di lingkungan tanpa oksigen, metanogen berperan mengakhiri rantai dekomposisi bahan organik sambil menghasilkan gas metana, yang kemudian dimanfaatkan sebagai sumber gas alam komersial. Beberapa Archaea hipertermofilik dan asidofilik seperti Sulfolobus juga dimanfaatkan industri untuk mengolah bijih besi dan tembaga, sementara enzim serta protein tahan panasnya menjadi acuan penting dalam teknologi stabilisasi molekul.",
+      "ecologyRoles": {
+        "benefits": [
+          "Siklus Nitrogen Global &mdash; Thaumarchaeota berperan besar dalam oksidasi amonia di tanah dan lautan, bahkan mengungguli bakteri nitrifikasi hingga 1000 kali lipat di beberapa tanah asam.",
+          "Siklus Karbon & Energi &mdash; Metanogen mengakhiri proses dekomposisi bahan organik di lingkungan tanpa oksigen (seperti sedimen laut, lahan basah, dan saluran cerna hewan ternak), sekaligus menghasilkan gas alam komersial.",
+          "Bioremediasi & Hidrometalurgi &mdash; Sulfolobus yang hipertermofilik dimanfaatkan industri untuk proses bioleaching, yaitu mengolah bijih besi dan tembaga pada suhu tinggi.",
+          "Teknologi Enzim Tahan Panas &mdash; Organisme hipertermofilik menjadi sumber enzim yang stabil pada suhu tinggi, termasuk protein chaperon seperti thermosome pada Pyrodictium yang dipakai sebagai acuan stabilisasi molekul dalam industri."
         ],
-        "answer": "Archaea",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Perhatikan ciri prokariotik dan konteks habitat/metabolisme; jangan mengandalkan bentuk saja."
+        "harms": [
+          "Kerusakan Makanan Bergaram &mdash; Haloarchaea bisa tumbuh subur di makanan yang sangat asin, seperti ikan asin, sosis, dan daging asin, sehingga menyebabkan pembusukan.",
+          "Emisi Gas Rumah Kaca &mdash; Metanogen di lahan pertanian basah dan sistem pencernaan hewan ternak melepaskan gas metana dalam jumlah besar ke atmosfer, yang turut mempercepat pemanasan global.",
+          "Pencemaran Drainase Asam Tambang &mdash; Ferroplasma mengoksidasi besi di area bekas tambang, menghasilkan asam sulfat pekat yang bisa menurunkan pH lingkungan hingga mendekati nol.",
+          "Catatan &mdash; berbeda dari Eubacteria, hingga saat ini belum ada satu pun spesies Archaea yang terbukti bersifat patogen bagi manusia, hewan, maupun tumbuhan."
+        ]
+      },
+      "examples": "Methanopyrus kandleri, Nanoarchaeum equitans, Ignicoccus hospitalis, Nitrosopumilus maritimus, Sulfolobus, Halobacterium",
+      "exampleNotes": [
+        { "name": "Methanopyrus kandleri", "note": "Hipertermofil pemegang rekor dunia; masih bisa membelah diri pada suhu 122°C" },
+        { "name": "Nanoarchaeum equitans", "note": "Genomnya sangat kecil sehingga hidup sebagai parasit metabolik pada inangnya" },
+        { "name": "Ignicoccus hospitalis", "note": "Berperan sebagai inang wajib bagi Nanoarchaeum equitans" },
+        { "name": "Nitrosopumilus maritimus", "note": "Thaumarchaeota laut yang memperoleh energi dari oksidasi amonia" },
+        { "name": "Sulfolobus", "note": "Hipertermofil asidofilik yang dimanfaatkan industri untuk mengolah bijih besi dan tembaga" },
+        { "name": "Halobacterium", "note": "Haloarchaea yang memanfaatkan protein bacteriorhodopsin untuk menangkap energi cahaya" }
+      ],
+      "recognize": "Untuk mengenali Archaea, ada tiga langkah utama yang biasa dilakukan: menganalisis gen 16S rRNA-nya, memeriksa profil lipid membrannya, lalu melakukan uji fisiologis khusus untuk memastikan identitasnya sampai ke tingkat genus atau spesies.",
+      "recognizeSteps": [
+        "<strong>Analisis gen 16S rRNA</strong> &mdash; DNA diekstrak dari sampel lingkungan atau kultur murni, lalu diperbanyak lewat PCR memakai primer khusus Archaea. Hasilnya kemudian disekuensing untuk menentukan posisi taksonominya pada pohon filogenetik.",
+        "<strong>Periksa profil lipid membran</strong> &mdash; lipid sel diekstrak, lalu dianalisis lewat kromatografi untuk mendeteksi ikatan eter pada rantai fitanil atau tetraether-nya. Ciri ini yang secara tegas membedakan Archaea dari Bacteria maupun Eukarya, karena keduanya memakai ikatan ester.",
+        "<strong>Lakukan uji fisiologis khusus</strong> &mdash; misalnya uji produksi metana secara anaerobik lewat kromatografi gas untuk mengonfirmasi metanogen, atau uji toleransi terhadap kadar garam tinggi untuk memastikan suatu isolat benar-benar tergolong haloarchaea."
+      ],
+      "challenge": {
+        "question": "Seorang peneliti mengisolasi sebuah mikroorganisme uniseluler prokariotik dari lubang hidrotermal di laut dalam. Hasil analisis biokimia menunjukkan dua hal: dinding selnya sama sekali tidak mengandung peptidoglikan, dan lipid membrannya tersusun dari gliserol yang terhubung ke rantai fitanil lewat ikatan eter, bukan ester. Berdasarkan dua ciri tersebut, isolat ini paling tepat digolongkan sebagai...",
+        "options": [
+          "Bacteria, karena habitat ekstrem umum ditemukan pada bakteri hipertermofilik seperti Aquifex",
+          "Archaea, karena ketiadaan peptidoglikan dan lipid membran berikatan eter merupakan ciri diagnostik yang secara mutlak membedakannya dari Bacteria",
+          "Eukarya, karena kompleksitas biokimia lipid menunjukkan organisme berinti sejati",
+          "Tidak dapat ditentukan tanpa melihat bentuk selnya terlebih dahulu"
+        ],
+        "answer": "Archaea, karena ketiadaan peptidoglikan dan lipid membran berikatan eter merupakan ciri diagnostik yang secara mutlak membedakannya dari Bacteria",
+        "explanation": "Ketiadaan peptidoglikan dan penggunaan ikatan eter pada lipid membran adalah dua ciri biokimia yang secara tegas membedakan Archaea dari Bacteria maupun Eukarya. Kemiripan habitat saja tidak cukup jadi dasar penggolongan, karena bakteri hipertermofilik pun bisa hidup di lingkungan ekstrem yang serupa. Bentuk sel juga bukan penentu yang bisa diandalkan, sebab Archaea sendiri menampilkan morfologi yang sangat beragam."
       }
     },
     "protozoa": {

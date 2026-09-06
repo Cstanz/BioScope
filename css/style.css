@@ -988,13 +988,13 @@ h3 {
   color: var(--forest);
 }
 
-.kingdom-card:first-child h3,
-.kingdom-card.active h3 {
+.kingdom-card h3,
+.division-card h3 {
   color: var(--ink);
 }
 
-.kingdom-card:first-child p,
-.kingdom-card.active p {
+.kingdom-card p,
+.division-card p {
   color: var(--ink-soft);
 }
 

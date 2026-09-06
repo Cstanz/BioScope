@@ -437,7 +437,7 @@ function renderKingdomPage() {
       <div class="container">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">Division / Phylum index</span>
+            <span class="eyebrow">Divisi / Daftar Kelompok</span>
             <h2>Telusuri kelompok</h2>
           </div>
         </div>
