@@ -311,7 +311,15 @@ function renderKingdomCards() {
 
 // ---------- Specimen 3D embed: lazy-load on tap (biar nggak berat di HP) ----------
 
-function buildSpecimenMarkup(embedUrl, title, fallbackLabel, fallbackSmall) {
+function buildSpecimenMarkup(embedUrl, imageUrl, title, fallbackLabel, fallbackSmall) {
+  if (!embedUrl && imageUrl) {
+    return `<img
+               src="${imageUrl}"
+               alt="${title}"
+               class="specimen-image"
+               loading="lazy" />`;
+  }
+
   if (!embedUrl) {
     return `<span>
                ${fallbackLabel}<br />
@@ -404,7 +412,7 @@ function renderKingdomPage() {
         </div>
 
         <div class="specimen specimen-${kingdomId}">
-          ${buildSpecimenMarkup(kingdom.embedUrl, `3D Model ${kingdom.name}`, "KINGDOM", kingdom.name.toUpperCase())}
+          ${buildSpecimenMarkup(kingdom.embedUrl, kingdom.image, `3D Model ${kingdom.name}`, "KINGDOM", kingdom.name.toUpperCase())}
         </div>
       </div>
     </section>
@@ -545,7 +553,7 @@ function initDivisionPage() {
         </div>
 
        <div class="specimen specimen-${division.kingdom}">
-          ${buildSpecimenMarkup(division.embedUrl, `3D Model ${division.title}`, "SPECIMEN", division.label.toUpperCase())}
+          ${buildSpecimenMarkup(division.embedUrl, division.image, `3D Model ${division.title}`, "SPECIMEN", division.label.toUpperCase())}
         </div>
       </div>
     </section>
