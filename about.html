@@ -9,6 +9,8 @@
   </script>
   <script defer="" src="js/main.js">
   </script>
+  <script defer="" src="js/references.js">
+  </script>
   <link rel="icon" type="image/svg+xml" href="Assets/favicon.svg">
   <title>
    Tentang &mdash; BioScope
@@ -71,7 +73,67 @@
      </p>
     </div>
    </section>
+   <section class="section section-paper">
+    <div class="container two-col">
+     <div>
+      <span class="eyebrow">
+       Mengapa BioScope
+      </span>
+      <h2>
+       Klasifikasi sering dihafal, jarang dipahami
+      </h2>
+     </div>
+     <div class="prose">
+      <p>
+       Banyak siswa mengenal takson lewat urutan nama yang harus diingat, bukan lewat ciri dan alasan di baliknya. Begitu urutan itu lupa, pemahamannya ikut hilang.
+      </p>
+      <p>
+       BioScope dibangun untuk membalik urutan itu. Setiap materi dimulai dari ciri yang bisa diamati, lalu mengarah ke kesimpulan klasifikasi &mdash; supaya jawabannya masuk akal, bukan sekadar diingat.
+      </p>
+     </div>
+    </div>
+   </section>
+
    <section class="section">
+    <div class="container two-col">
+     <div>
+      <span class="eyebrow">
+       Fitur utama
+      </span>
+      <h2>
+       Empat cara belajar, satu alur
+      </h2>
+     </div>
+     <div class="feature-grid">
+      <div class="feature-card">
+       <span class="feature-num">01</span>
+       <h3>Dasar Klasifikasi</h3>
+       <p>Pengantar konsep dan prinsip taksonomi sebelum masuk ke materi tiap kingdom.</p>
+       <a href="why-classify.html" class="text-link">Pelajari dasar &rarr;</a>
+      </div>
+      <div class="feature-card">
+       <span class="feature-num">02</span>
+       <h3>Materi & Ensiklopedia</h3>
+       <p>Halaman per kingdom lengkap dengan model 3D interaktif dan ciri morfologis.</p>
+       <a href="monera.html" class="text-link">Lihat materi &rarr;</a>
+      </div>
+      <div class="feature-card">
+       <span class="feature-num">03</span>
+       <h3>Classification Challenge</h3>
+       <p>Tantangan mengklasifikasikan spesimen berdasarkan ciri &mdash; bukan menghafal nama.</p>
+       <a href="classification-challenge.html" class="text-link">Coba challenge &rarr;</a>
+      </div>
+      <div class="feature-card">
+       <span class="feature-num">04</span>
+       <h3>Progress</h3>
+       <p>Pantau kemajuan belajar, tersimpan otomatis di browser tanpa perlu bikin akun.</p>
+       <a href="progress.html" class="text-link">Cek progress &rarr;</a>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section class="section section-paper">
     <div class="container two-col">
      <div>
       <span class="eyebrow">
@@ -138,25 +200,49 @@
     </div>
    </section>
 
-   <section class="section">
+   <section class="section" id="rujukan">
     <div class="container two-col">
      <div>
       <span class="eyebrow">
-       Referensi
+       Sumber rujukan
       </span>
       <h2>
-       Sumber rujukan materi
+       Daftar pustaka
       </h2>
      </div>
      <div class="prose">
       <p>
-       <em>Daftar referensi berikut masih berupa kerangka dan akan dilengkapi pada revisi berikutnya.</em>
+       Pilih format sitasi yang kamu perlukan &mdash; daftar di bawah akan menyesuaikan otomatis. Referensi berikut masih data contoh, tinggal diganti dengan rujukan materi yang sebenarnya di <code>js/references.js</code>.
       </p>
-      <ul>
-        <li>Nama Belakang, Inisial. (Tahun). <em>Judul buku atau artikel</em> (Edisi ke-n). Kota: Penerbit.</li>
-        <li>Nama Belakang, Inisial., & Nama Belakang, Inisial. (Tahun). Judul artikel jurnal. <em>Nama Jurnal, Volume</em>(Nomor), halaman&ndash;halaman.</li>
-        <li>Nama Belakang, Inisial. (Tahun). Judul halaman/sumber daring. <em>Nama Situs</em>. URL</li>
+      <div class="cite-style-switch" role="tablist" aria-label="Format sitasi">
+       <button type="button" class="cite-style-btn is-active" data-style="apa">APA 7</button>
+       <button type="button" class="cite-style-btn" data-style="mla">MLA 9</button>
+       <button type="button" class="cite-style-btn" data-style="chicago">Chicago</button>
+       <button type="button" class="cite-style-btn" data-style="ieee">IEEE</button>
+      </div>
+      <ul class="citation-list" id="citation-list">
       </ul>
+     </div>
+    </div>
+   </section>
+
+   <section class="cta-band">
+    <div class="container">
+     <div>
+      <span class="eyebrow">
+       Mulai belajar
+      </span>
+      <h2>
+       Siap coba BioScope?
+      </h2>
+     </div>
+     <div class="actions">
+      <a href="why-classify.html" class="btn btn-primary">
+       Mulai dari Dasar Klasifikasi
+      </a>
+      <a href="monera.html" class="btn btn-secondary">
+       Jelajahi Materi
+      </a>
      </div>
     </div>
    </section>

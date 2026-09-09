@@ -272,18 +272,19 @@ const BIOSCOPE_DATA = {
     "plantae": {
       "name": "Plantae",
       "eyebrow": "Kingdom 04",
-      "summary": "Kelompok tumbuhan yang umumnya fotosintetik dan memiliki dinding sel. Dalam pembelajaran ini, perkembangan struktur tubuh dan sistem reproduksi membantu menelusuri kelompok tumbuhan dari bentuk sederhana hingga tumbuhan berbunga.",
+      "summary": "Selamat datang di materi Plantae. Telusuri klasifikasi tumbuhan dari lumut sederhana hingga tumbuhan berbunga untuk memahami perkembangan struktur tubuh dan reproduksinya secara detail.",
+      "overview": "Anggota Kingdom Plantae juga dikenal sebagai embryophyte karena memiliki ciri khas pembentukan embrio multiseluler yang bergantung pada nutrisi induk selama tahap awal perkembangannya. Tumbuhan darat berevolusi dari nenek moyang alga hijau, secara spesifik dari kelompok alga hijau charophyta. Transisi habitat dari perairan ke daratan mendorong evolusi berbagai adaptasi struktur kunci &mdash; kutikula kedap air, stomata pengatur pertukaran gas, jaringan vaskular (xilem & floem) yang diperkuat lignin, serta organ reproduksi multiseluler pelindung gamet dan embrio. Kingdom ini secara klasik dikelompokkan ke dalam empat divisi utama berdasarkan tingkat kompleksitas jaringan vaskular, keberadaan biji, dan organ reproduksi: Bryophyta, Pteridophyta, Gymnospermae, dan Angiospermae.",
       "chars": [
-        "Eukariotik",
-        "Multiseluler",
-        "Fotosintetik",
-        "Dinding sel selulosa"
+        "<strong>Fotosintesis (Autotrof):</strong> Menggunakan pigmen klorofil a dan b yang tersimpan di dalam kloroplas untuk menangkap energi cahaya matahari dan mengubahnya menjadi energi kimia.",
+        "<strong>Dinding Sel Selulosa:</strong> Sel-sel eukariotiknya memiliki kloroplas dan vakuola, dikelilingi oleh dinding sel yang mengandung selulosa.",
+        "<strong>Multiseluler & Diferensiasi Jaringan:</strong> Memiliki tingkat organisasi multiseluler kompleks dengan diferensiasi sel membentuk jaringan dan organ khusus untuk fotosintesis, penyerapan, dan penyokong.",
+        "<strong>Spora Berdinding Sporopollenin:</strong> Menghasilkan spora yang dilindungi dinding berlapis sporopollenin, bahan organik yang sangat tahan terhadap kekeringan dan pembusukan."
       ],
       "criteria": [
-        "Jaringan vaskular",
-        "Biji",
-        "Bunga/buah",
-        "Dominasi fase hidup"
+        "<strong>Jaringan Vaskular:</strong> Kehadiran xilem dan floem sejati untuk mengangkut air, mineral, dan hasil fotosintesis membedakan tumbuhan vaskular (Pteridophyta, Gymnospermae, Angiospermae) dari Bryophyta yang nonvaskular.",
+        "<strong>Keberadaan Biji:</strong> Bryophyta dan Pteridophyta bereproduksi lewat spora, sedangkan Gymnospermae dan Angiospermae menghasilkan biji sebagai unit penyebaran utama yang berisi embrio dan cadangan makanan.",
+        "<strong>Bunga & Buah:</strong> Hanya Angiospermae yang memiliki organ reproduksi berupa bunga sejati, dengan bakal biji terbungkus rapat di dalam bakal buah (karpel) yang berkembang menjadi buah.",
+        "<strong>Dominasi Fase Hidup:</strong> Pada Bryophyta, gametofit haploid dominan dan hidup bebas; seiring evolusi menuju Pteridophyta, Gymnospermae, hingga Angiospermae, fase sporofit diploid menjadi semakin dominan sementara gametofit tereduksi."
       ],
       "division_ids": [
         "bryophyta",
@@ -308,11 +309,33 @@ const BIOSCOPE_DATA = {
           [
             "Bryophyta",
             "Pteridophyta",
-            "Gymnosperms",
-            "Angiosperms"
+            "Gymnospermae",
+            "Angiospermae"
           ],
-          "Angiosperms",
-          "Angiosperms adalah tumbuhan berbunga; bijinya berkembang di dalam struktur reproduktif yang menghasilkan buah."
+          "Angiospermae",
+          "Angiospermae adalah tumbuhan berbunga; bijinya berkembang di dalam struktur reproduktif (ovarium) yang menghasilkan buah."
+        ],
+        [
+          "Tumbuhan darat diperkirakan berevolusi dari nenek moyang…",
+          [
+            "Alga merah (Rhodophyta)",
+            "Alga hijau charophyta",
+            "Diatom",
+            "Sianobakteri"
+          ],
+          "Alga hijau charophyta",
+          "Bukti molekuler dan struktural menunjukkan tumbuhan darat berevolusi dari kelompok alga hijau charophyta (charophycean green algae), kerabat terdekat Plantae di antara alga."
+        ],
+        [
+          "Fungsi utama sporopollenin pada dinding spora tumbuhan adalah…",
+          [
+            "Menangkap cahaya matahari untuk fotosintesis",
+            "Melindungi spora dari kekeringan dan pembusukan",
+            "Mengangkut air dan mineral",
+            "Menyimpan cadangan karbohidrat"
+          ],
+          "Melindungi spora dari kekeringan dan pembusukan",
+          "Sporopollenin adalah bahan organik yang sangat tahan terhadap kekeringan dan pembusukan, sehingga melindungi spora tumbuhan agar dapat bertahan hingga menemukan kondisi yang sesuai untuk berkecambah."
         ]
       ],
       "unlock_text": "Selesaikan Fungi dengan skor minimal 85%."
@@ -320,18 +343,19 @@ const BIOSCOPE_DATA = {
     "animalia": {
       "name": "Animalia",
       "eyebrow": "Kingdom 05",
-      "summary": "Kelompok hewan multiseluler dengan organisasi tubuh yang kompleks dan nutrisi heterotrof. Perbandingan simetri, jaringan, rongga tubuh, segmentasi, dan kerangka membantu memahami filum-filumnya.",
+      "summary": "Selamat datang di materi Animalia. Telusuri simetri tubuh, rongga tubuh, dan segmentasi kesembilan filum hewan untuk memahami keragaman arsitektur tubuhnya secara detail.",
+      "overview": "Anggota Kingdom Animalia bersifat multiseluler (metazoa) dengan tubuh terorganisasi secara hierarkis dari sel, jaringan, organ, hingga sistem organ yang saling bekerja sama; sel-selnya mengalami spesialisasi fungsi dan tidak mampu hidup mandiri secara terpisah. Sebagai organisme heterotrof, hewan memperoleh nutrisi dengan mencerna atau memakan organisme lain, bukan menyintesisnya sendiri. Sel hewan tidak memiliki dinding sel kaku maupun filamen hifa, dan umumnya memiliki kemampuan bergerak mandiri lewat sistem tubuhnya sendiri, baik di seluruh tahap hidup maupun terbatas pada fase tertentu (misalnya fase larva). Pengelompokan sembilan filum klasik Animalia &mdash; dari Porifera yang paling sederhana hingga Chordata yang paling kompleks &mdash; didasarkan pada empat kriteria arsitektur tubuh: simetri tubuh, lapisan jaringan embrionik, rongga tubuh, dan segmentasi.",
       "chars": [
-        "Eukariotik",
-        "Multiseluler",
-        "Heterotrof",
-        "Tidak memiliki dinding sel"
+        "<strong>Multiseluler (Metazoa):</strong> Tubuh tersusun atas banyak sel terorganisasi hierarkis (sel, jaringan, organ, sistem organ) yang saling bekerja sama; sel-sel hewan mengalami spesialisasi fungsi dan tidak mampu hidup mandiri secara terpisah.",
+        "<strong>Heterotrof:</strong> Hewan tidak dapat menyintesis makanannya sendiri dari bahan anorganik seperti tumbuhan autotrof, melainkan memperoleh nutrisi dengan mencerna atau memakan organisme lain.",
+        "<strong>Tanpa Dinding Sel & Hifa:</strong> Sel hewan hanya dibatasi membran plasma tanpa dinding sel kaku seperti tumbuhan, dan tidak memiliki struktur filamen hifa seperti jamur.",
+        "<strong>Motil pada Fase Hidupnya:</strong> Memiliki kemampuan bergerak terkontrol dan mandiri dari dalam sistem tubuhnya sendiri, baik di seluruh tahapan hidup maupun terbatas pada fase tertentu, misalnya fase larva."
       ],
       "criteria": [
-        "Simetri tubuh",
-        "Jaringan dan organ",
-        "Rongga tubuh",
-        "Segmentasi dan kerangka"
+        "<strong>Simetri Tubuh:</strong> Asimetri (tanpa bidang pembagi seimbang), simetri radial (dapat dibagi oleh lebih dari dua bidang melalui sumbu longitudinal, cocok untuk hewan sesil/terapung bebas), atau simetri bilateral (dapat dibagi menjadi dua bagian cermin hanya oleh satu bidang sagital, mendukung pergerakan searah ke depan).",
+        "<strong>Lapisan Jaringan Embrionik (Germ Layers):</strong> Diploblastik (dua lapisan &mdash; ektoderm dan endoderm) atau triploblastik (tiga lapisan &mdash; ektoderm, mesoderm, dan endoderm).",
+        "<strong>Rongga Tubuh (Coelom):</strong> Aselomata (tanpa rongga tubuh sekunder, terisi parenkim mesoderm), pseudoselomata (rongga tubuh semu dari sisa blastocoel embrionik, tak dilapisi mesoderm utuh), atau selomata/eucoelomate (rongga tubuh sejati yang dilapisi selaput mesoderm/peritoneum).",
+        "<strong>Segmentasi Tubuh (Metamerisme):</strong> Pengulangan serial unit-unit tubuh yang serupa (metamere/somit) di sepanjang sumbu longitudinal tubuh, memungkinkan mobilitas dan fleksibilitas fungsi tubuh yang lebih tinggi."
       ],
       "division_ids": [
         "porifera",
@@ -366,6 +390,28 @@ const BIOSCOPE_DATA = {
           ],
           "Chordata",
           "Chordata dicirikan oleh notokorda pada setidaknya satu tahap perkembangan."
+        ],
+        [
+          "Filum yang memiliki rongga tubuh semu (pseudoselomata) dan tubuh tidak bersegmen adalah…",
+          [
+            "Annelida",
+            "Nematoda",
+            "Mollusca",
+            "Arthropoda"
+          ],
+          "Nematoda",
+          "Nematoda memiliki pseudoselomata (rongga tubuh semu dari sisa blastocoel embrionik yang tidak dilapisi utuh oleh mesoderm) dan tubuh silindrisnya tidak bersegmen, berbeda dari Annelida yang selomata sejati dan bersegmen."
+        ],
+        [
+          "Dua garis besar evolusi utama pada kelompok Bilateria (hewan bersimetri bilateral) adalah…",
+          [
+            "Radiata dan Bilateria",
+            "Protostomia dan Deuterostomia",
+            "Diploblastik dan Triploblastik",
+            "Aselomata dan Pseudoselomata"
+          ],
+          "Protostomia dan Deuterostomia",
+          "Bilateria terbagi menjadi Protostomia (mencakup klade Lophotrochozoa seperti Platyhelminthes, Mollusca, Annelida, dan Ecdysozoa seperti Nematoda, Arthropoda) dan Deuterostomia (meliputi Echinodermata dan Chordata)."
         ]
       ],
       "unlock_text": "Selesaikan Plantae dengan skor minimal 85%."
@@ -378,7 +424,7 @@ const BIOSCOPE_DATA = {
       "label": "Eubacteria",
       "title": "Eubacteria: Bakteri Sejati",
       "scientific": "Eubacteria",
-      "definition": "Eubacteria adalah kelompok mikroorganisme prokariotik uniseluler yang paling beragam dan tersebar luas di Bumi, mencakup ribuan spesies dengan bentuk dan cara hidup yang sangat bervariasi.",
+      "definition": "Eubacteria adalah kelompok mikroorganisme prokariotik uniseluler yang paling beragam dan tersebar luas di Bumi, mencakup ribuan spesies dengan bentuk dan cara hidup yang sangat bervariasi. Sel-selnya tidak memiliki membran inti maupun organel bermembran layaknya sel eukariotik, dan dinding selnya umumnya tersusun dari peptidoglikan &mdash; ciri utama yang membedakannya dari Archaea sekaligus menjadi target kerja sebagian besar antibiotik seperti penisilin.",
       "embedUrl": "https://sketchfab.com/models/1e085616d0ff43c3bfd1f86cdbdb5755/embed?autostart=1&transparent=1",
       "body": "Seperti prokariotik lain, sel Eubacteria tidak memiliki organel yang dibungkus membran maupun membran inti sejati. Materi genetiknya berupa DNA sirkular yang tersebar bebas di sitoplasma dalam bentuk nukleoid.",
       "morphologyProfile": [
@@ -1076,338 +1122,931 @@ const BIOSCOPE_DATA = {
       "id": "bryophyta",
       "kingdom": "plantae",
       "label": "Bryophyta",
-      "title": "Plantae — Bryophyta",
+      "title": "Plantae — Bryophyta (Tumbuhan Lumut)",
       "scientific": "Bryophyta",
-      "definition": "Kelompok tumbuhan nonvaskular yang mencakup lumut sejati dalam pengertian sempit.",
-      "body": "Tidak memiliki jaringan vaskular sejati; gametofit dominan.",
-      "habitat": "Tempat lembap dan teduh, walau beberapa tahan kondisi lebih kering.",
-      "nutrition": "Fotosintesis; menyerap air dan mineral melalui permukaan tubuh.",
-      "reproduction": "Sporofit tumbuh melekat pada gametofit dan menghasilkan spora.",
-      "ecology": "Menahan air, membantu pembentukan tanah, dan menjadi mikrohabitat.",
-      "examples": "Mosses",
-      "recognize": "Cari tubuh kecil tanpa jaringan pengangkut sejati dan ketergantungan kuat pada lingkungan lembap.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari tubuh kecil tanpa jaringan pengangkut sejati dan ketergantungan kuat pada lingkungan lembap.",
-        "options": [
-          "Bryophyta",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Bryophyta (tumbuhan lumut) adalah kelompok tumbuhan darat pertama yang berukuran kecil dan berstruktur sederhana. Ciri paling unik yang membedakannya secara tegas dari tiga divisi tumbuhan lain adalah sifatnya yang nonvaskular (tanpa xilem dan floem sejati), fase gametofit yang dominan dan hidup bebas, serta sporofit yang berukuran kecil dan bergantung penuh secara nutrisi pada gametofit betina.",
+      "body": "Bryophyta tidak memiliki akar, batang, atau daun sejati; bagian mirip daun dan batang yang tampak pada lumut merupakan organ fase gametofit, bukan sporofit. Sebagai pengganti akar, lumut memiliki rhizoid &mdash; struktur mirip rambut halus yang berfungsi menempelkan tubuh pada substrat, bukan sebagai organ utama penyerap air. Rhizoid berbentuk multiseluler pada lumut daun (mosses), namun uniseluler pada lumut hati (liverworts) dan lumut tanduk (hornworts). Secara ilmiah, lumut dikelompokkan ke dalam tiga filum: Marchantiophyta (lumut hati, talus berlobus, tanpa stomata, rhizoid uniseluler), Bryophyta sensu stricto (lumut daun, struktur 'daun' spiral, ada stomata pada sporofit, rhizoid multiseluler), dan Anthocerotophyta (lumut tanduk, sporofit silindris memanjang dari meristem basal, sel berkloroplas tunggal besar).",
+      "morphologyProfile": [
+        {
+          "label": "Rhizoid",
+          "value": "Struktur Penambat, Bukan Akar Sejati",
+          "desc": "Rhizoid multiseluler pada lumut daun atau uniseluler pada lumut hati/tanduk berfungsi menempelkan tubuh pada substrat, bukan sebagai organ penyerapan air utama."
+        },
+        {
+          "label": "Sporofit",
+          "value": "Kaki, Seta, dan Kapsul",
+          "desc": "Sporofit tersusun dari kaki (menancap di jaringan gametofit untuk menyerap makanan), seta (tangkai pengangkat kapsul, tidak ada pada lumut tanduk), dan kapsul (sporangium tempat meiosis menghasilkan spora haploid)."
+        },
+        {
+          "label": "Plasenta Matrotrofik",
+          "value": "Jaringan Penghubung Gametofit-Sporofit",
+          "desc": "Sporofit tidak pernah hidup mandiri; ia menyerap nutrisi (matrotrofi) dari gametofit betina lewat plasenta berisi sel transfer khusus yang memaksimalkan transportasi nutrisi secara aktif."
+        }
+      ],
+      "habitat": "Mayoritas lumut hidup di area teduh dan lembap seperti lantai hutan, tepi sungai, atau batuan basah karena tubuhnya rentan kehilangan air. Meski begitu, distribusinya sangat luas, dari gurun kering, batuan panas, hingga tundra Arktik dan Antartika yang dingin. Lumut sangat bergantung pada air eksternal untuk reproduksi seksual karena sperma berflagela dua harus berenang lewat lapisan air tipis menuju sel telur di dalam arkegonium.",
+      "habitatProfile": [
+        {
+          "label": "Lantai Hutan & Batuan Lembap",
+          "value": "Habitat Utama",
+          "desc": "Mayoritas lumut hidup di area teduh dan lembap seperti lantai hutan, tepi sungai, atau permukaan batuan basah."
+        },
+        {
+          "label": "Habitat Ekstrem",
+          "value": "Gurun hingga Kutub",
+          "desc": "Meski menyukai kelembapan, lumut memiliki sebaran sangat luas &mdash; ditemukan di gurun kering, batuan panas, hingga tundra Arktik dan Antartika."
+        },
+        {
+          "label": "Ketergantungan pada Air",
+          "value": "Reproduksi Seksual",
+          "desc": "Sperma berflagela dua harus berenang lewat lapisan air tipis di permukaan tanah/tumbuhan untuk mencapai sel telur di dalam arkegonium."
+        }
+      ],
+      "nutrition": "Lumut bersifat fotosintetik (autotrof), dengan sebagian besar aktivitas fotosintesis dilakukan oleh fase gametofit yang kaya klorofil. Karena tidak memiliki akar penyerap sejati maupun jaringan vaskular, lumut menyerap air dan mineral secara langsung dan cepat lewat seluruh permukaan luar tubuh gametofitnya, mengalir lewat jalur dinding sel (apoplast) dan sitoplasma (symplast) menuju sel-sel tetangga.",
+      "reproduction": "Bryophyta bereproduksi lewat pergiliran generasi heteromorfik yang khas. Spora haploid yang jatuh di tempat lembap berkecambah menjadi protonema (pada lumut daun) yang berkembang menjadi tumbuhan lumut dewasa. Gametofit menghasilkan organ kelamin multiseluler: anteridium (organ jantan penghasil sperma berflagela dua) dan arkegonium (organ betina berbentuk botol pelindung satu sel telur). Sperma berenang lewat bantuan air membuahi sel telur, membentuk zigot diploid yang tumbuh di dalam arkegonium menjadi embrio sporofit. Sporofit tidak pernah hidup mandiri, menyerap nutrisi lewat plasenta dari gametofit betina sepanjang hidupnya.",
+      "ecology": "Bersama liken, lumut merupakan kolonisator pertama pada batuan gundul, membantu pelapukan batuan menjadi tanah subur bagi tumbuhan lain. Lumut gambut (Sphagnum) berperan sangat besar dalam menyimpan air dan karbon global, sementara sejumlah spesies lumut lain bertindak sebagai bioindikator polusi udara yang sensitif.",
+      "ecologyRoles": {
+        "benefits": [
+          "Pionir Pembentuk Tanah &mdash; bersama liken, lumut menjadi kolonisator pertama pada batuan gundul dan membantu pelapukan menjadi tanah subur.",
+          "Penahan Air Raksasa &mdash; Sphagnum memiliki sel mati (hyaline cells) yang menyimpan air hingga 20 kali lipat berat keringnya, mencegah banjir dan menjaga kelembapan tanah.",
+          "Penyimpan Karbon Global &mdash; lahan gambut yang didominasi Sphagnum menutupi 1&ndash;3% permukaan bumi dan berperan besar menyimpan cadangan karbon global."
         ],
-        "answer": "Bryophyta",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari tubuh kecil tanpa jaringan pengangkut sejati dan ketergantungan kuat pada lingkungan lembap."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan langsung dari Bryophyta; sebaliknya, kepekaan lumut terhadap polusi udara justru dimanfaatkan sebagai bioindikator kualitas lingkungan.",
+          "Sensitivitas Ekologis &mdash; sejumlah spesies lumut menghilang secara alami dari area yang mengalami polusi udara parah, menandakan kerentanannya terhadap gangguan lingkungan."
+        ]
+      },
+      "examples": "Sphagnum, Marchantia, Anthoceros, Tortula obtusissima",
+      "exampleNotes": [
+        { "name": "Sphagnum", "note": "Lumut gambut penyimpan air dan karbon raksasa yang membentuk ekosistem lahan gambut di belahan bumi utara" },
+        { "name": "Marchantia", "note": "Lumut hati bertalus lebar dengan mangkuk gemma untuk reproduksi aseksual dan struktur payung penopang organ seksual" },
+        { "name": "Anthoceros", "note": "Lumut tanduk dengan sporofit silindris memanjang, talus gametofitnya dihuni bakteri pengikat nitrogen Nostoc secara mutualisme" },
+        { "name": "Tortula obtusissima", "note": "Lumut gurun Meksiko yang mampu merehidrasi diri dalam hitungan menit setelah kekeringan ekstrem" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Bryophyta adalah tubuh kecil tanpa jaringan pengangkut sejati, gametofit hijau yang dominan dan hidup bebas, serta sporofit kecil yang selalu menumpang dan bergantung nutrisi pada gametofitnya.",
+      "challenge": {
+        "question": "Mengapa fase sporofit Bryophyta tidak pernah tumbuh menjadi organisme yang hidup mandiri seperti pada tumbuhan vaskular?",
+        "options": [
+          "Karena sporofit tidak memiliki materi genetik lengkap",
+          "Karena sporofit menyerap nutrisi lewat plasenta dari gametofit betina sepanjang hidupnya",
+          "Karena sporofit tidak pernah terbentuk pada Bryophyta",
+          "Karena sporofit bersifat haploid seperti gametofit"
+        ],
+        "answer": "Karena sporofit menyerap nutrisi lewat plasenta dari gametofit betina sepanjang hidupnya",
+        "explanation": "Sporofit Bryophyta bersifat matrotrofik &mdash; ia menumpang hidup dan menyerap nutrisi secara terus-menerus dari gametofit betina lewat jaringan plasenta berisi sel transfer khusus, sehingga tidak pernah menjadi generasi yang mandiri secara nutrisi seperti pada tumbuhan vaskular."
       }
     },
     "pteridophyta": {
       "id": "pteridophyta",
       "kingdom": "plantae",
       "label": "Pteridophyta",
-      "title": "Plantae — Pteridophyta",
+      "title": "Plantae — Pteridophyta (Tumbuhan Paku)",
       "scientific": "Pteridophyta",
-      "definition": "Istilah tradisional untuk tumbuhan berpembuluh tanpa biji, seperti paku-pakuan.",
-      "body": "Memiliki xilem dan floem; berkembang biak dengan spora.",
-      "habitat": "Terutama lingkungan darat lembap, meski variasinya luas.",
-      "nutrition": "Fotosintesis; memiliki akar, batang, dan daun sejati.",
-      "reproduction": "Spora dihasilkan pada sporangium; fase gametofit dan sporofit bergantian.",
-      "ecology": "Produsen dan bagian penting ekosistem hutan/lembap.",
-      "examples": "Ferns, horsetails",
-      "recognize": "Cari daun sejati dan struktur penghasil spora tanpa biji.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari daun sejati dan struktur penghasil spora tanpa biji.",
-        "options": [
-          "Pteridophyta",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Pteridophyta (tumbuhan paku) adalah kelompok tumbuhan darat pertama yang memiliki jaringan vaskular sejati (xilem dan floem berlignin) namun belum menghasilkan biji. Berbeda dari Bryophyta yang sporofitnya bergantung penuh pada gametofit, sporofit Pteridophyta tumbuh mandiri, dominan, dan dapat berukuran besar; namun ia masih mewarisi ketergantungan leluhurnya pada air eksternal untuk fertilisasi karena sperma berflagelanya harus berenang menuju sel telur.",
+      "body": "Istilah Pteridophyta secara tradisional mencakup empat kelompok utama tumbuhan berpembuluh tanpa biji: Lycophyta (paku kawat, berdaun mikrofil kecil bertulang tunggal, misalnya Lycopodium dan Selaginella), Psilotophyta (paku purba tanpa akar dan daun sejati, misalnya Psilotum), Sphenophyta/Equisetophyta (paku ekor kuda berbatang beruas dan bersilika, misalnya Equisetum), dan Pterophyta (paku sejati berdaun makrofil besar bernama frond, kelompok terbesar dan paling dikenal). Daun muda paku sejati tergulung khas menyerupai kepala biola (fiddlehead atau crozier) sebelum membuka sempurna. Sebagian besar Pteridophyta bersifat homospora (menghasilkan satu jenis spora), tetapi Selaginella dan Isoetes bersifat heterospora (menghasilkan mikrospora dan megaspora terpisah) &mdash; pola yang dianggap sebagai cikal bakal evolusi biji pada tumbuhan berbiji.",
+      "morphologyProfile": [
+        {
+          "label": "Daun (Frond)",
+          "value": "Makrofil Bertulang Daun Bercabang",
+          "desc": "Daun paku sejati (frond) berukuran relatif besar dengan sistem tulang daun bercabang kompleks, berbeda dari mikrofil bertulang tunggal pada Lycophyta; daun muda tergulung khas menyerupai kepala biola (fiddlehead)."
+        },
+        {
+          "label": "Sporangium & Sorus",
+          "value": "Kumpulan Kotak Spora di Balik Daun",
+          "desc": "Sporangium penghasil spora umumnya berkumpul dalam kelompok bernama sorus di permukaan bawah daun, sering kali terlindung oleh selaput tipis pelindung bernama indusium."
+        },
+        {
+          "label": "Gametofit Independen",
+          "value": "Protalus Fotosintetik Hidup Bebas",
+          "desc": "Berbeda dari Bryophyta, gametofit Pteridophyta (protalus) berukuran kecil berbentuk hati namun hidup mandiri secara fotosintetik dan tidak bergantung pada sporofit."
+        }
+      ],
+      "habitat": "Pteridophyta paling melimpah di lantai hutan tropis dan subtropis yang lembap dan teduh, tetapi beberapa kelompok beradaptasi luas hingga daerah beriklim sedang, rawa, bahkan perairan tawar (paku air Azolla dan Salvinia). Seperti Bryophyta, Pteridophyta tetap memerlukan lapisan air tipis di permukaan tanah agar sperma berflagelanya dapat berenang mencapai sel telur.",
+      "habitatProfile": [
+        {
+          "label": "Lantai Hutan Tropis",
+          "value": "Habitat Utama",
+          "desc": "Sebagian besar spesies paku melimpah di lantai hutan tropis dan subtropis yang lembap dan teduh, termasuk sebagai epifit yang menempel di batang pohon."
+        },
+        {
+          "label": "Rawa & Perairan Tawar",
+          "value": "Paku Air",
+          "desc": "Azolla dan Salvinia beradaptasi hidup mengambang bebas di permukaan air tawar seperti sawah, kolam, dan rawa."
+        },
+        {
+          "label": "Ketergantungan pada Air",
+          "value": "Fertilisasi Eksternal",
+          "desc": "Seperti lumut, sperma berflagela Pteridophyta harus berenang lewat lapisan air tipis di permukaan gametofit untuk mencapai sel telur di dalam arkegonium."
+        }
+      ],
+      "nutrition": "Pteridophyta bersifat fotoautotrof penuh pada fase sporofitnya, menyerap air dan mineral lewat akar sejati serta jaringan vaskular yang mengangkutnya ke seluruh bagian tubuh. Gametofitnya (protalus) juga bersifat fotosintetik dan mampu hidup mandiri, meski hanya berumur pendek dan berukuran sangat kecil.",
+      "reproduction": "Pteridophyta bereproduksi lewat pergiliran generasi heteromorfik dengan sporofit dominan. Sporangium pada permukaan bawah daun (umumnya berkumpul dalam sorus) menghasilkan spora haploid lewat meiosis; spora yang jatuh di tempat lembap berkecambah menjadi gametofit protalus kecil berbentuk hati yang hidup bebas dan fotosintetik. Protalus menghasilkan anteridium (penghasil sperma berflagela) dan arkegonium (penghasil sel telur); sperma berenang lewat lapisan air tipis untuk membuahi sel telur, membentuk zigot yang tumbuh menjadi sporofit baru sambil untuk sesaat menumpang pada gametofit sebelum mandiri sepenuhnya. Selaginella dan Isoetes bersifat heterospora, menghasilkan mikrospora (gametofit jantan) dan megaspora (gametofit betina) yang terpisah.",
+      "ecology": "Pada periode Karbon (sekitar 359&ndash;299 juta tahun lalu), Lycophyta dan Sphenophyta raksasa mendominasi hutan rawa purba dan menjadi sumber utama pembentukan cadangan batu bara dunia saat ini. Di ekosistem modern, Pteridophyta berperan sebagai komponen penting understory hutan tropis, penahan erosi tanah, serta simbion pengikat nitrogen (Azolla) yang dimanfaatkan sebagai pupuk hayati alami di lahan persawahan.",
+      "ecologyRoles": {
+        "benefits": [
+          "Pembentuk Cadangan Batu Bara &mdash; hutan rawa Lycophyta dan Sphenophyta raksasa periode Karbon menjadi sumber utama deposit batu bara dunia saat ini.",
+          "Pupuk Hayati Sawah &mdash; Azolla pinnata bersimbiosis dengan cyanobacteria pengikat nitrogen Anabaena azollae, dimanfaatkan petani sebagai pupuk hayati alami di lahan sawah.",
+          "Penstabil Tanah & Understory Hutan &mdash; akar dan rimpang paku membantu menahan erosi tanah lembap sekaligus menjadi komponen penting lantai hutan tropis."
         ],
-        "answer": "Pteridophyta",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari daun sejati dan struktur penghasil spora tanpa biji."
+        "harms": [
+          "Gulma Beracun Ternak &mdash; Pteridium aquilinum (paku pakis kawat/bracken) bersifat invasif dan mengandung senyawa karsinogenik serta enzim thiaminase yang meracuni ternak penggembalaan.",
+          "Catatan &mdash; selain sifat invasif dan toksisitas Pteridium aquilinum bagi ternak, sumber tidak mencantumkan dampak merugikan besar lain dari Pteridophyta terhadap manusia."
+        ]
+      },
+      "examples": "Pteridium aquilinum, Equisetum arvense, Selaginella lepidophylla, Azolla pinnata",
+      "exampleNotes": [
+        { "name": "Pteridium aquilinum", "note": "Paku pakis kawat (bracken fern) yang invasif dan beracun bagi ternak, salah satu tumbuhan berpembuluh paling luas sebarannya di dunia" },
+        { "name": "Equisetum arvense", "note": "Paku ekor kuda berbatang beruas kaya silika, dahulu digunakan sebagai penggosok logam (scouring rush)" },
+        { "name": "Selaginella lepidophylla", "note": "Paku kawat 'tumbuhan kebangkitan' (resurrection plant) yang mampu mengering total lalu segar kembali setelah terkena air" },
+        { "name": "Azolla pinnata", "note": "Paku air kecil yang bersimbiosis dengan cyanobacteria Anabaena azollae pengikat nitrogen, dimanfaatkan sebagai pupuk hayati sawah" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Pteridophyta adalah daun sejati dengan sorus/sporangium penghasil spora di permukaan bawahnya (tanpa bunga maupun biji), serta daun muda yang tergulung khas menyerupai kepala biola.",
+      "challenge": {
+        "question": "Bukti evolusioner yang menunjukkan Selaginella (Lycophyta heterospora) sebagai kerabat terdekat dengan cikal bakal tumbuhan berbiji adalah…",
+        "options": [
+          "Kemampuannya menghasilkan bunga sederhana",
+          "Produksi mikrospora dan megaspora yang terpisah (heterospora)",
+          "Tidak adanya jaringan vaskular sama sekali",
+          "Sporofitnya yang bergantung penuh pada gametofit"
+        ],
+        "answer": "Produksi mikrospora dan megaspora yang terpisah (heterospora)",
+        "explanation": "Berbeda dari mayoritas Pteridophyta yang homospora, Selaginella dan Isoetes bersifat heterospora dengan mikrospora (menghasilkan gametofit jantan) dan megaspora (menghasilkan gametofit betina) yang terpisah &mdash; pola reproduksi yang dianggap sebagai cikal bakal evolusi biji pada tumbuhan berbiji (Gymnospermae dan Angiospermae)."
       }
     },
     "gymnosperms": {
       "id": "gymnosperms",
       "kingdom": "plantae",
-      "label": "Gymnosperms",
-      "title": "Plantae — Gymnosperms",
-      "scientific": "Gymnosperms",
-      "definition": "Tumbuhan berbiji dengan bakal biji yang tidak tertutup oleh ovarium seperti pada angiosperms.",
-      "body": "Vaskular; menghasilkan biji dan umumnya strobilus/kerucut.",
-      "habitat": "Hutan, daerah pegunungan, dan lingkungan darat beragam.",
-      "nutrition": "Fotosintesis; akar mengambil air dan mineral dari tanah.",
-      "reproduction": "Menghasilkan serbuk sari dan biji; tidak membentuk buah sejati dari ovarium.",
-      "ecology": "Produsen dan pembentuk habitat; beberapa bernilai ekonomi.",
-      "examples": "Pines, cycads, ginkgo",
-      "recognize": "Cari biji yang tidak terbungkus buah sejati dan struktur reproduktif seperti strobilus.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari biji yang tidak terbungkus buah sejati dan struktur reproduktif seperti strobilus.",
-        "options": [
-          "Gymnosperms",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "label": "Gymnospermae",
+      "title": "Plantae — Gymnospermae (Biji Terbuka)",
+      "scientific": "Gymnospermae",
+      "definition": "Gymnospermae secara harfiah berarti 'biji telanjang' (naked seed) &mdash; merujuk pada kondisi bakal biji (ovul) dan biji yang terekspos langsung pada permukaan daun termodifikasi (sporofil) atau struktur analognya. Berbeda dari Pteridophyta yang masih bereproduksi dengan spora, Gymnospermae telah menghasilkan biji sebagai unit penyebaran utama; berbeda dari Angiospermae, Gymnospermae tidak memiliki bunga atau buah sejati karena bijinya terekspos bebas di permukaan sisik strobilus, bukan terbungkus ovarium.",
+      "body": "Gymnospermae memiliki jaringan vaskular sejati (xilem dan floem). Daunnya umumnya termodifikasi menjadi bentuk jarum (seperti pinus) atau sisik (seperti cemara) untuk meminimalkan penguapan. Struktur reproduksi utamanya adalah strobilus (kerucut/cone): strobilus jantan (microsporangiate cone) menghasilkan mikrospora yang berkembang menjadi polen, sedangkan strobilus betina (megasporangiate cone) memiliki sisik bakal biji (seed-scale complex) yang membawa ovul terekspos di permukaannya. Kelompok yang masih hidup terbagi menjadi empat filum: Coniferophyta (konifer, terbesar dan paling melimpah), Cycadophyta (sikad mirip palem tropis), Ginkgophyta (hanya satu spesies hidup, Ginkgo biloba), dan Gnetophyta (Gnetum, Ephedra, Welwitschia).",
+      "morphologyProfile": [
+        {
+          "label": "Strobilus",
+          "value": "Kerucut Jantan & Betina Terpisah",
+          "desc": "Strobilus jantan menghasilkan mikrospora yang berkembang menjadi polen; strobilus betina memiliki sisik bakal biji kompleks yang membawa ovul terekspos di permukaannya."
+        },
+        {
+          "label": "Daun Jarum",
+          "value": "Adaptasi Hemat Air",
+          "desc": "Daun jarum konifer memiliki kutikula tebal, hipodermis berdinding tebal, dan stomata terbenam (sunken stomata) di bawah permukaan daun untuk meminimalkan hilangnya uap air lewat transpirasi."
+        },
+        {
+          "label": "Struktur Biji",
+          "value": "Embrio, Kulit Biji, & Cadangan Makanan",
+          "desc": "Biji tersusun dari embrio (generasi sporofit baru, 2n), kulit biji pelindung (jaringan sporofit induk, 2n), dan cadangan makanan dari jaringan gametofit betina haploid (n)."
+        }
+      ],
+      "habitat": "Gymnospermae sangat dominan di kawasan beriklim sedang hingga dingin pegunungan tinggi belahan bumi utara, membentuk bioma hutan konifer (taiga) yang luas. Beberapa kelompok seperti cycad dan gnetofit tersebar di daerah tropis basah hingga semi-kering.",
+      "habitatProfile": [
+        {
+          "label": "Hutan Konifer (Taiga)",
+          "value": "Habitat Dominan",
+          "desc": "Kawasan beriklim sedang hingga dingin pegunungan tinggi belahan bumi utara didominasi hutan konifer yang luas."
+        },
+        {
+          "label": "Tropis & Subtropis",
+          "value": "Cycad & Gnetofit",
+          "desc": "Beberapa kelompok seperti cycad dan gnetofit tersebar luas di daerah tropis basah hingga semi-kering."
+        },
+        {
+          "label": "Gurun Ekstrem",
+          "value": "Welwitschia mirabilis",
+          "desc": "Gnetofit unik ini hidup di gurun pasir Namibia, Afrika, salah satu habitat paling ekstrem bagi tumbuhan berbiji."
+        }
+      ],
+      "nutrition": "Gymnospermae bersifat fotoautotrof, mengasimilasi karbon dan memproduksi energi lewat fotosintesis menggunakan klorofil di dalam kloroplas. Daun berbentuk jarum pada konifer memiliki adaptasi anatomis khusus untuk menghemat air selama musim dingin atau kering ekstrem, termasuk kutikula tebal, hipodermis berdinding tebal, dan stomata terbenam.",
+      "reproduction": "Sporofit (tubuh tumbuhan utama) dominan dan mandiri, sedangkan gametofit sangat tereduksi dan bergantung pada sporofit. Ovul menempel terbuka pada permukaan sisik strobilus betina. Penyerbukan tidak lagi membutuhkan air eksternal seperti pada lumut atau paku &mdash; polen diterbangkan angin (wind pollination) dan ditangkap tetes penyerbukan pada liang bakal biji (micropyle). Polen berkecambah membentuk tabung polen yang tumbuh menembus jaringan bakal biji untuk mengantarkan sperma langsung ke sel telur di dalam arkegonium. Setelah fertilisasi, bakal biji berkembang menjadi biji lengkap dengan embrio, kulit biji, dan cadangan makanan.",
+      "ecology": "Vegetasi hutan konifer merupakan salah satu penyerap karbon (carbon sink) global terbesar di daratan, sekaligus menyediakan sebagian besar pasokan kayu industri dunia (softwood). Sistem perakaran pohon konifer yang mendalam di pegunungan juga berperan penting mencegah tanah longsor.",
+      "ecologyRoles": {
+        "benefits": [
+          "Penyerap Karbon Raksasa &mdash; vegetasi hutan konifer merupakan salah satu carbon sink daratan terbesar yang membantu menstabilkan iklim bumi.",
+          "Sumber Kayu Komersial &mdash; genus Pinus, Abies, dan Picea menyediakan sebagian besar pasokan kayu industri dunia (softwood) untuk bangunan, furnitur, dan pulp.",
+          "Pencegah Erosi Lereng &mdash; sistem perakaran pohon konifer yang mendalam di pegunungan menahan struktur tanah dan mencegah tanah longsor."
         ],
-        "answer": "Gymnosperms",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari biji yang tidak terbungkus buah sejati dan struktur reproduktif seperti strobilus."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan langsung dari Gymnospermae terhadap manusia atau ekosistem lain.",
+          "Kerentanan Populasi Klonal &mdash; penanaman massal klon jantan Ginkgo biloba secara eksklusif di perkotaan (untuk menghindari bau biji betina) berisiko meningkatkan kerentanan populasi terhadap serangan patogen dibanding populasi alami yang berkembang biak seksual."
+        ]
+      },
+      "examples": "Pinus palustris, Sequoia sempervirens, Ginkgo biloba, Welwitschia mirabilis",
+      "exampleNotes": [
+        { "name": "Pinus palustris", "note": "Pinus daun panjang yang mendominasi hutan pasir belahan bumi utara, sumber utama kayu komersial" },
+        { "name": "Sequoia sempervirens", "note": "Redwood pesisir, tumbuhan vaskular tertinggi di dunia (lebih dari 115 meter), tumbuh di California dan Oregon" },
+        { "name": "Ginkgo biloba", "note": "'Fosil hidup' berdaun kipas yang sangat toleran terhadap polusi udara perkotaan" },
+        { "name": "Welwitschia mirabilis", "note": "Gnetofit gurun Namibia yang sepanjang hidupnya hanya menghasilkan dua daun pita raksasa" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Gymnospermae adalah biji yang tidak terbungkus buah sejati (terekspos di permukaan sisik strobilus) serta ketiadaan bunga sejati, berbeda dari Angiospermae yang bijinya terlindung di dalam bakal buah.",
+      "challenge": {
+        "question": "Perbedaan utama yang membedakan biji Gymnospermae dari biji Angiospermae adalah…",
+        "options": [
+          "Gymnospermae tidak menghasilkan biji sama sekali",
+          "Biji Gymnospermae terekspos bebas di permukaan sisik strobilus, tidak terbungkus bakal buah",
+          "Gymnospermae hanya bereproduksi dengan spora",
+          "Gymnospermae tidak memiliki jaringan vaskular"
+        ],
+        "answer": "Biji Gymnospermae terekspos bebas di permukaan sisik strobilus, tidak terbungkus bakal buah",
+        "explanation": "Nama Gymnospermae berarti 'biji telanjang' karena bakal biji dan bijinya terekspos langsung pada permukaan sisik strobilus, berbeda dari Angiospermae yang bakal bijinya terbungkus rapat di dalam bakal buah (karpel) yang kemudian berkembang menjadi buah."
       }
     },
     "angiosperms": {
       "id": "angiosperms",
       "kingdom": "plantae",
-      "label": "Angiosperms",
-      "title": "Plantae — Angiosperms",
-      "scientific": "Angiosperms",
-      "definition": "Tumbuhan berbunga yang bijinya berkembang di dalam ovarium dan umumnya kemudian berada dalam buah.",
-      "body": "Vaskular; bunga dan buah merupakan ciri penting.",
-      "habitat": "Hampir semua habitat darat, dengan sebagian beradaptasi pada air.",
-      "nutrition": "Fotosintesis; akar dan jaringan vaskular mendukung pertumbuhan kompleks.",
-      "reproduction": "Bunga membantu penyerbukan; biji berkembang dalam struktur buah.",
-      "ecology": "Produsen dominan di banyak ekosistem dan sumber pangan utama.",
-      "examples": "Grasses, orchids, oaks",
-      "recognize": "Cari bunga, buah, dan biji yang terlindung dalam struktur reproduktif.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari bunga, buah, dan biji yang terlindung dalam struktur reproduktif.",
-        "options": [
-          "Angiosperms",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "label": "Angiospermae",
+      "title": "Plantae — Angiospermae (Tumbuhan Berbunga)",
+      "scientific": "Angiospermae",
+      "definition": "Angiospermae (dari bahasa Yunani angeion, 'wadah/kantung', dan sperma, 'biji') adalah kelompok tumbuhan berbiji paling beragam dan dominan di daratan modern, mencakup lebih dari 300.000 spesies. Ciri diagnostik utamanya adalah bunga sebagai organ reproduksi khas dan bakal biji yang terbungkus rapat di dalam bakal buah (ovarium), berbeda dari Gymnospermae yang bakal bijinya terekspos telanjang di permukaan sisik strobilus.",
+      "body": "Bunga tersusun atas empat lingkaran organ termodifikasi dari daun: sepal (kelopak pelindung kuncup), petal (mahkota penarik penyerbuk), stamen (benang sari penghasil polen), dan karpel (putik berisi bakal biji yang menyatu membentuk ovarium). Setelah fertilisasi, dinding ovarium berkembang menjadi buah (perikarp) yang melindungi sekaligus membantu penyebaran biji. Ciri unik lain Angiospermae adalah fertilisasi ganda: satu sel sperma membuahi sel telur membentuk zigot (2n), sedangkan sel sperma kedua melebur dengan dua inti polar membentuk jaringan endosperma triploid (3n) sebagai cadangan makanan embrio. Angiospermae terbagi menjadi dua kelompok evolusioner utama: monokotil (satu daun lembaga, tulang daun sejajar, akar serabut, berkas pembuluh tersebar, bagian bunga kelipatan tiga) dan eudikotil (dua daun lembaga, tulang daun menjala, akar tunggang, berkas pembuluh melingkar, bagian bunga kelipatan empat atau lima).",
+      "morphologyProfile": [
+        {
+          "label": "Bunga",
+          "value": "Sepal, Petal, Stamen, & Karpel",
+          "desc": "Organ reproduksi khas Angiospermae tersusun dari empat lingkaran daun termodifikasi: sepal pelindung kuncup, petal penarik penyerbuk, stamen penghasil polen, dan karpel (putik) yang menyatu membentuk ovarium pembungkus bakal biji."
+        },
+        {
+          "label": "Buah",
+          "value": "Perikarp Hasil Perkembangan Ovarium",
+          "desc": "Dinding ovarium yang telah dibuahi berkembang menjadi buah (perikarp), melindungi biji sekaligus membantu penyebarannya lewat angin, air, atau hewan pemakan buah."
+        },
+        {
+          "label": "Monokotil vs Eudikotil",
+          "value": "Dua Klade Evolusioner Utama",
+          "desc": "Monokotil berdaun lembaga tunggal, tulang daun sejajar, akar serabut, dan bagian bunga kelipatan tiga; eudikotil berdaun lembaga ganda, tulang daun menjala, akar tunggang, dan bagian bunga kelipatan empat atau lima."
+        }
+      ],
+      "habitat": "Angiospermae mendominasi hampir seluruh habitat darat, dari hutan hujan tropis, padang rumput, gurun, hingga tundra Arktik. Sejumlah kecil kelompok bahkan berhasil kembali beradaptasi hidup di lingkungan akuatik, mulai dari tumbuhan air tawar mengapung hingga lamun (seagrass) yang sepenuhnya terendam air laut.",
+      "habitatProfile": [
+        {
+          "label": "Seluruh Bioma Daratan",
+          "value": "Vegetasi Dominan Global",
+          "desc": "Angiospermae menjadi produsen dan pembentuk struktur vegetasi dominan di hampir seluruh bioma darat, dari hutan hujan tropis hingga tundra Arktik."
+        },
+        {
+          "label": "Adaptasi Akuatik",
+          "value": "Lamun & Tumbuhan Air",
+          "desc": "Zostera marina (lamun) merupakan salah satu dari sedikit kelompok Angiospermae yang berhasil beradaptasi hidup sepenuhnya terendam air laut, sementara Nymphaea (teratai) mengapung di perairan tawar."
+        },
+        {
+          "label": "Ceruk Ekologis Ekstrem",
+          "value": "Epifit, Parasit, & Karnivor",
+          "desc": "Sejumlah Angiospermae beradaptasi ekstrem sebagai epifit penumpang pohon (anggrek), parasit tanpa klorofil penghisap inang (Rafflesia), atau tumbuhan karnivor pemakan serangga (Dionaea)."
+        }
+      ],
+      "nutrition": "Mayoritas Angiospermae bersifat fotoautotrof, menyerap air dan mineral lewat akar serta jaringan vaskular yang lebih efisien berkat unsur pembuluh (vessel element) pada xilemnya. Namun, sejumlah kecil spesies berevolusi menyimpang dari pola ini: Rafflesia arnoldii kehilangan seluruh klorofil dan hidup sebagai parasit holoparasitik penuh pada akar tumbuhan inang, sementara Dionaea muscipula bersifat karnivor, menangkap dan mencerna serangga untuk melengkapi kebutuhan nitrogennya di tanah miskin hara.",
+      "reproduction": "Ciri reproduksi paling khas Angiospermae adalah fertilisasi ganda: satu sel sperma dari tabung polen membuahi sel telur membentuk zigot diploid (2n) yang tumbuh menjadi embrio, sedangkan sel sperma kedua melebur dengan dua inti polar sel sentral membentuk endosperma triploid (3n) sebagai cadangan makanan embrio. Penyerbukan (transfer polen dari stamen ke kepala putik) dapat dibantu angin maupun hewan penyerbuk seperti lebah, kupu-kupu, burung, dan kelelawar, mendorong koevolusi bentuk dan warna bunga yang sangat beragam. Setelah fertilisasi, bakal biji berkembang menjadi biji sementara ovarium berkembang menjadi buah, yang membantu penyebaran biji lewat angin, air, atau hewan pemakan buah.",
+      "ecology": "Sebagai produsen primer dominan di sebagian besar ekosistem darat, Angiospermae menopang hampir seluruh rantai makanan terestrial dan menjadi sumber pangan utama manusia lewat serealia, buah, dan sayuran. Koevolusi jangka panjang dengan hewan penyerbuk dan penyebar biji juga menjadikannya pendorong utama keanekaragaman hayati hewan di banyak ekosistem.",
+      "ecologyRoles": {
+        "benefits": [
+          "Sumber Pangan Utama Manusia &mdash; Oryza sativa (padi), Triticum (gandum), dan Zea mays (jagung) menjadi tumpuan ketahanan pangan miliaran manusia di dunia.",
+          "Koevolusi dengan Penyerbuk &mdash; kemitraan mutualisme dengan lebah, kupu-kupu, burung, dan kelelawar mendorong keanekaragaman bentuk bunga sekaligus menopang populasi hewan penyerbuk global.",
+          "Bahan Baku Industri & Obat &mdash; kayu keras (hardwood), serat kapas, karet alam, serta ribuan senyawa obat modern diturunkan dari Angiospermae."
         ],
-        "answer": "Angiosperms",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari bunga, buah, dan biji yang terlindung dalam struktur reproduktif."
+        "harms": [
+          "Tumbuhan Beracun &mdash; Atropa belladonna dan Nerium oleander menghasilkan alkaloid dan glikosida jantung yang sangat toksik, berpotensi fatal jika tertelan manusia maupun ternak.",
+          "Gulma Invasif & Alergen Serbuk Sari &mdash; sejumlah spesies menjadi gulma invasif yang menekan vegetasi asli, sementara serbuk sari tumbuhan penyerbukan angin (misalnya Ambrosia/ragweed) memicu reaksi alergi rinitis musiman pada manusia."
+        ]
+      },
+      "examples": "Oryza sativa, Nymphaea sp., Rafflesia arnoldii, Dionaea muscipula",
+      "exampleNotes": [
+        { "name": "Oryza sativa", "note": "Padi, monokotil serealia yang menjadi makanan pokok bagi lebih dari separuh populasi manusia dunia" },
+        { "name": "Nymphaea sp.", "note": "Teratai, eudikotil akuatik dengan daun mengapung dan bunga khas yang membuka-menutup mengikuti siklus cahaya" },
+        { "name": "Rafflesia arnoldii", "note": "Eudikotil parasit holoparasitik tanpa klorofil, menghasilkan bunga tunggal terbesar di dunia berdiameter hingga satu meter" },
+        { "name": "Dionaea muscipula", "note": "Venus flytrap, eudikotil karnivor dengan daun perangkap bergerak cepat untuk menangkap serangga di tanah rawa miskin nitrogen" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Angiospermae adalah kehadiran bunga sejati dan biji yang terlindung di dalam buah hasil perkembangan ovarium; jumlah daun lembaga serta pola tulang daun membantu membedakan monokotil dari eudikotil.",
+      "challenge": {
+        "question": "Ciri reproduksi unik yang hanya dimiliki Angiospermae, tidak ditemukan pada Gymnospermae maupun tumbuhan berpembuluh lain, adalah…",
+        "options": [
+          "Penyerbukan dengan bantuan angin",
+          "Fertilisasi ganda yang membentuk zigot sekaligus endosperma triploid",
+          "Kehadiran jaringan xilem dan floem",
+          "Pergiliran generasi antara sporofit dan gametofit"
+        ],
+        "answer": "Fertilisasi ganda yang membentuk zigot sekaligus endosperma triploid",
+        "explanation": "Fertilisasi ganda adalah ciri diagnostik unik Angiospermae: satu sel sperma membuahi sel telur membentuk zigot (2n), sedangkan sel sperma kedua melebur dengan dua inti polar membentuk endosperma triploid (3n) sebagai cadangan makanan embrio &mdash; mekanisme yang tidak ditemukan pada Gymnospermae maupun kelompok tumbuhan berpembuluh lainnya."
       }
     },
     "porifera": {
       "id": "porifera",
       "kingdom": "animalia",
       "label": "Porifera",
-      "title": "Animalia — Porifera",
+      "title": "Animalia — Porifera (Spons)",
       "scientific": "Porifera",
-      "definition": "Hewan sederhana dengan tubuh berpori dan sistem aliran air untuk memperoleh makanan.",
-      "body": "Tidak memiliki jaringan sejati seperti hewan yang lebih kompleks; tubuh berpori.",
-      "habitat": "Laut terutama, sebagian di air tawar.",
-      "nutrition": "Filter feeder; air membawa partikel makanan melalui tubuh.",
-      "reproduction": "Reproduksi seksual dan aseksual dapat terjadi.",
-      "ecology": "Penyaring air dan habitat bagi organisme kecil.",
-      "examples": "Sponges",
-      "recognize": "Cari banyak pori dan pola aliran air; tidak ada organ kompleks.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari banyak pori dan pola aliran air; tidak ada organ kompleks.",
-        "options": [
-          "Porifera",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Porifera (spons) dikelompokkan ke dalam cabang Parazoa dalam subdivisi kingdom hewan. Ciri paling mendasar dari Porifera adalah berada pada tingkat organisasi seluler (cellular grade of organization) &mdash; metazoa paling sederhana yang sel-sel tubuhnya telah mengalami pembagian kerja, namun tidak terorganisasi kuat membentuk jaringan sejati (true tissues).",
+      "body": "Spons secara umum tidak memiliki lapisan jaringan embrionik sejati (germ layers) maupun rongga tubuh atau rongga usus/pencernaan. Setelah tahap blastula, sel-sel spons mengalami reorganisasi membentuk struktur tubuh individu dewasa. Bentuk tubuhnya umumnya asimetris atau bernoda simetri radial sederhana. Penelitian embriologi pada demosponge bahkan menunjukkan bahwa setelah tahap blastula, migrasi sel dapat menghasilkan bentuk gastrula dua lapisan yang kemudian membentuk lapisan ketiga sebelum menjadi larva berenang bebas &mdash; memberi petunjuk bahwa tahap blastula dan gastrula kemungkinan sudah dimiliki nenek moyang bersama seluruh Metazoa purba.",
+      "morphologyProfile": [
+        {
+          "label": "Tingkat Organisasi",
+          "value": "Seluler (Cell Aggregate)",
+          "desc": "Sel-sel Porifera mengalami pembagian kerja namun tidak terorganisasi kuat menjadi jaringan sejati, menjadikannya metazoa dengan tingkat organisasi tubuh paling sederhana."
+        },
+        {
+          "label": "Lapisan Embrionik",
+          "value": "Tidak Ada Germ Layer Sejati",
+          "desc": "Berbeda dari hewan diploblastik maupun triploblastik, Porifera secara klasik tidak memiliki lapisan jaringan embrionik sejati, meski riset pada demosponge menunjukkan anomali perkembangan menuju gastrula dua-tiga lapisan."
+        },
+        {
+          "label": "Simetri Tubuh",
+          "value": "Asimetris atau Radial Sederhana",
+          "desc": "Bentuk tubuh spons umumnya asimetris atau bernoda simetri radial sederhana, tanpa rongga tubuh maupun rongga pencernaan."
+        }
+      ],
+      "habitat": "Sumber mencatat keberadaan spons di lingkungan air tawar (freshwater sponges) dan laut.",
+      "habitatProfile": [
+        {
+          "label": "Laut",
+          "value": "Habitat Mayoritas",
+          "desc": "Sebagian besar spesies Porifera hidup di lingkungan laut."
+        },
+        {
+          "label": "Air Tawar",
+          "value": "Freshwater Sponges",
+          "desc": "Sejumlah spesies spons juga menghuni lingkungan air tawar dan mampu bertahan lewat pembentukan gemula saat kondisi memburuk."
+        }
+      ],
+      "nutrition": "Tidak dibahas secara rinci pada sumber materi ini.",
+      "reproduction": "Spons air tawar dapat melakukan reproduksi aseksual lewat pembentukan gemula (gemmulation) &mdash; kumpulan sel yang terbungkus kapsul resisten pada musim gugur, mampu bertahan melewati musim dingin di dalam tubuh induk yang mengering atau membeku. Ketika musim semi tiba, sel-sel di dalamnya aktif kembali, keluar dari kapsul, dan tumbuh menjadi spons baru.",
+      "ecology": "Sumber materi ini tidak membahas secara rinci peran ekologis Porifera dalam ekosistem.",
+      "ecologyRoles": {
+        "benefits": [
+          "Catatan &mdash; sumber tidak mencantumkan detail peran ekologis menguntungkan Porifera secara spesifik."
         ],
-        "answer": "Porifera",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari banyak pori dan pola aliran air; tidak ada organ kompleks."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan dari Porifera."
+        ]
+      },
+      "examples": "Hexactinellida, Demospongiae, Calcarea",
+      "exampleNotes": [
+        { "name": "Hexactinellida", "note": "Kelas spons dengan spikula kaca (silika) yang khas" },
+        { "name": "Demospongiae", "note": "Kelas spons terbesar, menjadi objek riset embriologi anomali perkembangan gastrula dua-tiga lapisan" },
+        { "name": "Calcarea", "note": "Kelas spons dengan rangka spikula tersusun dari kalsium karbonat" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Porifera adalah tubuh berpori tanpa jaringan sejati, tanpa rongga usus, dan berada pada tingkat organisasi seluler paling sederhana di antara seluruh Metazoa.",
+      "challenge": {
+        "question": "Porifera dianggap sebagai metazoa paling sederhana karena tingkat organisasi tubuhnya berada pada tahap…",
+        "options": [
+          "Organ-sistem",
+          "Jaringan-organ",
+          "Sel-jaringan",
+          "Seluler (cell aggregate)"
+        ],
+        "answer": "Seluler (cell aggregate)",
+        "explanation": "Sel-sel Porifera telah mengalami pembagian kerja (division of labor) namun belum terorganisasi kuat membentuk jaringan sejati, sehingga tingkat organisasinya disebut seluler (cellular grade of organization) &mdash; paling sederhana di antara seluruh filum Animalia."
       }
     },
     "cnidaria": {
       "id": "cnidaria",
       "kingdom": "animalia",
       "label": "Cnidaria",
-      "title": "Animalia — Cnidaria",
+      "title": "Animalia — Cnidaria (Ubur-ubur, Anemon Laut)",
       "scientific": "Cnidaria",
-      "definition": "Hewan dengan jaringan sejati dan sel penyengat yang disebut cnidocytes.",
-      "body": "Simetri radial; bentuk polip dan/atau medusa.",
-      "habitat": "Terutama laut, dengan beberapa kelompok air tawar.",
-      "nutrition": "Predator; menangkap mangsa menggunakan tentakel dan cnidocytes.",
-      "reproduction": "Seksual maupun aseksual, bergantung kelompok.",
-      "ecology": "Predator dan pembentuk ekosistem terumbu pada beberapa kelompok.",
-      "examples": "Jellyfish, corals, sea anemones",
-      "recognize": "Cari tentakel dan ciri sel penyengat; simetri radial juga membantu.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari tentakel dan ciri sel penyengat; simetri radial juga membantu.",
-        "options": [
-          "Cnidaria",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Filum Cnidaria (bersama Ctenophora) dikelompokkan ke dalam kelompok hewan bersimetri radial yang dikenal sebagai Radiata, dengan sumbu oral-aboral yang membedakannya dari Platyhelminthes bersimetri bilateral. Cnidaria berada pada tingkat organisasi sel-jaringan (cell-tissue grade of organization), di mana sel-sel serupa terorganisasi membentuk jaringan sejati seperti jaring saraf (nerve net) untuk koordinasi tubuh &mdash; lebih kompleks dibandingkan Porifera yang baru berada pada tingkat organisasi seluler.",
+      "body": "Cnidaria bersifat diploblastik, berkembang dari dua lapisan jaringan embrionik utama: ektoderm (luar) dan endoderm (dalam). Pencernaannya berlangsung di dalam rongga gastrovaskular (usus buta/blind gut), tempat makanan masuk dan sisa pencernaan keluar lewat lubang tunggal yang sama. Salah satu bentuk arsitektur tubuhnya adalah polip, yang bersifat sesil/menetap. Klasifikasi internalnya mencakup tiga kelas utama: Hydrozoa, Scyphozoa, dan Anthozoa.",
+      "morphologyProfile": [
+        {
+          "label": "Simetri Tubuh",
+          "value": "Radial dengan Sumbu Oral-Aboral",
+          "desc": "Tubuh Cnidaria memancar dari sumbu oral (mulut) ke aboral, berbeda dari simetri bilateral pada Platyhelminthes dan filum bilateria lainnya."
+        },
+        {
+          "label": "Lapisan Embrionik",
+          "value": "Diploblastik",
+          "desc": "Berkembang dari dua lapisan jaringan embrionik &mdash; ektoderm (luar) dan endoderm (dalam) &mdash; tanpa lapisan mesoderm sejati seperti pada hewan triploblastik."
+        },
+        {
+          "label": "Rongga Pencernaan",
+          "value": "Gastrovaskular (Usus Buta)",
+          "desc": "Makanan masuk dan sisa pencernaan keluar lewat lubang tunggal yang sama pada rongga gastrovaskular, karena Cnidaria tidak memiliki saluran pencernaan lengkap dengan anus terpisah."
+        }
+      ],
+      "habitat": "Sumber mencatat ilustrasi ekosistem terumbu karang dan biota laut sebagai gambaran habitat Cnidaria.",
+      "habitatProfile": [
+        {
+          "label": "Ekosistem Laut",
+          "value": "Terumbu Karang",
+          "desc": "Cnidaria seperti karang berperan penting sebagai pembentuk terumbu karang (coral reef) yang menopang keanekaragaman hayati laut."
+        }
+      ],
+      "nutrition": "Pencernaan Cnidaria terjadi di dalam rongga gastrovaskular (blind gut); makanan yang dikonsumsi dicerna di rongga ini, dan materi tak tercerna dikeluarkan kembali melalui mulut yang sama.",
+      "reproduction": "Cnidaria dapat bereproduksi secara aseksual lewat pertunasan (budding), seperti pada genus Hydra, maupun lewat fragmentasi &mdash; tubuh membelah menjadi dua dan meregenerasi bagian yang hilang, seperti pada sebagian besar anemon laut dan hydroid.",
+      "ecology": "Cnidaria seperti karang berperan penting dalam ekosistem laut sebagai pembentuk terumbu karang (coral reef) yang menopang keanekaragaman hayati laut.",
+      "ecologyRoles": {
+        "benefits": [
+          "Pembentuk Terumbu Karang &mdash; karang (Anthozoa) membangun struktur terumbu yang menopang keanekaragaman hayati laut yang sangat tinggi."
         ],
-        "answer": "Cnidaria",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari tentakel dan ciri sel penyengat; simetri radial juga membantu."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan spesifik dari Cnidaria."
+        ]
+      },
+      "examples": "Botruanthus benedini, Dendronephthya sp., Hydra sp.",
+      "exampleNotes": [
+        { "name": "Botruanthus benedini", "note": "Spesies anemon tabung (tube anemone) yang ditemukan di Samudra Pasifik timur" },
+        { "name": "Dendronephthya sp.", "note": "Polip cnidaria yang merepresentasikan simetri radial dan tingkat organisasi sel-jaringan" },
+        { "name": "Hydra sp.", "note": "Contoh klasik cnidaria yang melakukan reproduksi aseksual lewat pembentukan tunas (budding)" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Cnidaria adalah simetri radial dengan sumbu oral-aboral, rongga gastrovaskular bermulut tunggal, dan tingkat organisasi sel-jaringan dengan jaring saraf sederhana.",
+      "challenge": {
+        "question": "Tingkat organisasi tubuh Cnidaria yang lebih kompleks dibandingkan Porifera ditandai dengan kehadiran…",
+        "options": [
+          "Rongga tubuh sejati (selom)",
+          "Jaringan sejati seperti jaring saraf (nerve net)",
+          "Sistem organ lengkap",
+          "Segmentasi tubuh"
+        ],
+        "answer": "Jaringan sejati seperti jaring saraf (nerve net)",
+        "explanation": "Cnidaria berada pada tingkat organisasi sel-jaringan (cell-tissue grade), di mana sel-sel serupa terorganisasi membentuk jaringan sejati seperti jaring saraf untuk koordinasi tubuh, sesuatu yang tidak dimiliki Porifera yang baru pada tingkat organisasi seluler."
       }
     },
     "platyhelminthes": {
       "id": "platyhelminthes",
       "kingdom": "animalia",
       "label": "Platyhelminthes",
-      "title": "Animalia — Platyhelminthes",
+      "title": "Animalia — Platyhelminthes (Cacing Pipih)",
       "scientific": "Platyhelminthes",
-      "definition": "Cacing pipih dengan tubuh dorsoventral pipih dan simetri bilateral.",
-      "body": "Triploblastik, tidak memiliki rongga tubuh sejati.",
-      "habitat": "Air, tanah lembap, atau sebagai parasit.",
-      "nutrition": "Karnivor, pemakan detritus, atau parasit.",
-      "reproduction": "Banyak hermafrodit; reproduksi seksual dan regenerasi pada beberapa kelompok.",
-      "ecology": "Predator kecil, pengurai, dan parasit.",
-      "examples": "Planarians, tapeworms",
-      "recognize": "Cari tubuh pipih bilateral; perhatikan apakah hidup bebas atau parasitik.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari tubuh pipih bilateral; perhatikan apakah hidup bebas atau parasitik.",
-        "options": [
-          "Platyhelminthes",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Platyhelminthes (cacing pipih) adalah kelompok hewan triploblastik pada tingkat organisasi jaringan-organ (tissue-organ grade), di mana jaringan terorganisasi membentuk organ berspesialisasi seperti bintik mata (eyespots), probosis, dan sistem reproduksi. Memiliki simetri bilateral dan tergolong Bilateria, serta bersifat aselomata &mdash; tidak memiliki rongga tubuh sekunder di luar saluran pencernaan, dengan ruang antara epidermis dan usus terisi penuh jaringan mesoderm parenkim. Berdasarkan perkembangan embrionalnya, Platyhelminthes dikelompokkan ke dalam Protostomia, klade Lophotrochozoa.",
+      "body": "Tubuh cacing pipih memipih menyerupai pita atau cakram (pemipihan dorsoventral), memungkinkan ukuran tubuh besar tanpa kompleksitas organ internal rumit karena tidak ada sel internal yang berjarak terlalu jauh dari permukaan luar tubuh. Saluran pencernaannya berupa usus buta (blind gut/gastrovascular cavity) tempat makanan masuk dan sisa metabolisme keluar lewat lubang tunggal; pada beberapa kelompok, saluran pencernaan bahkan tidak ada sama sekali. Seluruh jaringan mesoderm pembentuk organ dan parenkim pada embrio Platyhelminthes yang mengalami pembelahan spiral berasal dari satu sel blastomer khusus bernama sel 4d.",
+      "morphologyProfile": [
+        {
+          "label": "Bentuk Tubuh",
+          "value": "Gepeng Dorsoventral",
+          "desc": "Tubuh memipih menyerupai pita atau cakram, solusi evolusioner yang memungkinkan ukuran besar tanpa memerlukan sistem peredaran darah atau organ pernapasan internal kompleks."
+        },
+        {
+          "label": "Rongga Tubuh",
+          "value": "Aselomata",
+          "desc": "Tidak memiliki rongga tubuh sekunder di luar saluran pencernaan; ruang antara epidermis dan usus terisi penuh oleh jaringan mesoderm parenkim."
+        },
+        {
+          "label": "Asal Mesoderm",
+          "value": "Sel 4d",
+          "desc": "Pada embrio yang mengalami pembelahan spiral, seluruh jaringan mesoderm pembentuk organ dan parenkim berasal dari satu sel blastomer khusus pada tahap 29&ndash;64 sel, disebut sel 4d."
+        }
+      ],
+      "habitat": "Cacing pipih mencakup kelompok hidup bebas maupun endoparasit pada organisme lain.",
+      "habitatProfile": [
+        {
+          "label": "Hidup Bebas",
+          "value": "Perairan & Tanah Lembap",
+          "desc": "Sejumlah spesies cacing pipih hidup bebas, dicontohkan lewat Planaria sp. sebagai organisme aselomata klasik."
+        },
+        {
+          "label": "Endoparasit",
+          "value": "Menempati Organisme Inang",
+          "desc": "Kelompok lain hidup sebagai endoparasit di dalam tubuh organisme inang lain."
+        }
+      ],
+      "nutrition": "Cacing pipih memperoleh makanan lewat rongga gastrovaskular; kelompok yang tidak memiliki usus (no gut) menyerap nutrisi secara langsung dari lingkungan atau inangnya.",
+      "reproduction": "Sebagian besar cacing pipih bersifat hermafrodit (monoecious), memiliki organ reproduksi jantan dan betina dalam satu individu. Reproduksi aseksual dapat berlangsung lewat partenogenesis amiotik (telur dibentuk tanpa pembelahan meiosis) maupun ginogenesis.",
+      "ecology": "Sumber materi ini tidak membahas secara rinci peran ekologis maupun dampak medis Platyhelminthes.",
+      "ecologyRoles": {
+        "benefits": [
+          "Catatan &mdash; sumber tidak mencantumkan detail peran ekologis menguntungkan Platyhelminthes secara spesifik."
         ],
-        "answer": "Platyhelminthes",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari tubuh pipih bilateral; perhatikan apakah hidup bebas atau parasitik."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak medis atau ekologis merugikan Platyhelminthes secara spesifik dalam materi ini."
+        ]
+      },
+      "examples": "Planaria sp.",
+      "exampleNotes": [
+        { "name": "Planaria sp.", "note": "Cacing pipih aselomata klasik yang embrionya berkembang hingga gastrula awal lalu membentuk lapisan mesoderm parenkim pengisi rongga tubuh" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Platyhelminthes adalah tubuh gepeng bersimetri bilateral, tanpa rongga tubuh sejati (aselomata), dan seringnya sifat hermafrodit pada organ reproduksinya.",
+      "challenge": {
+        "question": "Mengapa cacing pipih dapat tumbuh berukuran relatif besar tanpa memiliki sistem peredaran darah atau organ pernapasan internal yang kompleks?",
+        "options": [
+          "Karena tubuhnya memipih (dorsoventral) sehingga tidak ada sel internal yang berjarak jauh dari permukaan luar",
+          "Karena memiliki rongga tubuh sejati yang efisien",
+          "Karena bersifat diploblastik",
+          "Karena mengalami segmentasi tubuh"
+        ],
+        "answer": "Karena tubuhnya memipih (dorsoventral) sehingga tidak ada sel internal yang berjarak jauh dari permukaan luar",
+        "explanation": "Pemipihan dorsoventral pada Platyhelminthes merupakan solusi geometris rasio luas permukaan terhadap volume: bentuk gepeng memungkinkan pertukaran zat berlangsung langsung lewat difusi ke seluruh sel tubuh tanpa memerlukan sistem sirkulasi atau pernapasan internal yang rumit."
       }
     },
     "nematoda": {
       "id": "nematoda",
       "kingdom": "animalia",
       "label": "Nematoda",
-      "title": "Animalia — Nematoda",
+      "title": "Animalia — Nematoda (Cacing Gilig)",
       "scientific": "Nematoda",
-      "definition": "Cacing gilig dengan tubuh silindris tidak bersegmen dan kutikula.",
-      "body": "Bilateral; pseudocoelomate; tubuh dilindungi kutikula.",
-      "habitat": "Tanah, air, jaringan tumbuhan/hewan, dan lingkungan lain.",
-      "nutrition": "Makan bakteri, fungi, jaringan, atau menjadi parasit.",
-      "reproduction": "Reproduksi seksual umum; jantan dan betina biasanya terpisah.",
-      "ecology": "Penting dalam jaring makanan tanah; sebagian merupakan parasit.",
-      "examples": "Roundworms",
-      "recognize": "Cari tubuh silindris ramping tanpa segmen dan kutikula.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari tubuh silindris ramping tanpa segmen dan kutikula.",
-        "options": [
-          "Nematoda",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Nematoda (roundworms/cacing gilig) adalah filum hewan triploblastik yang dikelompokkan ke dalam klade Ecdysozoa pada divisi Protostomia. Memiliki simetri bilateral dan rongga tubuh semu (pseudoselomata/pseudocoelom) &mdash; rongga berisi cairan yang hanya dilapisi mesoderm di dinding luar tubuh, tidak pada saluran pencernaan. Kriteria ini membedakannya dari Platyhelminthes (aselomata) dan Annelida (selomata sejati). Tubuh Nematoda tidak bersegmen, berbeda dari Annelida yang bermetamerisme, dan mengalami proses ganti kulit (ecdysis).",
+      "body": "Nematoda memiliki bentuk tubuh silindris (roundworm) yang dilapisi kutikula pelindung, dengan arsitektur tube-within-a-tube berupa saluran pencernaan lengkap (complete gut) di mana makanan mengalir satu arah dari mulut hingga anus yang terpisah. Data genetik molekuler menempatkan Nematoda lebih dekat kekerabatannya dengan Arthropoda dalam klade Ecdysozoa karena keduanya sama-sama mengalami ecdysis (pengelupasan kutikula), memperbarui pengelompokan tradisional yang hanya berbasis bentuk rongga tubuh.",
+      "morphologyProfile": [
+        {
+          "label": "Rongga Tubuh",
+          "value": "Pseudoselomata (Pseudocoelom)",
+          "desc": "Rongga berisi cairan yang mesodermnya hanya melapisi dinding luar tubuh (di bawah ektoderm), tidak melapisi saluran pencernaan secara utuh seperti pada hewan selomata sejati."
+        },
+        {
+          "label": "Pelindung Tubuh",
+          "value": "Kutikula",
+          "desc": "Lapisan pelindung luar berupa kutikula yang mengalami pengelupasan berkala (ecdysis) seiring pertumbuhan tubuh, ciri khas klade Ecdysozoa."
+        },
+        {
+          "label": "Saluran Pencernaan",
+          "value": "Complete Gut (Tube-within-a-Tube)",
+          "desc": "Berbeda dari Platyhelminthes dan Cnidaria, Nematoda memiliki saluran pencernaan lengkap dengan mulut dan anus terpisah, sehingga makanan mengalir satu arah."
+        }
+      ],
+      "habitat": "Sumber materi ini tidak membahas secara rinci detail habitat Nematoda.",
+      "habitatProfile": [
+        {
+          "label": "Catatan",
+          "value": "Tidak Dibahas Rinci di Sumber",
+          "desc": "Materi sumber hanya mencantumkan judul filum Nematoda tanpa deskripsi habitat spesifik."
+        }
+      ],
+      "nutrition": "Sumber materi ini tidak membahas secara rinci cara hidup Nematoda sebagai pemakan bakteri/fungi maupun parasit.",
+      "reproduction": "Sumber materi ini tidak membahas secara rinci mekanisme reproduksi seksual Nematoda, selain menyebutkan morfologi unik sel spermanya.",
+      "ecology": "Sumber materi ini tidak membahas secara rinci peran ekologis maupun medis Nematoda.",
+      "ecologyRoles": {
+        "benefits": [
+          "Catatan &mdash; sumber tidak mencantumkan detail peran ekologis menguntungkan Nematoda secara spesifik."
         ],
-        "answer": "Nematoda",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari tubuh silindris ramping tanpa segmen dan kutikula."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak medis atau pertanian merugikan Nematoda secara spesifik dalam materi ini."
+        ]
+      },
+      "examples": "Roundworms (nama spesies spesifik tidak dicantumkan pada sumber)",
+      "exampleNotes": [],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Nematoda adalah tubuh silindris tidak bersegmen berlapis kutikula, rongga tubuh semu (pseudoselomata), dan saluran pencernaan lengkap dari mulut hingga anus.",
+      "challenge": {
+        "question": "Analisis filogenetik molekuler menunjukkan Nematoda lebih dekat kekerabatannya dengan Arthropoda dalam klade Ecdysozoa karena keduanya sama-sama…",
+        "options": [
+          "Memiliki rongga tubuh sejati (selomata)",
+          "Mengalami pengelupasan kutikula (ecdysis)",
+          "Bersegmen tubuh (metamerisme)",
+          "Bersifat diploblastik"
+        ],
+        "answer": "Mengalami pengelupasan kutikula (ecdysis)",
+        "explanation": "Nematoda dan Arthropoda sama-sama memiliki kutikula pelindung tubuh yang harus dilepas dan diganti secara berkala seiring pertumbuhan (ecdysis) &mdash; sifat evolusioner bersama yang menjadi dasar pengelompokan keduanya ke dalam klade Ecdysozoa berdasarkan data genetik, menggantikan klasifikasi tradisional berbasis bentuk rongga tubuh saja."
       }
     },
     "annelida": {
       "id": "annelida",
       "kingdom": "animalia",
       "label": "Annelida",
-      "title": "Animalia — Annelida",
+      "title": "Animalia — Annelida (Cacing Bersegmen)",
       "scientific": "Annelida",
-      "definition": "Cacing bersegmen dengan tubuh tersusun atas unit-unit berulang.",
-      "body": "Segmentasi jelas; coelom berkembang baik pada banyak anggota.",
-      "habitat": "Laut, air tawar, dan tanah.",
-      "nutrition": "Pemakan detritus, predator, atau pengisap darah pada kelompok tertentu.",
-      "reproduction": "Seksual; beberapa memiliki regenerasi/aseksual terbatas.",
-      "ecology": "Pengurai, pengaduk tanah, dan bagian penting rantai makanan.",
-      "examples": "Earthworms, leeches, polychaetes",
-      "recognize": "Cari segmentasi tubuh yang jelas dan susunan organ yang mengikuti unit tubuh.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari segmentasi tubuh yang jelas dan susunan organ yang mengikuti unit tubuh.",
-        "options": [
-          "Annelida",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Annelida (dari bahasa Latin annelus, 'cincin-cincin kecil') adalah kelompok cacing bersegmen yang tergolong klade Bilateria dan Lophotrochozoa. Memiliki tubuh bersimetri bilateral, bersifat triploblastik, menunjukkan segmentasi tubuh sejati (metamerisme), dan memiliki rongga tubuh sejati (selomata/eucoelomate) yang dilapisi penuh jaringan mesoderm &mdash; berbeda dari Nematoda yang pseudoselomata dan tidak bersegmen.",
+      "body": "Tubuh Annelida tersusun dari deretan unit segmen berulang (metamere/somit) yang dipisahkan secara internal oleh sekat jaringan (septa). Organ internal berkembang baik dan diulang pada setiap segmen, mencakup sepasang metanefridium (organ ekskresi) dan pasangan ganglion saraf segmental yang dihubungkan batang saraf ventral. Sistem sirkulasinya tertutup, dengan darah mengalir di pembuluh longitudinal dan cabang lateral. Otot sirkular dan longitudinal pada dinding tubuh bekerja berlawanan dengan cairan selom yang bertindak sebagai rangka hidrostatik untuk menghasilkan pergerakan, dibantu seta berbahan kitin untuk mencengkeram substrat.",
+      "morphologyProfile": [
+        {
+          "label": "Segmentasi",
+          "value": "Metamerisme dengan Septa",
+          "desc": "Tubuh tersusun dari unit segmen berulang (metamere/somit) yang dipisahkan secara internal oleh sekat jaringan (septa), dengan organ ekskresi dan ganglion saraf yang diulang di tiap segmen."
+        },
+        {
+          "label": "Sistem Sirkulasi",
+          "value": "Tertutup",
+          "desc": "Darah mengalir di dalam pembuluh darah longitudinal dan pembuluh cabang lateral, sistem sirkulasi tertutup yang lebih efisien dibanding sirkulasi terbuka."
+        },
+        {
+          "label": "Rangka Hidrostatik",
+          "value": "Cairan Selom & Seta",
+          "desc": "Cairan di rongga selom bertindak sebagai rangka hidrostatik yang bekerja berlawanan dengan kontraksi otot sirkular/longitudinal, dibantu seta kitin untuk mencengkeram substrat saat bergerak."
+        }
+      ],
+      "habitat": "Annelida memiliki distribusi ekologis sangat luas. Sebagian besar Polychaeta (cacing laut) hidup di samudra, dari daerah pasang surut hingga lubang sembur hidrotermal laut dalam. Oligochaeta dan Hirudinea banyak menghuni perairan tawar serta lingkungan tanah daratan lembap.",
+      "habitatProfile": [
+        {
+          "label": "Samudra",
+          "value": "Polychaeta",
+          "desc": "Cacing laut berbulu hidup dari daerah pasang surut, dasar laut bentik, hingga lingkungan ekstrem seperti lubang sembur hidrotermal laut dalam."
+        },
+        {
+          "label": "Tanah & Air Tawar",
+          "value": "Oligochaeta & Hirudinea",
+          "desc": "Cacing tanah dan lintah banyak menghuni perairan tawar serta lingkungan tanah daratan yang lembap."
+        }
+      ],
+      "nutrition": "Sebagai detritivor, Annelida seperti cacing tanah memakan tanah atau sisa bahan organik mati dan menyerap nutrisi saat melewati saluran pencernaan lengkap. Sebagai predator/filter feeder, cacing laut Polychaeta berburu invertebrata kecil atau menyaring partikel makanan dari air menggunakan tentakel/parapodia. Sebagai penghisap darah/parasit temporer, lintah menempel pada inang dan menghisap darah atau cairan tubuhnya.",
+      "reproduction": "Sebagian kelompok bersifat hermafrodit/monoecious (cacing tanah dan lintah) namun tetap melakukan fertilisasi silang antarindividu, sedangkan Polychaeta umumnya berkelamin terpisah (dioecious). Pada cacing tanah, klitelum menyekresikan kepompong mukus (cocoon) untuk melindungi telur dan sperma terfertilisasi hingga berkembang menjadi embrio. Beberapa spesies juga mampu bereproduksi aseksual lewat fragmentasi tubuh diikuti kemampuan regenerasi.",
+      "ecology": "Aktivitas cacing tanah meliang di dalam tanah menciptakan rongga udara yang memfasilitasi aerasi dan sirkulasi air tanah, sekaligus mencerna bahan organik mati dan menghasilkan ekskreta (casting) kaya nutrisi yang menyuburkan topsoil.",
+      "ecologyRoles": {
+        "benefits": [
+          "Penggembur & Pengaerasi Tanah &mdash; cacing tanah menciptakan rongga udara yang memfasilitasi aerasi dan sirkulasi air tanah.",
+          "Dekomposer & Penyubur Topsoil &mdash; mencerna bahan organik mati dan menghasilkan ekskreta (casting) kaya nutrisi yang memulihkan kesuburan lapisan tanah atas.",
+          "Sumber Senyawa Medis &mdash; Hirudo medicinalis menyekresikan hirudin, senyawa antikoagulan yang dimanfaatkan dalam terapi medis bedah rekonstruktif."
         ],
-        "answer": "Annelida",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari segmentasi tubuh yang jelas dan susunan organ yang mengikuti unit tubuh."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan langsung dari Annelida terhadap manusia atau ekosistem selain gigitan lintah penghisap darah."
+        ]
+      },
+      "examples": "Lumbricus terrestris, Hirudo medicinalis, Spirobranchus giganteus, Hesiolyra bergi",
+      "exampleNotes": [
+        { "name": "Lumbricus terrestris", "note": "Cacing tanah darat yang berperan penting menguraikan bahan organik dan meningkatkan aerasi tanah pertanian" },
+        { "name": "Hirudo medicinalis", "note": "Lintah medis air tawar yang menyekresikan zat pembius lokal dan senyawa antikoagulan hirudin" },
+        { "name": "Spirobranchus giganteus", "note": "Cacing pohon natal, Polychaeta laut yang hidup menetap dalam tabung kapur di terumbu karang" },
+        { "name": "Hesiolyra bergi", "note": "Polychaeta laut yang hidup bebas di ekosistem ekstrem sekitar lubang sembur hidrotermal laut dalam" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Annelida adalah segmentasi tubuh yang jelas (metamerisme) dengan organ internal yang berulang di tiap segmen, serta rongga tubuh sejati (selomata).",
+      "challenge": {
+        "question": "Perbedaan mendasar yang membedakan Annelida dari Nematoda dalam hal arsitektur tubuh adalah…",
+        "options": [
+          "Annelida memiliki rongga tubuh sejati (selomata) dan tubuh bersegmen, sedangkan Nematoda pseudoselomata dan tidak bersegmen",
+          "Annelida tidak memiliki saluran pencernaan lengkap",
+          "Nematoda memiliki sistem sirkulasi tertutup, Annelida tidak",
+          "Annelida bersifat diploblastik, Nematoda triploblastik"
+        ],
+        "answer": "Annelida memiliki rongga tubuh sejati (selomata) dan tubuh bersegmen, sedangkan Nematoda pseudoselomata dan tidak bersegmen",
+        "explanation": "Annelida memiliki selom sejati yang dilapisi penuh jaringan mesoderm serta tubuh bersegmen (metamerisme) yang jelas, sedangkan Nematoda tergolong pseudoselomata (rongga tubuh semu) dan tubuh silindrisnya tidak bersegmen."
       }
     },
     "mollusca": {
       "id": "mollusca",
       "kingdom": "animalia",
       "label": "Mollusca",
-      "title": "Animalia — Mollusca",
+      "title": "Animalia — Mollusca (Hewan Lunak)",
       "scientific": "Mollusca",
-      "definition": "Hewan bertubuh lunak dengan mantel; banyak memiliki cangkang.",
-      "body": "Tubuh umumnya terdiri atas kaki, massa viseral, dan mantel.",
-      "habitat": "Laut, air tawar, dan darat.",
-      "nutrition": "Herbivor, predator, filter feeder, atau detritivor bergantung kelompok.",
-      "reproduction": "Seksual; pola perkembangan bervariasi.",
-      "ecology": "Konsumen, predator, filter feeder, dan sumber makanan bagi banyak organisme.",
-      "examples": "Snails, clams, squids",
-      "recognize": "Cari tubuh lunak dan mantel; cangkang ada pada banyak tetapi tidak semua anggota.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari tubuh lunak dan mantel; cangkang ada pada banyak tetapi tidak semua anggota.",
-        "options": [
-          "Mollusca",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Mollusca (dari bahasa Latin molluscus, 'lunak') adalah kelompok hewan triploblastik bersimetri bilateral dan bersifat selomata. Seluruh moluska memiliki arsitektur tubuh dasar tiga bagian: kaki berotot (foot) untuk lokomosi/menggali/menempel, massa viseral (visceral mass) yang menampung organ dalam, dan mantel (mantle) yang membungkus massa viseral dan menyekresikan cangkang kapur.",
+      "body": "Mantel membentuk rongga mantel (mantle cavity) berisi air yang menampung insang, anus, dan pori ekskresi. Sebagian besar moluska memiliki radula, sabuk bergigi kitin untuk menggerus makanan. Mantel menyekresikan cangkang pelindung dari kalsium karbonat; pada cumi-cumi dan sotong cangkang mengalami reduksi menjadi cangkang internal, sedangkan pada gurita dan siput telanjang cangkang hilang sepenuhnya. Filum ini terbagi menjadi beberapa kelas utama: Polyplacophora (kiton, cangkang 8 lempeng dorsal), Gastropoda (siput & bekicot, mengalami torsi 180&deg;, ~3/4 spesies moluska), Bivalvia (kima, tiram, kerang, cangkang dua belahan berengsel), dan Cephalopoda (cumi-cumi, gurita, sotong, nautilus, kaki termodifikasi menjadi tentakel).",
+      "morphologyProfile": [
+        {
+          "label": "Tiga Bagian Tubuh",
+          "value": "Kaki, Massa Viseral, Mantel",
+          "desc": "Kaki berotot untuk lokomosi/menggali/menempel, massa viseral menampung organ dalam (pencernaan, ekskresi, reproduksi), dan mantel membungkus massa viseral sekaligus menyekresikan cangkang."
+        },
+        {
+          "label": "Radula",
+          "value": "Organ Pemarut Bergigi Kitin",
+          "desc": "Sabuk bergigi kitin khas moluska (kecuali Bivalvia) yang digunakan untuk menggerus makanan, terutama pada kiton dan gastropoda herbivor."
+        },
+        {
+          "label": "Cangkang",
+          "value": "Kalsium Karbonat, Tereduksi, atau Hilang",
+          "desc": "Mantel menyekresikan cangkang kaku dari kalsium karbonat; cephalopoda modern seperti cumi-cumi dan sotong mereduksinya menjadi cangkang internal, sedangkan gurita dan siput telanjang kehilangannya sepenuhnya."
+        }
+      ],
+      "habitat": "Habitat moluska sangat luas: laut menjadi habitat utama mayoritas spesies (dari daerah pasang surut hingga laut dalam), air tawar dihuni kima/remis/siput air tawar, dan darat dihuni siput darat (bekicot) serta siput telanjang yang beradaptasi dengan lingkungan lembap.",
+      "habitatProfile": [
+        {
+          "label": "Laut",
+          "value": "Habitat Utama Mayoritas Spesies",
+          "desc": "Dari daerah pasang surut hingga laut dalam, laut menjadi rumah bagi mayoritas spesies moluska termasuk seluruh Cephalopoda."
+        },
+        {
+          "label": "Air Tawar",
+          "value": "Kima, Remis, & Siput Air Tawar",
+          "desc": "Berbagai spesies bivalvia dan gastropoda air tawar menghuni sungai, danau, dan kolam."
+        },
+        {
+          "label": "Darat",
+          "value": "Siput Darat & Siput Telanjang",
+          "desc": "Bekicot dan siput telanjang (slug) beradaptasi hidup di lingkungan darat yang lembap."
+        }
+      ],
+      "nutrition": "Sebagai herbivor, kiton dan mayoritas gastropoda menggerus alga dari bebatuan atau memakan tumbuhan menggunakan radula. Sebagai predator/karnivor, cephalopoda memburu mangsa aktif dengan tentakel dan paruh beracun, atau siput pemangsa membor cangkang moluska lain. Sebagai pemakan suspensi (filter feeder), bivalvia menyaring partikel makanan organik halus dari aliran air lewat mukus pada insang.",
+      "reproduction": "Sebagian besar spesies berkelamin terpisah (dioecious) dengan gonad di massa viseral, meski banyak siput darat bersifat hermafrodit. Fertilisasi dapat eksternal maupun internal. Pada sebagian besar moluska laut, perkembangan telur menghasilkan tahap larva bersilia berenang bebas bernama larva trokofor (trochophore).",
+      "ecology": "Bivalvia berperan sebagai penyaring air alami (biofilter) yang membersihkan perairan dari suspensi organik dan alga berlebih, sementara Cephalopoda dan Gastropoda berperan sebagai predator dan mangsa kunci dalam jaring-jaring makanan laut. Moluska juga menjadi sumber protein hewani bernilai ekonomi tinggi bagi manusia.",
+      "ecologyRoles": {
+        "benefits": [
+          "Biofilter Alami &mdash; Bivalvia menyaring suspensi organik dan alga berlebih, membersihkan kualitas air perairan.",
+          "Predator & Mangsa Kunci &mdash; Cephalopoda dan Gastropoda menjaga keseimbangan jaring-jaring makanan laut.",
+          "Sumber Pangan Ekonomi &mdash; cumi-cumi, tiram, kerang, dan remis menjadi sumber protein hewani bernilai ekonomi tinggi bagi manusia."
         ],
-        "answer": "Mollusca",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari tubuh lunak dan mantel; cangkang ada pada banyak tetapi tidak semua anggota."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan spesifik dari Mollusca."
+        ]
+      },
+      "examples": "Loligo sp., Architeuthis dux, Achatina fulica, Mytilus edulis, Nautilus sp.",
+      "exampleNotes": [
+        { "name": "Loligo sp.", "note": "Cumi-cumi, Cephalopoda predator laut berenang cepat dengan cangkang internal tereduksi" },
+        { "name": "Architeuthis dux", "note": "Cumi-cumi raksasa laut dalam, mangsa utama paus sperma" },
+        { "name": "Achatina fulica", "note": "Bekicot, Gastropoda darat yang menggunakan rongga mantel berpembuluh darah sebagai paru-paru" },
+        { "name": "Mytilus edulis", "note": "Kerang laut/remis, Bivalvia pemakan suspensi yang menempel dengan benang byssal" },
+        { "name": "Nautilus sp.", "note": "Satu-satunya genus Cephalopoda modern yang masih mempertahankan cangkang eksternal beruang-ruang" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Mollusca adalah tubuh lunak yang terbagi menjadi kaki, massa viseral, dan mantel; cangkang kapur hadir pada banyak anggota namun tidak selalu ada.",
+      "challenge": {
+        "question": "Mengapa Cephalopoda mengembangkan sistem peredaran darah tertutup dan otak besar yang kompleks, berbeda dari Bivalvia yang bersirkulasi terbuka?",
+        "options": [
+          "Karena Cephalopoda adalah predator laut aktif yang membutuhkan suplai oksigen cepat dan koordinasi saraf tinggi untuk berburu",
+          "Karena Cephalopoda tidak memiliki cangkang sama sekali",
+          "Karena Bivalvia hidup di darat sehingga tidak memerlukan sirkulasi kompleks",
+          "Karena Cephalopoda tidak memiliki radula"
+        ],
+        "answer": "Karena Cephalopoda adalah predator laut aktif yang membutuhkan suplai oksigen cepat dan koordinasi saraf tinggi untuk berburu",
+        "explanation": "Gaya hidup Cephalopoda sebagai predator laut aktif menuntut sistem sirkulasi darah tertutup yang lebih efisien mengantarkan oksigen, serta sefalisasi (otak besar dan mata kompleks) untuk berburu dan memecahkan masalah &mdash; berbeda dari Bivalvia yang bergerak lambat sebagai pemakan suspensi dan tidak membutuhkan kompleksitas saraf setinggi itu."
       }
     },
     "arthropoda": {
       "id": "arthropoda",
       "kingdom": "animalia",
       "label": "Arthropoda",
-      "title": "Animalia — Arthropoda",
+      "title": "Animalia — Arthropoda (Hewan Berbuku-buku)",
       "scientific": "Arthropoda",
-      "definition": "Hewan dengan kaki beruas, tubuh bersegmen, dan eksoskeleton.",
-      "body": "Eksoskeleton kitin; appendages beruas; segmentasi tubuh termodifikasi.",
-      "habitat": "Hampir semua habitat darat dan air.",
-      "nutrition": "Herbivor, predator, detritivor, parasit, dan filter feeder.",
-      "reproduction": "Seksual; pertumbuhan memerlukan molting.",
-      "ecology": "Penyerbuk, predator, pengurai, dan komponen utama jaring makanan.",
-      "examples": "Insects, spiders, crustaceans",
-      "recognize": "Cari eksoskeleton dan appendages beruas; molting adalah bagian penting siklus hidup.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari eksoskeleton dan appendages beruas; molting adalah bagian penting siklus hidup.",
-        "options": [
-          "Arthropoda",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Arthropoda (dari bahasa Yunani arthron = sendi/buku, pous = kaki) merupakan filum terbesar di Kingdom Animalia &mdash; sekitar dua dari tiga spesies hewan yang telah dideskripsikan di bumi adalah anggotanya. Cirinya meliputi eksoskeleton kaku dari protein dan kitin, anggota tubuh/kaki beruas-ruas (jointed appendages), bersifat triploblastik, bersimetri bilateral, dan tergolong selomata dengan rongga tubuh utama berupa hemosol (hemocoel) dalam sistem sirkulasi terbuka.",
+      "body": "Eksoskeleton kitin melindungi organ dalam, mencegah dehidrasi di daratan, dan menyediakan tempat perlekatan otot. Tubuh bersegmen mengalami tagmatisasi &mdash; penyatuan dan spesialisasi fungsi menjadi tagmata seperti kepala-toraks-abdomen pada serangga, atau sefalotoraks-abdomen pada keliserata dan mayoritas krustasea. Karena eksoskeleton kaku tidak dapat membesar, Arthropoda harus melepas kerangka lamanya secara berkala lewat molting (ekdisis) dan menyekresikan eksoskeleton baru yang lebih besar. Filum ini terbagi menjadi empat subfilum: Cheliceriformes (laba-laba, kalajengking, mimi), Myriapoda (kaki-seribu, lipan), Hexapoda (serangga), dan Crustacea (udang, kepiting, krill).",
+      "morphologyProfile": [
+        {
+          "label": "Eksoskeleton",
+          "value": "Kitin & Protein",
+          "desc": "Rangka luar kaku yang melindungi organ dalam, mencegah dehidrasi/kehilangan air di daratan, serta menyediakan tempat perlekatan otot untuk pergerakan."
+        },
+        {
+          "label": "Tagmatisasi",
+          "value": "Kepala-Toraks-Abdomen atau Sefalotoraks-Abdomen",
+          "desc": "Tubuh bersegmen menyatu dan terspesialisasi menjadi tagmata: kepala, toraks, abdomen pada serangga; atau sefalotoraks (kepala-dada menyatu) dan abdomen pada keliserata dan mayoritas krustasea."
+        },
+        {
+          "label": "Molting (Ekdisis)",
+          "value": "Pergantian Eksoskeleton Berkala",
+          "desc": "Karena eksoskeleton kaku tidak dapat membesar, Arthropoda harus melepas kerangka lama secara berkala dan menyekresikan eksoskeleton baru yang lebih besar untuk tumbuh."
+        }
+      ],
+      "habitat": "Arthropoda memiliki kisaran habitat paling luas di antara semua filum hewan &mdash; ditemukan di hampir seluruh biosfer: laut dan air tawar (didominasi Crustacea), daratan (didominasi Hexapoda, Arachnida, dan Myriapoda), hingga udara (serangga terbang).",
+      "habitatProfile": [
+        {
+          "label": "Laut & Air Tawar",
+          "value": "Crustacea",
+          "desc": "Krustasea seperti udang, kepiting, dan krill mendominasi ekosistem akuatik laut maupun air tawar."
+        },
+        {
+          "label": "Daratan",
+          "value": "Hexapoda, Arachnida, & Myriapoda",
+          "desc": "Serangga, laba-laba/kalajengking, serta kaki-seribu/lipan mendominasi habitat daratan di hampir seluruh biosfer."
+        },
+        {
+          "label": "Udara",
+          "value": "Serangga Terbang",
+          "desc": "Hexapoda bersayap merupakan satu-satunya kelompok invertebrata yang berhasil beradaptasi untuk terbang aktif di udara."
+        }
+      ],
+      "nutrition": "Cara hidup dan organ pencernaan Arthropoda sangat bervariasi: herbivor (belalang, kaki-seribu), predator/karnivor (laba-laba, kalajengking, lipan, capung), parasit/ektoparasit (caplak, tungau, kutu, pinjal), detritivor/dekomposer (rayap, kutu kayu), dan filter feeder (teritip).",
+      "reproduction": "Umumnya bereproduksi secara seksual dengan kelamin terpisah (dioecious) dan fertilisasi internal pada spesies darat. Pertumbuhan individu bersifat tidak kontinu dan memerlukan molting bertahap. Pada serangga, pertumbuhan larva menuju dewasa mengalami metamorfosis tidak sempurna (tahap nimfa) atau metamorfosis sempurna (larva &rarr; pupa &rarr; imago/dewasa).",
+      "ecology": "Sebagai penyerbuk, sumber pangan penyokong jaring makanan, sekaligus dekomposer bahan organik, Arthropoda memegang peran ekologis sentral di hampir semua ekosistem. Namun sejumlah spesies juga menjadi hama pertanian maupun vektor penyakit berbahaya bagi manusia.",
+      "ecologyRoles": {
+        "benefits": [
+          "Penyerbuk (Polinator) &mdash; lebah madu Apis mellifera menyerbuki tanaman pertanian dan bunga liar.",
+          "Sumber Pangan & Jaring Makanan &mdash; krill Euphausia superba, udang, dan kepiting menjadi sumber protein manusia sekaligus penyokong jaring makanan samudra.",
+          "Dekomposer &mdash; kutu kayu Armadillidium vulgare dan rayap menguraikan bahan organik mati tanah."
         ],
-        "answer": "Arthropoda",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari eksoskeleton dan appendages beruas; molting adalah bagian penting siklus hidup."
+        "harms": [
+          "Hama Pertanian &mdash; kumbang jepang Popillia japonica dan belalang merusak tanaman pangan.",
+          "Vektor Penyakit &mdash; nyamuk Anopheles sp. menyebarkan malaria dan lalat tsetse Glossina sp. menyebarkan penyakit tidur."
+        ]
+      },
+      "examples": "Apis mellifera, Limulus polyphemus, Scolopendra morsitans, Euphausia superba, Drosophila melanogaster",
+      "exampleNotes": [
+        { "name": "Apis mellifera", "note": "Lebah madu (Hexapoda), serangga sosial penyerbuk penghasil madu dan lilin lebah" },
+        { "name": "Limulus polyphemus", "note": "Mimi/horseshoe crab (Cheliceriformes), 'fosil hidup' laut dengan darah biru untuk deteksi endotoksin" },
+        { "name": "Scolopendra morsitans", "note": "Lipan (Myriapoda), karnivor darat bersegmen dengan cakar beracun pelumpuh mangsa" },
+        { "name": "Euphausia superba", "note": "Krill Antartika (Crustacea), planktonik bergerombol, makanan utama paus balin" },
+        { "name": "Drosophila melanogaster", "note": "Lalat buah (Hexapoda), organisme model klasik riset genetika dan biologi perkembangan" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Arthropoda adalah eksoskeleton kaku dari kitin, anggota tubuh beruas-ruas, dan tubuh bersegmen yang tergabung menjadi tagmata (kepala, toraks, abdomen atau sefalotoraks-abdomen).",
+      "challenge": {
+        "question": "Struktur sayap serangga memberikan keuntungan adaptif dibanding vertebrata terbang karena…",
+        "options": [
+          "Sayap serangga adalah penjuluran kutikula toraks, bukan modifikasi tungkai, sehingga kaki tetap berfungsi penuh untuk lokomosi",
+          "Sayap serangga terbuat dari tulang seperti sayap burung",
+          "Serangga tidak memerlukan otot untuk terbang",
+          "Sayap serangga selalu lebih besar dari tubuhnya"
+        ],
+        "answer": "Sayap serangga adalah penjuluran kutikula toraks, bukan modifikasi tungkai, sehingga kaki tetap berfungsi penuh untuk lokomosi",
+        "explanation": "Berbeda dari vertebrata terbang (burung, kelelawar) yang harus memodifikasi sepasang kaki depannya menjadi sayap, sayap serangga merupakan perluasan/ekstensi kutikula luar toraks &mdash; sehingga serangga tetap mempertahankan tiga pasang kaki penuh untuk berjalan sekaligus mampu terbang, memberikan efisiensi lokomosi ganda di daratan dan udara."
       }
     },
     "echinodermata": {
       "id": "echinodermata",
       "kingdom": "animalia",
       "label": "Echinodermata",
-      "title": "Animalia — Echinodermata",
+      "title": "Animalia — Echinodermata (Hewan Berkulit Duri)",
       "scientific": "Echinodermata",
-      "definition": "Hewan laut dengan sistem pembuluh air dan ciri dewasa berupa simetri radial sekunder.",
-      "body": "Endoskeleton berkapur; sistem pembuluh air; larva bilateral.",
-      "habitat": "Laut.",
-      "nutrition": "Predator, herbivor, detritivor, atau pemakan suspensi.",
-      "reproduction": "Seksual umum; regenerasi kuat pada beberapa kelompok.",
-      "ecology": "Mempengaruhi struktur komunitas dasar laut.",
-      "examples": "Starfish, sea urchins, sea cucumbers",
-      "recognize": "Cari habitat laut, kaki tabung, dan pola tubuh radial pada dewasa.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari habitat laut, kaki tabung, dan pola tubuh radial pada dewasa.",
-        "options": [
-          "Echinodermata",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Echinodermata (dari bahasa Yunani echin = berduri, derma = kulit) adalah kelompok hewan triploblastik bersimetri radial yang tergolong klade Deuterostomia bersama Chordata. Larvanya bersimetri bilateral, namun saat dewasa tubuhnya berubah menjadi bersimetri radial (umumnya memancar dalam 5 ruji/penta-radial). Ciri paling unik filum ini adalah sistem pembuluh air (water vascular system) &mdash; jejaring kanal hidraulik internal bercabang yang terhubung dengan kaki tabung (tube feet).",
+      "body": "Echinodermata memiliki endoskeleton lempengan kapur (calcareous plates) yang keras, dilapisi epidermis tipis dan umumnya dilengkapi duri atau tonjolan kaku. Kaki tabung digerakkan secara hidraulik oleh sistem pembuluh air lewat kombinasi organ ampula dan podium, menyekresikan zat adhesif untuk melekat dan de-adhesif untuk melepas substrat &mdash; berfungsi untuk lokomosi, menangkap mangsa, dan pertukaran gas. Filum ini terbagi menjadi 6 kelas: Asteroidea (bintang laut), Ophiuroidea (bintang mengular), Echinoidea (bulu babi & dolar pasir), Crinoidea (lili laut & bintang bulu), Holothuroidea (teripang), dan Concentricycloidea (aster laut).",
+      "morphologyProfile": [
+        {
+          "label": "Sistem Pembuluh Air",
+          "value": "Water Vascular System",
+          "desc": "Jejaring kanal hidraulik internal bercabang yang terhubung dengan kaki tabung, menjadi ciri paling unik dan diagnostik seluruh anggota Echinodermata."
+        },
+        {
+          "label": "Kaki Tabung",
+          "value": "Digerakkan Ampula & Podium",
+          "desc": "Kaki tabung (tube feet) digerakkan secara hidraulik, menyekresikan zat adhesif untuk melekat dan de-adhesif untuk melepas substrat; berfungsi untuk lokomosi, menangkap mangsa, dan pertukaran gas."
+        },
+        {
+          "label": "Endoskeleton",
+          "value": "Lempengan Kapur Berduri",
+          "desc": "Epidermis tipis melapisi endoskeleton lempengan kapur (calcareous plates) yang keras dan umumnya dilengkapi duri atau tonjolan kaku, sumber nama 'berkulit duri'."
+        }
+      ],
+      "habitat": "Seluruh anggota Echinodermata hidup di laut (marine), umumnya bentik di dasar laut dengan pergerakan lambat atau bersifat sesil.",
+      "habitatProfile": [
+        {
+          "label": "Dasar Laut (Bentik)",
+          "value": "Habitat Eksklusif Marine",
+          "desc": "Seluruh anggota Echinodermata hidup eksklusif di laut, umumnya bentik di dasar laut dengan pergerakan lambat atau bersifat sesil (menetap)."
+        }
+      ],
+      "nutrition": "Sebagai predator, bintang laut mendekap cangkang bivalvia dengan kaki tabung lalu menjulurkan lambungnya ke dalam cangkang mangsa untuk mencerna secara eksternal. Sebagai herbivor, bulu babi memakan alga/rumput laut dengan organ mulut mirip-rahang. Sebagai filter feeder, lili laut dan bintang bulu menangkap partikel makanan dengan lengan berbulu. Sebagai detritivor, bintang mengular dan teripang mengonsumsi bangkai dan materi organik mati di dasar laut.",
+      "reproduction": "Umumnya berkelamin terpisah (dioecious), melepaskan gamet langsung ke air laut untuk fertilisasi eksternal. Bintang laut dan ekinodermata lain memiliki kemampuan regenerasi organ tubuh sangat tinggi &mdash; dapat menumbuhkan kembali lengan yang putus, bahkan sepotong lengan dapat tumbuh menjadi individu utuh jika masih membawa sebagian cakram pusat.",
+      "ecology": "Bintang laut berperan mengontrol populasi cangkang bivalvia sebagai predator utama, sedangkan bulu babi mengontrol keberlimpahan rumput laut/alga di ekosistem bentik, menjadikan Echinodermata pengatur penting struktur komunitas dasar laut.",
+      "ecologyRoles": {
+        "benefits": [
+          "Predator Kontrol Populasi &mdash; bintang laut mengontrol populasi bivalvia sebagai predator utama di komunitas dasar laut.",
+          "Pengontrol Alga &mdash; bulu babi mengontrol keberlimpahan rumput laut/alga di ekosistem bentik, menjaga keseimbangan komunitas."
         ],
-        "answer": "Echinodermata",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari habitat laut, kaki tabung, dan pola tubuh radial pada dewasa."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan spesifik dari Echinodermata."
+        ]
+      },
+      "examples": "Asteroidea, Echinoidea, Holothuroidea (nama spesies binomial spesifik tidak dicantumkan pada sumber)",
+      "exampleNotes": [
+        { "name": "Asteroidea (Bintang laut)", "note": "Lengan majemuk memancar dari cakram pusat, predator bivalvia dengan mekanisme lambung eversible" },
+        { "name": "Echinoidea (Bulu babi & Dolar pasir)", "note": "Tubuh bulat/cakram tanpa lengan, duri dapat digerakkan, struktur mulut mirip-rahang" },
+        { "name": "Holothuroidea (Teripang)", "note": "Tubuh memanjang tanpa duri, endoskeleton tereduksi, tentakel penangkap makanan di sekitar mulut" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Echinodermata adalah simetri radial (biasanya 5 ruji) pada fase dewasa, endoskeleton kapur berduri, dan kaki tabung yang digerakkan sistem pembuluh air.",
+      "challenge": {
+        "question": "Perubahan simetri tubuh Echinodermata dari bilateral (larva) menjadi radial (dewasa) merupakan bentuk adaptasi sekunder yang menguntungkan…",
+        "options": [
+          "Gaya hidup predator aktif yang berburu mangsa cepat",
+          "Gaya hidup bentik yang bergerak lambat atau sesil",
+          "Kemampuan terbang di udara",
+          "Kehidupan parasit di dalam inang"
+        ],
+        "answer": "Gaya hidup bentik yang bergerak lambat atau sesil",
+        "explanation": "Simetri radial memungkinkan Echinodermata dewasa merespons lingkungan secara merata dari segala arah tanpa perlu 'kepala' yang mengarahkan pergerakan searah &mdash; sangat sesuai untuk gaya hidup bentik yang bergerak lambat atau menetap di dasar laut, berbeda dari larva bilateralnya yang perlu berenang aktif mencari tempat menetap."
       }
     },
     "chordata": {
       "id": "chordata",
       "kingdom": "animalia",
       "label": "Chordata",
-      "title": "Animalia — Chordata",
+      "title": "Animalia — Chordata (Hewan Kordata/Vertebrata)",
       "scientific": "Chordata",
-      "definition": "Kelompok yang memiliki notokorda, tali saraf dorsal berongga, celah faring, endostil/tiroid, dan ekor post-anal pada setidaknya satu tahap perkembangan.",
-      "body": "Ciri chordata muncul pada tahap perkembangan tertentu; banyak anggota memiliki tulang belakang.",
-      "habitat": "Laut, air tawar, dan darat.",
-      "nutrition": "Sangat beragam: herbivor, karnivor, omnivor, filter feeder.",
-      "reproduction": "Seksual umum; perkembangan sangat beragam.",
-      "ecology": "Konsumen penting dan bagian dari hampir semua tipe ekosistem.",
-      "examples": "Fish, amphibians, reptiles, birds, mammals",
-      "recognize": "Cari ciri chordata pada tahap perkembangan; jangan menyamakan Chordata hanya dengan mamalia.",
-      "challenge": {
-        "question": "Kelompok manakah yang paling sesuai dengan ciri: Cari ciri chordata pada tahap perkembangan; jangan menyamakan Chordata hanya dengan mamalia.",
-        "options": [
-          "Chordata",
-          "Kelompok lain dalam kingdom yang sama",
-          "Kelompok dari kingdom berbeda",
-          "Bukan kelompok biologis"
+      "definition": "Filum Chordata merupakan kelompok hewan triploblastik bersimetri bilateral yang tergolong klade Deuterostomia bersama Echinodermata. Seluruh kordata memiliki 4 ciri struktural kunci yang muncul pada tahap tertentu perkembangan embrioniknya: notokord (batang penyokong fleksibel dorsal), batang saraf dorsal berongga (berkembang menjadi otak dan sumsum tulang belakang), celah/sibakan faring (alat penyaring makanan atau berkembang menjadi insang/struktur leher-telinga), dan ekor post-anal berotot.",
+      "body": "Arsitektur tubuh Chordata mengalami serangkaian inovasi evolusioner bertahap: sefalisasi & kraniata (pembentukan kepala dengan otak terpusat dan tengkorak), bumbungan neural/neural crest (sel embrionik pembentuk tulang tengkorak, gigi, sel saraf), rahang berengsel (Gnathostomata), tungkai berjari (Tetrapoda), hingga telur amniotik (Amniota) untuk beradaptasi penuh di daratan kering. Filum ini terbagi menjadi 3 subfilum: Cephalochordata (lanselet), Urochordata (tunikata), dan Vertebrata/Craniata &mdash; mencakup Agnatha (tak berahang), Chondrichthyes (ikan berkartilago), Osteichthyes (ikan bertulang), Amphibia, Reptilia/Aves, dan Mammalia.",
+      "morphologyProfile": [
+        {
+          "label": "Empat Ciri Kordata",
+          "value": "Notokord, Batang Saraf Dorsal, Celah Faring, Ekor Post-Anal",
+          "desc": "Keempat ciri struktural ini muncul pada tahap tertentu perkembangan embrionik seluruh anggota Chordata, meski tidak semuanya bertahan hingga dewasa pada setiap kelompok."
+        },
+        {
+          "label": "Neural Crest",
+          "value": "Sel Embrionik Pembentuk Kepala",
+          "desc": "Kumpulan sel embrionik unik yang bermigrasi membentuk tulang/kartilago tengkorak, gigi, dan sel saraf, menjadi kunci evolusi sefalisasi (pembentukan kepala) pada Vertebrata."
+        },
+        {
+          "label": "Telur Amniotik",
+          "value": "4 Membran Ekstraembrionik",
+          "desc": "Amniota memiliki amnion (bantalan cairan penahan guncangan), korion (pertukaran gas), kantong kuning telur (nutrisi), dan alantois (penampung sisa metabolik) &mdash; adaptasi kunci untuk berkembang biak penuh di daratan kering."
+        }
+      ],
+      "habitat": "Chordata mendiami kisaran habitat paling luas di biosfer: laut (lanselet, tunikata, ikan, hiu, pari, mamalia laut), air tawar (ikan bertulang, larva lampre, amfibia, kura-kura air tawar), serta darat dan udara (amfibia dewasa, reptil, mamalia, burung).",
+      "habitatProfile": [
+        {
+          "label": "Laut",
+          "value": "Kordata Invertebrata & Vertebrata Laut",
+          "desc": "Dihuni lanselet dan tunikata (kordata invertebrata), ikan pasuk, hiu, pari, serta mamalia laut seperti paus dan lumba-lumba."
+        },
+        {
+          "label": "Air Tawar",
+          "value": "Ikan, Larva Lampre, & Amfibia",
+          "desc": "Berbagai ikan bertulang, larva lampre, amfibia, dan kura-kura air tawar menghuni sungai dan danau."
+        },
+        {
+          "label": "Darat & Udara",
+          "value": "Amfibia Dewasa, Reptil, Mamalia, & Burung",
+          "desc": "Dihuni secara luas oleh amfibia dewasa, reptil, mamalia, serta kelompok burung yang teradaptasi untuk terbang."
+        }
+      ],
+      "nutrition": "Sebagai filter feeder, lanselet, tunikata, dan larva lampre menyaring partikel makanan lewat mukus pada celah faring. Sebagai ektoparasit, lampre dewasa mengisap darah/jaringan ikan lewat mulut parut lingkaran. Sebagai predator/karnivora, hiu, krokodilia, burung pemangsa, dan mamalia karnivora berburu mangsa aktif dengan rahang dan gigi tajam. Sebagai herbivora/omnivora, reptil herbivora, burung, dan mamalia ungulata memakan tumbuhan, buah, atau rumput.",
+      "reproduction": "Fertilisasi eksternal terjadi pada mayoritas ikan bersirip-duri dan amfibia, sedangkan fertilisasi internal terjadi pada hiu, reptil, burung, dan mamalia. Adaptasi Amniota berupa telur amniotik dengan 4 membran ekstraembrionik memungkinkan reproduksi penuh di daratan. Pola perkembangannya bervariasi: ovipar (bertelur, pada sebagian hiu, amfibia, reptil, burung, monotremata), ovovivipar (telur menetas dalam uterus, pada sebagian hiu dan ular), dan vivipar (anak berkembang dalam uterus via plasenta, pada sebagian hiu dan mayoritas mamalia euteria).",
+      "ecology": "Sebagai predator puncak, Chordata mengendalikan populasi herbivora dan invertebrata dalam menjaga keseimbangan jaring-jaring makanan ekosistem laut, air tawar, dan darat, sekaligus menjadi sumber pangan protein hewani terbesar dari sektor perikanan, peternakan, dan perunggasan. Amfibia yang berkulit permeabel dan bertelur tanpa cangkang bertindak sebagai indikator lingkungan yang sangat peka terhadap perubahan iklim dan pencemaran.",
+      "ecologyRoles": {
+        "benefits": [
+          "Predator Puncak &mdash; mengendalikan populasi herbivora dan invertebrata, menjaga keseimbangan jaring-jaring makanan ekosistem laut, air tawar, dan darat.",
+          "Sumber Pangan Global &mdash; sektor perikanan, peternakan, dan perunggasan menjadikan Chordata komoditas ekonomi protein hewani terbesar dunia.",
+          "Indikator Lingkungan &mdash; amfibia sangat peka terhadap perubahan iklim dan pencemaran perairan berkat kulit permeabel dan telur tanpa cangkang."
         ],
-        "answer": "Chordata",
-        "explanation": "Ciri diagnostik yang digunakan adalah: Cari ciri chordata pada tahap perkembangan; jangan menyamakan Chordata hanya dengan mamalia."
+        "harms": [
+          "Catatan &mdash; sumber tidak mencantumkan dampak merugikan spesifik dari Chordata terhadap manusia atau ekosistem lain."
+        ]
+      },
+      "examples": "Branchiostoma sp., Petromyzon marinus, Latimeria chalumnae, Archaeopteryx lithographica, Tachyglossus aculeatus",
+      "exampleNotes": [
+        { "name": "Branchiostoma sp.", "note": "Lanselet (Cephalochordata), kordata invertebrata kecil yang menanamkan tubuh di pasir dan menyaring makanan dari air" },
+        { "name": "Petromyzon marinus", "note": "Lampre laut (Petromyzontida), vertebrata tak berahang parasitik pengisap darah ikan lewat mulut parut melingkar" },
+        { "name": "Latimeria chalumnae", "note": "Koelakan (Sarcopterygii), 'fosil hidup' ikan bersirip-daging dengan tulang batang berdaging di dalam siripnya" },
+        { "name": "Archaeopteryx lithographica", "note": "Fosil transisi burung terawal, memiliki bulu terbang sejati namun mempertahankan gigi dan ekor bertulang khas theropoda" },
+        { "name": "Tachyglossus aculeatus", "note": "Ekidna paruh-pendek (Monotremata), mamalia Australia berduri yang bertelur namun menyusui anaknya" }
+      ],
+      "recognize": "Ciri utama yang bisa diamati untuk mengenali Chordata adalah kehadiran notokord dan batang saraf dorsal tunggal berongga pada tahap perkembangan tertentu &mdash; jangan menyamakan Chordata hanya dengan hewan bertulang belakang (vertebrata) semata.",
+      "challenge": {
+        "question": "Evolusi tulang martil (malleus) dan tulang landasan (incus) di telinga tengah mamalia berasal dari modifikasi…",
+        "options": [
+          "Tulang tengkorak neural crest",
+          "Tulang artikular dan kuadrat pada engsel rahang reptil/sinapsida purba",
+          "Notokord embrionik",
+          "Celah faring embrionik"
+        ],
+        "answer": "Tulang artikular dan kuadrat pada engsel rahang reptil/sinapsida purba",
+        "explanation": "Pada sinapsida awal, sendi rahang bawah dibentuk oleh tulang artikular dan kuadrat. Seiring evolusi menuju mamalia, rahang bawah menyederhana menjadi satu tulang (dentaris), sementara tulang artikular dan kuadrat bergeser posisi masuk ke telinga tengah dan berkembang menjadi tulang martil (malleus) dan tulang landasan (incus) &mdash; contoh klasik penurunan dengan modifikasi (descent with modification) yang meningkatkan sensitivitas pendengaran mamalia di daratan."
       }
     }
   }

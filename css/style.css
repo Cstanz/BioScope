@@ -1047,11 +1047,25 @@ h3 {
     text-overflow: ellipsis !important;
 }
 
+.division-card h3 {
+  min-height: calc(2 * 1.1em);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .division-card p {
     margin: 0;
     color: var(--ink-soft);
     font-size: 13px;
     line-height: 1.75;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-index {
@@ -1803,6 +1817,137 @@ h3 {
   border-left-color: var(--danger);
 }
 
+/* ---------- Two-column info layout (label + heading beside content) ---------- */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 0.85fr 1.7fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.two-col > div:first-child {
+  position: sticky;
+  top: 110px;
+}
+
+/* ---------- Feature grid (used on the About page) ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.feature-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 26px rgba(24, 54, 43, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-dark);
+  box-shadow: var(--shadow);
+}
+
+.feature-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  color: var(--forest-dark);
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feature-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.feature-card .text-link {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------- Citation style switcher & copy button (About page) ---------- */
+
+.cite-style-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 8px;
+}
+
+.cite-style-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: 160ms ease;
+}
+
+.cite-style-btn:hover {
+  border-color: var(--forest);
+  color: var(--ink);
+}
+
+.cite-style-btn.is-active {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--white);
+}
+
+.citation-text {
+  display: block;
+}
+
+.citation-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.citation-copy:hover {
+  color: var(--forest-dark);
+  text-decoration: underline;
+}
+
+.citation-copy.is-copied {
+  color: var(--accent);
+}
+
 /* ---------- Info cards (used for morphology & habitat profile rows) ---------- */
 
 .info-card-grid {
@@ -2231,6 +2376,11 @@ legend {
   .quiz-panel,
   .two-col {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .two-col > div:first-child {
+    position: static;
   }
 }
 
