@@ -26,11 +26,13 @@
   --serif: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
   --radius: 4px;
+  --radius-pill: 999px;
   --shadow: 0 14px 40px rgba(24, 54, 43, 0.08);
 
   /* Warna "permukaan" kartu/panel — sama dengan --white di mode terang,
      tapi jadi gelap di mode malam (lihat blok [data-theme="dark"] di bawah) */
   --surface: #ffffff;
+  --main-color-rgb: 31, 90, 69; 
 }
 
 /* =====================================================
@@ -42,21 +44,22 @@
 [data-theme="dark"] {
   --ink: #eef3ef;
   --ink-soft: #c3d0c9;
-  --muted: #8fa199;
-  --paper: #0e1613;
-  --paper-2: #141f1a;
-  --paper-3: #1a2822;
-  --surface: #16211c;
-  --forest: #55a17c;
+  --muted: #93a79d;
+  --paper: #142b21;
+  --paper-2: #1a3327;
+  --paper-3: #203f2d;
+  --surface: #1c3a2a;
+  --forest: #5cae85;
   --forest-dark: #2f6b52;
-  --sage: #5c8b74;
-  --sage-light: #1e2e26;
-  --accent: #e0a377;
-  --line: #263129;
-  --line-dark: #384a41;
-  --danger: #e2897b;
-  --success: #6fc394;
+  --sage: #6a9c81;
+  --sage-light: #24402f;
+  --accent: #e6ad82;
+  --line: #2c4534;
+  --line-dark: #3d5a44;
+  --danger: #f2a093;
+  --success: #7fe3a8;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  --main-color-rgb: 92, 174, 133;
 }
 
 [data-theme="dark"] body {
@@ -434,7 +437,11 @@ h3 {
   justify-content: center;
   padding: 11px 18px;
   border: 1px solid var(--line-dark);
-  border-radius: var(--radius);
+  /* Pill/rounded penuh — standar bentuk CTA di seluruh situs (Mulai Belajar,
+     Lihat Progress, Hitung Skor, dst). Sebelumnya ada definisi .btn-primary
+     kedua di bawah yang menimpa jadi pill hanya untuk sebagian tombol;
+     sekarang disatukan di sini supaya SEMUA tombol .btn konsisten. */
+  border-radius: var(--radius-pill);
   background: transparent;
   color: var(--ink);
   font-size: 14px;
@@ -862,18 +869,15 @@ h3 {
     margin-top: 2rem;
 }
 
-/* ---------- Hero video: tombol CTA (pill button) ---------- */
-/* CATATAN: .btn-primary & .btn-secondary sudah didefinisikan di atas
-   pada bagian "Buttons" (style kotak, untuk tombol umum di seluruh situs).
-   Blok di bawah ini MENIMPA sebagian propertinya (jadi bentuk pill/lonjong)
-   khusus supaya tombol di hero video terlihat berbeda. Kalau mau tombol
-   pill ini cuma berlaku di hero video, ganti selector jadi
-   ".hero-buttons .btn-primary" / ".hero-buttons .btn-secondary" saja. */
-.btn-primary {
+/* ---------- Hero video: tombol CTA ---------- */
+/* CATATAN: bentuk pill sudah jadi standar .btn di bagian "Buttons" di atas,
+   jadi blok ini HANYA berisi hal yang benar-benar khusus tampilan hero
+   video (warna glass-effect, shadow) dan discope ke ".hero-buttons" saja —
+   tidak lagi menimpa .btn-primary/.btn-secondary secara global. */
+.hero-buttons .btn-primary {
     background-color: #1b4332; /* Hijau hutan yang dalam dan elegan */
     color: #ffffff;
     padding: 12px 28px;
-    border-radius: 50px; /* Bikin bentuknya lonjong / pill modern */
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
@@ -882,18 +886,17 @@ h3 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.btn-primary:hover {
+.hero-buttons .btn-primary:hover {
     background-color: #2d6a4f;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.btn-secondary {
+.hero-buttons .btn-secondary {
     background-color: rgba(255, 255, 255, 0.08); /* Efek kaca transparan tipis */
     backdrop-filter: blur(5px);
     color: #f3e9dc; /* Warna teks krem lembut */
     padding: 12px 28px;
-    border-radius: 50px;
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
@@ -901,7 +904,7 @@ h3 {
     transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
+.hero-buttons .btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: #f3e9dc;
     transform: translateY(-2px);
@@ -928,10 +931,22 @@ h3 {
 
 .section-heading {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 2rem;
-    gap: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+    gap: 0.75rem 1.5rem;
+}
+
+/* Badge/status di sebelah kanan heading (mis. "3 ciri untuk dicocokkan")
+   diberi garis pembatas kiri supaya terlihat sebagai keterangan yang
+   terikat langsung pada section di sebelahnya, bukan elemen lepas. */
+.section-heading > .status {
+    border-left: 2px solid var(--line-dark);
+    padding-left: 10px !important;
+    margin-left: 4px;
 }
 
 .section-heading h2 {
@@ -1178,15 +1193,15 @@ h3 {
 
 /* =====================================================
    EDITORIAL TAXONOMY MAP
-   Diagram interaktif 5 kingdom (dipakai di halaman
-   "Dasar Klasifikasi") — root node, cabang, popup hover.
+   Diagram 5 kingdom (dipakai di halaman "Dasar Klasifikasi")
+   — root node, garis penghubung, kartu kingdom.
    ===================================================== */
 .editorial-tax-map {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 20px;
+    padding: 64px 32px 56px;
     background: var(--forest-dark); /* Latar gelap kontras tinggi — tetap gelap di kedua tema */
     color: var(--white);
     border-radius: 16px;
@@ -1194,161 +1209,170 @@ h3 {
     margin-top: 40px;
 }
 
-/* 6. Subtle Scientific Texture */
+/* Teks label kecil (eyebrow, breadcrumb) di atas latar hijau gelap:
+   var(--muted) terlalu gelap di sini (kontras rendah), jadi dinaikkan
+   opacity/lightness-nya supaya rasio kontras memenuhi minimal 4.5:1
+   untuk teks kecil. */
+.editorial-tax-map .eyebrow,
+.section-dark .eyebrow {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Subtle scientific texture */
 .tax-texture {
     position: absolute;
     inset: 0;
-    opacity: 0.015;
+    opacity: 0.02;
     background-image: radial-gradient(circle at 2px 2px, var(--white) 1px, transparent 0);
     background-size: 32px 32px;
     pointer-events: none;
     z-index: 1;
 }
-/* 2. Node tanpa card & Bentuk Organik */
+
+/* Root node */
 .tax-root-node {
     position: relative;
     z-index: 2;
-    padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Bentuk amorf */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
     font-family: var(--serif);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 0.09em;
-    backdrop-filter: blur(8px);
-    transition: all 3s ease-in-out;
-    animation: morph 8s infinite alternate;
+    letter-spacing: 0.1em;
 }
 
-@keyframes morph {
-    0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-    100% { border-radius: 60% 40% 30% 70% / 60% 50% 40% 50%; }
+.tax-root-node::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
 }
 
-/* 1. Sophisticated Branching Lines */
-.tax-branches {
-    width: 100%;
-    max-width: 800px;
-    height: 100px;
-    margin: -10px 0;
-    z-index: 1;
-}
-
-.tax-branches path {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.15);
-    stroke-width: 1.5;
-    transition: stroke 0.3s ease;
-}
-
-/* Layout Kingdom Nodes */
-.tax-kingdoms {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 900px;
+/* Trunk connecting root to the rail */
+.tax-trunk {
     position: relative;
-    z-index: 3;
+    z-index: 1;
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Layout kingdom cards */
+.tax-kingdoms {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    width: 100%;
+    max-width: 1040px;
+}
+
+/* Horizontal rail sitting above the row of cards */
+.tax-kingdoms::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: calc(10% - 1px);
+    right: calc(10% - 1px);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .tax-k-node {
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 120px;
-    cursor: pointer;
+    padding: 22px 16px 18px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    transform: perspective(700px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    will-change: transform;
 }
 
-/* 3. Numbering Besar */
+/* Stem linking each card up to the horizontal rail */
+.tax-k-node::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.tax-k-node:hover {
+    transform: translateY(-4px);
+    border-color: rgba(224, 163, 119, 0.5);
+    background: rgba(255, 255, 255, 0.07);
+}
+
 .k-number {
     font-family: var(--serif);
-    font-size: 42px;
-    font-weight: 200;
-    color: rgba(255, 255, 255, 0.2);
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.35);
     line-height: 1;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 .k-name {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
     color: var(--white);
-    transition: transform 0.3s ease;
-}
-
-.k-line {
-    width: 1px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 12px 0;
-    transition: background 0.3s ease;
-}
-
-.k-line-vertical {
-    width: 1px;
-    height: 16px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 8px 0;
-    transition: background 0.3s ease;
 }
 
 .k-trait {
-    font-size: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 9px;
+    font-size: 9px;
     font-family: monospace;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.07em;
+    color: var(--accent);
+    background: rgba(224, 163, 119, 0.12);
+    border: 1px solid rgba(224, 163, 119, 0.25);
+    border-radius: 999px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    width: fit-content;
 }
 
-.k-explore {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.3);
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+.k-line-vertical {
+    display: none; /* diganti divider di bawah */
 }
 
 .k-annotation {
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 15px); /* Muncul di sebelah kanan */
-    transform: translateY(-50%) translateX(-10px);
-    width: max-content;
-    min-width: 140px;
-    padding: 12px 16px;
-    background: rgba(24, 54, 43, 0.9); /* Blend dengan warna background */
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 10;
-    text-align: left;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .k-annotation.align-left {
-    left: auto;
-    right: calc(100% + 15px);
-    transform: translateY(-50%) translateX(10px);
+    /* posisi lama tidak lagi relevan — kartu selalu rata kiri */
 }
 
 .anno-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
-}
-.anno-row:last-child {
-    margin-bottom: 0;
 }
 .anno-label {
     font-size: 8px;
@@ -1358,163 +1382,446 @@ h3 {
 }
 .anno-value {
     font-size: 11px;
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.85);
     font-family: monospace;
 }
 
-/* 4. Micro-label */
-.k-micro {
-    display: flex;
-    flex-direction: column;
+.k-explore {
+    margin-top: 16px;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     font-size: 10px;
-    font-family: monospace;
-    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.25s ease, gap 0.25s ease;
 }
 
-.k-info-trigger {
-    color: rgba(255, 255, 255, 0.4);
+.k-explore::after {
+    content: "\2192";
+    transition: transform 0.25s ease;
 }
 
-/* 5. Hover Effect & 7. Accent Orange */
-.k-popup {
-    position: absolute;
-    top: 100%;
-    margin-top: 20px;
-    width: 200px;
-    padding: 16px;
-    background: var(--paper); /* Warna kertas krem dari variabel */
-    color: var(--ink);
-    border-radius: var(--radius);
-    border-top: 3px solid var(--accent); /* Accent orange dipertahankan */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    text-align: left;
-    pointer-events: none;
-}
-
-.k-popup .eyebrow {
-    color: var(--accent);
-    margin-bottom: 6px;
-}
-
-.k-popup p {
-    font-size: 12px;
-    line-height: 1.5;
-    margin: 0;
-    color: var(--ink-soft);
-}
-
-/* Interaktivitas saat di-hover */
 .tax-k-node:hover .k-number {
-    color: var(--accent); /* Angka menyala warna orange */
-}
-
-.tax-k-node:hover .k-name {
-    transform: translateY(-2px);
-}
-
-.tax-k-node:hover .k-line {
-    background: var(--accent);
-}
-
-.tax-k-node:hover .k-line-vertical {
-    background: var(--accent); /* Garis vertikal menyala */
-}
-
-.tax-k-node:hover .k-trait {
-    color: var(--white);
+    color: var(--accent);
 }
 
 .tax-k-node:hover .k-explore {
     color: var(--accent);
-    border-color: rgba(166, 106, 63, 0.3); /* Accent warna border kotak kecil */
-    background: rgba(166, 106, 63, 0.05);
 }
 
-.tax-k-node:hover .k-annotation {
+.tax-k-node:hover .k-explore::after {
+    transform: translateX(3px);
+    animation: tax-arrow-bounce 0.9s ease-in-out infinite;
+}
+
+/* =====================================================
+   TAXONOMY TREE — LIVE EFFECTS
+   Ambient glow, garis "mengalir", border menyala saat hover,
+   shimmer pada angka, dan animasi masuk staggered.
+   Semua dibungkus prefers-reduced-motion agar tetap aksesibel.
+   ===================================================== */
+
+@property --tax-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* Ambient glow orbs yang mengambang pelan di latar */
+.tax-glow {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.tax-glow-a {
+    top: -70px;
+    left: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(224, 163, 119, 0.55), transparent 70%);
+    animation: tax-float-a 11s ease-in-out infinite;
+}
+
+.tax-glow-b {
+    bottom: -90px;
+    right: -70px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(155, 182, 159, 0.45), transparent 70%);
+    animation: tax-float-b 13s ease-in-out infinite;
+}
+
+@keyframes tax-float-a {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(36px, 22px) scale(1.1); }
+}
+
+@keyframes tax-float-b {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-28px, -18px) scale(1.08); }
+}
+
+.tax-glow-c {
+    top: 40%;
+    left: 45%;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
+    animation: tax-float-c 17s ease-in-out infinite;
+}
+
+@keyframes tax-float-c {
+    0%, 100% { transform: translate(-60px, 30px) scale(0.9); }
+    33% { transform: translate(80px, -40px) scale(1.15); }
+    66% { transform: translate(20px, 50px) scale(1); }
+}
+
+/* Garis trunk & rail jadi "mengalir" seperti arus data */
+.tax-trunk {
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.35) 0px,
+        rgba(255, 255, 255, 0.35) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 100% 18px;
+    animation: tax-flow-down 0.9s linear infinite;
+}
+
+.tax-kingdoms::before {
+    background: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.35) 0px,
+        rgba(255, 255, 255, 0.35) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 18px 100%;
+    animation: tax-flow-right 0.9s linear infinite;
+}
+
+@keyframes tax-flow-down {
+    to { background-position: 0 18px; }
+}
+
+@keyframes tax-flow-right {
+    to { background-position: 18px 0; }
+}
+
+/* Titik pulsa pada node akar, seperti radar */
+.tax-root-node::before {
+    animation: tax-pulse-dot 2.2s ease-out infinite;
+}
+
+@keyframes tax-pulse-dot {
+    0% { box-shadow: 0 0 0 0 rgba(224, 163, 119, 0.55); }
+    70% { box-shadow: 0 0 0 9px rgba(224, 163, 119, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(224, 163, 119, 0); }
+}
+
+/* Stem penghubung tiap kartu berdenyut halus, delay beda-beda biar organik */
+.tax-k-node::before {
+    animation: tax-stem-pulse 2.4s ease-in-out infinite alternate;
+}
+
+.tax-kingdoms .tax-k-node:nth-child(1)::before { animation-delay: 0s; }
+.tax-kingdoms .tax-k-node:nth-child(2)::before { animation-delay: 0.3s; }
+.tax-kingdoms .tax-k-node:nth-child(3)::before { animation-delay: 0.6s; }
+.tax-kingdoms .tax-k-node:nth-child(4)::before { animation-delay: 0.9s; }
+.tax-kingdoms .tax-k-node:nth-child(5)::before { animation-delay: 1.2s; }
+
+@keyframes tax-stem-pulse {
+    from { opacity: 0.35; }
+    to { opacity: 1; }
+}
+
+/* Kartu kingdom masuk satu-satu (staggered) saat halaman dimuat */
+.tax-k-node {
+    --tax-angle: 0deg;
+    opacity: 0;
+    animation: tax-rise 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.tax-kingdoms .tax-k-node:nth-child(1) { animation-delay: 0.05s; }
+.tax-kingdoms .tax-k-node:nth-child(2) { animation-delay: 0.15s; }
+.tax-kingdoms .tax-k-node:nth-child(3) { animation-delay: 0.25s; }
+.tax-kingdoms .tax-k-node:nth-child(4) { animation-delay: 0.35s; }
+.tax-kingdoms .tax-k-node:nth-child(5) { animation-delay: 0.45s; }
+
+@keyframes tax-rise {
+    from {
+        opacity: 0;
+        transform: translateY(26px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Border menyala berputar saat kartu di-hover */
+.tax-k-node::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+        from var(--tax-angle),
+        transparent 0deg,
+        transparent 60deg,
+        var(--accent) 95deg,
+        transparent 130deg,
+        transparent 360deg
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.tax-k-node:hover {
+    transform: perspective(700px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-6px) scale(1.015);
+    box-shadow: 0 22px 44px -16px rgba(0, 0, 0, 0.55);
+}
+
+.tax-k-node:hover::after {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
+    animation: tax-spin-border 2.4s linear infinite;
 }
 
-.tax-k-node:hover .k-info-trigger {
-    color: var(--accent);
+@keyframes tax-spin-border {
+    to { --tax-angle: 360deg; }
 }
 
-.tax-k-node:hover .k-popup {
+/* Angka kingdom berkilau lembut saat kartu di-hover */
+.tax-k-node:hover .k-number {
+    background: linear-gradient(90deg, var(--accent) 0%, #ffffff 50%, var(--accent) 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: tax-shimmer-number 1.6s linear infinite;
+}
+
+@keyframes tax-shimmer-number {
+    to { background-position: -220% 0; }
+}
+
+/* Panah "Jelajahi" berdenyut maju-mundur saat hover */
+@keyframes tax-arrow-bounce {
+    0%, 100% { transform: translateX(3px); }
+    50% { transform: translateX(7px); }
+}
+
+/* =====================================================
+   TAXONOMY TREE — MOVING BACKGROUND (mesh + spora)
+   Lapisan latar yang terus "berjalan": grid mesh bergeser
+   pelan dan partikel spora melayang naik, di belakang kartu.
+   ===================================================== */
+
+/* Grid mesh diagonal yang bergeser terus-menerus */
+.tax-mesh {
+    position: absolute;
+    inset: -20%;
+    z-index: 0;
+    opacity: 0.09;
+    background-image:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    background-size: 42px 42px;
+    transform: rotate(6deg);
+    animation: tax-mesh-drift 16s linear infinite;
+    pointer-events: none;
+    filter: blur(0.5px);
+    mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.85) 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.85) 0%, transparent 70%);
+}
+
+@keyframes tax-mesh-drift {
+    from { background-position: 0 0; }
+    to { background-position: 168px 168px; }
+}
+
+/* Sinar sapuan halus yang lewat sesekali di seluruh panel */
+.tax-sheen {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.tax-sheen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30%;
+    width: 22%;
+    background: linear-gradient(
+        100deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 45%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0.08) 55%,
+        transparent 100%
+    );
+    animation: tax-sheen-sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes tax-sheen-sweep {
+    0% { left: -30%; }
+    55%, 100% { left: 130%; }
+}
+
+/* Partikel spora yang melayang naik dari dasar panel */
+.tax-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.tax-spore {
+    position: absolute;
+    left: var(--left, 10%);
+    bottom: -12px;
+    width: var(--size, 4px);
+    height: var(--size, 4px);
+    border-radius: 50%;
+    background: var(--spore-color, var(--accent));
+    box-shadow: 0 0 10px 3px var(--spore-color, var(--accent)), 0 0 22px 6px var(--spore-color, var(--accent));
+    opacity: 0;
+    animation: tax-spore-rise var(--dur, 15s) ease-in var(--delay, 0s) infinite;
+}
+
+@keyframes tax-spore-rise {
+    0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+    8% { opacity: 0.95; }
+    50% { transform: translate(var(--drift, 14px), -150px) scale(1); opacity: 0.7; }
+    92% { opacity: 0; }
+    100% { transform: translate(calc(var(--drift, 14px) * 2), -290px) scale(0.6); opacity: 0; }
+}
+
+/* =====================================================
+   TAXONOMY TREE — HOVER INTERACTIVITY
+   Titik energi yang "berjalan" dari rail ke kartu yang
+   sedang di-hover/fokus, dikontrol lewat JS ringan.
+   ===================================================== */
+
+.tax-pulse {
+    position: absolute;
+    top: -20px;
+    left: 10%;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px 4px rgba(224, 163, 119, 0.75), 0 0 26px 10px rgba(224, 163, 119, 0.35);
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+    transition: left 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.tax-pulse.is-active {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    animation: tax-pulse-travel 1.1s ease-in-out infinite;
+}
+
+@keyframes tax-pulse-travel {
+    0% { transform: translateY(0) scale(0.7); opacity: 0.4; }
+    50% { transform: translateY(56px) scale(1); opacity: 1; }
+    100% { transform: translateY(0) scale(0.7); opacity: 0.4; }
+}
+
+/* Matikan semua animasi berkelanjutan untuk pengguna yang sensitif terhadap gerakan */
+@media (prefers-reduced-motion: reduce) {
+    .tax-glow-a,
+    .tax-glow-b,
+    .tax-glow-c,
+    .tax-trunk,
+    .tax-kingdoms::before,
+    .tax-root-node::before,
+    .tax-k-node::before,
+    .tax-k-node:hover::after,
+    .tax-k-node:hover .k-number,
+    .tax-k-node:hover .k-explore::after,
+    .tax-mesh,
+    .tax-sheen::before,
+    .tax-spore,
+    .tax-pulse.is-active {
+        animation: none !important;
+    }
+
+    .tax-particles,
+    .tax-sheen,
+    .tax-pulse {
+        display: none !important;
+    }
+
+    .tax-k-node {
+        opacity: 1;
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* Responsif untuk tablet — 3 kolom biar kartu tidak terlalu sempit */
+@media (max-width: 1024px) and (min-width: 801px) {
+    .tax-kingdoms {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Responsif untuk layar HP */
 @media (max-width: 800px) {
     .editorial-tax-map {
-        padding: 48px 20px;
+        padding: 40px 20px;
+    }
+
+    .tax-trunk {
+        display: none;
     }
 
     .tax-kingdoms {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
-    .tax-branches {
-        display: none; /* Sembunyikan SVG lengkung di HP */
+    .tax-kingdoms::before {
+        display: none;
+    }
+
+    .tax-k-node::before {
+        display: none;
     }
 
     .tax-k-node {
-        width: 100%;
-        padding: 24px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        cursor: default;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 10px;
     }
 
-    .tax-k-node:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .tax-k-node:first-child {
-        padding-top: 0;
-    }
-
-    /* Di HP, tampilkan detail langsung (bukan pas hover, karena tidak ada mouse) */
     .k-annotation {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none;
         width: 100%;
-        max-width: 220px;
-        margin: 16px auto 0;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.15);
     }
-
-    .k-annotation.align-left {
-        left: auto;
-        right: auto;
-    }
-
-    .k-popup {
-        position: relative;
-        top: 0;
-        margin-top: 10px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--white);
-    }
-    .k-popup p { color: rgba(255, 255, 255, 0.7); }
 }
 
 /* =====================================================
@@ -1715,6 +2022,53 @@ h3 {
   font-weight: 600;
 }
 
+/* ---------- Term tooltip (istilah taksonomi di Taxonomy Tree) ----------
+   Dipasangkan lewat atribut data-term (lihat setupTermTooltips() di
+   main.js). Tempelkan class .term-tag pada elemen tag di markup supaya
+   style ini aktif. */
+.term-tag {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed currentColor;
+}
+
+.term-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 240px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  pointer-events: none;
+}
+
+.term-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .term-tooltip {
+    max-width: 200px;
+  }
+}
+
 /* ---------- Generic decorative icon visuals ----------
    Used instead of literal photo/map placeholders so this template can be
    duplicated across every division page without needing per-page assets. */
@@ -1833,14 +2187,21 @@ h3 {
 
 /* ---------- Feature grid (used on the About page) ---------- */
 
+/* Flexbox + justify-content: center, bukan CSS grid, supaya jumlah kartu
+   ganjil (mis. 5 kartu = 3+2) tidak menghasilkan baris terakhir yang
+   menempel rata kiri sendirian — baris sisa akan otomatis berada di
+   tengah alih-alih terlihat kepotong/tidak rapi. */
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-top: 28px;
 }
 
 .feature-card {
+  flex: 1 1 220px;
+  max-width: 300px;
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -2119,6 +2480,453 @@ h3 {
   background: #f6e8e5;
 }
 
+/* ---------- Bengkel Klasifikasi (seret & lepas, khusus filum Animalia) ---------- */
+/* .challenge-card--workbench mematikan grid 2 kolom bawaan .challenge-card
+   (visual kiri + soal kanan) supaya bengkel ini bisa pakai layout sendiri
+   yang lebih lebar. */
+
+.challenge-card--workbench {
+  display: block;
+  padding: 40px 45px 45px;
+}
+
+.match-game-head p {
+  max-width: 560px;
+  margin: 8px 0 22px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.match-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+}
+
+.match-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 260px;
+}
+
+.match-progress-bar {
+  flex: 1;
+  max-width: 320px;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--paper-3);
+}
+
+.match-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--forest);
+  transition: width 0.35s ease;
+}
+
+.match-progress-label {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.match-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.match-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  cursor: help; /* menandakan ada info tambahan di title/tooltip */
+}
+
+.match-timer svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.match-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.match-icon-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.match-icon-btn:hover {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+
+.match-icon-btn[aria-pressed="true"] {
+  color: var(--muted);
+}
+
+.match-game-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 28px;
+}
+
+.match-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.match-slot-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.match-slot-drop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  padding: 12px 16px;
+  border: 2px dashed var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Petunjuk panah halus: muncul di semua kotak yang masih kosong saat
+   sebuah kartu sedang diseret atau dipilih (ketuk-lalu-ketuk), sebagai
+   isyarat umum "lepas di sini" — bukan menunjuk jawaban yang benar. */
+.match-slot-drop.is-droppable::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--sage);
+  border-bottom: 2px solid var(--sage);
+  transform: translateX(-50%) rotate(45deg);
+  animation: matchArrowBounce 1s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.match-slot-placeholder {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.match-slot-drop.is-droppable {
+  border-color: var(--sage);
+}
+
+.match-slot-drop.is-hover {
+  border-color: var(--forest);
+  background: var(--sage-light);
+  transform: scale(1.02);
+}
+
+.match-slot-drop:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+.match-chip:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+.match-slot-drop.is-filled {
+  cursor: default;
+  border-style: solid;
+  border-color: var(--success);
+  background: var(--sage-light);
+  animation: matchPop 0.35s ease;
+}
+
+.match-slot-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.match-slot-desc {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  animation: matchFadeUp 0.3s ease;
+}
+
+.match-slot.is-shake .match-slot-drop {
+  border-color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 16%, var(--paper-2));
+  animation: matchShake 0.4s ease;
+}
+
+.match-slot.is-flash-correct .match-slot-drop {
+  animation: matchFlashCorrect 0.55s ease;
+}
+
+.match-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+}
+
+.match-chip {
+  touch-action: none;
+  padding: 12px 16px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: left;
+  cursor: grab;
+  user-select: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+}
+
+.match-chip:hover {
+  border-color: var(--forest);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(24, 54, 43, 0.12);
+}
+
+.match-chip.is-selected {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 2px var(--sage);
+}
+
+.match-chip.is-dragging {
+  opacity: 0.35;
+}
+
+.match-chip.is-shake {
+  animation: matchShake 0.4s ease;
+  border-color: var(--danger);
+}
+
+.match-chip-ghost {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  box-shadow: var(--shadow);
+  opacity: 0.95;
+}
+
+.match-toast {
+  min-height: 20px;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.match-toast-correct {
+  color: var(--success);
+}
+
+.match-toast-incorrect {
+  color: var(--danger);
+}
+
+.match-complete {
+  position: relative;
+  overflow: hidden;
+  margin-top: 26px;
+  padding: 20px;
+  border-left: 3px solid var(--success);
+  background: var(--sage-light);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.match-complete [data-match-complete-time] {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.match-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.match-confetti-piece {
+  position: absolute;
+  top: -16px;
+  width: 7px;
+  height: 12px;
+  border-radius: 1px;
+  animation-name: matchConfettiFall;
+  animation-timing-function: cubic-bezier(0.35, 0, 0.65, 1);
+  animation-fill-mode: forwards;
+}
+
+.match-complete strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--success);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.match-complete[hidden] {
+  display: none;
+}
+
+.match-complete.is-visible {
+  animation: matchFadeUp 0.4s ease;
+}
+
+.match-complete .btn-secondary {
+  margin-top: 12px;
+}
+
+@keyframes matchPop {
+  0% {
+    transform: scale(0.94);
+  }
+  60% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes matchFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes matchArrowBounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0) rotate(45deg);
+  }
+  50% {
+    transform: translate(-50%, 4px) rotate(45deg);
+  }
+}
+
+@keyframes matchFlashCorrect {
+  0% {
+    background: var(--sage-light);
+  }
+  35% {
+    background: color-mix(in srgb, var(--success) 30%, var(--sage-light));
+  }
+  100% {
+    background: var(--sage-light);
+  }
+}
+
+@keyframes matchConfettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(160px) rotate(var(--confetti-rotate, 220deg));
+    opacity: 0;
+  }
+}
+
+@keyframes matchShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match-slot-drop.is-filled,
+  .match-slot-desc,
+  .match-complete.is-visible,
+  .match-slot.is-shake .match-slot-drop,
+  .match-chip.is-shake,
+  .match-slot-drop.is-droppable::before,
+  .match-slot.is-flash-correct .match-slot-drop,
+  .match-confetti-piece {
+    animation: none;
+  }
+
+  .match-chip:hover {
+    transform: none;
+  }
+}
+
 /* ---------- Quiz ---------- */
 
 .quiz-panel {
@@ -2185,46 +2993,110 @@ legend {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;
+  margin-bottom: 6px;
 }
 
 .stat {
-  padding: 28px;
+  position: relative;
+  padding: 30px 28px;
   border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
   background: var(--forest-dark);
   color: var(--white);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.stat::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.stat:nth-child(2) {
+  background: var(--accent);
+}
+
+/* Selaraskan dengan palet utama situs: hijau gelap (kartu 1) / oranye-tan
+   (kartu 2, --accent) / tan (kartu 3, --paper-3) — sebelumnya kartu ke-3
+   memakai --sage (hijau muda) yang tidak konsisten dengan dua warna
+   lainnya. */
+.stat:nth-child(3) {
+  background: var(--paper-3);
+  color: var(--forest-dark);
+}
+
+.stat:nth-child(3) span {
+  color: rgba(22, 67, 51, 0.62);
 }
 
 .stat span {
   display: block;
   color: #cbd9d1;
   font-size: 10px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .stat strong {
   font-family: var(--serif);
-  font-size: 50px;
+  font-size: 52px;
   font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .progress-list {
-  border-top: 1px solid var(--line-dark);
+  border-top: none;
+  counter-reset: kingdom-index;
 }
 
 .progress-row {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 1fr auto auto;
-  gap: 25px;
+  grid-template-columns: 40px 1.2fr 1fr auto auto;
+  gap: 22px;
   align-items: center;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line-dark);
+  padding: 26px 24px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  counter-increment: kingdom-index;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.progress-row:hover {
+  border-color: var(--forest);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.progress-row::before {
+  content: counter(kingdom-index, decimal-leading-zero);
+  justify-self: start;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--sage);
 }
 
 .progress-row h3 {
   margin: 3px 0;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .progress-row p {
@@ -2234,21 +3106,33 @@ legend {
 }
 
 .progress-meter {
-  height: 6px;
+  height: 8px;
   overflow: hidden;
   background: var(--paper-3);
+  border-radius: 999px;
 }
 
 .progress-meter span {
   display: block;
   height: 100%;
-  background: var(--forest);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--forest), var(--accent));
+  transition: width 0.5s ease;
 }
 
 .score-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
   font-size: 10px;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .danger {
@@ -2278,6 +3162,31 @@ legend {
   font-style: normal;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.compact-item em {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+/* Status dibedakan lewat warna DAN ikon (✓ / 🔓 / 🔒), bukan warna saja,
+   supaya tetap bisa dibedakan oleh pengguna buta warna. */
+.status-selesai {
+  color: var(--success);
+}
+
+.status-terbuka {
+  color: var(--accent);
+}
+
+.status-terkunci {
+  color: var(--muted);
+}
+
+.status-icon {
+  font-size: 11px;
 }
 
 .compact-item strong {
@@ -2474,9 +3383,34 @@ legend {
     font-size: 34px;
   }
 
+  .challenge-card--workbench {
+    padding: 25px;
+  }
+
+  .match-game-body {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
   .progress-row {
     grid-template-columns: 1fr;
     gap: 10px;
+    padding: 22px 18px;
+  }
+
+  /* Daftar tantangan (halaman Challenge): 3 kolom sempit (0.25fr 1fr 0.2fr)
+     jadi terlalu padat di HP, ditumpuk vertikal saja. */
+  .compact-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .compact-item em {
+    justify-content: flex-start;
+  }
+
+  .progress-row::before {
+    display: none;
   }
 
   .quiz-panel {
@@ -2714,4 +3648,41 @@ legend {
 
 .key-restart-btn:hover {
   background: var(--paper-2);
+}
+
+/* Spotlight Cursor */
+.cursor-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(var(--main-color-rgb), 0.15) 0%,
+    rgba(var(--main-color-rgb), 0.05) 40%,
+    transparent 70%
+  );
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.cursor-spotlight.active {
+  opacity: 1;
+}
+
+/* opsional: kecilin dikit + makin terang pas hover di elemen interaktif */
+.cursor-spotlight.hover-mode {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--main-color-rgb), 0.25) 0%,
+    rgba(var(--main-color-rgb), 0.08) 40%,
+    transparent 70%
+  );
 }

@@ -1,15 +1,3 @@
-/*
-  BioScope — Daftar Pustaka
-  ------------------------------------------------------------
-  Cara pakai:
-  1. Ganti isi array `references` di bawah dengan rujukan asli
-     (materi per kingdom, jurnal, buku, dsb).
-  2. Setiap entri butuh `type`: "book", "journal", atau "website",
-     karena tiap tipe punya field dan format sitasi yang beda.
-  3. Sisanya (switcher gaya sitasi, tombol salin) jalan otomatis,
-     tidak perlu diutak-atik.
-*/
-
 document.addEventListener('DOMContentLoaded', function () {
   var list = document.getElementById('citation-list');
   if (!list) return;

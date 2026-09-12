@@ -2,7 +2,7 @@ const BIOSCOPE_DATA = {
   "kingdoms": {
     "monera": {
       "name": "Monera",
-      "eyebrow": "Kingdom 01",
+      "eyebrow": "Kerajaan 01",
       "embedUrl": "https://sketchfab.com/models/42439edc90cd4d87b8ae322a4dcee8de/embed?autostart=1&transparent=1",
       
       // Teks pengantar ringkas di atas 3D
@@ -124,7 +124,7 @@ const BIOSCOPE_DATA = {
     },
 "protista": {
       "name": "Protista",
-      "eyebrow": "Kingdom 02",
+      "eyebrow": "Kerajaan 02",
       "embedUrl": "https://sketchfab.com/models/8df6e9add2c24beaa989b3278d96245a/embed?autostart=1",
  
       "summary": "Selamat datang di materi Protista. Putar dan perbesar model 3D di samping untuk melihat kompleksitas struktur sel eukariotik uniseluler secara detail.",
@@ -195,11 +195,11 @@ const BIOSCOPE_DATA = {
           "Protista fotosintetik seperti diatom, dinoflagellata, dan alga berperan sebagai produsen primer utama di ekosistem akuatik, dengan kontribusi diperkirakan lebih dari seperempat total fotosintesis dunia."
         ]
       ],
-      "unlock_text": "Selesaikan Monera dengan skor minimal 85%."
+      "unlock_text": "Selesaikan Monera (skor ≥85%) untuk membuka Protista."
     },
     "fungi": {
       "name": "Fungi",
-      "eyebrow": "Kingdom 03",
+      "eyebrow": "Kerajaan 03",
       "embedUrl": "https://sketchfab.com/models/0dc381077a0e48cdb211b4505ab0be09/embed?autostart=1&transparent=1",
       "summary": "Selamat datang di materi Fungi. Putar dan perbesar model 3D di samping untuk melihat struktur hifa dan tubuh buah jamur secara detail.",
       "overview": "Fungi adalah kelompok organisme eukariotik heterotrof yang tidak berklorofil dan tidak dapat berfotosintesis, sehingga secara mendasar berbeda dari Plantae. Berbeda pula dari Animalia, fungi tidak menelan makanannya (ingesti); mereka mengeluarkan enzim pencerna ke luar tubuh untuk merombak materi organik kompleks (pencernaan ekstraseluler), kemudian menyerap hasil rombakannya (absorpsi) langsung ke dalam sel. Tubuh vegetatif sebagian besar fungi tersusun atas hifa &mdash; benang-benang halus bercabang yang bersama-sama membentuk jaringan miselium. Klasifikasi klasik membagi fungi menjadi empat filum utama berdasarkan struktur dan spora seksualnya: Chytridiomycota, Zygomycota, Ascomycota, dan Basidiomycota, meski filogenetika molekuler modern menunjukkan Zygomycota bersifat polifiletik dan kini mulai dipecah ke filum-filum baru seperti Mucoromycota dan Glomeromycota.",
@@ -267,11 +267,11 @@ const BIOSCOPE_DATA = {
           "Chytridiomycota adalah satu-satunya filum fungi sejati yang menghasilkan spora kembara motil (zoospora) berflagela tunggal; filum fungi lain tidak memiliki fase sel yang dapat bergerak aktif."
         ]
       ],
-      "unlock_text": "Selesaikan Protista dengan skor minimal 85%."
+      "unlock_text": "Selesaikan Protista (skor ≥85%) untuk membuka Fungi."
     },
     "plantae": {
       "name": "Plantae",
-      "eyebrow": "Kingdom 04",
+      "eyebrow": "Kerajaan 04",
       "summary": "Selamat datang di materi Plantae. Telusuri klasifikasi tumbuhan dari lumut sederhana hingga tumbuhan berbunga untuk memahami perkembangan struktur tubuh dan reproduksinya secara detail.",
       "overview": "Anggota Kingdom Plantae juga dikenal sebagai embryophyte karena memiliki ciri khas pembentukan embrio multiseluler yang bergantung pada nutrisi induk selama tahap awal perkembangannya. Tumbuhan darat berevolusi dari nenek moyang alga hijau, secara spesifik dari kelompok alga hijau charophyta. Transisi habitat dari perairan ke daratan mendorong evolusi berbagai adaptasi struktur kunci &mdash; kutikula kedap air, stomata pengatur pertukaran gas, jaringan vaskular (xilem & floem) yang diperkuat lignin, serta organ reproduksi multiseluler pelindung gamet dan embrio. Kingdom ini secara klasik dikelompokkan ke dalam empat divisi utama berdasarkan tingkat kompleksitas jaringan vaskular, keberadaan biji, dan organ reproduksi: Bryophyta, Pteridophyta, Gymnospermae, dan Angiospermae.",
       "chars": [
@@ -338,11 +338,11 @@ const BIOSCOPE_DATA = {
           "Sporopollenin adalah bahan organik yang sangat tahan terhadap kekeringan dan pembusukan, sehingga melindungi spora tumbuhan agar dapat bertahan hingga menemukan kondisi yang sesuai untuk berkecambah."
         ]
       ],
-      "unlock_text": "Selesaikan Fungi dengan skor minimal 85%."
+      "unlock_text": "Selesaikan Fungi (skor ≥85%) untuk membuka Plantae."
     },
     "animalia": {
       "name": "Animalia",
-      "eyebrow": "Kingdom 05",
+      "eyebrow": "Kerajaan 05",
       "summary": "Selamat datang di materi Animalia. Telusuri simetri tubuh, rongga tubuh, dan segmentasi kesembilan filum hewan untuk memahami keragaman arsitektur tubuhnya secara detail.",
       "overview": "Anggota Kingdom Animalia bersifat multiseluler (metazoa) dengan tubuh terorganisasi secara hierarkis dari sel, jaringan, organ, hingga sistem organ yang saling bekerja sama; sel-selnya mengalami spesialisasi fungsi dan tidak mampu hidup mandiri secara terpisah. Sebagai organisme heterotrof, hewan memperoleh nutrisi dengan mencerna atau memakan organisme lain, bukan menyintesisnya sendiri. Sel hewan tidak memiliki dinding sel kaku maupun filamen hifa, dan umumnya memiliki kemampuan bergerak mandiri lewat sistem tubuhnya sendiri, baik di seluruh tahap hidup maupun terbatas pada fase tertentu (misalnya fase larva). Pengelompokan sembilan filum klasik Animalia &mdash; dari Porifera yang paling sederhana hingga Chordata yang paling kompleks &mdash; didasarkan pada empat kriteria arsitektur tubuh: simetri tubuh, lapisan jaringan embrionik, rongga tubuh, dan segmentasi.",
       "chars": [
@@ -414,7 +414,7 @@ const BIOSCOPE_DATA = {
           "Bilateria terbagi menjadi Protostomia (mencakup klade Lophotrochozoa seperti Platyhelminthes, Mollusca, Annelida, dan Ecdysozoa seperti Nematoda, Arthropoda) dan Deuterostomia (meliputi Echinodermata dan Chordata)."
         ]
       ],
-      "unlock_text": "Selesaikan Plantae dengan skor minimal 85%."
+      "unlock_text": "Selesaikan Plantae (skor ≥85%) untuk membuka Animalia."
     }
   },
   "divisions": {
@@ -983,7 +983,7 @@ const BIOSCOPE_DATA = {
         },
         {
           "label": "Bentuk Uniseluler",
-          "value": "Ragi (Yeast) Berfisi atau Bertunas",
+          "value": "Ragi Berfisi atau Bertunas",
           "desc": "Beberapa anggota tumbuh sebagai sel tunggal, membelah secara biner/fisi (Schizosaccharomyces pombe) atau bertunas (Saccharomyces cerevisiae); genus Candida bahkan dapat berganti fase antara ragi dan hifa berfilamen (dimorfisme)."
         }
       ],
@@ -1437,7 +1437,7 @@ const BIOSCOPE_DATA = {
       "morphologyProfile": [
         {
           "label": "Tingkat Organisasi",
-          "value": "Seluler (Cell Aggregate)",
+          "value": "Seluler (Agregat Sel)",
           "desc": "Sel-sel Porifera mengalami pembagian kerja namun tidak terorganisasi kuat menjadi jaringan sejati, menjadikannya metazoa dengan tingkat organisasi tubuh paling sederhana."
         },
         {
@@ -1644,7 +1644,7 @@ const BIOSCOPE_DATA = {
         },
         {
           "label": "Saluran Pencernaan",
-          "value": "Complete Gut (Tube-within-a-Tube)",
+          "value": "Saluran Pencernaan Lengkap (Tabung dalam Tabung)",
           "desc": "Berbeda dari Platyhelminthes dan Cnidaria, Nematoda memiliki saluran pencernaan lengkap dengan mulut dan anus terpisah, sehingga makanan mengalir satu arah."
         }
       ],
@@ -1850,7 +1850,7 @@ const BIOSCOPE_DATA = {
           "desc": "Tubuh bersegmen menyatu dan terspesialisasi menjadi tagmata: kepala, toraks, abdomen pada serangga; atau sefalotoraks (kepala-dada menyatu) dan abdomen pada keliserata dan mayoritas krustasea."
         },
         {
-          "label": "Molting (Ekdisis)",
+          "label": "Ekdisis (Molting)",
           "value": "Pergantian Eksoskeleton Berkala",
           "desc": "Karena eksoskeleton kaku tidak dapat membesar, Arthropoda harus melepas kerangka lama secara berkala dan menyekresikan eksoskeleton baru yang lebih besar untuk tumbuh."
         }

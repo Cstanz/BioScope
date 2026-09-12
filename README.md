@@ -36,25 +36,7 @@ Karena BioScope berjalan murni di sisi *client* (Client-Side), Anda tidak perlu 
 2. Ekstrak folder proyek jika dalam bentuk ZIP.
 3. Buka file `index.html` langsung menggunakan browser modern pilihan Anda (direkomendasikan Google Chrome, Firefox, atau Brave).
 
-## 📂 Struktur Direktori
-
-```text
-/BioScope
-│── index.html                    # Halaman Beranda Utama
-│── why-classify.html             # Halaman Dasar Klasifikasi & Taxonomy Map
-│── monera.html                   # Halaman Materi Kingdom 01 (Dan kingdom lainnya)
-│── progress.html                 # Dasbor pantauan skor dan progress mahasiswa
-│── classification-challenge.html # Halaman Global Quiz/Challenge
-│── about.html                    # Halaman informasi tentang platform
-│── /css
-│   └── style.css                 # File stylesheet utama
-│── /js
-│   ├── data.js                   # Database statis materi, soal kuis, dan link embed 3D
-│   └── main.js                   # Logika utama (Navigasi, Quiz, Unlock System)
-└── /Assets                       # Folder gambar, logo (.svg/.png), dan aset visual lainnya
-```
-
 ## 📝 Catatan Khusus & Kredit
 
 * **Penyimpanan Data:** Karena menggunakan `localStorage`, *progress* skor mahasiswa akan hilang jika pengguna membersihkan *cache/history* browser atau jika membuka web di mode *Incognito/Private Browsing*.
-* **Kredit 3D Model:** Model 3D Coronavirus pada materi Monera menggunakan fitur embed interaktif yang disediakan oleh [Sketchfab by Thiago Coser](https://sketchfab.com/thiago.coser).
+* **Kredit 3D Model:** Model 3D Coronavirus pada materi Monera menggunakan fitur embed interaktif yang disediakan oleh sketchfab 
