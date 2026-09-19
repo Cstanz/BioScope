@@ -2011,41 +2011,7 @@ function renderGlobalChallenges() {
                 `;
               })
               .join("")}
-            ${
-              kingdom.dichotomousKey
-                ? (() => {
-                    const unlocked = adminAwareUnlock(kingdomId, progress);
-                    const kState = progress.kingdoms[kingdomId];
-                    const statusKey = kState.dichotomousCompleted
-                      ? "selesai"
-                      : unlocked
-                        ? "terbuka"
-                        : "terkunci";
-                    const statusText =
-                      statusKey === "selesai"
-                        ? "Selesai"
-                        : statusKey === "terbuka"
-                          ? "Terbuka"
-                          : "Terkunci";
-                    const statusIcon =
-                      statusKey === "selesai" ? "✓" : statusKey === "terbuka" ? "🔓" : "🔒";
-
-                    return `
-                      <a
-                        class="compact-item ${unlocked ? "" : "disabled"}"
-                        href="${unlocked ? `dichotomous-key.html?kingdom=${kingdomId}` : "#"}"
-                      >
-                        <span>Kunci Dikotomi</span>
-                        <strong>${kingdom.dichotomousKey.title}</strong>
-                        <em class="status-${statusKey}">
-                          <span class="status-icon" aria-hidden="true">${statusIcon}</span>
-                          ${statusText}
-                        </em>
-                      </a>
-                    `;
-                  })()
-                : ""
-            }
+            
           </div>
         </section>
       `;

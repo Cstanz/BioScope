@@ -93,6 +93,31 @@ var references = [
     issue: '6',
     pages: 'e0006225',
     doi: '10.1128/jb.00062-25'
+  },
+
+  {
+    type: 'book',
+    authors: [
+      { last: 'Rusyana', first: 'Adun' }
+    ],
+    year: '2011/2013',
+    title: 'Zoologi Invertebrata (Teori dan Praktik)',
+    city: 'Bandung',
+    publisher: 'Alfabeta'
+  },
+
+  {
+    type: 'journal',
+    authors: [
+      { last: 'Salahi', first: 'A.' },
+      { last: 'Abd El-Ghany', first: 'W. A.' }
+    ],
+    year: 2025,
+    title: 'A Spotlight on Archaea in Humans, Livestock and Poultry: A Review',
+    journal: 'Veterinary Medicine and Science',
+    volume: '11',
+    pages: 'e70263',
+    doi: '10.1002/vms3.70263'
   }
 ];
   // ---------- 2. Helper nama penulis per gaya sitasi ----------
@@ -154,7 +179,7 @@ var references = [
       }
       if (ref.type === 'journal') {
         return a + ' (' + ref.year + '). ' + ref.title + '. <em>' + ref.journal + '</em>, ' +
-          ref.volume + '(' + ref.issue + '), ' + ref.pages + '.';
+          ref.volume + (ref.issue ? '(' + ref.issue + ')' : '') + ', ' + ref.pages + '.';
       }
       return a + ' (' + ref.year + '). ' + ref.title + '. <em>' + ref.site + '</em>. ' + ref.url;
     },
@@ -166,7 +191,7 @@ var references = [
       }
       if (ref.type === 'journal') {
         return a + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.journal + '</em>, vol. ' + ref.volume +
-          ', no. ' + ref.issue + ', ' + ref.year + ', pp. ' + ref.pages + '.';
+          (ref.issue ? ', no. ' + ref.issue : '') + ', ' + ref.year + ', pp. ' + ref.pages + '.';
       }
       return a + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.site + '</em>, ' + ref.year + ', ' + ref.url + '.';
     },
@@ -178,7 +203,7 @@ var references = [
       }
       if (ref.type === 'journal') {
         return a + '. ' + ref.year + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.journal + '</em> ' +
-          ref.volume + ' (' + ref.issue + '): ' + ref.pages + '.';
+          ref.volume + (ref.issue ? ' (' + ref.issue + ')' : '') + ': ' + ref.pages + '.';
       }
       return a + '. ' + ref.year + '. &ldquo;' + ref.title + '.&rdquo; ' + ref.site + '. ' + ref.url + '.';
     },
@@ -190,7 +215,7 @@ var references = [
       }
       if (ref.type === 'journal') {
         return a + ', &ldquo;' + ref.title + ',&rdquo; <em>' + ref.journal + '</em>, vol. ' + ref.volume +
-          ', no. ' + ref.issue + ', pp. ' + ref.pages + ', ' + ref.year + '.';
+          (ref.issue ? ', no. ' + ref.issue : '') + ', pp. ' + ref.pages + ', ' + ref.year + '.';
       }
       return a + ', &ldquo;' + ref.title + ',&rdquo; ' + ref.site + ', ' + ref.year + '. [Online]. Available: ' + ref.url;
     }
