@@ -125,7 +125,7 @@ const BIOSCOPE_DATA = {
 "protista": {
       "name": "Protista",
       "eyebrow": "Kerajaan 02",
-      "embedUrl": "https://sketchfab.com/models/8df6e9add2c24beaa989b3278d96245a/embed?autostart=1",
+      "embedUrl": "https://sketchfab.com/models/8df6e9add2c24beaa989b3278d96245a/embed?autostart=1&transparent=1",
  
       "summary": "Selamat datang di materi Protista. Putar dan perbesar model 3D di samping untuk melihat kompleksitas struktur sel eukariotik uniseluler secara detail.",
  
@@ -200,7 +200,7 @@ const BIOSCOPE_DATA = {
     "fungi": {
       "name": "Fungi",
       "eyebrow": "Kerajaan 03",
-      "embedUrl": "https://sketchfab.com/models/0dc381077a0e48cdb211b4505ab0be09/embed?autostart=1&transparent=1",
+      "embedUrl": "https://sketchfab.com/models/03c4d57714314821975e2c9d696ed305/embed?autostart=1&transparent=1",
       "summary": "Selamat datang di materi Fungi. Putar dan perbesar model 3D di samping untuk melihat struktur hifa dan tubuh buah jamur secara detail.",
       "overview": "Fungi adalah kelompok organisme eukariotik heterotrof yang tidak berklorofil dan tidak dapat berfotosintesis, sehingga secara mendasar berbeda dari Plantae. Berbeda pula dari Animalia, fungi tidak menelan makanannya (ingesti); mereka mengeluarkan enzim pencerna ke luar tubuh untuk merombak materi organik kompleks (pencernaan ekstraseluler), kemudian menyerap hasil rombakannya (absorpsi) langsung ke dalam sel. Tubuh vegetatif sebagian besar fungi tersusun atas hifa &mdash; benang-benang halus bercabang yang bersama-sama membentuk jaringan miselium. Klasifikasi klasik membagi fungi menjadi empat filum utama berdasarkan struktur dan spora seksualnya: Chytridiomycota, Zygomycota, Ascomycota, dan Basidiomycota, meski filogenetika molekuler modern menunjukkan Zygomycota bersifat polifiletik dan kini mulai dipecah ke filum-filum baru seperti Mucoromycota dan Glomeromycota.",
       "chars": [
@@ -504,7 +504,7 @@ const BIOSCOPE_DATA = {
       "title": "Archaea: Domain Prokariotik yang Unik",
       "scientific": "Archaea",
       "definition": "Archaea (dahulu disebut Archaebacteria) adalah domain organisme prokariotik uniseluler yang berbeda secara evolusioner dari Bacteria maupun Eukarya. Dulu, Archaea dikenal sebagai organisme purba yang hanya mampu bertahan hidup di lingkungan ekstrem. Penelitian modern menunjukkan anggapan itu keliru: Archaea sebenarnya tersebar luas di seluruh biosfer, termasuk di tanah dan lautan yang kondisinya biasa saja.",
-      "embedUrl": "https://sketchfab.com/models/eb47b67df9ca4c47b681716d572e3177/embed?autostart=1&transparent=1",
+      "image": "../assets/division/8647ae17-6595-4676-9b17-b4683193f457.jpg",
       "body": "Seperti prokariotik lainnya, sel Archaea tidak memiliki organel yang dibungkus membran maupun membran inti sejati. Ciri paling khas dari Archaea ada pada dinding selnya: berbeda dari Bacteria, dinding sel Archaea sama sekali tidak mengandung peptidoglikan, melainkan bahan penyusun lain seperti pseudomurein.",
       "morphologyProfile": [
         {
@@ -580,6 +580,7 @@ const BIOSCOPE_DATA = {
       "kingdom": "protista",
       "label": "Protozoa",
       "title": "Protista Mirip Hewan: Protozoa",
+      "embedUrl": "https://sketchfab.com/models/7cb325a9ac5346be943ef7ddd41de51e/embed?transparent=1&autostart=1",
       "scientific": "Protozoa",
       "definition": "Protozoa (Protista Mirip Hewan) adalah istilah informal untuk kelompok protista uniseluler heterotrof yang umumnya bermotilitas (dapat bergerak aktif). Protozoa bukan takson formal seperti filum atau kelas, melainkan pengelompokan ekologis dan fungsional berdasarkan kemiripan cara hidupnya dengan hewan.",
       "body": "Sebagai sel eukariotik tunggal, Protozoa menjalankan seluruh fungsi vital &mdash; makan, bergerak, dan bereproduksi &mdash; yang pada hewan multiseluler dilakukan oleh organ tubuh terpisah. Klasifikasi klasik membagi Protozoa menjadi empat subkelompok berdasarkan alat geraknya: Rhizopoda (pseudopodia), Flagellata (flagela), Ciliata (silia), dan Sporozoa (tanpa alat gerak aktif). Sistematika modern kemudian memetakan keempatnya ke supergrup eukariota yang berbeda-beda &mdash; Rhizopoda tersebar ke Amoebozoa dan Rhizaria, Flagellata parasit ke Excavata, sedangkan Ciliata dan Sporozoa sama-sama masuk ke Alveolata (SAR).",
@@ -658,6 +659,7 @@ const BIOSCOPE_DATA = {
       "kingdom": "protista",
       "label": "Algae",
       "title": "Protista Mirip Tumbuhan: Algae",
+      "embedUrl": "https://sketchfab.com/models/5bc051acc7994d0b843f5535efa7fffd/embed?autostart=1&transparent=1",
       "scientific": "Algae",
       "definition": "Algae (Protista Mirip Tumbuhan) adalah istilah informal untuk protista fotoautotrof yang memiliki plastida (kloroplas) untuk berfotosintesis. Algae bukan takson formal tunggal karena bersifat polifiletik; berbagai garis keturunannya diperoleh secara independen lewat peristiwa endosimbiosis yang berbeda-beda sepanjang sejarah evolusi.",
       "body": "Keragaman kloroplas Algae terbentuk lewat endosimbiosis berulang. Endosimbiosis primer &mdash; saat eukariota heterotrofik purba menelan sianobakteri &mdash; melahirkan alga merah (Rhodophyta) dan alga hijau (Chlorophyta). Endosimbiosis sekunder kemudian terjadi saat alga hijau atau alga merah uniseluler ditelan kembali oleh eukariota heterotrofik lain, menghasilkan kelompok seperti Euglenophyta (dari alga hijau) serta Chromalveolata seperti diatom, alga cokelat, dan Dinoflagellata (dari alga merah). Bukti paling nyata terlihat pada Chlorarachniophyta, yang plastidanya masih menyisakan nukleomorph &mdash; sisa inti sel alga hijau yang ditelannya, terbungkus oleh hingga empat lapis membran.",
@@ -736,6 +738,7 @@ const BIOSCOPE_DATA = {
       "kingdom": "protista",
       "label": "Protista Mirip Jamur",
       "title": "Protista Mirip Jamur: Jamur Lendir & Jamur Air",
+      "embedUrl": "https://sketchfab.com/models/6a6a3a66f8264648b8ba57cff7aca34a/embed?autostart=1&transparent=1",
       "scientific": "Myxomycota, Acrasiomycota, & Oomycota",
       "definition": "Protista Mirip Jamur adalah istilah informal untuk kelompok protista heterotrof yang memiliki kemiripan morfologi dan cara hidup dengan fungi sejati &mdash; menghasilkan tubuh buah penghasil spora atau jaringan berfilamen mirip hifa. Kemiripan ini terbentuk lewat evolusi konvergen, bukan kekerabatan dekat: jamur lendir (Myxomycota & Acrasiomycota) sebenarnya berkerabat dengan amoeba di Amoebozoa, sedangkan jamur air (Oomycota) justru berkerabat dekat dengan alga fotosintetik di Stramenopila.",
       "body": "Dinding sel adalah pembeda utamanya dari fungi sejati: dinding sel jamur mirip protista ini tersusun dari selulosa, bukan kitin seperti pada fungi. Myxomycota (jamur lendir plasmodial) pada fase mencari makan berbentuk plasmodium &mdash; satu massa sitoplasma raksasa berlendir tanpa sekat sel yang mengandung ribuan nukleus diploid hasil mitosis berulang tanpa sitokinesis. Acrasiomycota (jamur lendir seluler) berbeda karena sel-sel ameboid haploidnya tetap bersekat individual, dan hanya beragregasi membentuk 'siput' semu saat makanan menipis. Oomycota (jamur air) sama sekali tidak membentuk plasmodium maupun agregat, melainkan tumbuh sebagai jaringan hifa multinukleat yang menyerap nutrisi secara absorptif.",
