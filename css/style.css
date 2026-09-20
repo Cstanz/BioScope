@@ -1,7 +1,3 @@
-/*
-  BioScope — visual system
-  Light editorial theme, designed to stay readable and easy to edit.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
 :root {
   --ink: #18362b;
@@ -29,18 +25,11 @@
   --radius-pill: 999px;
   --shadow: 0 14px 40px rgba(24, 54, 43, 0.08);
 
-  /* Warna "permukaan" kartu/panel — sama dengan --white di mode terang,
-     tapi jadi gelap di mode malam (lihat blok [data-theme="dark"] di bawah) */
+
   --surface: #ffffff;
-  --main-color-rgb: 31, 90, 69; 
+  --main-color-rgb: 31, 90, 69;
 }
 
-/* =====================================================
-   DARK MODE (NIGHT MODE)
-   Override variable warna saja — karena hampir semua elemen
-   di file ini sudah pakai var(--ink), var(--paper), dst,
-   cukup ganti nilainya di sini dan seluruh halaman ikut berubah.
-   ===================================================== */
 [data-theme="dark"] {
   --ink: #eef3ef;
   --ink-soft: #c3d0c9;
@@ -70,8 +59,6 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Beberapa elemen pakai warna hardcoded (bukan variable) — disesuaikan
-   khusus untuk mode gelap di sini */
 [data-theme="dark"] .site-header {
   background: rgba(14, 22, 19, 0.92);
 }
@@ -100,8 +87,6 @@ body {
 [data-theme="dark"] .site-footer {
   background: #10201a;
 }
-
-/* ---------- Theme toggle button ---------- */
 
 .theme-toggle {
   display: inline-flex;
@@ -143,7 +128,6 @@ body {
   display: inline-flex;
 }
 
-/* Varian khusus untuk floating-header (di atas video, transparan) */
 .floating-header .theme-toggle {
   border-color: rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
@@ -154,8 +138,6 @@ body {
 .floating-header .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.18);
 }
-
-/* ---------- Logo terang/gelap otomatis ikut tema ---------- */
 
 .logo-dark-mode {
   display: none;
@@ -168,8 +150,6 @@ body {
 [data-theme="dark"] .logo-dark-mode {
   display: block;
 }
-
-/* ---------- Floating scroll-to-top button ---------- */
 
 .scroll-top-btn {
   position: fixed;
@@ -239,11 +219,9 @@ button:active,
   }
 }
 
-/* Terapkan ke kontainer utama */
 main, .hero-home {
   animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
-/* ---------- Base ---------- */
 
 * {
   box-sizing: border-box;
@@ -304,8 +282,6 @@ img {
   max-width: 820px;
 }
 
-/* ---------- Header ---------- */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -341,7 +317,6 @@ img {
   text-transform: uppercase;
 }
 
-
 nav {
   display: flex;
   align-items: center;
@@ -372,8 +347,6 @@ nav a.active {
   background: var(--surface);
   color: var(--ink);
 }
-
-/* ---------- Typography ---------- */
 
 h1,
 h2,
@@ -423,8 +396,6 @@ h3 {
   font-style: italic;
 }
 
-/* ---------- Buttons ---------- */
-
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -439,10 +410,7 @@ h3 {
   justify-content: center;
   padding: 11px 18px;
   border: 1px solid var(--line-dark);
-  /* Pill/rounded penuh — standar bentuk CTA di seluruh situs (Mulai Belajar,
-     Lihat Progress, Hitung Skor, dst). Sebelumnya ada definisi .btn-primary
-     kedua di bawah yang menimpa jadi pill hanya untuk sebagian tombol;
-     sekarang disatukan di sini supaya SEMUA tombol .btn konsisten. */
+
   border-radius: var(--radius-pill);
   background: transparent;
   color: var(--ink);
@@ -478,8 +446,6 @@ h3 {
   font-weight: 700;
 }
 
-/* ---------- Hero ---------- */
-
 .hero,
 .chapter-hero,
 .ency-hero {
@@ -488,10 +454,10 @@ h3 {
 
 .hero-home {
   min-height: 650px;
-  display: flex;          /* Ubah jadi flex */
-  align-items: center;    /* Posisi vertikal di tengah */
-  justify-content: center;/* Posisi horizontal di tengah */
-  text-align: center;     /* Ratakan teks jadi ke tengah */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: var(--paper);
 }
 .hero-home .hero-grid {
@@ -502,16 +468,16 @@ h3 {
 }
 
 .hero-home .lede {
-  margin-inline: auto;     /* Membuat paragraf deskripsi pas di tengah */
+  margin-inline: auto;
 }
 
 .hero-home .actions {
-  justify-content: center; /* Membuat tombol berdampingan di tengah */
+  justify-content: center;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   max-width: 800px;
   align-items: center;
 }
@@ -544,8 +510,6 @@ h3 {
   padding: 60px 0;
   background: var(--paper-2);
 }
-
-/* ---------- Visual placeholders ---------- */
 
 .specimen {
   min-height: 460px;
@@ -645,17 +609,10 @@ h3 {
   text-transform: uppercase;
 }
 
-/* =====================================================
-   HERO VIDEO SECTION
-   Section hero halaman utama dengan video background
-   (floating header, overlay gelap, konten teks, tombol CTA)
-   ===================================================== */
-
-/* ---------- Hero video: floating header di atas video ---------- */
 .hero-video-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Memenuhi tinggi layar */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -687,7 +644,7 @@ h3 {
 }
 
 .brand-logo-img {
-    height: 32px; /* Sesuaikan tinggi logo (bisa diubah jadi 36px atau 40px kalau kurang besar) */
+    height: 32px;
     width: auto;
     object-fit: contain;
 }
@@ -753,7 +710,6 @@ h3 {
     border-bottom: 2px solid var(--accent);
 }
 
-/* Responsif floating header untuk layar kecil / HP */
 @media (max-width: 700px) {
     .floating-header {
         padding: 16px 20px;
@@ -775,8 +731,7 @@ h3 {
         display: flex;
     }
 }
-/* ---------- Hero video: video background & overlay ---------- */
-/* Mengatur Video agar menutupi seluruh area section secara proporsional */
+
 .hero-video {
     position: absolute;
     top: 50%;
@@ -790,18 +745,16 @@ h3 {
     z-index: 1;
 }
 
-/* Lapisan Gelap Transparan (Overlay) di atas video */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.55); /* Sesuaikan tingkat gelapnya di sini (0.55 = 55%) */
+    background-color: rgba(0, 0, 0, 0.55);
     z-index: 2;
 }
 
-/* Konten Teks & Tombol berada di atas overlay */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -809,17 +762,16 @@ h3 {
     padding: 0 20px;
 }
 
-/* ---------- Hero video: konten teks (badge, judul, subjudul) ---------- */
 .hero-badge {
     display: inline-block;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.09em;
-    color: #7FAF9F; 
+    color: #7FAF9F;
     text-transform: uppercase;
     margin-bottom: 1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-right: 2px solid #d1b89d; 
+    border-right: 2px solid #d1b89d;
     white-space: nowrap;
     overflow: hidden;
     animation: blink-cursor 0.7s infinite;
@@ -835,7 +787,7 @@ h3 {
     font-weight: 800;
     color: #ffffff;
     letter-spacing: -0.02em;
-    margin-bottom: -5px; 
+    margin-bottom: -5px;
     line-height: 1;
 }
 
@@ -844,14 +796,14 @@ h3 {
     font-weight: 300;
     font-style: italic;
     color: #d1b89d;
-    margin-top: 0; /* Pastikan tidak ada jarak atas */
-    margin-bottom: 1.2rem; /* Jarak ke paragraf deskripsi di bawahnya */
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     letter-spacing: 1px;
 }
 
 .hero-content h2 span {
     font-weight: 200;
-    color: #d1b89d; /* Aksen warna cokelat tanah/earthy tones */
+    color: #d1b89d;
 }
 
 .hero-content p {
@@ -871,13 +823,8 @@ h3 {
     margin-top: 2rem;
 }
 
-/* ---------- Hero video: tombol CTA ---------- */
-/* CATATAN: bentuk pill sudah jadi standar .btn di bagian "Buttons" di atas,
-   jadi blok ini HANYA berisi hal yang benar-benar khusus tampilan hero
-   video (warna glass-effect, shadow) dan discope ke ".hero-buttons" saja —
-   tidak lagi menimpa .btn-primary/.btn-secondary secara global. */
 .hero-buttons .btn-primary {
-    background-color: #1b4332; /* Hijau hutan yang dalam dan elegan */
+    background-color: #1b4332;
     color: #ffffff;
     padding: 12px 28px;
     font-weight: 600;
@@ -895,14 +842,14 @@ h3 {
 }
 
 .hero-buttons .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.08); /* Efek kaca transparan tipis */
+    background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(5px);
-    color: #f3e9dc; /* Warna teks krem lembut */
+    color: #f3e9dc;
     padding: 12px 28px;
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
-    border: 1px solid rgba(217, 184, 157, 0.4); /* Border warna earthy tones */
+    border: 1px solid rgba(217, 184, 157, 0.4);
     transition: all 0.3s ease;
 }
 
@@ -912,11 +859,6 @@ h3 {
     transform: translateY(-2px);
     color: #ffffff;
 }
-/* =====================================================
-   GENERIC SECTION UTILITIES
-   Dipakai di banyak halaman: pembungkus section, heading,
-   dan paragraf intro editorial.
-   ===================================================== */
 
 .section {
   padding: 100px 0;
@@ -942,9 +884,6 @@ h3 {
     gap: 0.75rem 1.5rem;
 }
 
-/* Badge/status di sebelah kanan heading (mis. "3 ciri untuk dicocokkan")
-   diberi garis pembatas kiri supaya terlihat sebagai keterangan yang
-   terikat langsung pada section di sebelahnya, bukan elemen lepas. */
 .section-heading > .status {
     border-left: 2px solid var(--line-dark);
     padding-left: 10px !important;
@@ -958,7 +897,7 @@ h3 {
 }
 
 .editorial-intro {
-    max-width: 750px; /* Lebarkan sedikit paragrafnya supaya pas di tengah/kiri */
+    max-width: 750px;
 }
 
 .editorial-intro p {
@@ -967,8 +906,6 @@ h3 {
     color: var(--ink-soft);
     margin: 0;
 }
-
-/* ---------- Kingdom and division cards ---------- */
 
 .kingdom-grid {
   display: grid;
@@ -999,7 +936,6 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-/* Active / available kingdom */
 .kingdom-card:first-child,
 .kingdom-card.active {
   background: var(--surface);
@@ -1023,7 +959,6 @@ h3 {
   color: var(--ink-soft);
 }
 
-/* Locked kingdoms */
 .kingdom-card.locked {
   background: rgba(255, 255, 255, 0.055);
   border-color: rgba(255, 255, 255, 0.16);
@@ -1128,7 +1063,7 @@ h3 {
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.kingdom-card .status-locked, 
+.kingdom-card .status-locked,
 .kingdom-card .status {
     background: transparent !important;
     border: none !important;
@@ -1140,7 +1075,6 @@ h3 {
     letter-spacing: 0.5px;
 }
 
-/* Mengatur teks keterangan syarat skor di sebelah kanan */
 .kingdom-card .lock-note {
     font-size: 0.7rem;
     line-height: 1.2;
@@ -1165,8 +1099,6 @@ h3 {
   min-height: 350px;
   background: var(--surface);
 }
-
-/* ---------- Status ---------- */
 
 .status {
   display: inline-block;
@@ -1193,34 +1125,24 @@ h3 {
   color: var(--muted);
 }
 
-/* =====================================================
-   EDITORIAL TAXONOMY MAP
-   Diagram 5 kingdom (dipakai di halaman "Dasar Klasifikasi")
-   — root node, garis penghubung, kartu kingdom.
-   ===================================================== */
 .editorial-tax-map {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 64px 32px 56px;
-    background: var(--forest-dark); /* Latar gelap kontras tinggi — tetap gelap di kedua tema */
+    background: var(--forest-dark);
     color: var(--white);
     border-radius: 16px;
     overflow: hidden;
     margin-top: 40px;
 }
 
-/* Teks label kecil (eyebrow, breadcrumb) di atas latar hijau gelap:
-   var(--muted) terlalu gelap di sini (kontras rendah), jadi dinaikkan
-   opacity/lightness-nya supaya rasio kontras memenuhi minimal 4.5:1
-   untuk teks kecil. */
 .editorial-tax-map .eyebrow,
 .section-dark .eyebrow {
     color: rgba(255, 255, 255, 0.65);
 }
 
-/* Subtle scientific texture */
 .tax-texture {
     position: absolute;
     inset: 0;
@@ -1231,7 +1153,6 @@ h3 {
     z-index: 1;
 }
 
-/* Root node */
 .tax-root-node {
     position: relative;
     z-index: 2;
@@ -1257,7 +1178,6 @@ h3 {
     flex-shrink: 0;
 }
 
-/* Trunk connecting root to the rail */
 .tax-trunk {
     position: relative;
     z-index: 1;
@@ -1266,7 +1186,6 @@ h3 {
     background: rgba(255, 255, 255, 0.18);
 }
 
-/* Layout kingdom cards */
 .tax-kingdoms {
     position: relative;
     z-index: 2;
@@ -1277,7 +1196,6 @@ h3 {
     max-width: 1040px;
 }
 
-/* Horizontal rail sitting above the row of cards */
 .tax-kingdoms::before {
     content: "";
     position: absolute;
@@ -1306,7 +1224,6 @@ h3 {
     will-change: transform;
 }
 
-/* Stem linking each card up to the horizontal rail */
 .tax-k-node::before {
     content: "";
     position: absolute;
@@ -1356,7 +1273,7 @@ h3 {
 }
 
 .k-line-vertical {
-    display: none; /* diganti divider di bawah */
+    display: none;
 }
 
 .k-annotation {
@@ -1369,7 +1286,7 @@ h3 {
 }
 
 .k-annotation.align-left {
-    /* posisi lama tidak lagi relevan — kartu selalu rata kiri */
+
 }
 
 .anno-row {
@@ -1419,20 +1336,12 @@ h3 {
     animation: tax-arrow-bounce 0.9s ease-in-out infinite;
 }
 
-/* =====================================================
-   TAXONOMY TREE — LIVE EFFECTS
-   Ambient glow, garis "mengalir", border menyala saat hover,
-   shimmer pada angka, dan animasi masuk staggered.
-   Semua dibungkus prefers-reduced-motion agar tetap aksesibel.
-   ===================================================== */
-
 @property --tax-angle {
     syntax: '<angle>';
     inherits: false;
     initial-value: 0deg;
 }
 
-/* Ambient glow orbs yang mengambang pelan di latar */
 .tax-glow {
     position: absolute;
     z-index: 0;
@@ -1485,7 +1394,6 @@ h3 {
     66% { transform: translate(20px, 50px) scale(1); }
 }
 
-/* Garis trunk & rail jadi "mengalir" seperti arus data */
 .tax-trunk {
     background: repeating-linear-gradient(
         to bottom,
@@ -1518,7 +1426,6 @@ h3 {
     to { background-position: 18px 0; }
 }
 
-/* Titik pulsa pada node akar, seperti radar */
 .tax-root-node::before {
     animation: tax-pulse-dot 2.2s ease-out infinite;
 }
@@ -1529,7 +1436,6 @@ h3 {
     100% { box-shadow: 0 0 0 0 rgba(224, 163, 119, 0); }
 }
 
-/* Stem penghubung tiap kartu berdenyut halus, delay beda-beda biar organik */
 .tax-k-node::before {
     animation: tax-stem-pulse 2.4s ease-in-out infinite alternate;
 }
@@ -1545,7 +1451,6 @@ h3 {
     to { opacity: 1; }
 }
 
-/* Kartu kingdom masuk satu-satu (staggered) saat halaman dimuat */
 .tax-k-node {
     --tax-angle: 0deg;
     opacity: 0;
@@ -1569,7 +1474,6 @@ h3 {
     }
 }
 
-/* Border menyala berputar saat kartu di-hover */
 .tax-k-node::after {
     content: "";
     position: absolute;
@@ -1607,7 +1511,6 @@ h3 {
     to { --tax-angle: 360deg; }
 }
 
-/* Angka kingdom berkilau lembut saat kartu di-hover */
 .tax-k-node:hover .k-number {
     background: linear-gradient(90deg, var(--accent) 0%, #ffffff 50%, var(--accent) 100%);
     background-size: 220% auto;
@@ -1621,19 +1524,11 @@ h3 {
     to { background-position: -220% 0; }
 }
 
-/* Panah "Jelajahi" berdenyut maju-mundur saat hover */
 @keyframes tax-arrow-bounce {
     0%, 100% { transform: translateX(3px); }
     50% { transform: translateX(7px); }
 }
 
-/* =====================================================
-   TAXONOMY TREE — MOVING BACKGROUND (mesh + spora)
-   Lapisan latar yang terus "berjalan": grid mesh bergeser
-   pelan dan partikel spora melayang naik, di belakang kartu.
-   ===================================================== */
-
-/* Grid mesh diagonal yang bergeser terus-menerus */
 .tax-mesh {
     position: absolute;
     inset: -20%;
@@ -1656,7 +1551,6 @@ h3 {
     to { background-position: 168px 168px; }
 }
 
-/* Sinar sapuan halus yang lewat sesekali di seluruh panel */
 .tax-sheen {
     position: absolute;
     inset: 0;
@@ -1688,7 +1582,6 @@ h3 {
     55%, 100% { left: 130%; }
 }
 
-/* Partikel spora yang melayang naik dari dasar panel */
 .tax-particles {
     position: absolute;
     inset: 0;
@@ -1718,12 +1611,6 @@ h3 {
     100% { transform: translate(calc(var(--drift, 14px) * 2), -290px) scale(0.6); opacity: 0; }
 }
 
-/* =====================================================
-   TAXONOMY TREE — HOVER INTERACTIVITY
-   Titik energi yang "berjalan" dari rail ke kartu yang
-   sedang di-hover/fokus, dikontrol lewat JS ringan.
-   ===================================================== */
-
 .tax-pulse {
     position: absolute;
     top: -20px;
@@ -1752,7 +1639,6 @@ h3 {
     100% { transform: translateY(0) scale(0.7); opacity: 0.4; }
 }
 
-/* Matikan semua animasi berkelanjutan untuk pengguna yang sensitif terhadap gerakan */
 @media (prefers-reduced-motion: reduce) {
     .tax-glow-a,
     .tax-glow-b,
@@ -1784,14 +1670,12 @@ h3 {
     }
 }
 
-/* Responsif untuk tablet — 3 kolom biar kartu tidak terlalu sempit */
 @media (max-width: 1024px) and (min-width: 801px) {
     .tax-kingdoms {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Responsif untuk layar HP */
 @media (max-width: 800px) {
     .editorial-tax-map {
         padding: 40px 20px;
@@ -1825,11 +1709,6 @@ h3 {
         width: 100%;
     }
 }
-
-/* =====================================================
-   OBSERVATION CARDS (obs-*)
-   Grid kartu "cara mengenali" / observasi ciri kelompok.
-   ===================================================== */
 
 .section-observation {
     padding-bottom: 120px;
@@ -1869,7 +1748,7 @@ h3 {
     transform: translateY(-4px);
     border-color: var(--forest);
     background: var(--surface);
-    border-style: solid; /* Mengubah dashed menjadi solid saat dihover */
+    border-style: solid;
     box-shadow: var(--shadow);
 }
 
@@ -1906,21 +1785,17 @@ h3 {
     line-height: 1.5;
 }
 
-/* Responsif untuk layar menengah (Tablet) */
 @media (max-width: 900px) {
     .obs-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Responsif untuk layar kecil (HP) */
 @media (max-width: 600px) {
     .obs-grid {
         grid-template-columns: 1fr;
     }
 }
-
-/* ---------- CTA ---------- */
 
 .cta-band {
   padding: 55px 0;
@@ -1939,8 +1814,6 @@ h3 {
   margin: 5px 0;
   font-size: 40px;
 }
-
-/* ---------- Encyclopedia ---------- */
 
 .editorial-grid {
   display: grid;
@@ -1990,7 +1863,6 @@ h3 {
   font-size: 18px;
 }
 
-/* ---------- Breadcrumb ---------- */
 .breadcrumb-nav {
   padding: 18px 0;
   border-bottom: 1px solid var(--line);
@@ -2024,10 +1896,6 @@ h3 {
   font-weight: 600;
 }
 
-/* ---------- Term tooltip (istilah taksonomi di Taxonomy Tree) ----------
-   Dipasangkan lewat atribut data-term (lihat setupTermTooltips() di
-   main.js). Tempelkan class .term-tag pada elemen tag di markup supaya
-   style ini aktif. */
 .term-tag {
   position: relative;
   cursor: help;
@@ -2071,9 +1939,6 @@ h3 {
   }
 }
 
-/* ---------- Generic decorative icon visuals ----------
-   Used instead of literal photo/map placeholders so this template can be
-   duplicated across every division page without needing per-page assets. */
 .habitat-visual {
   height: 200px;
   display: flex;
@@ -2107,7 +1972,6 @@ h3 {
   text-transform: uppercase;
 }
 
-/* ---------- Ecology: menguntungkan / merugikan list ---------- */
 .ecology-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2173,8 +2037,6 @@ h3 {
   border-left-color: var(--danger);
 }
 
-/* ---------- Two-column info layout (label + heading beside content) ---------- */
-
 .two-col {
   display: grid;
   grid-template-columns: 0.85fr 1.7fr;
@@ -2187,12 +2049,6 @@ h3 {
   top: 110px;
 }
 
-/* ---------- Feature grid (used on the About page) ---------- */
-
-/* Flexbox + justify-content: center, bukan CSS grid, supaya jumlah kartu
-   ganjil (mis. 5 kartu = 3+2) tidak menghasilkan baris terakhir yang
-   menempel rata kiri sendirian — baris sisa akan otomatis berada di
-   tengah alih-alih terlihat kepotong/tidak rapi. */
 .feature-grid {
   display: flex;
   flex-wrap: wrap;
@@ -2250,8 +2106,6 @@ h3 {
   font-size: 13px;
   font-weight: 700;
 }
-
-/* ---------- Citation style switcher & copy button (About page) ---------- */
 
 .cite-style-switch {
   display: flex;
@@ -2311,8 +2165,6 @@ h3 {
   color: var(--accent);
 }
 
-/* ---------- Info cards (used for morphology & habitat profile rows) ---------- */
-
 .info-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -2358,8 +2210,6 @@ h3 {
   }
 }
 
-/* ---------- Example species tags (sidebar) ---------- */
-
 .example-tags {
   list-style: none;
   padding: 0;
@@ -2386,8 +2236,6 @@ h3 {
   font-size: 12px;
   color: var(--muted);
 }
-
-/* ---------- Challenge ---------- */
 
 .challenge-wrap {
   padding: 90px 0;
@@ -2482,11 +2330,6 @@ h3 {
   background: #f6e8e5;
 }
 
-/* ---------- Bengkel Klasifikasi (seret & lepas, khusus filum Animalia) ---------- */
-/* .challenge-card--workbench mematikan grid 2 kolom bawaan .challenge-card
-   (visual kiri + soal kanan) supaya bengkel ini bisa pakai layout sendiri
-   yang lebih lebar. */
-
 .challenge-card--workbench {
   display: block;
   padding: 40px 45px 45px;
@@ -2558,7 +2401,7 @@ h3 {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
-  cursor: help; /* menandakan ada info tambahan di title/tooltip */
+  cursor: help;
 }
 
 .match-timer svg {
@@ -2639,9 +2482,6 @@ h3 {
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
 }
 
-/* Petunjuk panah halus: muncul di semua kotak yang masih kosong saat
-   sebuah kartu sedang diseret atau dipilih (ketuk-lalu-ketuk), sebagai
-   isyarat umum "lepas di sini" — bukan menunjuk jawaban yang benar. */
 .match-slot-drop.is-droppable::before {
   content: "";
   position: absolute;
@@ -2929,8 +2769,6 @@ h3 {
   }
 }
 
-/* ---------- Quiz ---------- */
-
 .quiz-panel {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
@@ -2958,15 +2796,12 @@ legend {
   border-color: var(--line);
 }
 
-/* Feedback "benar" secara eksplisit (sebelumnya cuma mengandalkan
-   style .feedback default — dibuat eksplisit biar jelas & gampang diubah) */
 .feedback.correct {
   border-left-color: var(--success);
   background: var(--sage-light);
   color: var(--ink-soft);
 }
 
-/* Highlight pilihan jawaban setelah quiz di-submit */
 .option.option-correct {
   border-color: var(--success);
   background: var(--sage-light);
@@ -2977,7 +2812,6 @@ legend {
   background: #f6e8e5;
 }
 
-/* Feedback per soal (muncul di bawah pilihan jawaban setelah submit) */
 .question-feedback {
   margin-top: 14px;
   font-size: 13px;
@@ -2989,8 +2823,6 @@ legend {
   font-family: var(--serif);
   font-size: 15px;
 }
-
-/* ---------- Progress ---------- */
 
 .stats-grid {
   display: grid;
@@ -3031,10 +2863,6 @@ legend {
   background: var(--accent);
 }
 
-/* Selaraskan dengan palet utama situs: hijau gelap (kartu 1) / oranye-tan
-   (kartu 2, --accent) / tan (kartu 3, --paper-3) — sebelumnya kartu ke-3
-   memakai --sage (hijau muda) yang tidak konsisten dengan dua warna
-   lainnya. */
 .stat:nth-child(3) {
   background: var(--paper-3);
   color: var(--forest-dark);
@@ -3142,8 +2970,6 @@ legend {
   color: var(--danger);
 }
 
-/* ---------- Global challenge list ---------- */
-
 .compact-list {
   border-top: 1px solid var(--line);
 }
@@ -3173,8 +2999,6 @@ legend {
   justify-content: flex-end;
 }
 
-/* Status dibedakan lewat warna DAN ikon (✓ / 🔓 / 🔒), bukan warna saja,
-   supaya tetap bisa dibedakan oleh pengguna buta warna. */
 .status-selesai {
   color: var(--success);
 }
@@ -3206,8 +3030,6 @@ legend {
   margin-bottom: 70px;
 }
 
-/* ---------- Locked state ---------- */
-
 .locked-page {
   min-height: 65vh;
   display: grid;
@@ -3219,8 +3041,6 @@ legend {
 .locked-page h1 {
   font-size: 60px;
 }
-
-/* ---------- Footer ---------- */
 
 .site-footer {
   padding: 55px 0;
@@ -3244,8 +3064,6 @@ legend {
   font-family: var(--serif);
   font-size: 22px;
 }
-
-/* ---------- Responsive ---------- */
 
 @media (max-width: 1000px) {
   .kingdom-grid {
@@ -3400,8 +3218,7 @@ legend {
     padding: 22px 18px;
   }
 
-  /* Daftar tantangan (halaman Challenge): 3 kolom sempit (0.25fr 1fr 0.2fr)
-     jadi terlalu padat di HP, ditumpuk vertikal saja. */
+
   .compact-item {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -3419,18 +3236,6 @@ legend {
     padding: 25px;
   }
 }
-
-
-/* =====================================================
-   HOME REFINEMENTS
-   CATATAN: beberapa rule di bawah ini (misalnya .section-dark,
-   .site-footer, .footer-grid) sudah pernah didefinisikan di atas.
-   Karena taruh belakangan di file, rule di sini yang menang untuk
-   properti yang sama (cascade CSS). Dibiarkan terpisah karena ini
-   memang override khusus untuk penyesuaian halaman Home — kalau mau
-   digabung ke definisi aslinya, cek dulu satu per satu supaya nggak
-   ada properti yang hilang.
-   ===================================================== */
 
 .section-dark {
   background: #164333;
@@ -3504,7 +3309,6 @@ legend {
   }
 }
 
-
 .prose {
   max-width: 760px;
 }
@@ -3567,7 +3371,6 @@ legend {
 [data-theme="dark"] .specimen iframe {
   background: var(--paper-2) !important;
 }
-/* ---------- Dichotomous key ---------- */
 
 .key-trail {
   display: flex;
@@ -3652,7 +3455,6 @@ legend {
   background: var(--paper-2);
 }
 
-/* Spotlight Cursor */
 .cursor-spotlight {
   position: fixed;
   top: 0;
@@ -3677,7 +3479,6 @@ legend {
   opacity: 1;
 }
 
-/* opsional: kecilin dikit + makin terang pas hover di elemen interaktif */
 .cursor-spotlight.hover-mode {
   width: 250px;
   height: 250px;
