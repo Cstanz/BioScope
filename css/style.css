@@ -18,8 +18,8 @@
   --success: #286044;
 
   --max-width: 1180px;
-  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --serif: "Fraunces", "Georgia", serif;
+  --sans: "Karla", system-ui, -apple-system, sans-serif;
+  --serif: "Newsreader", "Georgia", serif;
 
   --radius: 4px;
   --radius-pill: 999px;
@@ -1795,6 +1795,96 @@ h3 {
     .obs-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.howto-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px 16px;
+  margin-top: 32px;
+}
+
+.howto-step {
+  position: relative;
+  padding: 30px 18px 24px;
+  border: 1px solid var(--line-dark);
+  border-radius: 10px;
+  background: var(--surface);
+  text-align: center;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.howto-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--forest);
+  box-shadow: var(--shadow);
+}
+
+.howto-badge {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: var(--paper-2);
+  border: 1px solid var(--line-dark);
+  color: var(--forest-dark);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(24, 54, 43, 0.1);
+  transform: rotate(-4deg);
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.howto-step:nth-child(2) .howto-badge {
+  transform: rotate(3deg);
+}
+
+.howto-step:nth-child(4) .howto-badge {
+  transform: rotate(-2deg);
+}
+
+.howto-step:hover .howto-badge {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--white);
+  transform: rotate(0deg);
+}
+
+.howto-step h3 {
+  margin: 14px 0 10px;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.howto-step p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .howto-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .howto-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin-inline: auto;
+  }
 }
 
 .cta-band {
