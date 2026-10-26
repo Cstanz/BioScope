@@ -176,7 +176,7 @@
         item_id: item.id, level: item.level, selected: a.opt, correct: ok, ms: a.ms, changes: a.changes, order: orderOf(item, p.code).map(o => o.id).join(""), ts });
     });
     const res = { score, total: ITEMS.length, startedAt: d.startedAt, finishedAt: ts };
-    saveResponse({ type: "summary", participant: p.code, test: JENIS, instrument_version: T.version, instrument_status: T.status, ...res });
+    saveResponse({ type: "summary", participant: p.code, test: JENIS, instrument_version: T.version, instrument_status: T.status, consentAt: p.consentAt, ...res });
     write(doneKey(p.code, JENIS), res);
     try { localStorage.removeItem(draftKey(p.code, JENIS)); } catch (e) {}
     screenDone(res, false);
