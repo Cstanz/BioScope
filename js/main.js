@@ -1789,15 +1789,34 @@ function launchMatchConfetti(panelEl) {
 // selebrasi confetti singkat saat semua ciri tercocokkan.
 
 function renderClassificationWorkbench(container, division, divisionId) {
-  const pairs = division.morphologyProfile.map((item, index) => ({
-    id: `pair-${index}`,
-    label: item.label,
-    value: item.value,
-    desc: item.desc,
-  }));
+  // Bersihkan listener dari render sebelumnya (ganti tab / ulangi) supaya
+  // tidak menumpuk di document.
+  if (typeof container._bengkelCleanup === "function") {
+    container._bengkelCleanup();
+  }
 
-  const shuffledChips = shuffleArray(pairs);
+  const isValidPair = (item) =>
+    item && typeof item === "object" && item.label && item.value;
+
+  // Kotak ciri = morphologyProfile. Entri yang rusak dilewati, bukan
+  // ditampilkan sebagai "undefined".
+  const pairs = division.morphologyProfile
+    .filter(isValidPair)
+    .map((item, index) => ({
+      id: `pair-${index}`,
+      label: item.label,
+      value: item.value,
+      desc: item.desc,
+    }));
+
+  // Kartu pengecoh: tidak cocok dengan kotak mana pun.
+  const decoys = (division.workshopDecoys || [])
+    .filter((value) => typeof value === "string" && value.trim())
+    .map((value, index) => ({ id: `decoy-${index}`, value, decoy: true }));
+
+  const shuffledChips = shuffleArray([...pairs, ...decoys]);
   const challenge = division.challenge;
+  let wrongCount = 0;
   let matchedCount = 0;
   let selectedChipId = null;
   let elapsedSeconds = 0;
@@ -1810,7 +1829,7 @@ function renderClassificationWorkbench(container, division, divisionId) {
       <div class="match-game-head">
         <span class="eyebrow">${division.label}</span>
         <h3>Cocokkan ciri dengan nilainya</h3>
-        <p>Seret tiap kartu ciri di bawah ke kotak label yang sesuai. Di layar sentuh, ketuk kartunya lalu ketuk kotaknya.</p>
+        <p>Seret tiap kartu dari panel <strong>Kartu jawaban</strong> ke kotak label yang sesuai. ${decoys.length ? `Hati-hati, ada ${decoys.length} kartu pengecoh yang tidak cocok ke kotak mana pun. ` : ""}Di layar sentuh, ketuk kartunya lalu ketuk kotaknya.</p>
 
         <div class="match-toolbar">
           <div class="match-progress">
@@ -1869,9 +1888,9 @@ function renderClassificationWorkbench(container, division, divisionId) {
         <div class="match-slots" data-slots>
           ${pairs
             .map(
-              (pair) => `
+              (pair, index) => `
                 <div class="match-slot" data-slot="${pair.id}">
-                  <span class="match-slot-label">${pair.label}</span>
+                  <span class="match-slot-label"><span class="match-slot-num" aria-hidden="true">${index + 1}</span>${pair.label}</span>
                   <div class="match-slot-drop" data-drop="${pair.id}" tabindex="0" role="button" aria-label="Kotak jawaban untuk ${pair.label}">
                     <span class="match-slot-placeholder">Lepas di sini</span>
                   </div>
@@ -1882,17 +1901,23 @@ function renderClassificationWorkbench(container, division, divisionId) {
             .join("")}
         </div>
 
-        <div class="match-chips" data-chip-pool>
-          ${shuffledChips
-            .map(
-              (chip) => `
-                <button type="button" class="match-chip" data-chip="${chip.id}">
-                  ${chip.value}
-                </button>
-              `,
-            )
-            .join("")}
-        </div>
+        <aside class="match-tray" aria-label="Kartu jawaban">
+          <div class="match-tray-head">
+            <strong>Kartu jawaban</strong>
+            <span class="match-tray-count" data-chip-left>${shuffledChips.length} kartu</span>
+          </div>
+          <div class="match-chips" data-chip-pool>
+            ${shuffledChips
+              .map(
+                (chip) => `
+                  <button type="button" class="match-chip" data-chip="${chip.id}"${chip.decoy ? " data-decoy=\"1\"" : ""}>
+                    ${chip.value}
+                  </button>
+                `,
+              )
+              .join("")}
+          </div>
+        </aside>
       </div>
 
       <div class="match-toast" data-match-toast aria-live="polite"></div>
@@ -1900,6 +1925,7 @@ function renderClassificationWorkbench(container, division, divisionId) {
       <div class="match-complete" data-match-complete hidden>
         <strong>Semua ciri tercocokkan.</strong>
         <p data-match-complete-time></p>
+        <p data-match-complete-stats></p>
         <p>${challenge.explanation}</p>
         <button type="button" class="btn btn-secondary" data-match-reset>Ulangi Bengkel</button>
       </div>
@@ -1912,6 +1938,8 @@ function renderClassificationWorkbench(container, division, divisionId) {
   const progressLabel = root.querySelector("[data-progress-label]");
   const completePanel = root.querySelector("[data-match-complete]");
   const completeTime = root.querySelector("[data-match-complete-time]");
+  const completeStats = root.querySelector("[data-match-complete-stats]");
+  const chipLeftEl = root.querySelector("[data-chip-left]");
   const timerValueEl = root.querySelector("[data-timer-value]");
   const soundToggle = root.querySelector("[data-match-sound-toggle]");
   const soundIconOn = root.querySelector("[data-sound-icon-on]");
@@ -1975,7 +2003,23 @@ function renderClassificationWorkbench(container, division, divisionId) {
   function updateProgress() {
     const pct = Math.round((matchedCount / pairs.length) * 100);
     progressFill.style.width = `${pct}%`;
-    progressLabel.textContent = `${matchedCount} / ${pairs.length} tercocokkan`;
+    progressLabel.textContent = `${matchedCount} / ${pairs.length} tercocokkan${
+      wrongCount ? ` · ${wrongCount} salah` : ""
+    }`;
+    const left = root.querySelectorAll(".match-chip:not(.is-decoy-revealed)").length;
+    chipLeftEl.textContent = `${left} kartu tersisa`;
+  }
+
+  function revealDecoy(chipEl) {
+    chipEl.classList.add("is-decoy-revealed");
+    chipEl.disabled = true;
+    chipEl.setAttribute("aria-label", `${chipEl.textContent.trim()} (kartu pengecoh)`);
+    if (!chipEl.querySelector(".match-chip-tag")) {
+      chipEl.insertAdjacentHTML(
+        "beforeend",
+        '<span class="match-chip-tag">Pengecoh</span>',
+      );
+    }
   }
 
   function attemptMatch(chipEl, slotId) {
@@ -2007,15 +2051,33 @@ function renderClassificationWorkbench(container, division, divisionId) {
         stopTimer();
         markChallenge(division.kingdom, divisionId);
         completeTime.textContent = `Waktu kamu: ${formatMatchTime(elapsedSeconds)}.`;
+        const attempts = matchedCount + wrongCount;
+        const accuracy = Math.round((matchedCount / attempts) * 100);
+        completeStats.textContent = wrongCount
+          ? `Ketepatan: ${accuracy}% (${wrongCount} kali salah letak).`
+          : "Ketepatan: 100%, tanpa salah letak.";
+        root.querySelectorAll(".match-chip[data-decoy]").forEach(revealDecoy);
         completePanel.hidden = false;
         completePanel.classList.add("is-visible");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        completePanel.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "nearest",
+        });
         playMatchSuccessSound();
         launchMatchConfetti(completePanel);
       }
     } else {
+      wrongCount += 1;
       slotEl.classList.add("is-shake");
       chipEl.classList.add("is-shake");
-      showToast("Belum pas, coba pasangan lain.", "incorrect");
+      if (chipEl.dataset.decoy === "1") {
+        revealDecoy(chipEl);
+        showToast("Itu kartu pengecoh, tidak cocok ke kotak mana pun.", "incorrect");
+      } else {
+        showToast("Belum pas, coba kotak lain.", "incorrect");
+      }
+      updateProgress();
       playMatchIncorrectSound();
       window.setTimeout(() => {
         slotEl.classList.remove("is-shake");
@@ -2084,7 +2146,7 @@ function renderClassificationWorkbench(container, division, divisionId) {
 
   function onPointerDown(event) {
     const chip = event.target.closest(".match-chip");
-    if (!chip || chip.dataset.matched === "1") {
+    if (!chip || chip.disabled) {
       return;
     }
 
@@ -2168,11 +2230,17 @@ function renderClassificationWorkbench(container, division, divisionId) {
 
   // ---- Reset (tombol di toolbar, aktif kapan saja, & di panel selesai) ----
 
-  function teardownAndRestart() {
+  container._bengkelCleanup = () => {
     document.removeEventListener("pointermove", onPointerMove);
     document.removeEventListener("pointerup", onPointerUp);
     stopTimer();
-    matchedCount = 0;
+    if (dragGhost) {
+      dragGhost.remove();
+      dragGhost = null;
+    }
+  };
+
+  function teardownAndRestart() {
     renderClassificationWorkbench(container, division, divisionId);
   }
 

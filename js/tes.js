@@ -14,6 +14,9 @@
   };
 
   const JENIS = root.dataset.tes === "post" ? "post" : "pre";
+  // Mode pratinjau (?preview=1): untuk dosen/validator. Tanpa persetujuan dan kode, tanpa syarat pre-test,
+  // dan jawaban TIDAK disimpan di mana pun.
+  const PREVIEW = new URLSearchParams(location.search).has("preview");
   const T = window.BIOSCOPE_TESTS;
   const SET = T[JENIS];
   const ITEMS = SET.items;
@@ -24,10 +27,11 @@
 
   // ---------- Penyimpanan ----------
   const read = (k, fb) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch (e) { return fb; } };
-  const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const write = (k, v) => { if (PREVIEW) return; try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
 
   // Satu pintu penyimpanan jawaban. Backend nanti cukup memasang window.BIOSCOPE_API.saveResponse.
   function saveResponse(rec) {
+    if (PREVIEW) return;
     const all = read(RESPONSES_KEY, []);
     all.push(rec);
     write(RESPONSES_KEY, all);
@@ -79,10 +83,10 @@
 
   // ---------- Util tampilan ----------
   const $ = (h) => { root.innerHTML = `<div class="tes-wrap" id="tes-main">${h}</div>`; return document.getElementById("tes-main"); };
-  const draftNote = () => T.status !== "tervalidasi"
-    ? `<p class="tes-note"><strong>Instrumen draf (${T.version}).</strong> Soal ini belum divalidasi ahli. Jawaban hanya untuk uji coba teknis, bukan data penelitian.</p>` : "";
+  const draftNote = () => (PREVIEW ? `<p class="tes-note"><strong>Mode pratinjau.</strong> Jawabanmu tidak disimpan dan tidak masuk ke data penelitian.</p>` : "") + (T.status !== "tervalidasi"
+    ? `<p class="tes-note"><strong>Instrumen draf (${T.version}).</strong> Soal ini belum divalidasi ahli. Jawaban hanya untuk uji coba teknis, bukan data penelitian.</p>` : "");
   const title = `<span class="eyebrow">${SET.title}</span><h1 class="section-title">${SET.title} BioScope</h1>`;
-  const participant = () => read(PARTICIPANT_KEY, null);
+  const participant = () => PREVIEW ? { code: "PREVIEW", consentAt: null } : read(PARTICIPANT_KEY, null);
 
   // ---------- Layar 1: persetujuan + kode ----------
   function screenConsent(msg) {
@@ -116,8 +120,8 @@
   function start() {
     const p = participant();
     if (!p) return screenConsent();
-    if (read(doneKey(p.code, JENIS), null)) return screenDone(read(doneKey(p.code, JENIS)), true);
-    if (JENIS === "post" && !read(doneKey(p.code, "pre"), null)) {
+    if (!PREVIEW && read(doneKey(p.code, JENIS), null)) return screenDone(read(doneKey(p.code, JENIS)), true);
+    if (!PREVIEW && JENIS === "post" && !read(doneKey(p.code, "pre"), null)) {
       $(`${title}${draftNote()}<div class="tes-card"><p>Kode <strong>${p.code}</strong> belum mengerjakan pre-test. Kerjakan pre-test lebih dulu agar hasilnya bisa dibandingkan.</p>
         <div class="tes-actions"><a class="btn btn-primary" href="pretest.html">Ke Pre-test</a></div></div>`);
       return;
@@ -179,7 +183,19 @@
     saveResponse({ type: "summary", participant: p.code, test: JENIS, instrument_version: T.version, instrument_status: T.status, consentAt: p.consentAt, ...res });
     write(doneKey(p.code, JENIS), res);
     try { localStorage.removeItem(draftKey(p.code, JENIS)); } catch (e) {}
+    if (PREVIEW) return screenPreviewResult(d, res);
     screenDone(res, false);
+  }
+
+  // Hanya pratinjau: tampilkan jawaban dan kunci supaya validator bisa memeriksa.
+  function screenPreviewResult(d, res) {
+    const rows = ITEMS.map((item, i) => {
+      const a = d.answers[item.id], key = item.options.find(o => o.id === item.key), mine = item.options.find(o => o.id === a.opt);
+      return `<tr><th scope="row">${i + 1}</th><td>${a.opt === item.key ? "Benar" : "Salah"}</td><td>${mine ? mine.text : "-"}</td><td>${key.text}</td></tr>`;
+    }).join("");
+    $(`${title}${draftNote()}<div class="tes-card"><h2>Pratinjau selesai: ${res.score} dari ${res.total}</h2>
+      <table class="tes-table"><thead><tr><th>No</th><th>Hasil</th><th>Jawaban yang dipilih</th><th>Kunci</th></tr></thead><tbody>${rows}</tbody></table>
+      <div class="tes-actions"><a class="btn btn-primary" href="?preview=1">Ulangi pratinjau</a></div></div>`);
   }
 
   function screenDone(res, again) {

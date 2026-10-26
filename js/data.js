@@ -850,8 +850,7 @@ const BIOSCOPE_DATA = {
           "label": "Materi Genetik",
           "value": "Nukleoid & Plasmid",
           "desc": "Kebanyakan bakteri punya satu kromosom sirkular yang berada di sitoplasma, di wilayah nukleoid. Sebagian bakteri membawa juga plasmid, yaitu DNA tambahan berukuran kecil."
-        },
-        "Whittaker, R. H. (1969). New concepts of kingdoms of organisms. <em>Science, 163</em>(3863), 150–160. <a href=\"https://doi.org/10.1126/science.163.3863.150\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1126/science.163.3863.150</a>"
+        }
       ],
       "habitat": "Ketika keadaan memburuk, sebagian bakteri bertahan dengan membentuk endospora, yaitu sel dorman yang sangat tahan panas, bahan kimia, radiasi, dan pengeringan. Endospora terbentuk saat pertumbuhan terhenti karena nutrien penting seperti karbon atau nitrogen habis, misalnya pada Bacillus dan Clostridium. Bakteri juga bisa membaca keadaan sekitarnya lewat kemotaksis, yaitu bergerak mendekati zat yang menguntungkan dan menjauhi zat yang berbahaya. Banyak yang membentuk biofilm, matriks polisakarida yang menghambat masuknya antibiotik dan zat beracun, melindungi sel dari pemangsaan protista, dan mencegah sel terbilas ke tempat yang kurang cocok (Madigan dkk., 2019). Di tingkat gen, faktor sigma alternatif RpoS menjadi pengendali utama respons terhadap stres dengan mengatur ratusan gen pada bakteri seperti E. coli.</p><p>Suhu dan pH ikut menentukan siapa tinggal di mana. Psikrofil punya suhu optimum ≤15°C, termofil &gt;45°C, dan hipertermofil &gt;80°C. Asidofil dan alkalifil menjaga pH sitoplasmanya tetap mendekati netral meski lingkungannya ekstrem, sedangkan halofil menyeimbangkan kadar air dengan menambah solut kompatibel di dalam sel (Madigan dkk., 2019). Selain diwariskan dari induk ke anak, gen juga berpindah antarsel lewat transformasi, transduksi, dan konjugasi, sehingga sifat yang menguntungkan bisa menyebar di dalam populasi (Madigan dkk., 2019).",
       "habitatProfile": [
@@ -3768,5 +3767,216 @@ for (const [divisionId, cycle] of Object.entries(BIOSCOPE_LIFE_CYCLES)) {
   if (BIOSCOPE_DATA.divisions[divisionId]) {
     BIOSCOPE_DATA.divisions[divisionId].lifeCycleNote = cycle.note || "";
     BIOSCOPE_DATA.divisions[divisionId].lifeCycleSteps = cycle.steps;
+  }
+}
+
+// ---------- Bengkel Klasifikasi: kartu pengecoh ----------
+// Kotak ciri tetap memakai morphologyProfile; daftar ini hanya menambah kartu
+// jawaban yang tampak masuk akal tetapi tidak cocok dengan kotak mana pun pada
+// kelompok tersebut, supaya jawaban tidak gampang ditebak.
+const BIOSCOPE_WORKSHOP_DECOYS = {
+  "eubacteria": [
+    "Mitokondria & retikulum endoplasma",
+    "Ribosom tipe 80S",
+    "Inti bermembran dengan pori inti",
+    "Beberapa kromosom linear di dalam inti",
+    "Dinding sel dari selulosa",
+    "Dinding sel dari kitin",
+    "Selalu berbentuk bulat"
+  ],
+  "archaea": [
+    "Dinding peptidoglikan",
+    "Ikatan ester pada lipid membran",
+    "Hanya berbentuk bulat (kokus)",
+    "Dinding sel dari selulosa",
+    "Dinding sel dari kitin",
+    "Lipid dengan asam lemak rantai lurus",
+    "Tanpa membran plasma"
+  ],
+  "protozoa": [
+    "Dinding sel peptidoglikan",
+    "Selalu berfotosintesis",
+    "Hanya bergerak dengan flagela",
+    "Otot rangka dan tulang",
+    "Dinding sel selulosa kaku pada semua anggota",
+    "Nukleoid tanpa membran inti",
+    "Plasmid melingkar sebagai satu-satunya DNA"
+  ],
+  "algae": [
+    "Akar, batang, dan daun sejati",
+    "Xilem dan floem berlignin",
+    "Dinding sel kitin saja",
+    "Tanpa pigmen fotosintetik",
+    "Bakterioklorofil sebagai pigmen utama",
+    "Selalu uniseluler",
+    "Embrio dilindungi jaringan induk"
+  ],
+  "slime-molds": [
+    "Dinding sel kitin pada seluruh anggota",
+    "Berfotosintesis dengan klorofil",
+    "Askus berisi delapan askospora",
+    "Basidium dengan basidiospora",
+    "Tubuh berupa talus berklorofil",
+    "Cangkang silika pada seluruh anggota",
+    "Zigospora berdinding tebal"
+  ],
+  "chytridiomycota": [
+    "Basidiospora di luar basidium",
+    "Septum dolipori dengan parentesom",
+    "Dua flagela tak sama (tinsel dan cambuk)",
+    "Tidak berflagela, spora terbawa angin",
+    "Akar sejati berpembuluh",
+    "Spora ditembakkan dari askus",
+    "Spora dilepas dari konidiofor"
+  ],
+  "zygomycota": [
+    "Askospora di dalam askus",
+    "Hifa bersekat dengan badan Woronin",
+    "Hifa bersekat dengan septum dolipori",
+    "Dinding sel selulosa",
+    "Peptidoglikan dan asam teikoat",
+    "Zoospora berflagela",
+    "Konidia pada fialid"
+  ],
+  "ascomycota": [
+    "Zigospora hasil peleburan hifa",
+    "Basidiospora pada sterigma",
+    "Hifa senositik tanpa sekat",
+    "Septum dolipori dengan parentesom",
+    "Basidium berbentuk gada",
+    "Basidiokarp berbilah (lamela)",
+    "Sporangium berisi sporangiospora"
+  ],
+  "basidiomycota": [
+    "Askospora di dalam askus",
+    "Zoospora berflagela tunggal",
+    "Septum berpori sederhana dengan badan Woronin",
+    "Hifa tanpa sekat (senositik)",
+    "Miselium selalu haploid tanpa tahap dikariotik",
+    "Askus unitunikat berdinding tunggal",
+    "Askokarp berbentuk piala (apotesium)"
+  ],
+  "bryophyta": [
+    "Sporofit dominan berdaun besar",
+    "Akar sejati bercabang",
+    "Rizoid berpembuluh penyerap air utama",
+    "Sporofit hidup bebas berdaun",
+    "Sporangium berkelompok di bawah daun (sorus)",
+    "Pohon tegak berkayu tinggi",
+    "Rimpang menjalar dengan daun majemuk"
+  ],
+  "pteridophyta": [
+    "Biji terbungkus buah",
+    "Gametofit dominan tanpa pembuluh",
+    "Strobilus berisi biji telanjang",
+    "Kapsul di ujung seta",
+    "Gametofit menumpang pada sporofit",
+    "Daun jarum berkayu",
+    "Bunga dengan kelopak dan mahkota"
+  ],
+  "gymnosperms": [
+    "Fertilisasi ganda",
+    "Ovul tertutup dalam ovarium",
+    "Floem dengan buluh tapis dan sel pengiring",
+    "Buah sejati dari dinding ovarium",
+    "Endosperma triploid",
+    "Bunga dengan kelopak dan mahkota",
+    "Xilem hanya berupa sel parenkim"
+  ],
+  "angiosperms": [
+    "Strobilus tanpa bunga",
+    "Xilem hanya berupa trakeid",
+    "Biji telanjang pada sisik runjung",
+    "Spora dilepas dari sorus di bawah daun",
+    "Tubuh tanpa jaringan pembuluh",
+    "Gametofit hidup bebas berukuran besar",
+    "Ovul tidak terbungkus karpel"
+  ],
+  "porifera": [
+    "Knidosit dengan nematokis",
+    "Simetri bilateral",
+    "Rongga gastrovaskular satu lubang",
+    "Ektoderm, endoderm, dan mesoglea",
+    "Rangka kitin berbuku-buku",
+    "Pelat kalkareus bermikrostruktur stereom",
+    "Tiga lapisan germinal sejati"
+  ],
+  "cnidaria": [
+    "Simetri bilateral",
+    "Pencernaan lengkap dengan anus terpisah",
+    "Akuifer berpori dengan koanosit",
+    "Tubuh pipih dorsoventral",
+    "Tiga lapisan germinal sejati",
+    "Koloblas perekat",
+    "Sel api (protonefridia)"
+  ],
+  "platyhelminthes": [
+    "Pseudoselom",
+    "Pencernaan lengkap dengan anus",
+    "Selom sejati",
+    "Silindris dengan kutikula kolagen",
+    "Pipih lateral (dari sisi ke sisi)",
+    "Cangkang kapur dua katup",
+    "Eksoskeleton kitin"
+  ],
+  "nematoda": [
+    "Tubuh bersegmen dengan septa",
+    "Otot sirkuler dan longitudinal berlapis",
+    "Selom sejati",
+    "Aselomata",
+    "Eksoskeleton kitin dengan sendi",
+    "Tegumen tanpa kutikula",
+    "Rongga gastrovaskular satu lubang"
+  ],
+  "annelida": [
+    "Pseudoselom",
+    "Peredaran darah terbuka",
+    "Tanpa segmentasi",
+    "Segmen menyatu menjadi tagma",
+    "Cairan pseudoselom bertekanan tinggi",
+    "Eksoskeleton kitin keras",
+    "Rangka dalam dari spikula"
+  ],
+  "mollusca": [
+    "Tubuh bersegmen dengan septa",
+    "Eksoskeleton kitin dengan tagma",
+    "Kepala, toraks, dan abdomen",
+    "Lengan radial dengan kaki tabung",
+    "Mandibula berkitin dan maksila",
+    "Cangkang kitin berbuku",
+    "Spikula silika sebagai rangka"
+  ],
+  "arthropoda": [
+    "Sistem peredaran darah tertutup",
+    "Endoskeleton kalkareus",
+    "Kutikula kolagen tanpa kitin",
+    "Tubuh tanpa tagma dan tidak bersegmen",
+    "Kaki tabung hidrolik",
+    "Anggota badan tidak beruas",
+    "Cangkang kapur satu atau dua katup"
+  ],
+  "echinodermata": [
+    "Eksoskeleton kitin",
+    "Simetri bilateral pada dewasa",
+    "Saluran ekskresi berupa metanefridia",
+    "Spikula dan spongin",
+    "Simetri radial pada larva dan dewasa",
+    "Kaki bersegmen dengan sendi",
+    "Insang buku dan trakea"
+  ],
+  "chordata": [
+    "Tali saraf ventral padat",
+    "Tanpa notokord di tahap hidup mana pun",
+    "Selubung kitin pada Arthropoda",
+    "Cincin saraf pengganti notokord",
+    "Mantel bercangkang pada Mollusca",
+    "Segmen cacing berulang dengan septa",
+    "Ekor di depan anus"
+  ]
+};
+
+for (const [divisionId, decoys] of Object.entries(BIOSCOPE_WORKSHOP_DECOYS)) {
+  if (BIOSCOPE_DATA.divisions[divisionId]) {
+    BIOSCOPE_DATA.divisions[divisionId].workshopDecoys = decoys;
   }
 }

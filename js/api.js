@@ -1,3 +1,7 @@
+/* Penghubung BioScope ke Supabase (tanpa library tambahan).
+   Isi dua nilai di bawah dari Supabase: Project Settings -> API.
+   Pakai kunci "Publishable" (sb_publishable_...) atau "anon" (eyJ...).
+   JANGAN PERNAH memakai "secret" atau "service_role". */
 (function () {
   "use strict";
   const SUPABASE_URL = "https://ISI-PROJECT-ID.supabase.co";
@@ -31,8 +35,11 @@
         const batch = q.slice(0, 200);
         const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?on_conflict=participant,test,item_id`, {
           method: "POST",
-          headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": "application/json",
-                     Prefer: "resolution=ignore-duplicates,return=minimal" },
+          headers: Object.assign(
+            { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "resolution=ignore-duplicates,return=minimal" },
+            // Kunci lama (anon, berbentuk JWT "eyJ...") boleh dikirim sebagai Bearer; kunci baru "sb_publishable_..." tidak boleh.
+            SUPABASE_ANON_KEY.startsWith("sb_") ? {} : { Authorization: `Bearer ${SUPABASE_ANON_KEY}` }
+          ),
           body: JSON.stringify(batch.map(toRow))
         });
         if (!res.ok) { console.warn("BioScope: gagal kirim (" + res.status + "), akan dicoba lagi."); break; }

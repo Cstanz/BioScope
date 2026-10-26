@@ -2640,6 +2640,7 @@ h3 {
   overflow: hidden;
   border-radius: 999px;
   background: var(--paper-3);
+  box-shadow: inset 0 0 0 1px var(--line);
 }
 
 .match-progress-fill {
@@ -2727,8 +2728,9 @@ h3 {
 
 .match-game-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
   margin-top: 28px;
 }
 
@@ -2739,18 +2741,40 @@ h3 {
 }
 
 .match-slot-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 6px;
   font-family: var(--serif);
   font-size: 15px;
   color: var(--ink);
 }
 
+.match-slot-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--paper-3);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.match-slot.is-correct .match-slot-num {
+  background: var(--success);
+  color: var(--surface);
+}
+
 .match-slot-drop {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 54px;
+  min-height: 58px;
   padding: 12px 16px;
   border: 2px dashed var(--line-dark);
   border-radius: var(--radius);
@@ -2829,6 +2853,37 @@ h3 {
   animation: matchFlashCorrect 0.55s ease;
 }
 
+.match-tray {
+  position: sticky;
+  top: 110px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.match-tray-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.match-tray-head strong {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.match-tray-count {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .match-chips {
   display: flex;
   flex-wrap: wrap;
@@ -2870,6 +2925,35 @@ h3 {
 .match-chip.is-shake {
   animation: matchShake 0.4s ease;
   border-color: var(--danger);
+}
+
+.match-chip.is-decoy-revealed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-style: dashed;
+  border-color: var(--danger);
+  background: transparent;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.match-chip-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
+  color: var(--danger);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .match-chip-ghost {
@@ -3485,7 +3569,31 @@ legend {
 
   .match-game-body {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 22px;
+  }
+
+  .match-tray {
+    position: sticky;
+    top: auto;
+    bottom: 10px;
+    z-index: 20;
+    max-height: 32vh;
+    overflow-y: auto;
+    padding: 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .match-tray-head {
+    margin-bottom: 10px;
+  }
+
+  .match-chips {
+    gap: 8px;
+  }
+
+  .match-chip {
+    padding: 8px 11px;
+    font-size: 12.5px;
   }
 
   .progress-row {
