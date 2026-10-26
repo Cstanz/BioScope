@@ -4246,7 +4246,7 @@ legend {
 
 .mindmap-section {
   border-top: 1px solid var(--line);
-  background: var(--paper-2);
+  background: var(--paper-3);
 }
 
 .mindmap-scroll {
@@ -4365,4 +4365,83 @@ legend {
     width: 88px;
     height: 88px;
   }
+}
+
+/* ---------- Bengkel terkunci sampai materi dibaca ---------- */
+.bengkel-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 36px 8px;
+  text-align: center;
+}
+
+.bengkel-locked-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--paper-3);
+  font-size: 28px;
+}
+
+.bengkel-locked h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.bengkel-locked p {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.bengkel-tabs .btn.is-locked {
+  border-style: dashed;
+  opacity: 0.8;
+}
+
+.read-notice {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 200;
+  max-width: min(92vw, 460px);
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--forest-dark, #12302a);
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.read-notice.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .read-notice {
+    transition: none;
+  }
+}
+/* Kartu kingdom: label & garis footer mengikuti tema (terang/gelap) */
+.kingdom-card:not(.locked) .eyebrow {
+  color: var(--forest);
+}
+
+.kingdom-card:not(.locked) .card-footer {
+  border-top-color: var(--line);
 }

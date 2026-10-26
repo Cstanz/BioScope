@@ -214,6 +214,7 @@ function markMaterial(kingdomId, divisionId) {
   kingdom.divisions[divisionId].materialViewed = true;
   recalcKingdom(kingdomId, progress);
   saveProgress(progress);
+  document.dispatchEvent(new CustomEvent("bioscope:progress"));
 }
 
 function markChallenge(kingdomId, divisionId) {
@@ -566,6 +567,22 @@ function renderKingdomPage() {
       </div>
     </section>
 
+    <section class="section mindmap-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Peta konsep</span>
+            <h2>Mindmap ${kingdom.name}</h2>
+          </div>
+        </div>
+
+        <div class="mindmap-scroll">
+          ${renderMindmap(kingdomId)}
+        </div>
+        <p class="mindmap-hint">Klik nama kelompok pada mindmap untuk membuka materinya.</p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container two-col">
         <div>
@@ -587,22 +604,6 @@ function renderKingdomPage() {
             ${kingdom.criteria.map((item) => `<li>${item}</li>`).join("")}
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="section mindmap-section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">Peta konsep</span>
-            <h2>Mindmap ${kingdom.name}</h2>
-          </div>
-        </div>
-
-        <div class="mindmap-scroll">
-          ${renderMindmap(kingdomId)}
-        </div>
-        <p class="mindmap-hint">Klik nama kelompok pada mindmap untuk membuka materinya.</p>
       </div>
     </section>
 
@@ -652,7 +653,7 @@ function renderKingdomPage() {
           <div>
             <span class="eyebrow">Seret · cocokkan · pahami</span>
             <h2>Bengkel Klasifikasi ${kingdom.name}</h2>
-            <p>Selesaikan Bengkel tiap kelompok untuk melengkapi progres kingdom ini. Semua kingdom terbuka untuk dijelajahi.</p>
+            <p>Bengkel tiap kelompok terbuka setelah kamu membaca materi kelompok itu sampai selesai. Selesaikan semuanya untuk melengkapi progres kingdom ini.</p>
           </div>
         </div>
         <div class="bengkel-tabs" data-bengkel-tabs style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"></div>
@@ -674,21 +675,39 @@ function setupBengkelTabs(kingdomId) {
   }
 
   const list = Object.values(BIOSCOPE_DATA.divisions).filter((d) => d.kingdom === kingdomId);
-  let active = list[0] && list[0].id;
+
+  // Bengkel terkunci sampai materi kelompoknya dibaca (mode admin: terbuka).
+  const isLocked = (id) => {
+    if (isAdminMode()) {
+      return false;
+    }
+    const state = getProgress().kingdoms[kingdomId].divisions[id];
+    return !(state && state.materialViewed);
+  };
+
+  const firstOpen = list.find((d) => !isLocked(d.id));
+  let active = (firstOpen || list[0] || {}).id;
 
   const draw = () => {
     const state = getProgress().kingdoms[kingdomId].divisions;
     tabs.innerHTML = list
       .map((d) => {
-        const done = state[d.id] && state[d.id].challengeCompleted;
-        return `<button type="button" class="btn ${d.id === active ? "btn-primary" : "btn-secondary"}" data-tab="${d.id}">${done ? "✓ " : ""}${d.label}</button>`;
+        const locked = isLocked(d.id);
+        const done = !locked && state[d.id] && state[d.id].challengeCompleted;
+        const mark = locked ? "🔒 " : done ? "✓ " : "";
+        const title = locked ? ` title="Baca materi ${d.label} dulu untuk membuka bengkel ini"` : "";
+        return `<button type="button" class="btn ${d.id === active ? "btn-primary" : "btn-secondary"}${locked ? " is-locked" : ""}" data-tab="${d.id}"${title}>${mark}${d.label}</button>`;
       })
       .join("");
   };
 
   const show = (id) => {
     active = id;
-    renderChallenge(id);
+    if (isLocked(id)) {
+      renderBengkelLocked(id);
+    } else {
+      renderChallenge(id);
+    }
     draw();
   };
 
@@ -698,11 +717,58 @@ function setupBengkelTabs(kingdomId) {
       show(btn.dataset.tab);
     }
   });
-  document.addEventListener("bioscope:progress", draw);
+  const refresh = () => {
+    const panel = document.querySelector("[data-challenge] .bengkel-locked");
+    if (panel && !isLocked(active)) {
+      show(active);
+    } else {
+      draw();
+    }
+  };
+
+  document.addEventListener("bioscope:progress", refresh);
+  // Kembali dari halaman materi lewat tombol back (cache bfcache).
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted && active) {
+      show(active);
+    }
+  });
 
   if (active) {
     show(active);
   }
+}
+
+// Panel pengganti Bengkel saat materi kelompok belum dibaca.
+function renderBengkelLocked(divisionId) {
+  alurTrackStop("bengkel");
+  const container = document.querySelector("[data-challenge]");
+
+  if (!container) {
+    return;
+  }
+
+  if (typeof container._bengkelCleanup === "function") {
+    container._bengkelCleanup();
+    container._bengkelCleanup = null;
+  }
+
+  const division = BIOSCOPE_DATA.divisions[divisionId];
+
+  container.classList.add("challenge-card--workbench");
+  container.innerHTML = `
+    <div class="bengkel-locked" role="status">
+      <span class="bengkel-locked-icon" aria-hidden="true">🔒</span>
+      <span class="eyebrow">${division.label}</span>
+      <h3>Bengkel ini masih terkunci</h3>
+      <p>
+        Bengkel menguji ciri-ciri yang dijelaskan di materi. Baca materi
+        ${division.label} sampai akhir dulu; bengkelnya terbuka otomatis
+        setelah kamu sampai di ujung materi.
+      </p>
+      <a class="btn btn-primary" href="divisions/${divisionId}.html">Baca materi ${division.label} →</a>
+    </div>
+  `;
 }
 
 // Daftar pustaka halaman kingdom. Diisi dari kingdom.references di data.js
@@ -899,8 +965,6 @@ function initDivisionPage() {
     return;
   }
 
-  markMaterial(division.kingdom, divisionId);
-
   container.innerHTML = `
     ${renderBreadcrumb(kingdom, division)}
 
@@ -926,6 +990,7 @@ function initDivisionPage() {
       <div class="container ency-columns">
         ${renderEditorialColumns(division, kingdom)}
       </div>
+      <div data-material-end aria-hidden="true" style="height:1px"></div>
     </section>
 
     <section class="challenge-wrap">
@@ -943,6 +1008,51 @@ function initDivisionPage() {
 
   loadReferencesScript();
   loadDetektifScript();
+  alurTrack("materi", division.kingdom, divisionId);
+  watchMaterialRead(division.kingdom, divisionId, division.label);
+}
+
+// Materi dihitung "dibaca" setelah pembaca sampai di ujung materi, bukan
+// sekadar membuka halaman. Bengkel Klasifikasi dikunci sampai materi
+// kelompoknya dibaca (lihat setupBengkelTabs).
+function watchMaterialRead(kingdomId, divisionId, label) {
+  const state = getProgress().kingdoms[kingdomId]?.divisions[divisionId];
+
+  if (!state || state.materialViewed) {
+    return;
+  }
+
+  const sentinel = document.querySelector("[data-material-end]");
+
+  if (!sentinel || !("IntersectionObserver" in window)) {
+    markMaterial(kingdomId, divisionId);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) {
+      return;
+    }
+
+    observer.disconnect();
+    markMaterial(kingdomId, divisionId);
+    showReadNotice(`Materi ${label} tercatat selesai dibaca. Bengkelnya sudah terbuka.`);
+  });
+
+  observer.observe(sentinel);
+}
+
+function showReadNotice(text) {
+  const notice = document.createElement("div");
+  notice.className = "read-notice";
+  notice.setAttribute("role", "status");
+  notice.textContent = text;
+  document.body.appendChild(notice);
+  requestAnimationFrame(() => notice.classList.add("is-visible"));
+  setTimeout(() => {
+    notice.classList.remove("is-visible");
+    setTimeout(() => notice.remove(), 400);
+  }, 4500);
 }
 
 // Game Detektif Taksonomi: detektif.js dimuat otomatis dari halaman filum.
@@ -1585,6 +1695,7 @@ function renderChallenge(divisionId) {
   }
 
   const division = BIOSCOPE_DATA.divisions[divisionId];
+  alurTrack("bengkel", division.kingdom, divisionId);
 
   // Semua kelompok (filum/divisio/domain) dapat "Bengkel Klasifikasi" versi
   // seret-dan-lepas, selama datanya punya morphologyProfile (pasangan
@@ -2792,12 +2903,165 @@ function setupScrollTopButton() {
   });
 }
 
+// ---------- Alur: pre-test -> materi -> post-test ----------
+// Pre-test wajib sebelum membuka materi; post-test baru terbuka setelah semua
+// materi (semua divisi/filum) selesai dibaca. Mode admin tidak terkena gerbang.
+const ALUR_PARTICIPANT_KEY = "bioscopeParticipant";
+const ALUR_WAJIB_WHY = false; // true = halaman Dasar Klasifikasi juga harus dibuka dulu
+const ALUR_BEBAS = ["", "index.html", "about.html", "progress.html", "pretest.html", "posttest.html", "admin.html", "dashboard.html"];
+
+function alurBase() {
+  const s = [...document.scripts].find((x) => /(^|\/)js\/main\.js(\?|$)/.test(x.getAttribute("src") || ""));
+  const src = s ? s.getAttribute("src") : "js/main.js";
+  return src.replace(/js\/main\.js.*$/, "");
+}
+
+function alurRead(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch { return null; }
+}
+
+function alurCode() {
+  const p = alurRead(ALUR_PARTICIPANT_KEY);
+  return p && p.code ? p.code : null;
+}
+
+function alurTestDone(jenis) {
+  const code = alurCode();
+  return Boolean(code && alurRead(`bioscopeTestDone:${code}:${jenis}`));
+}
+
+function alurMateriSelesai() {
+  const progress = getProgress();
+  if (ALUR_WAJIB_WHY && !progress.whyClassify) return false;
+  return Object.values(progress.kingdoms).every((k) =>
+    Object.values(k.divisions).every((d) => d.materialViewed),
+  );
+}
+
+// true = halaman dialihkan ke pre-test, hentikan init.
+function alurGate() {
+  if (isAdminMode()) return false;
+  const page = location.pathname.split("/").pop();
+  if (ALUR_BEBAS.includes(page)) return false;
+  if (alurTestDone("pre")) return false;
+  location.replace(alurBase() + "pretest.html");
+  return true;
+}
+
+function setupAlurNav() {
+  const base = alurBase();
+  const page = location.pathname.split("/").pop();
+  const onTest = page === "pretest.html" || page === "posttest.html";
+  const preDone = alurTestDone("pre");
+  const postDone = alurTestDone("post");
+  const postOpen = preDone && !postDone && alurMateriSelesai();
+
+  document.querySelectorAll("[data-alur]").forEach((el) => el.remove());
+
+  const nav = document.querySelector("#site-nav");
+  let item = null;
+  // Pre-test tidak ditampilkan di menu: siswa diarahkan otomatis oleh alurGate().
+  if (postOpen) item = ["Post-test", "posttest.html"];
+
+  if (nav && item) {
+    const a = document.createElement("a");
+    a.href = base + item[1];
+    a.textContent = item[0];
+    a.setAttribute("data-alur", "");
+    if (page === item[1]) a.classList.add("active");
+    nav.appendChild(a);
+  }
+
+  if (postOpen && !onTest && !sessionStorage.getItem("bioscopeAlurTutup")) {
+    if (!document.getElementById("alur-style")) {
+      const st = document.createElement("style");
+      st.id = "alur-style";
+      st.textContent = ".alur-banner{position:fixed;right:1rem;bottom:1rem;z-index:9999;max-width:320px;padding:1rem 1.1rem;border-radius:12px;background:var(--forest,#1f5a45);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.3);font-size:.95rem;line-height:1.5}.alur-banner a{display:inline-block;margin-top:.5rem;padding:.4rem .8rem;border-radius:8px;background:#fff;color:#1f5a45;font-weight:700;text-decoration:none}.alur-banner button{position:absolute;top:.3rem;right:.5rem;background:none;border:0;color:#fff;font-size:1.2rem;cursor:pointer}";
+      document.head.appendChild(st);
+    }
+    const box = document.createElement("div");
+    box.className = "alur-banner";
+    box.setAttribute("data-alur", "");
+    box.innerHTML = `<button type="button" aria-label="Tutup">×</button><strong>Semua materi selesai!</strong><br>Post-test sudah terbuka.<br><a href="${base}posttest.html">Kerjakan post-test</a>`;
+    box.querySelector("button").onclick = () => { sessionStorage.setItem("bioscopeAlurTutup", "1"); box.remove(); };
+    document.body.appendChild(box);
+  }
+}
+
+// ---------- Pencatat waktu belajar (materi dan bengkel) ----------
+// Mencatat detik AKTIF: tab terlihat dan ada interaksi dalam 60 detik terakhir.
+// Dikirim berkala ke Supabase (tabel activity) lewat js/api.js, memakai kode peserta.
+const ALUR_ANTRIAN = "bioscopeActivityPending";
+const ALUR_IDLE_MS = 60000;
+const alurSesi = {};
+let alurTerakhirAktif = Date.now();
+let alurPelacakJalan = false;
+
+function alurMuatApi() {
+  if (window.BIOSCOPE_API) return;
+  const s = document.createElement("script");
+  s.src = alurBase() + "js/api.js";
+  document.head.appendChild(s);
+}
+
+function alurTrack(kind, kingdom, division) {
+  if (isAdminMode() || !alurCode()) return;
+  const cur = alurSesi[kind];
+  if (cur && cur.kingdom === kingdom && cur.division === division) return;
+  alurTrackStop(kind);
+  alurSesi[kind] = { kingdom, division, sec: 0 };
+}
+
+function alurTrackStop(kind) {
+  if (!alurSesi[kind]) return;
+  alurKirim(kind);
+  delete alurSesi[kind];
+}
+
+function alurKirim(kind) {
+  const s = alurSesi[kind];
+  const code = alurCode();
+  if (!s || !code || s.sec < 3) return;
+  let q = [];
+  try { q = JSON.parse(localStorage.getItem(ALUR_ANTRIAN)) || []; } catch { q = []; }
+  q.push({
+    seg: `${code}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    participant: code, kind, kingdom: s.kingdom, division: s.division,
+    seconds: Math.min(Math.round(s.sec), 3600), ts: new Date().toISOString(),
+  });
+  try { localStorage.setItem(ALUR_ANTRIAN, JSON.stringify(q)); } catch {}
+  s.sec = 0;
+  if (window.BIOSCOPE_API && window.BIOSCOPE_API.flushActivity) window.BIOSCOPE_API.flushActivity();
+}
+
+function alurMulaiPelacak() {
+  if (alurPelacakJalan) return;
+  alurPelacakJalan = true;
+  ["pointerdown", "mousemove", "keydown", "scroll", "touchstart"].forEach((e) =>
+    window.addEventListener(e, () => { alurTerakhirAktif = Date.now(); }, { passive: true }),
+  );
+  let tik = 0;
+  setInterval(() => {
+    if (document.hidden || Date.now() - alurTerakhirAktif > ALUR_IDLE_MS) return;
+    Object.values(alurSesi).forEach((s) => { s.sec += 1; });
+    if (++tik % 30 === 0) Object.keys(alurSesi).forEach(alurKirim);
+  }, 1000);
+  const semua = () => Object.keys(alurSesi).forEach(alurKirim);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) semua(); });
+  window.addEventListener("pagehide", semua);
+}
+
 // ---------- Initialization ----------
 
 function init() {
+  if (alurGate()) return;
   setupThemeToggle();
   setActiveNav();
   setupMenu();
+  alurMuatApi();
+  alurMulaiPelacak();
+  setupAlurNav();
+  document.addEventListener("bioscope:progress", setupAlurNav);
   setupScrollTopButton();
   setupSpecimenLazyLoad();
   setupImageLightbox();
