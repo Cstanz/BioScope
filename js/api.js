@@ -4,8 +4,8 @@
    JANGAN PERNAH memakai "secret" atau "service_role". */
 (function () {
   "use strict";
-  const SUPABASE_URL = "https://ISI-PROJECT-ID.supabase.co";
-  const SUPABASE_ANON_KEY = "ISI-ANON-PUBLIC-KEY";
+  const SUPABASE_URL = "https://tfdqiqtbsyoeobtjcfvm.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_EQaTYPlu0A7OySJUsUWVJg_zT9joosc";
   const TABLE = "responses";
   const PENDING = "bioscopePending";   // antrean: jawaban yang belum terkirim (offline/gagal)
   let flushing = false;
@@ -25,6 +25,24 @@
     };
   }
 
+  // Kirim baris dengan INSERT biasa. Mode ON CONFLICT ikut memeriksa aturan BACA (RLS), yang sengaja tertutup
+  // untuk siswa. Duplikat (409) dianggap sudah terkirim; kalau satu batch kena duplikat, kirim satu per satu.
+  async function postRows(path, rows, keepalive) {
+    const headers = Object.assign(
+      { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" },
+      SUPABASE_ANON_KEY.startsWith("sb_") ? {} : { Authorization: `Bearer ${SUPABASE_ANON_KEY}` }
+    );
+    const send = (body) => fetch(`${SUPABASE_URL}/rest/v1/${path}`, { method: "POST", keepalive: !!keepalive, headers, body: JSON.stringify(body) });
+    const res = await send(rows);
+    if (res.ok) return true;
+    if (res.status !== 409) { try { console.warn("BioScope: gagal kirim ke " + path + " (" + res.status + ") " + (await res.text())); } catch (e) {} return false; }
+    for (const r of rows) {
+      const one = await send([r]);
+      if (!one.ok && one.status !== 409) { console.warn("BioScope: gagal kirim ke " + path + " (" + one.status + ")"); return false; }
+    }
+    return true;
+  }
+
   async function flush() {
     if (flushing || SUPABASE_URL.includes("ISI-") || SUPABASE_ANON_KEY.includes("ISI-")) return;
     flushing = true;
@@ -33,30 +51,54 @@
         const q = read(PENDING, []);
         if (!q.length) break;
         const batch = q.slice(0, 200);
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?on_conflict=participant,test,item_id`, {
-          method: "POST",
-          headers: Object.assign(
-            { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "resolution=ignore-duplicates,return=minimal" },
-            // Kunci lama (anon, berbentuk JWT "eyJ...") boleh dikirim sebagai Bearer; kunci baru "sb_publishable_..." tidak boleh.
-            SUPABASE_ANON_KEY.startsWith("sb_") ? {} : { Authorization: `Bearer ${SUPABASE_ANON_KEY}` }
-          ),
-          body: JSON.stringify(batch.map(toRow))
-        });
-        if (!res.ok) { console.warn("BioScope: gagal kirim (" + res.status + "), akan dicoba lagi."); break; }
+        if (!(await postRows(TABLE, batch.map(toRow), false))) break;   // gagal: tetap di antrean, dicoba lagi nanti
         write(PENDING, read(PENDING, []).slice(batch.length));   // buang yang sudah terkirim
       }
     } catch (e) { /* offline: tetap di antrean */ }
     flushing = false;
   }
 
+  // ---------- Pencatat waktu belajar (tabel activity) ----------
+  const ACT_PENDING = "bioscopeActivityPending";
+  let flushingAct = false;
+  async function flushActivity() {
+    if (flushingAct || SUPABASE_URL.includes("ISI-") || SUPABASE_ANON_KEY.includes("ISI-")) return;
+    flushingAct = true;
+    try {
+      while (true) {
+        const q = read(ACT_PENDING, []);
+        if (!q.length) break;
+        const batch = q.slice(0, 200);
+        if (!(await postRows("activity", batch, true))) break;
+        write(ACT_PENDING, read(ACT_PENDING, []).slice(batch.length));
+      }
+    } catch (e) { /* offline: tetap di antrean */ }
+    flushingAct = false;
+  }
+
   let timer = null;
   window.BIOSCOPE_API = {
     saveResponse(rec) {
       const q = read(PENDING, []); q.push(rec); write(PENDING, q);
-      clearTimeout(timer); timer = setTimeout(flush, 300);      // kumpulkan dulu, kirim sekali
+      clearTimeout(timer); timer = setTimeout(flush, 300);
     },
-    flush
+    flush,
+    flushActivity,
+    // Cek apakah kode ada di daftar peserta. true/false; null = tidak bisa dicek (offline/belum diset) -> tes tetap lanjut.
+    async checkCode(code) {
+      if (SUPABASE_URL.includes("ISI-") || SUPABASE_ANON_KEY.includes("ISI-")) return null;
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/cek_kode`, {
+          method: "POST",
+          headers: Object.assign({ apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json" },
+            SUPABASE_ANON_KEY.startsWith("sb_") ? {} : { Authorization: `Bearer ${SUPABASE_ANON_KEY}` }),
+          body: JSON.stringify({ p: code })
+        });
+        if (!res.ok) return null;
+        return (await res.json()) === true;
+      } catch (e) { return null; }
+    }
   };
-  window.addEventListener("online", flush);
-  window.addEventListener("load", flush);
+  window.addEventListener("online", () => { flush(); flushActivity(); });
+  window.addEventListener("load", () => { flush(); flushActivity(); });
 })();
