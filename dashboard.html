@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dashboard Peneliti — BioScope</title>
+<style>
+:root{--bg:#f6f5f0;--card:#fff;--tx:#1d2b25;--mut:#6b7a73;--ac:#1f5a45;--bd:#d9d6cb;--bad:#9a5147}
+@media(prefers-color-scheme:dark){:root{--bg:#141a17;--card:#1d2622;--tx:#e8efe9;--mut:#93a39a;--ac:#5fc29c;--bd:#33403a;--bad:#e08a7e}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+.wrap{max-width:1100px;margin:0 auto;padding:1.2rem}
+h1{font-size:1.4rem;margin:.2rem 0}h2{font-size:1.05rem;margin:1.6rem 0 .5rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1rem 0}
+.stat b{display:block;font-size:1.6rem;color:var(--ac)}.stat span{color:var(--mut);font-size:.85rem}
+input,button{font:inherit;padding:.5rem .7rem;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+button{cursor:pointer;background:var(--ac);color:#fff;border-color:var(--ac)}button.sec{background:transparent;color:var(--tx);border-color:var(--bd)}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{padding:.45rem .6rem;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+th{cursor:pointer;color:var(--mut);font-weight:600}td.n,th.n{text-align:right}
+.err{color:var(--bad);font-weight:600}.mut{color:var(--mut)}
+.tag{padding:.1rem .5rem;border-radius:99px;font-size:.8rem;border:1px solid var(--bd)}
+.ok{color:var(--ac);border-color:var(--ac)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Dashboard Peneliti BioScope</h1>
+  <p class="mut">Pantau nilai, waktu pengerjaan, dan keberlanjutan peserta pre-test/post-test.</p>
+
+  <div id="login" class="card">
+    <div class="row">
+      <input id="em" type="email" placeholder="Email admin" autocomplete="username">
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+      <button id="go">Masuk</button>
+    </div>
+    <p id="msg" class="err" role="alert"></p>
+  </div>
+
+  <div id="app" hidden>
+    <div class="row"><button id="reload" class="sec">Muat ulang</button>
+      <button id="csvP" class="sec">Unduh rekap peserta (CSV)</button>
+      <button id="csvR" class="sec">Unduh data mentah (CSV)</button>
+      <input id="q" placeholder="Cari kode atau nama…"><span id="upd" class="mut"></span></div>
+    <div class="stats" id="stats"></div>
+    <h2>Daftar peserta (roster)</h2>
+    <div class="card">
+      <p class="mut">Satu baris per mahasiswa: KODE, Nama, NIM (opsional). Pisahkan dengan koma atau tab, jadi bisa ditempel langsung dari Excel. Kode yang sama akan diperbarui.</p>
+      <textarea id="ros" rows="5" style="width:100%;font:inherit;padding:.5rem;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx)" placeholder="MHS-001, Budi Santoso, 24010001"></textarea>
+      <div class="row" style="margin-top:.5rem"><button id="saveRos">Simpan daftar</button><span id="rosMsg" class="mut"></span></div>
+    </div>
+    <h2>Rekap per peserta</h2>
+    <div class="card scroll"><table id="tp"></table></div>
+    <h2>Waktu belajar per materi dan bengkel</h2>
+    <div class="card scroll"><table id="tw"></table></div>
+    <h2>Analisis per butir soal</h2>
+    <div class="card scroll"><table id="ti"></table></div>
+  </div>
+</div>
+
+<script>
+// ===== ISI DUA NILAI INI (sama dengan di js/api.js; pakai kunci publishable/anon) =====
+const SB_URL = "https://tfdqiqtbsyoeobtjcfvm.supabase.co";
+const SB_KEY = "sb_publishable_EQaTYPlu0A7OySJUsUWVJg_zT9joosc";
+// =====================================================================================
+let who = "?", token = null, ACT = [], ROWS = [], PEOPLE = [], ROSTER = {}, sortKey = "last", sortDir = -1;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dur = ms => ms == null ? "–" : Math.floor(ms/60000) + "m " + String(Math.round(ms%60000/1000)).padStart(2,"0") + "s";
+const fdt = s => s ? new Date(s).toLocaleString("id-ID",{dateStyle:"short",timeStyle:"short"}) : "–";
+const avg = a => a.length ? a.reduce((x,y)=>x+y,0)/a.length : null;
+const f1 = v => v == null ? "–" : (Math.round(v*10)/10).toString().replace(".",",");
+
+async function login(){
+  $("msg").textContent = "";
+  try{
+    const r = await fetch(`${SB_URL}/auth/v1/token?grant_type=password`,{method:"POST",
+      headers:{apikey:SB_KEY,"Content-Type":"application/json"},
+      body:JSON.stringify({email:$("em").value.trim(),password:$("pw").value})});
+    const j = await r.json();
+    if(!r.ok) throw new Error(j.error_description || j.msg || "Login gagal");
+    token = j.access_token; who = (j.user && j.user.email) || $("em").value.trim(); $("pw").value = "";
+    $("login").hidden = true; $("app").hidden = false; load();
+  }catch(e){ $("msg").textContent = e.message; }
+}
+
+async function load(){
+  $("upd").textContent = "Memuat…"; ROWS = [];
+  try{
+    for(let off=0;;off+=1000){
+      const r = await fetch(`${SB_URL}/rest/v1/responses?select=*&order=ts.asc&limit=1000&offset=${off}`,
+        {headers:{apikey:SB_KEY,Authorization:"Bearer "+token}});
+      if(!r.ok) throw new Error("Gagal membaca data ("+r.status+"). Cek policy admin di Supabase.");
+      const part = await r.json(); ROWS = ROWS.concat(part);
+      if(part.length < 1000) break;
+    }
+    const rr = await fetch(`${SB_URL}/rest/v1/roster?select=*&order=code.asc&limit=1000`,{headers:{apikey:SB_KEY,Authorization:"Bearer "+token}});
+    ROSTER = {}; if(rr.ok) (await rr.json()).forEach(x=>ROSTER[x.code]=x);
+    ACT = [];
+    try{ for(let off=0;;off+=1000){
+      const ar = await fetch(`${SB_URL}/rest/v1/activity?select=*&order=ts.asc&limit=1000&offset=${off}`,{headers:{apikey:SB_KEY,Authorization:"Bearer "+token}});
+      if(!ar.ok) break; const part = await ar.json(); ACT = ACT.concat(part); if(part.length<1000) break; } }catch(e){}
+    build(); $("upd").textContent = "Diperbarui " + new Date().toLocaleTimeString("id-ID") + " · login: " + who;
+  }catch(e){ $("upd").innerHTML = `<span class="err">${esc(e.message)}</span>`; }
+}
+
+function build(){
+  const P = {};
+  ROWS.forEach(r=>{
+    const p = P[r.participant] ??= {code:r.participant,pre:{},post:{},last:null};
+    const t = p[r.test]; if(!t) return;
+    if(r.type==="summary"){ t.score=r.score; t.total=r.total; t.start=r.started_at; t.end=r.finished_at; }
+    else { t.active=(t.active||0)+(r.ms||0); t.changes=(t.changes||0)+(r.changes||0); }
+    if(r.ts && (!p.last || r.ts>p.last)) p.last=r.ts;
+  });
+  ACT.forEach(a=>{
+    const p = P[a.participant] ??= {code:a.participant,pre:{},post:{},last:null};
+    if(a.kind==="bengkel") p.tBengkel=(p.tBengkel||0)+a.seconds*1000; else p.tMateri=(p.tMateri||0)+a.seconds*1000;
+    if(a.ts && (!p.last || a.ts>p.last)) p.last=a.ts;
+  });
+  Object.keys(ROSTER).forEach(c=>{ P[c] ??= {code:c,pre:{},post:{},last:null}; });
+  PEOPLE = Object.values(P).map(p=>{
+    p.name = (ROSTER[p.code]||{}).name||"";
+    const a=p.pre.score, b=p.post.score, tot=p.post.total||p.pre.total;
+    p.gain = (a!=null && b!=null) ? b-a : null;
+    p.ngain = (a!=null && b!=null && tot>a) ? (b-a)/(tot-a) : null;
+    p.status = p.post.score!=null ? "Selesai" : p.pre.score!=null ? "Pre selesai" : "Belum mulai";
+    return p;
+  });
+  stats(); renderPeople(); items(); waktu();
+}
+
+function stats(){
+  const done = PEOPLE.filter(p=>p.status==="Selesai");
+  const s = [
+    [PEOPLE.length,"Peserta terdaftar"],
+    [PEOPLE.filter(p=>p.pre.score!=null).length,"Selesai pre-test"],
+    [done.length,"Selesai pre + post"],
+    [f1(avg(PEOPLE.filter(p=>p.pre.score!=null).map(p=>p.pre.score))),"Rata-rata pre"],
+    [f1(avg(PEOPLE.filter(p=>p.post.score!=null).map(p=>p.post.score))),"Rata-rata post"],
+    [f1(avg(done.map(p=>p.ngain).filter(v=>v!=null))),"Rata-rata N-gain"]
+  ];
+  $("stats").innerHTML = s.map(x=>`<div class="card stat"><b>${esc(x[0])}</b><span>${x[1]}</span></div>`).join("");
+}
+
+const COLS = [
+  ["code","Kode"],["name","Nama"],["status","Status"],["tMateri","Waktu materi","n"],["tBengkel","Waktu bengkel","n"],
+  ["pre.score","Pre","n"],["pre.active","Waktu aktif pre","n"],["pre.end","Selesai pre"],
+  ["post.score","Post","n"],["post.active","Waktu aktif post","n"],["post.end","Selesai post"],
+  ["gain","Selisih","n"],["ngain","N-gain","n"],["last","Aktivitas terakhir"]
+];
+const get = (p,k)=>k.split(".").reduce((o,x)=>o?.[x],p);
+function cell(p,k){
+  const v = get(p,k);
+  if(k==="status") return `<span class="tag ${v==="Selesai"?"ok":""}">${v}</span>`;
+  if(k.endsWith("score")){ const t=get(p,k.replace("score","total")); return v==null?"–":`${v}/${t}`; }
+  if(k==="tMateri"||k==="tBengkel") return v?dur(v):"–";
+  if(k.endsWith("active")) return dur(v);
+  if(k.endsWith("end")||k==="last") return fdt(v);
+  if(k==="gain") return v==null?"–":(v>0?"+":"")+v;
+  if(k==="ngain") return v==null?"–":f1(v*100)+"%";
+  return esc(v);
+}
+function renderPeople(){
+  const q = $("q").value.trim().toUpperCase();
+  const list = PEOPLE.filter(p=>(p.code+" "+(p.name||"")).toUpperCase().includes(q)).sort((a,b)=>{
+    const x=get(a,sortKey), y=get(b,sortKey);
+    if(x==null) return 1; if(y==null) return -1;
+    return (x>y?1:x<y?-1:0)*sortDir;
+  });
+  $("tp").innerHTML = `<thead><tr>${COLS.map(c=>`<th class="${c[2]||""}" data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir>0?" ▲":" ▼"):""}</th>`).join("")}</tr></thead>
+  <tbody>${list.map(p=>`<tr>${COLS.map(c=>`<td class="${c[2]||""}">${cell(p,c[0])}</td>`).join("")}</tr>`).join("")||`<tr><td colspan="${COLS.length}" class="mut">Belum ada data.</td></tr>`}</tbody>`;
+  $("tp").querySelectorAll("th").forEach(th=>th.onclick=()=>{
+    const k=th.dataset.k; sortDir = sortKey===k ? -sortDir : 1; sortKey=k; renderPeople();
+  });
+}
+
+function items(){
+  const I = {};
+  ROWS.filter(r=>r.type==="item").forEach(r=>{
+    const i = I[r.test+"|"+r.item_id] ??= {test:r.test,id:r.item_id,level:r.level,n:0,ok:0,ms:[],ch:0};
+    i.n++; if(r.correct) i.ok++; if(r.ms!=null) i.ms.push(r.ms); i.ch += r.changes||0;
+  });
+  const L = Object.values(I).sort((a,b)=>a.test===b.test?a.id.localeCompare(b.id):a.test==="pre"?-1:1);
+  $("ti").innerHTML = `<thead><tr><th>Tes</th><th>Butir</th><th>Level</th><th class="n">Peserta</th><th class="n">% benar</th><th class="n">Rata-rata waktu</th><th class="n">Ganti jawaban</th></tr></thead>
+  <tbody>${L.map(i=>`<tr><td>${esc(i.test)}</td><td>${esc(i.id)}</td><td>${esc(i.level)}</td><td class="n">${i.n}</td><td class="n">${f1(i.ok/i.n*100)}%</td><td class="n">${dur(avg(i.ms))}</td><td class="n">${i.ch}</td></tr>`).join("")||`<tr><td colspan="7" class="mut">Belum ada data.</td></tr>`}</tbody>`;
+}
+
+function waktu(){
+  const W={};
+  ACT.forEach(a=>{ const k=(a.kingdom||"?")+" / "+(a.division||"?"); const w=W[k]??={k,m:{},b:{}};
+    const t=a.kind==="bengkel"?w.b:w.m; t[a.participant]=(t[a.participant]||0)+a.seconds*1000; });
+  const av=o=>{const v=Object.values(o);return v.length?avg(v):null};
+  const L=Object.values(W).sort((x,y)=>x.k.localeCompare(y.k));
+  $("tw").innerHTML = `<thead><tr><th>Kingdom / divisi</th><th class="n">Peserta materi</th><th class="n">Rata-rata waktu materi</th><th class="n">Peserta bengkel</th><th class="n">Rata-rata waktu bengkel</th></tr></thead>
+  <tbody>${L.map(w=>`<tr><td>${esc(w.k)}</td><td class="n">${Object.keys(w.m).length}</td><td class="n">${dur(av(w.m))}</td><td class="n">${Object.keys(w.b).length}</td><td class="n">${dur(av(w.b))}</td></tr>`).join("")||`<tr><td colspan="5" class="mut">Belum ada data waktu belajar.</td></tr>`}</tbody>`;
+}
+
+function csv(rows, cols){
+  const q = v => '"'+String(v??"").replace(/"/g,'""')+'"';
+  const t = [cols.join(",")].concat(rows.map(r=>cols.map(c=>q(r[c])).join(","))).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff"+t],{type:"text/csv"}));
+  return a;
+}
+$("csvP").onclick = ()=>{
+  const rows = PEOPLE.map(p=>({kode:p.code,nama:p.name,status:p.status,waktu_materi_detik:Math.round((p.tMateri||0)/1000),waktu_bengkel_detik:Math.round((p.tBengkel||0)/1000),pre:p.pre.score,pre_total:p.pre.total,pre_waktu_aktif_detik:p.pre.active!=null?Math.round(p.pre.active/1000):"",pre_selesai:p.pre.end,
+    post:p.post.score,post_total:p.post.total,post_waktu_aktif_detik:p.post.active!=null?Math.round(p.post.active/1000):"",post_selesai:p.post.end,selisih:p.gain,ngain:p.ngain,aktivitas_terakhir:p.last}));
+  const a = csv(rows, Object.keys(rows[0]||{kode:1})); a.download="rekap-peserta.csv"; a.click();
+};
+$("csvR").onclick = ()=>{ const a = csv(ROWS, Object.keys(ROWS[0]||{id:1})); a.download="data-mentah.csv"; a.click(); };
+$("saveRos").onclick = async ()=>{
+  const out=[], bad=[];
+  $("ros").value.split(/\r?\n/).forEach(line=>{
+    if(!line.trim()) return;
+    const [c,n,m] = line.split(/[,\t;]/).map(x=>x.trim());
+    const code=(c||"").toUpperCase();
+    if(/^[A-Z0-9-]{4,20}$/.test(code) && n) out.push({code,name:n,nim:m||null}); else bad.push(line);
+  });
+  if(bad.length) return $("rosMsg").innerHTML=`<span class="err">Baris tidak valid (kode 4-20 karakter huruf/angka/-, nama wajib): ${esc(bad[0])}</span>`;
+  if(!out.length) return $("rosMsg").textContent="Belum ada baris.";
+  const r = await fetch(`${SB_URL}/rest/v1/roster?on_conflict=code`,{method:"POST",
+    headers:{apikey:SB_KEY,Authorization:"Bearer "+token,"Content-Type":"application/json",Prefer:"resolution=merge-duplicates,return=minimal"},body:JSON.stringify(out)});
+  if(!r.ok){ let t=""; try{ t=await r.text(); }catch(e){}
+    return $("rosMsg").innerHTML=`<span class="err">Gagal menyimpan (${r.status}). Login sebagai: ${esc(who)}. Pesan server: ${esc(t.slice(0,300))}</span>`; }
+  $("rosMsg").textContent = out.length+" peserta tersimpan."; $("ros").value=""; load();
+};
+$("go").onclick = login; $("pw").onkeydown = e=>{ if(e.key==="Enter") login(); };
+$("reload").onclick = load; $("q").oninput = renderPeople;
+</script>
+</body>
+</html>
