@@ -1,8 +1,3 @@
-/*
-  BioScope — application logic
-  All learning state is stored locally in the browser.
-*/
-
 const STORE_KEY = "bioscopeProgress";
 const ROLE_KEY = "bioscopeRole";
 const THEME_KEY = "bioscopeTheme";
@@ -172,6 +167,9 @@ function saveProgress(progress) {
   localStorage.setItem(STORE_KEY, JSON.stringify(progress));
 }
 
+// Ambang penguasaan (mastery) sementara; dikaji ulang setelah uji coba.
+const MASTERY_THRESHOLD = 75;
+
 function kingdomUnlocked(kingdomId, progress) {
   const order = Object.keys(BIOSCOPE_DATA.kingdoms);
   const index = order.indexOf(kingdomId);
@@ -181,7 +179,9 @@ function kingdomUnlocked(kingdomId, progress) {
   }
 
   const previousId = order[index - 1];
-  return (progress.kingdoms[previousId]?.score || 0) >= 85;
+  // Kunci 85% dihapus: semua kingdom terbuka untuk dijelajahi.
+  // Penguasaan ditampilkan sebagai status (lihat MASTERY_THRESHOLD), bukan gerbang.
+  return true;
 }
 
 function recalcKingdom(kingdomId, progress) {
@@ -226,7 +226,13 @@ function markChallenge(kingdomId, divisionId) {
 
   kingdom.divisions[divisionId].challengeCompleted = true;
   recalcKingdom(kingdomId, progress);
+
+  const all = Object.values(kingdom.divisions);
+  const pct = Math.round((all.filter((d) => d.challengeCompleted).length / all.length) * 100);
+  kingdom.score = Math.max(kingdom.score || 0, pct);
+
   saveProgress(progress);
+  document.dispatchEvent(new CustomEvent("bioscope:progress"));
 }
 
 // ---------- Glosarium istilah taksonomi (untuk tooltip tag di Taxonomy Tree) ----------
@@ -354,6 +360,7 @@ function renderKingdomCards() {
     .map(([id, kingdom], index) => {
       const unlocked = adminAwareUnlock(id, progress);
       const kingdomProgress = progress.kingdoms[id];
+      const mastered = (kingdomProgress.quizBest || 0) >= MASTERY_THRESHOLD;
       const previousKingdom = index
         ? kingdoms[index - 1][1].name
         : "sebelumnya";
@@ -370,7 +377,7 @@ function renderKingdomCards() {
 
           <div class="card-footer">
             <span class="status ${unlocked ? "status-open" : "status-locked"}">
-              ${isAdminMode() ? "Admin · Akses penuh" : unlocked ? "Terbuka" : "Terkunci"}
+              ${isAdminMode() ? "Admin · Akses penuh" : mastered ? "Dikuasai" : unlocked ? "Terbuka" : "Terkunci"}
             </span>
 
             ${
@@ -409,6 +416,39 @@ function sanitizeSketchfabEmbedUrl(embedUrl) {
   } catch {
     return embedUrl;
   }
+}
+
+// ---------- Kredit model 3D ----------
+// Caption di bawah viewer 3D, formatnya sama seperti caption gambar:
+//   "Model 3D struktur sel bakteri. Sumber: "Judul" oleh Kreator, Sketchfab (CC BY 4.0)."
+// Isi detailnya lewat modelCredit { title, creator, license, url } di data.js.
+// Placeholder "[isi ...]" otomatis diabaikan; tautan Sketchfab diambil dari embedUrl.
+function renderModelCredit(item, name) {
+  // Kalau tidak ada model 3D tapi ada gambar spesimen, tampilkan caption gambar.
+  // Isi lewat imageCaption di data.js (boleh mengandung tautan/HTML sederhana).
+  if (item && !item.embedUrl && item.image) {
+    const cap =
+      item.imageCaption ||
+      `Gambar ${escapeAttr(name || "")}. Sumber: [isi sumber gambar].`;
+    return `<p class="model-credit" style="margin:.75rem 0 0;font-size:.95rem;line-height:1.6;opacity:.85;">${cap}</p>`;
+  }
+  if (!item || !item.embedUrl) return "";
+  const idMatch = String(item.embedUrl).match(/sketchfab\.com\/models\/([0-9a-f]{32})/i);
+  const credit = item.modelCredit || {};
+  const clean = (v) => (v && !/^\s*\[/.test(v) ? String(v).trim() : "");
+  const url = clean(credit.url) || (idMatch ? `https://sketchfab.com/models/${idMatch[1]}` : "");
+  const title = clean(credit.title);
+  const creator = clean(credit.creator);
+  const license = clean(credit.license);
+
+  // Template: bagian yang belum diisi di data.js tampil sebagai [isi ...].
+  let source = `${title ? "&ldquo;" + escapeAttr(title) + "&rdquo;" : "[isi judul model]"} oleh ${creator ? escapeAttr(creator) : "[isi kreator]"}`;
+  source += url
+    ? `, <a href="${escapeAttr(url)}" target="_blank" rel="noopener">Sketchfab</a>`
+    : ", Sketchfab";
+  source += ` (${license ? escapeAttr(license) : "[isi lisensi]"})`;
+
+  return `<p class="model-credit" style="margin:.75rem 0 0;font-size:.95rem;line-height:1.6;opacity:.85;">Model 3D ${escapeAttr(name || "")}. Sumber: ${source}.</p>`;
 }
 
 function buildSpecimenMarkup(embedUrl, imageUrl, title, fallbackLabel, fallbackSmall) {
@@ -517,8 +557,11 @@ function renderKingdomPage() {
           ${isAdminMode() ? '<span class="admin-preview-badge">PRATINJAU ADMIN · AKSES PENUH</span>' : ""}
         </div>
 
-        <div class="specimen specimen-${kingdomId}">
+        <div class="specimen-wrap">
+          <div class="specimen specimen-${kingdomId}">
           ${buildSpecimenMarkup(kingdom.embedUrl, kingdom.image, `3D Model ${kingdom.name}`, "KERAJAAN", kingdom.name.toUpperCase())}
+        </div>
+          ${renderModelCredit(kingdom, kingdom.name)}
         </div>
       </div>
     </section>
@@ -544,6 +587,22 @@ function renderKingdomPage() {
             ${kingdom.criteria.map((item) => `<li>${item}</li>`).join("")}
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="section mindmap-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Peta konsep</span>
+            <h2>Mindmap ${kingdom.name}</h2>
+          </div>
+        </div>
+
+        <div class="mindmap-scroll">
+          ${renderMindmap(kingdomId)}
+        </div>
+        <p class="mindmap-hint">Klik nama kelompok pada mindmap untuk membuka materinya.</p>
       </div>
     </section>
 
@@ -589,20 +648,216 @@ function renderKingdomPage() {
 
     <section class="section">
       <div class="container">
-        <div class="quiz-panel">
+        <div class="section-heading">
           <div>
-            <span class="eyebrow">Kuis kerajaan</span>
-            <h2>Uji pemahaman ${kingdom.name}</h2>
-            <p>Skor minimal 85% diperlukan untuk membuka kingdom berikutnya.</p>
+            <span class="eyebrow">Seret · cocokkan · pahami</span>
+            <h2>Bengkel Klasifikasi ${kingdom.name}</h2>
+            <p>Selesaikan Bengkel tiap kelompok untuk melengkapi progres kingdom ini. Semua kingdom terbuka untuk dijelajahi.</p>
           </div>
-
-          <div id="kingdom-quiz"></div>
         </div>
+        <div class="bengkel-tabs" data-bengkel-tabs style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"></div>
+        <div class="challenge-card" data-challenge></div>
+      </div>
+    </section>
+
+    ${renderKingdomReferences(kingdom)}
+  `;
+
+  setupBengkelTabs(kingdomId);
+}
+
+// Tab Bengkel Klasifikasi: satu tab per kelompok (filum/divisi/domain) di kingdom ini.
+function setupBengkelTabs(kingdomId) {
+  const tabs = document.querySelector("[data-bengkel-tabs]");
+  if (!tabs) {
+    return;
+  }
+
+  const list = Object.values(BIOSCOPE_DATA.divisions).filter((d) => d.kingdom === kingdomId);
+  let active = list[0] && list[0].id;
+
+  const draw = () => {
+    const state = getProgress().kingdoms[kingdomId].divisions;
+    tabs.innerHTML = list
+      .map((d) => {
+        const done = state[d.id] && state[d.id].challengeCompleted;
+        return `<button type="button" class="btn ${d.id === active ? "btn-primary" : "btn-secondary"}" data-tab="${d.id}">${done ? "✓ " : ""}${d.label}</button>`;
+      })
+      .join("");
+  };
+
+  const show = (id) => {
+    active = id;
+    renderChallenge(id);
+    draw();
+  };
+
+  tabs.addEventListener("click", (event) => {
+    const btn = event.target.closest("[data-tab]");
+    if (btn) {
+      show(btn.dataset.tab);
+    }
+  });
+  document.addEventListener("bioscope:progress", draw);
+
+  if (active) {
+    show(active);
+  }
+}
+
+// Daftar pustaka halaman kingdom. Diisi dari kingdom.references di data.js
+// (array string HTML, urut abjad). Kalau kingdom belum punya references,
+// bagian ini tidak ditampilkan. Memakai kelas .citation-section/.citation-list
+// yang sudah ada di style.css.
+function renderKingdomReferences(kingdom) {
+  if (!Array.isArray(kingdom.references) || !kingdom.references.length) {
+    return "";
+  }
+
+  return `
+    <section class="section citation-section" id="daftar-pustaka">
+      <div class="container">
+        <span class="eyebrow">Sumber</span>
+        <h2>Daftar Pustaka</h2>
+
+        <ol class="citation-list">
+          ${kingdom.references.map((item) => `<li>${item}</li>`).join("")}
+        </ol>
       </div>
     </section>
   `;
+}
 
-  renderQuiz(kingdomId);
+// ---------- Mindmap kingdom ----------
+
+// Mindmap dibuat otomatis dari data kingdom (tanpa gambar):
+//   kiri  : Ciri utama + Dasar klasifikasi (diambil dari teks tebal di chars/criteria)
+//   kanan : tiap kelompok/filum beserta contoh spesiesnya (klik = buka materinya)
+function renderMindmap(kingdomId) {
+  const kingdom = BIOSCOPE_DATA.kingdoms[kingdomId];
+
+  if (!kingdom) {
+    return "";
+  }
+
+  const WIDTH = 1180;
+  const cx = WIDTH / 2;
+  const LEAF_H = 28;
+  const TOPIC_GAP = 16;
+  const PAD = 24;
+
+  const shorten = (text, max) =>
+    text.length > max ? `${text.slice(0, max - 1)}…` : text;
+
+  const boldLabel = (html) => {
+    const match = String(html).match(/<strong>([\s\S]*?)<\/strong>/i);
+    return shorten(plainText(match ? match[1] : html).replace(/:$/, ""), 36);
+  };
+
+  const widthOf = (text, size) => Math.round(text.length * size * 0.56 + 24);
+
+  const left = [
+    { title: "Ciri utama", leaves: (kingdom.chars || []).map(boldLabel) },
+    { title: "Dasar klasifikasi", leaves: (kingdom.criteria || []).map(boldLabel) },
+  ].filter((topic) => topic.leaves.length);
+
+  const right = kingdom.division_ids
+    .map((divisionId) => {
+      const division = BIOSCOPE_DATA.divisions[divisionId];
+
+      if (!division) {
+        return null;
+      }
+
+      const names = division.exampleNotes
+        ? division.exampleNotes.map((ex) => ex.name)
+        : String(division.examples || "").split(",");
+
+      return {
+        title: plainText(division.label),
+        href: `divisions/${divisionId}.html`,
+        leaves: names
+          .map((name) => shorten(plainText(name), 38))
+          .filter(Boolean)
+          .slice(0, 2),
+      };
+    })
+    .filter(Boolean);
+
+  const blockHeight = (topic) => Math.max(1, topic.leaves.length) * LEAF_H;
+  const groupHeight = (topics) =>
+    topics.reduce((total, topic) => total + blockHeight(topic), 0) +
+    Math.max(0, topics.length - 1) * TOPIC_GAP;
+
+  const height = Math.max(groupHeight(left), groupHeight(right), 160) + PAD * 2;
+  const middle = height / 2;
+
+  const curve = (x1, y1, x2, y2) => {
+    const dx = (x2 - x1) / 2;
+    return `M ${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}`;
+  };
+
+  const centerLabel = kingdom.name;
+  const centerW = Math.max(120, widthOf(centerLabel, 18));
+  const maxTopicW = (topics) =>
+    Math.max(80, ...topics.map((topic) => widthOf(topic.title, 13.5)));
+
+  let links = "";
+  let nodes = "";
+
+  const drawSide = (topics, side) => {
+    const sign = side === "left" ? -1 : 1;
+    const topicW = maxTopicW(topics);
+    const innerX = cx + sign * 130;
+    const leafStart = cx + sign * (130 + topicW + 40);
+    let top = middle - groupHeight(topics) / 2;
+
+    topics.forEach((topic) => {
+      const h = blockHeight(topic);
+      const topicY = top + h / 2;
+      const w = widthOf(topic.title, 13.5);
+      const boxX = side === "left" ? innerX - w : innerX;
+      const edgeNear = side === "left" ? boxX + w : boxX;
+      const edgeFar = side === "left" ? boxX : boxX + w;
+
+      links += `<path class="mm-link mm-link-${side}" d="${curve(cx + sign * (centerW / 2), middle, edgeNear, topicY)}" />`;
+
+      const box = `
+        <rect class="mm-topic mm-topic-${side}" x="${boxX}" y="${topicY - 15}" width="${w}" height="30" rx="15" />
+        <text class="mm-topic-text" x="${boxX + w / 2}" y="${topicY + 4.5}" text-anchor="middle">${escapeAttr(topic.title)}</text>`;
+
+      nodes += topic.href
+        ? `<a class="mm-anchor" href="${topic.href}" aria-label="Buka materi ${escapeAttr(topic.title)}">${box}</a>`
+        : `<g>${box}</g>`;
+
+      topic.leaves.forEach((leaf, index) => {
+        const leafY = top + LEAF_H * (index + 0.5);
+        const lw = widthOf(leaf, 12);
+        const leafX = side === "left" ? leafStart - lw : leafStart;
+        const leafNear = side === "left" ? leafX + lw : leafX;
+
+        links += `<path class="mm-link mm-link-${side} mm-link-leaf" d="${curve(edgeFar, topicY, leafNear, leafY)}" />`;
+        nodes += `
+          <rect class="mm-leaf mm-leaf-${side}" x="${leafX}" y="${leafY - 12}" width="${lw}" height="24" rx="12" />
+          <text class="mm-leaf-text" x="${leafX + lw / 2}" y="${leafY + 4}" text-anchor="middle">${escapeAttr(leaf)}</text>`;
+      });
+
+      top += h + TOPIC_GAP;
+    });
+  };
+
+  drawSide(left, "left");
+  drawSide(right, "right");
+
+  return `
+    <svg class="mindmap" viewBox="0 0 ${WIDTH} ${height}" role="img"
+      aria-label="Mindmap kerajaan ${escapeAttr(kingdom.name)}: ciri utama, dasar klasifikasi, dan kelompok beserta contohnya">
+      ${links}
+      <rect class="mm-center" x="${cx - centerW / 2}" y="${middle - 26}" width="${centerW}" height="52" rx="26" />
+      <text class="mm-center-text" x="${cx}" y="${middle + 6}" text-anchor="middle">${escapeAttr(centerLabel)}</text>
+      ${nodes}
+    </svg>
+  `;
 }
 
 // ---------- Division / phylum encyclopedia pages ----------
@@ -658,40 +913,18 @@ function initDivisionPage() {
           <p class="lede">${division.definition}</p>
         </div>
 
-       <div class="specimen specimen-${division.kingdom}">
+       <div class="specimen-wrap">
+          <div class="specimen specimen-${division.kingdom}">
           ${buildSpecimenMarkup(division.embedUrl, division.image, `3D Model ${division.title}`, "SPESIMEN", division.label.toUpperCase())}
+        </div>
+          ${renderModelCredit(division, division.label)}
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container editorial-grid">
-        <aside class="aside-meta">
-          <span class="eyebrow">Taksonomi</span>
-          <dl>
-            <dt>Kerajaan</dt>
-            <dd>${kingdom.name}</dd>
-
-            <dt>Kelompok</dt>
-            <dd>${division.label}</dd>
-
-            <dt>Contoh</dt>
-            <dd>${
-              division.exampleNotes
-                ? `<ul class="example-tags">${division.exampleNotes
-                    .map(
-                      (ex) =>
-                        `<li><strong>${ex.name}</strong><span>${ex.note}</span></li>`,
-                    )
-                    .join("")}</ul>`
-                : division.examples
-            }</dd>
-          </dl>
-        </aside>
-
-        <div class="prose">
-          ${renderEditorialSections(division)}
-        </div>
+    <section class="section ency-columns-section">
+      <div class="container ency-columns">
+        ${renderEditorialColumns(division, kingdom)}
       </div>
     </section>
 
@@ -699,30 +932,53 @@ function initDivisionPage() {
       <div class="container">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">${
-              division.morphologyProfile && division.morphologyProfile.length
-                ? "Seret · cocokkan · pahami"
-                : "Satu kelompok · satu tantangan"
-            }</span>
-            <h2>${
-              division.morphologyProfile && division.morphologyProfile.length
-                ? "Bengkel Klasifikasi"
-                : "Tantangan Klasifikasi"
-            }</h2>
+            <span class="eyebrow">Detektif Taksonomi</span>
+            <h2>Kumpulkan kartu filum ini</h2>
           </div>
-          <span class="status status-open">${
-            division.morphologyProfile && division.morphologyProfile.length
-              ? `${division.morphologyProfile.length} ciri untuk dicocokkan`
-              : "1 unit penilaian"
-          }</span>
         </div>
-
-        <div class="challenge-card" data-challenge="${divisionId}"></div>
+        <div data-detektif="${divisionId}"></div>
       </div>
     </section>
   `;
 
-  renderChallenge(divisionId);
+  loadReferencesScript();
+  loadDetektifScript();
+}
+
+// Game Detektif Taksonomi: detektif.js dimuat otomatis dari halaman filum.
+function loadDetektifScript() {
+  if (window.__dt) {
+    return;
+  }
+
+  const mainScript = document.querySelector('script[src$="main.js"]');
+
+  if (!mainScript) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = mainScript.getAttribute("src").replace(/main\.js$/, "detektif.js");
+  document.body.appendChild(script);
+}
+
+// Daftar pustaka per halaman: references.js dimuat otomatis di sini supaya
+// tidak perlu menambah <script> di tiap halaman filum. Kalau sudah dimuat
+// lewat HTML, references.js menjaga dirinya agar tidak jalan dua kali.
+function loadReferencesScript() {
+  if (window.__bioscopeRefs) {
+    return;
+  }
+
+  const mainScript = document.querySelector('script[src$="main.js"]');
+
+  if (!mainScript) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = mainScript.getAttribute("src").replace(/main\.js$/, "references.js");
+  document.body.appendChild(script);
 }
 
 // ---------- Breadcrumb ----------
@@ -770,9 +1026,10 @@ function renderKingdomBreadcrumb(kingdom) {
 
 // ---------- Editorial sections (auto-hides sections with no data) ----------
 
-function renderEditorialSections(division) {
-  const sections = [
+function buildEditorialSections(division) {
+  return [
     {
+      key: "struktur",
       eyebrow: "Struktur tubuh",
       heading: "Struktur & morfologi",
       body: division.body
@@ -784,6 +1041,7 @@ function renderEditorialSections(division) {
         : "",
     },
     {
+      key: "habitat",
       eyebrow: "Habitat",
       heading: "Habitat & distribusi",
       body: division.habitat
@@ -795,32 +1053,45 @@ function renderEditorialSections(division) {
         : "",
     },
     {
+      key: "nutrisi",
       eyebrow: "Cara hidup",
       heading: "Nutrisi & cara hidup",
       body: division.nutrition ? `<p>${division.nutrition}</p>` : "",
     },
     {
-      eyebrow: "Siklus hidup",
-      heading: "Reproduksi",
-      body: division.reproduction ? `<p>${division.reproduction}</p>` : "",
+      // Revisi dosen: "Reproduksi" diganti "Siklus hidup". Teks reproduksi
+      // tetap dipakai sebagai pembuka, lalu dilengkapi diagram siklus hidup.
+      key: "siklus-hidup",
+      eyebrow: "Reproduksi",
+      heading: "Siklus hidup",
+      body:
+        division.reproduction || division.lifeCycleSteps
+          ? `${division.reproduction ? `<p>${division.reproduction}</p>` : ""}${renderLifeCycle(division)}`
+          : "",
     },
     {
+      key: "ekologi",
       eyebrow: "Ekologi",
       heading: "Peran ekologis",
       body: renderEcology(division),
     },
     {
+      key: "pengenalan",
       eyebrow: "Pengenalan",
       heading: "Bagaimana mengenalinya?",
       body: division.recognizeSteps
-        ? `<ul>${division.recognizeSteps.map((step) => `<li>${step}</li>`).join("")}</ul>`
+        ? `<ul class="ency-steps">${division.recognizeSteps.map((step) => `<li>${step}</li>`).join("")}</ul>`
         : division.recognize
           ? `<p>${division.recognize}</p>`
           : "",
     },
   ].filter((section) => section.body);
+}
 
-  return sections
+// Layout lama (satu kolom). Tidak dipakai lagi oleh halaman division,
+// disimpan supaya tetap bisa dipakai kalau suatu saat dibutuhkan.
+function renderEditorialSections(division) {
+  return buildEditorialSections(division)
     .map(
       (section, index) => `
         <section class="editorial-section">
@@ -833,6 +1104,410 @@ function renderEditorialSections(division) {
     .join("");
 }
 
+// ---------- Layout tiga kolom (terinspirasi OneZoom) ----------
+
+// Susunan: tiap materi jadi satu blok, lalu blok dibagi ke tiga kolom
+// dengan urutan tetap (kiri → kanan) supaya nomor 01, 02, 03... tetap
+// terbaca berurutan. Blok "Contoh spesies" selalu jadi blok terakhir,
+// sehingga berada di ujung kolom ketiga seperti daftar kutipan di OneZoom.
+function renderEditorialColumns(division, kingdom) {
+  const blocks = buildEditorialSections(division).map((section, index) => ({
+    html: `
+      <section class="ency-block">
+        <span class="eyebrow">${String(index + 1).padStart(2, "0")} · ${section.eyebrow}</span>
+        <h2>${section.heading}</h2>
+        ${renderSectionFigure(division, section.key)}
+        ${section.body}
+      </section>
+    `,
+  }));
+
+  const examplesHtml = renderExamplesBlock(division, kingdom);
+
+  if (examplesHtml) {
+    blocks.push({ html: examplesHtml });
+  }
+
+  return splitIntoColumns(blocks, 3)
+    .filter((column) => column.length)
+    .map(
+      (column) =>
+        `<div class="ency-col">${column.map((block) => block.html).join("")}</div>`,
+    )
+    .join("");
+}
+
+// ---------- Tempat gambar (tinggal tempel) ----------
+
+// Tiap bagian materi dan tiap contoh spesies punya "slot" gambar. Slot mencari
+// file otomatis berdasarkan nama, jadi cukup menaruh file di folder Assets
+// tanpa mengubah kode/data. Urutan format: .svg, .jpg, .jpeg, .png, .webp.
+// Kalau file belum ada, slot tampil sebagai kotak putus-putus berisi nama
+// file yang diharapkan. Setel SHOW_EMPTY_IMAGE_SLOTS = false untuk
+// menyembunyikan slot kosong saat situs sudah dipublikasikan.
+const SHOW_EMPTY_IMAGE_SLOTS = true;
+const IMAGE_EXTENSIONS = ["svg", "jpg", "jpeg", "png", "webp"];
+
+if (!SHOW_EMPTY_IMAGE_SLOTS) {
+  document.documentElement.classList.add("no-empty-slots");
+}
+
+// Dipanggil lewat onerror pada <img>: coba format berikutnya, kalau habis
+// tandai slot sebagai kosong.
+function bioscopeImgFallback(img) {
+  const next = Number(img.dataset.step || 0) + 1;
+
+  if (next < IMAGE_EXTENSIONS.length) {
+    img.dataset.step = next;
+    img.src = `${img.dataset.base}.${IMAGE_EXTENSIONS[next]}`;
+    return;
+  }
+
+  // Semua format gagal dimuat -> baru tampilkan kotak "Tempat gambar".
+  const slot = img.parentElement;
+  slot.classList.add("is-empty");
+  const placeholder = slot.querySelector(".ency-slot-empty");
+  if (placeholder) {
+    placeholder.style.display = ""; // kembalikan ke aturan CSS
+  }
+  img.remove();
+}
+
+// ---------- Klik gambar -> tampil penuh (lightbox) ----------
+// Berlaku untuk gambar materi, gambar contoh spesies, kartu info, dan
+// gambar spesimen. Tutup dengan klik di mana saja, tombol ×, atau Esc.
+function setupImageLightbox() {
+  const SELECTOR = ".ency-slot img, .ency-thumb img, .info-card-img, .specimen-image";
+
+  const style = document.createElement("style");
+  style.textContent = `
+    ${SELECTOR.split(",").map((s) => s.trim()).join(", ")} { cursor: zoom-in; }
+    .img-lightbox {
+      position: fixed; inset: 0; z-index: 10000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; padding: 24px;
+      background: rgba(0, 0, 0, 0.88);
+      opacity: 0; transition: opacity 0.2s ease; cursor: zoom-out;
+    }
+    .img-lightbox.is-open { opacity: 1; }
+    .img-lightbox img {
+      max-width: 96vw; max-height: 82vh; object-fit: contain;
+      background: #fff; border-radius: 6px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    .img-lightbox-caption {
+      max-width: 900px; color: #eee; font-size: 0.95rem;
+      line-height: 1.5; text-align: center;
+    }
+    .img-lightbox-close {
+      position: absolute; top: 16px; right: 20px;
+      width: 42px; height: 42px; border: 0; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15); color: #fff;
+      font-size: 28px; line-height: 1; cursor: pointer;
+    }
+    .img-lightbox-close:hover { background: rgba(255, 255, 255, 0.3); }
+  `;
+  document.head.appendChild(style);
+
+  let overlay = null;
+
+  function close() {
+    if (!overlay) return;
+    const el = overlay;
+    overlay = null;
+    el.classList.remove("is-open");
+    document.body.style.overflow = "";
+    window.setTimeout(() => el.remove(), 200);
+  }
+
+  function open(img) {
+    close();
+
+    const figure = img.closest("figure");
+    const captionEl = figure && figure.querySelector("figcaption");
+    const creditEl = img.closest(".specimen-wrap") && img.closest(".specimen-wrap").querySelector(".model-credit");
+    const captionText =
+      img.dataset.caption ||
+      (creditEl ? creditEl.textContent.trim() : "") ||
+      (captionEl && !captionEl.classList.contains("ency-slot-file")
+        ? captionEl.textContent.trim()
+        : img.alt || "");
+
+    overlay = document.createElement("div");
+    overlay.className = "img-lightbox";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Tampilan gambar penuh");
+    overlay.innerHTML = `
+      <button type="button" class="img-lightbox-close" aria-label="Tutup gambar">&times;</button>
+      <img src="${escapeAttr(img.currentSrc || img.src)}" alt="${escapeAttr(img.alt || "")}" />
+      ${captionText ? `<div class="img-lightbox-caption">${escapeAttr(captionText)}</div>` : ""}
+    `;
+
+    overlay.addEventListener("click", close);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => overlay && overlay.classList.add("is-open"));
+  }
+
+  document.addEventListener("click", (event) => {
+    const img = event.target.closest(SELECTOR);
+    if (img && img.tagName === "IMG") {
+      event.preventDefault();
+      open(img);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") close();
+  });
+}
+
+// Nama file gambar contoh dibuat otomatis dari nama spesies:
+//   "Escherichia coli" -> Assets/contoh/escherichia-coli.(svg|jpg|png)
+function exampleImageSlug(name) {
+  return plainText(name)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function renderExamplesBlock(division, kingdom) {
+  let list = "";
+
+  if (division.exampleNotes && division.exampleNotes.length) {
+    list = `<ul class="ency-quotes ency-examples">${division.exampleNotes
+      .map((ex, exIndex) => {
+        const label = plainText(ex.name);
+        // Template caption otomatis (Gambar 6 dst., setelah 5 gambar materi).
+        // Isi `caption` pada exampleNotes di data.js untuk menggantinya.
+        const exCaption =
+          ex.caption || `Gambar ${5 + exIndex + 1}. ${label}. (Sumber: [isi sumber gambar])`;
+        const slug = exampleImageSlug(ex.name);
+        // `image` pada exampleNotes (opsional) menimpa nama otomatis.
+        const base = `../Assets/contoh/${slug}`;
+        const explicit = Boolean(ex.image);
+        const src = explicit ? ex.image : `${base}.${IMAGE_EXTENSIONS[0]}`;
+        const lastStep = explicit ? IMAGE_EXTENSIONS.length - 1 : 0;
+
+        return `
+          <li class="ency-example">
+            <figure class="ency-thumb" data-initial="${escapeAttr(label.charAt(0).toUpperCase())}"
+              title="Tempat gambar: Assets/contoh/${escapeAttr(slug)}.svg / .jpg / .png">
+              <img src="${escapeAttr(src)}" alt="${escapeAttr(label)}" loading="lazy"
+                data-caption="${escapeAttr(plainText(exCaption))}"
+                data-base="${escapeAttr(base)}" data-step="${lastStep}"
+                onerror="bioscopeImgFallback(this)" />
+              <figcaption class="ency-slot-file">${escapeAttr(slug)}</figcaption>
+              <figcaption class="ency-caption">${exCaption}</figcaption>
+            </figure>
+            <div class="ency-example-text">
+              <strong>${ex.name}</strong>
+              <span>${ex.note}</span>
+            </div>
+          </li>`;
+      })
+      .join("")}</ul>`;
+  } else if (division.examples) {
+    list = `<p>${division.examples}</p>`;
+  }
+
+  return `
+    <section class="ency-block ency-block-examples">
+      <span class="eyebrow">Taksonomi</span>
+      <dl class="ency-taxon">
+        <div><dt>Kerajaan</dt><dd>${kingdom.name}</dd></div>
+        <div><dt>Kelompok</dt><dd>${division.label}</dd></div>
+      </dl>
+      ${
+        list
+          ? `<h2>Contoh</h2>
+      ${list}`
+          : ""
+      }
+    </section>
+  `;
+}
+
+// ---------- Helper teks ----------
+
+// Ubah potongan HTML (&mdash;, <strong>, dll.) menjadi teks biasa.
+function plainText(html) {
+  const box = document.createElement("textarea");
+  box.innerHTML = String(html || "").replace(/<[^>]*>/g, "");
+  return box.value.replace(/\s+/g, " ").trim();
+}
+
+function escapeAttr(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// ---------- Gambar pendukung materi ----------
+
+// Slot gambar tiap bagian materi. Nama file otomatis:
+//   Assets/materi/<id-filum>-<bagian>.(svg|jpg|png)
+// contoh: Assets/materi/eubacteria-struktur.svg
+// Kunci bagian: struktur, habitat, nutrisi, siklus-hidup, ekologi, pengenalan.
+// Mau pakai file/lokasi lain? Isi sectionImages di data.js:
+//   sectionImages: { struktur: { src: "...", caption: "..." } }
+function renderSectionFigure(division, key) {
+  const custom = division.sectionImages && division.sectionImages[key];
+  const base = `../Assets/materi/${division.id}-${key}`;
+  const explicit = Boolean(custom && custom.src);
+  const src = explicit ? custom.src : `${base}.${IMAGE_EXTENSIONS[0]}`;
+  const lastStep = explicit ? IMAGE_EXTENSIONS.length - 1 : 0;
+  // Caption otomatis (template) kalau data.js belum punya caption untuk bagian ini.
+  // Ganti "[isi sumber gambar]" lewat sectionImages.<kunci>.caption di data.js.
+  const FIGURE_ORDER = ["struktur", "habitat", "nutrisi", "siklus-hidup", "ekologi", "pengenalan"];
+  const FIGURE_TITLE = {
+    "struktur": "Struktur dan morfologi",
+    "habitat": "Habitat",
+    "nutrisi": "Cara memperoleh nutrisi pada",
+    "siklus-hidup": "Siklus hidup",
+    "ekologi": "Peran ekologis",
+    "pengenalan": "Ciri pengenal"
+  };
+  const figNo = FIGURE_ORDER.indexOf(key) + 1;
+  const defaultCaption = `Gambar ${figNo}. ${FIGURE_TITLE[key] || "Ilustrasi"} ${division.label || ""}. Sumber: [isi sumber gambar].`;
+  const caption = custom && custom.caption ? custom.caption : defaultCaption;
+
+  return `
+    <figure class="ency-slot" title="Tempat gambar: Assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}">
+      <img src="${escapeAttr(src)}" alt="${escapeAttr((custom && (custom.alt || custom.caption)) || "")}" loading="lazy"
+        data-base="${escapeAttr(base)}" data-step="${lastStep}"
+        onerror="bioscopeImgFallback(this)" />
+      <div class="ency-slot-empty" style="display:none">
+        <span class="ency-slot-label">Tempat gambar</span>
+        <code>Assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}</code>
+        <span class="ency-slot-formats">.svg / .jpg / .png</span>
+      </div>
+      ${caption ? `<figcaption>${caption}</figcaption>` : ""}
+    </figure>
+  `;
+}
+
+// ---------- Diagram siklus hidup ----------
+
+// Cincin bernomor (menunjukkan arah siklus) + daftar tahap di bawahnya.
+// Data: division.lifeCycleSteps = [[judul, penjelasan], ...]
+function renderLifeCycle(division) {
+  const steps = division.lifeCycleSteps;
+
+  if (!steps || !steps.length) {
+    return "";
+  }
+
+  const size = 240;
+  const center = size / 2;
+  const radius = 82;
+  const nodeRadius = 16;
+  const gap = (nodeRadius + 7) / radius;
+  const count = steps.length;
+  const point = (angle) => ({
+    x: center + radius * Math.cos(angle),
+    y: center + radius * Math.sin(angle),
+  });
+  const angleOf = (index) => -Math.PI / 2 + (index * 2 * Math.PI) / count;
+
+  const arrows = steps
+    .map((_, index) => {
+      const from = point(angleOf(index) + gap);
+      const to = point(angleOf(index + 1) - gap);
+      return `<path class="lifecycle-arc" d="M ${from.x.toFixed(1)} ${from.y.toFixed(1)} A ${radius} ${radius} 0 0 1 ${to.x.toFixed(1)} ${to.y.toFixed(1)}" marker-end="url(#lifecycle-arrow)" />`;
+    })
+    .join("");
+
+  const nodes = steps
+    .map((_, index) => {
+      const spot = point(angleOf(index));
+      return `
+        <g class="lifecycle-node">
+          <circle cx="${spot.x.toFixed(1)}" cy="${spot.y.toFixed(1)}" r="${nodeRadius}" />
+          <text x="${spot.x.toFixed(1)}" y="${(spot.y + 5).toFixed(1)}" text-anchor="middle">${index + 1}</text>
+        </g>`;
+    })
+    .join("");
+
+  const list = steps
+    .map(
+      ([title, desc], index) => `
+        <li class="lifecycle-step">
+          <span class="lifecycle-num">${index + 1}</span>
+          <div>
+            <strong>${title}</strong>
+            <span>${desc}</span>
+          </div>
+        </li>`,
+    )
+    .join("");
+
+  return `
+    <div class="lifecycle">
+      ${division.lifeCycleNote ? `<p class="lifecycle-note">${division.lifeCycleNote}</p>` : ""}
+      <svg class="lifecycle-ring" viewBox="0 0 ${size} ${size}" role="img"
+        aria-label="Diagram siklus hidup ${escapeAttr(plainText(division.label))} dalam ${count} tahap">
+        <defs>
+          <marker id="lifecycle-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path class="lifecycle-arrow-head" d="M 0 1 L 9 5 L 0 9 z" />
+          </marker>
+        </defs>
+        ${arrows}
+        ${nodes}
+        <text class="lifecycle-center" x="${center}" y="${center - 2}" text-anchor="middle">Siklus</text>
+        <text class="lifecycle-center" x="${center}" y="${center + 14}" text-anchor="middle">hidup</text>
+      </svg>
+      <ol class="lifecycle-steps">${list}</ol>
+      <p class="lifecycle-loop">↻ Setelah tahap ${count}, siklus kembali ke tahap 1.</p>
+    </div>
+  `;
+}
+
+// Bagi blok (urutan tetap) ke n kolom dengan beban teks paling seimbang.
+// Beban dihitung dari panjang teks + bonus per kartu info, jadi kolom
+// otomatis menyesuaikan kalau materi suatu kelompok lebih pendek/panjang.
+function splitIntoColumns(blocks, columnCount) {
+  if (blocks.length <= columnCount) {
+    return blocks.map((block) => [block]);
+  }
+
+  const weights = blocks.map((block) => {
+    const text = block.html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").length;
+    const cards = (block.html.match(/class="info-card"/g) || []).length;
+    const cycleSteps = (block.html.match(/class="lifecycle-step"/g) || []).length;
+    const ring = block.html.includes("lifecycle-ring") ? 230 : 0;
+    const figure = block.html.includes("ency-slot") ? 150 : 0;
+    return text + cards * 70 + cycleSteps * 60 + ring + figure + 90;
+  });
+
+  const sum = (from, to) =>
+    weights.slice(from, to).reduce((total, value) => total + value, 0);
+
+  const n = blocks.length;
+  let best = null;
+
+  for (let i = 1; i < n - 1; i += 1) {
+    for (let j = i + 1; j < n; j += 1) {
+      const cost = Math.max(sum(0, i), sum(i, j), sum(j, n));
+
+      if (!best || cost < best.cost) {
+        best = { cost, i, j };
+      }
+    }
+  }
+
+  return [
+    blocks.slice(0, best.i),
+    blocks.slice(best.i, best.j),
+    blocks.slice(best.j),
+  ];
+}
+
 // Renders ecology as a plain paragraph, or — when a division supplies
 // `ecologyRoles: { benefits: [...], harms: [...] }` — as a two-column
 // menguntungkan/merugikan list for easier scanning.
@@ -841,6 +1516,7 @@ function renderEcology(division) {
     const { benefits = [], harms = [] } = division.ecologyRoles;
 
     return `
+      ${division.ecologyIntro ? `<p>${division.ecologyIntro}</p>` : ""}
       <div class="ecology-grid">
         ${
           benefits.length
@@ -885,6 +1561,11 @@ function renderInfoCards(items) {
         .map(
           (item) => `
             <div class="info-card">
+              ${
+                item.image
+                  ? `<img class="info-card-img" src="${escapeAttr(item.image)}" alt="${escapeAttr(plainText(item.value))}" loading="lazy" onerror="this.remove();" />`
+                  : ""
+              }
               <span class="info-card-label">${item.label}</span>
               <strong class="info-card-value">${item.value}</strong>
               <span class="info-card-desc">${item.desc}</span>
@@ -1805,10 +2486,14 @@ function renderQuiz(kingdomId) {
     const score = Math.round((correctAnswers / kingdom.quiz.length) * 100);
     const progress = getProgress();
 
-    progress.kingdoms[kingdomId].score = score;
+    const kp = progress.kingdoms[kingdomId];
+    kp.quizLast = score;
+    kp.quizBest = Math.max(kp.quizBest || 0, score);
+    kp.attempts = (kp.attempts || 0) + 1;
+    kp.score = Math.max(kp.score || 0, score); // tidak lagi turun saat mengulang
     saveProgress(progress);
 
-    const unlockedNext = score >= 85;
+    const unlockedNext = kp.quizBest >= MASTERY_THRESHOLD;
     const result = document.querySelector("#quiz-result");
 
     result.className = `feedback ${unlockedNext ? "correct" : "incorrect"}`;
@@ -1816,8 +2501,8 @@ function renderQuiz(kingdomId) {
       <strong>Skor ${score}%.</strong>
       ${
         unlockedNext
-          ? "Kingdom berikutnya terbuka."
-          : "Belum mencapai 85%. Review materi lalu ulangi quiz."
+          ? `Penguasaan tercapai (skor terbaik ${kp.quizBest}%). Kingdom lain tetap bisa dijelajahi kapan saja.`
+          : `Belum mencapai ${MASTERY_THRESHOLD}% (percobaan ke-${kp.attempts}, skor terbaik ${kp.quizBest}%). Semua kingdom tetap terbuka: pelajari lagi materi yang kurang, lalu coba kuis lagi kapan saja.`
       }
     `;
 
@@ -1889,11 +2574,6 @@ function renderProgress() {
             .map(([id, kingdom]) => {
               const kingdomProgress = progress.kingdoms[id];
               const unlocked = adminAwareUnlock(id, progress);
-
-              // Satu sumber data untuk status & persentase: keduanya sama-sama
-              // berasal dari kingdomProgress.progress, supaya status text
-              // tidak pernah berlawanan dengan progress bar (mis. progress
-              // 100% tapi status masih "Belum dikerjakan").
               const scoreLabel =
                 kingdomProgress.progress === 0
                   ? "Belum dikerjakan"
@@ -1950,9 +2630,6 @@ function renderProgress() {
     }
   });
 }
-
-// ---------- Global challenge index ----------
-
 function renderGlobalChallenges() {
   const container = document.querySelector("#global-challenges");
 
@@ -1991,8 +2668,6 @@ function renderGlobalChallenges() {
                     : statusKey === "terbuka"
                       ? "Terbuka"
                       : "Terkunci";
-                // Status dibedakan lewat ikon + warna, bukan warna saja,
-                // supaya tetap jelas bagi pengguna buta warna.
                 const statusIcon =
                   statusKey === "selesai" ? "✓" : statusKey === "terbuka" ? "🔓" : "🔒";
 
@@ -2057,6 +2732,7 @@ function init() {
   setupMenu();
   setupScrollTopButton();
   setupSpecimenLazyLoad();
+  setupImageLightbox();
   setupTermTooltips();
   renderKingdomCards();
   renderKingdomPage();
@@ -2102,7 +2778,7 @@ function animateSpotlight() {
 }
 animateSpotlight();
 
-// opsional: efek beda pas hover di card/button
+
 const interactiveElements = document.querySelectorAll('.kingdom-card, button, a, .organism-slide');
 interactiveElements.forEach(el => {
   el.addEventListener('mouseenter', () => spotlight.classList.add('hover-mode'));

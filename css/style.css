@@ -2,7 +2,7 @@
 :root {
   --ink: #18362b;
   --ink-soft: #486158;
-  --muted: #6d7f77;
+  --muted: #5b6a63;
   --paper: #fbfaf6;
   --paper-2: #f2f0e8;
   --paper-3: #e8e6dd;
@@ -11,7 +11,7 @@
   --forest-dark: #164333;
   --sage: #9bb69f;
   --sage-light: #dce9dc;
-  --accent: #a66a3f;
+  --accent: #8d5a35;
   --line: #d9ddd6;
   --line-dark: #bdc8c0;
   --danger: #9a5147;
@@ -311,7 +311,7 @@ img {
   display: block;
   margin-top: 1px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -372,14 +372,13 @@ h3 {
   max-width: 70ch;
   color: var(--ink-soft);
   font-size: 19px;
-  margin-inline: auto;
   line-height: 1.6;
 }
 
 .eyebrow {
   display: block;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -387,7 +386,7 @@ h3 {
 
 .meta {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .scientific {
@@ -552,14 +551,14 @@ h3 {
   position: relative;
   z-index: 1;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.09em;
 }
 
 .specimen small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .specimen-image {
@@ -603,7 +602,7 @@ h3 {
 }
 
 .specimen-load-text {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -679,7 +678,7 @@ h3 {
 
 .brand-sub {
     color: #a3b8ad;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1070,13 +1069,13 @@ h3 {
     padding: 0 !important;
     border-radius: 0 !important;
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
 .kingdom-card .lock-note {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     line-height: 1.2;
     text-align: right;
     color: #94a3b8;
@@ -1084,7 +1083,7 @@ h3 {
 .lock-note {
   max-width: 110px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.45;
   text-align: right;
 }
@@ -1106,7 +1105,7 @@ h3 {
   border: 1px solid var(--line-dark);
   border-radius: 999px;
   color: var(--ink-soft);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1261,7 +1260,7 @@ h3 {
     display: inline-block;
     margin-top: 10px;
     padding: 3px 9px;
-    font-size: 9px;
+    font-size: 12px;
     font-family: monospace;
     letter-spacing: 0.07em;
     color: var(--accent);
@@ -1294,13 +1293,13 @@ h3 {
     flex-direction: column;
 }
 .anno-label {
-    font-size: 8px;
+    font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.08em;
     margin-bottom: 2px;
 }
 .anno-value {
-    font-size: 11px;
+    font-size: 12px;
     color: rgba(255, 255, 255, 0.85);
     font-family: monospace;
 }
@@ -1310,7 +1309,7 @@ h3 {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: rgba(255, 255, 255, 0.5);
@@ -1769,7 +1768,7 @@ h3 {
 }
 
 .obs-title {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1869,7 +1868,7 @@ h3 {
 .howto-step p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -1885,6 +1884,135 @@ h3 {
     max-width: 340px;
     margin-inline: auto;
   }
+}
+
+.history-timeline-wrap {
+  margin-top: 40px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+}
+
+.history-timeline {
+  position: relative;
+  display: flex;
+  gap: 36px;
+  width: max-content;
+  padding-top: 28px;
+}
+
+.history-timeline::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed var(--line-dark);
+}
+
+.history-item {
+  position: relative;
+  width: 210px;
+  flex: none;
+}
+
+.history-dot {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--forest);
+  box-shadow: 0 0 0 4px var(--paper);
+}
+
+.history-dot-current {
+  background: var(--accent);
+}
+
+.history-year {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.history-content h3 {
+  margin: 0 0 6px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.history-content p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.section-dark .obs-intro {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cladogram {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.cladogram-svg {
+  width: 100%;
+  min-width: 620px;
+  height: auto;
+}
+
+.cladogram-svg path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.32);
+  stroke-width: 1.6;
+}
+
+.clado-root-dot {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.clado-tip-dot {
+  fill: var(--sage, #8fb5a0);
+}
+
+.clado-root-label {
+  font-family: var(--serif);
+  font-size: 13px;
+  fill: rgba(255, 255, 255, 0.55);
+}
+
+.clado-name {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  fill: #ffffff;
+}
+
+.clado-name-a {
+  fill: #9fd7b8;
+}
+
+.clado-name-b {
+  fill: #f0c28f;
+}
+
+.clado-name-c {
+  fill: #bcd9ff;
+}
+
+.clado-trait {
+  font-family: var(--sans);
+  font-size: 12px;
+  fill: rgba(255, 255, 255, 0.65);
 }
 
 .cta-band {
@@ -1925,7 +2053,7 @@ h3 {
 .aside-meta dt {
   margin-top: 16px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1964,7 +2092,7 @@ h3 {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.02em;
 }
 
@@ -2003,7 +2131,7 @@ h3 {
   border-radius: 6px;
   background: var(--ink);
   color: var(--white);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.4;
   text-transform: none;
@@ -2056,7 +2184,7 @@ h3 {
 
 .habitat-visual span {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2073,7 +2201,7 @@ h3 {
 .ecology-col-label {
   display: block;
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2210,7 +2338,7 @@ h3 {
   border-radius: 999px;
   background: var(--surface);
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
   transition: 160ms ease;
@@ -2240,7 +2368,7 @@ h3 {
   border: none;
   background: none;
   color: var(--forest);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2253,6 +2381,64 @@ h3 {
 
 .citation-copy.is-copied {
   color: var(--accent);
+}
+
+/* Daftar pustaka di halaman filum (dibuat otomatis oleh references.js) */
+.citation-section {
+  border-top: 1px solid var(--line);
+}
+
+.citation-section h2 {
+  margin: 8px 0 0;
+}
+
+.citation-list {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cite;
+}
+
+.citation-list li {
+  position: relative;
+  padding: 18px 0 18px 40px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+  counter-increment: cite;
+  overflow-wrap: anywhere;
+}
+
+.citation-list li::before {
+  content: counter(cite);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--sage-light);
+  color: var(--forest-dark);
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.citation-list li:last-child {
+  border-bottom: none;
+}
+
+.citation-list a {
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+.citation-list a:hover {
+  color: var(--forest-dark);
 }
 
 .info-card-grid {
@@ -2271,7 +2457,7 @@ h3 {
 }
 
 .info-card-label {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--accent);
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -2288,7 +2474,7 @@ h3 {
 }
 
 .info-card-desc {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.4;
   display: block;
@@ -2323,7 +2509,7 @@ h3 {
 }
 
 .example-tags span {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 
@@ -2365,7 +2551,7 @@ h3 {
 }
 
 .challenge-visual span {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2465,7 +2651,7 @@ h3 {
 
 .match-progress-label {
   flex-shrink: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
@@ -2487,7 +2673,7 @@ h3 {
   border-radius: 999px;
   background: var(--paper-2);
   color: var(--ink-soft);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
@@ -2514,7 +2700,7 @@ h3 {
   background: var(--surface);
   color: var(--ink-soft);
   font-family: var(--sans);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
@@ -2627,7 +2813,7 @@ h3 {
 
 .match-slot-desc {
   margin: 8px 0 0;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--ink-soft);
   animation: matchFadeUp 0.3s ease;
@@ -2965,7 +3151,7 @@ legend {
 .stat span {
   display: block;
   color: #cbd9d1;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
@@ -3022,7 +3208,7 @@ legend {
 .progress-row p {
   margin: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .progress-meter {
@@ -3048,7 +3234,7 @@ legend {
   border-radius: 999px;
   background: var(--paper-2);
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -3076,7 +3262,7 @@ legend {
 .compact-item span,
 .compact-item em {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3102,7 +3288,7 @@ legend {
 }
 
 .status-icon {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .compact-item strong {
@@ -3147,7 +3333,7 @@ legend {
 
 .footer-grid p {
   color: #c2d0c8;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .footer-grid strong {
@@ -3431,7 +3617,7 @@ legend {
   position: absolute;
   top: 16px;
   left: 18px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -3578,4 +3764,497 @@ legend {
     rgba(var(--main-color-rgb), 0.08) 40%,
     transparent 70%
   );
+}
+
+/* =========================================================
+   ENCYCLOPEDIA — LAYOUT TIGA KOLOM
+   Dipakai di halaman divisions/*.html (terinspirasi OneZoom).
+   Blok materi dibagi ke 3 kolom oleh renderEditorialColumns()
+   di main.js; kolom ketiga berakhir dengan daftar contoh gaya kutipan.
+   ========================================================= */
+
+.ency-columns {
+  width: min(calc(100% - 48px), 1320px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px;
+  align-items: start;
+}
+
+.ency-col {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  min-width: 0;
+}
+
+.ency-block h2 {
+  margin: 8px 0 18px;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ency-block p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Kartu info (morfologi & habitat) ditumpuk vertikal di dalam kolom */
+.ency-col .info-card-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.ency-col .info-card-value {
+  font-size: 18px;
+}
+
+.ency-col .info-card-desc {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Daftar bergaris kiri: contoh, langkah mengenali, peran ekologis */
+.ency-quotes,
+.ency-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ency-quotes li,
+.ency-steps li,
+.ency-col .ecology-col li {
+  padding: 0 0 0 16px;
+  border-left: 3px solid var(--line-dark);
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.ency-quotes li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ency-quotes strong {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.ency-quotes span {
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.ency-steps li {
+  border-left-color: var(--forest);
+}
+
+/* Peran ekologis: dua daftar (menguntungkan / merugikan) jadi satu kolom */
+.ency-col .ecology-grid {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: none;
+  margin-top: 0;
+}
+
+.ency-col .ecology-col ul {
+  gap: 18px;
+  margin: 0;
+}
+
+.ency-col .ecology-col li::before {
+  content: none;
+}
+
+.ency-col .ecology-col-benefit li {
+  border-left-color: var(--success);
+}
+
+.ency-col .ecology-col-harm li {
+  border-left-color: var(--danger);
+}
+
+/* Taksonomi singkat di atas daftar contoh */
+.ency-taxon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 14px 0 26px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ency-taxon dt {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ency-taxon dd {
+  margin: 2px 0 0;
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+@media (max-width: 1000px) {
+  .ency-columns {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .ency-col {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ency-columns {
+    width: min(calc(100% - 28px), 1320px);
+  }
+
+  .ency-block h2 {
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================================
+   CONTOH SPESIES BERGAMBAR (halaman filum)
+   ========================================================= */
+
+.ency-examples {
+  gap: 26px;
+}
+
+.ency-quotes li.ency-example {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 6px 16px;
+  align-items: start;
+  padding-left: 16px;
+}
+
+.ency-example-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ency-thumb {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.ency-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder bila file gambar belum ada */
+.ency-thumb.is-empty {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  background: var(--paper-2);
+}
+
+.ency-thumb.is-empty::after {
+  content: attr(data-initial);
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 40px;
+  font-style: italic;
+  opacity: 0.55;
+}
+
+/* Gambar pendukung per bagian materi & kartu info */
+.ency-figure {
+  margin: 0 0 22px;
+}
+
+.ency-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.ency-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.info-card-img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  background: var(--paper-2);
+}
+
+/* =========================================================
+   DIAGRAM SIKLUS HIDUP
+   ========================================================= */
+
+.lifecycle {
+  margin-top: 26px;
+  padding: 20px 18px 18px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.ency-block .lifecycle-note {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.lifecycle-ring {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+  margin: 6px auto 14px;
+}
+
+.lifecycle-arc {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.lifecycle-arrow-head {
+  fill: var(--accent);
+}
+
+.lifecycle-node circle {
+  fill: var(--forest);
+}
+
+.lifecycle-node text {
+  fill: var(--paper);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lifecycle-center {
+  fill: var(--muted);
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.lifecycle-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lifecycle-step {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.lifecycle-num {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lifecycle-step strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.lifecycle-step span:not(.lifecycle-num) {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ency-block .lifecycle-loop {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line-dark);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MINDMAP (halaman kingdom)
+   ========================================================= */
+
+.mindmap-section {
+  border-top: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.mindmap-scroll {
+  margin-top: 28px;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.mindmap {
+  display: block;
+  width: 100%;
+  min-width: 860px;
+  height: auto;
+}
+
+.mm-link {
+  fill: none;
+  stroke-width: 2;
+}
+
+.mm-link-left {
+  stroke: var(--accent);
+}
+
+.mm-link-right {
+  stroke: var(--forest);
+}
+
+.mm-link-leaf {
+  stroke-width: 1.4;
+  opacity: 0.55;
+}
+
+.mm-center {
+  fill: var(--forest-dark);
+}
+
+.mm-center-text {
+  fill: #ffffff;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.mm-topic {
+  stroke-width: 2;
+}
+
+.mm-topic-left {
+  fill: var(--surface);
+  stroke: var(--accent);
+}
+
+.mm-topic-right {
+  fill: var(--surface);
+  stroke: var(--forest);
+}
+
+.mm-topic-text {
+  fill: var(--ink);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.mm-leaf {
+  stroke-width: 1;
+}
+
+.mm-leaf-left {
+  fill: var(--paper-2);
+  stroke: var(--line-dark);
+}
+
+.mm-leaf-right {
+  fill: var(--sage-light);
+  stroke: var(--line-dark);
+}
+
+.mm-leaf-text {
+  fill: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.mm-anchor {
+  cursor: pointer;
+}
+
+.mm-anchor:hover .mm-topic-right,
+.mm-anchor:focus-visible .mm-topic-right {
+  fill: var(--forest);
+}
+
+.mm-anchor:hover .mm-topic-text,
+.mm-anchor:focus-visible .mm-topic-text {
+  fill: var(--paper);
+}
+
+.mindmap-hint {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .ency-quotes li.ency-example {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .ency-thumb {
+    width: 88px;
+    height: 88px;
+  }
 }
