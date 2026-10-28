@@ -891,24 +891,24 @@ const BIOSCOPE_DATA = {
         { "name": "Escherichia coli", 
           "note": "Umumnya hidup sebagai flora normal di usus manusia, meski beberapa galur bisa bersifat patogen",
           "image": "../Assets/division/eubacteria/escherichia-coli.png",
-          "caption": "Gambar 6. Mikrograf bakteri Escherichia coli yang merupakan anggota dari mikrobiota manusia. (Sumber: Janice Haney Carr/CDC / Encyclopedia Britannica | Lisensi: Penggunaan Edukasional / Hak Cipta)"
+          "caption": "Gambar 6. Contoh bakteri yang hidup sebagai flora normal usus manusia, meski sebagian galurnya bisa bersifat patogen: mikrograf Escherichia coli. (Sumber: Janice Haney Carr/CDC / Encyclopedia Britannica | Lisensi: Penggunaan Edukasional / Hak Cipta)"
         },
         { "name": "Rhizobium leguminosarum",
           "note": "Bersimbiosis dengan akar tanaman legum untuk membantu proses fiksasi nitrogen",
           "image": "../Assets/division/eubacteria/rhizobium.jpg",
-          "caption": "Gambar 7. Mikrograf dan morfologi sel bakteri Rhizobium leguminosarum yang hidup sebagai mikrosimbion penambat nitrogen pada tanaman polong-polongan. (Sumber: Wayne Reeve, dkk. / ResearchGate | Lisensi: CC BY 2.5)"
+          "caption": "Gambar 7. Contoh bakteri penambat nitrogen yang bersimbiosis dengan akar tanaman legum: mikrograf dan morfologi sel Rhizobium leguminosarum. (Sumber: Wayne Reeve, dkk. / ResearchGate | Lisensi: CC BY 2.5)"
         },
         { "name": "Streptomyces griseus",
           "image": "../Assets/division/eubacteria/streptomyces-griseus.png",
-          "caption": "Gambar 8. Koloni bakteri Streptomyces griseus yang merupakan salah satu contoh kelompok aktinomiset. (Sumber: A.W. Rakosy/Encyclopedia Britannica, Inc. / Encyclopedia Britannica | Lisensi: Penggunaan Edukasional / Hak Cipta)", 
+          "caption": "Gambar 8. Contoh aktinomiset penghuni tanah yang menghasilkan antibiotik streptomycin: koloni Streptomyces griseus. (Sumber: A.W. Rakosy/Encyclopedia Britannica, Inc. / Encyclopedia Britannica | Lisensi: Penggunaan Edukasional / Hak Cipta)", 
           "note": "Bakteri tanah yang dikenal sebagai penghasil antibiotik streptomycin" }
       ],
       "sectionImages": {
-        "struktur": { "alt": "Struktur dan bentuk dasar sel bakteri", "caption": "Gambar 1. Struktur internal sel bakteri yang sedang membelah diamati menggunakan mikroskop elektron transmisi (TEM). (Dimodifikasi dari Madigan dkk., 2019)." },
-        "habitat": { "alt": "Adaptasi bakteri terhadap lingkungan", "caption": "Gambar 2. Kolom garam yang menjulang dari perairan Laut Mati yang sangat asin, sebuah lingkungan stres di mana hanya sedikit bentuk kehidupan selain bakteri yang dapat bertahan. (Sumber: Peter Carmichael/ASPECT / Encyclopedia Britannica | Lisensi: Hak Cipta / Penggunaan Edukasional)" },
-        "nutrisi": { "alt": "Cara bakteri memperoleh makanan", "caption": "Gambar 3. Susunan kompleks protein pada membran bakteri ungu dalam menghasilkan energi (ATP) melalui fotosintesis anoksigenik. (Dimodifikasi dari Madigan dkk., 2019)." },
-        "siklus-hidup": { "alt": "Pembelahan biner pada bakteri", "caption": "Gambar 4. Skema tahapan pembelahan biner pada sel prokariota (bakteri) dari replikasi DNA hingga terbentuk dua sel anak identik. (Sumber: Ecoddington14 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" },
-        "ekologi": { "alt": "Peran bakteri dalam siklus nitrogen dan karbon", "caption": "Gambar 5. Skema siklus nitrogen di alam, memperlihatkan peran penting bakteri tanah dalam proses fiksasi, amonifikasi, nitrifikasi, dan denitrifikasi. (Sumber: U.S. Environmental Protection Agency / Wikimedia Commons | Lisensi: Public Domain)" }
+        "struktur": { "alt": "Struktur dan bentuk dasar sel bakteri", "caption": "BARU: Gambar 1. Contoh organisasi sel prokariotik yang tidak berinti sejati: mikrograf elektron transmisi (TEM) memperlihatkan bagian dalam sel bakteri yang sedang membelah. (Sumber: Madigan, M. T., dkk. (2021). Brock Biology of Microorganisms (Edisi 16). Pearson Education | Lisensi: Copyright © 2021 Pearson Education, Inc. Ditampilkan di situs ini strictly untuk keperluan penelitian pendidikan non-komersial)" },
+        "habitat": { "alt": "Adaptasi bakteri terhadap lingkungan", "caption": "Gambar 2. Contoh lingkungan berkadar garam sangat tinggi, tempat bakteri halofil bertahan dengan menambah solut kompatibel di dalam sel: kolom garam menjulang dari perairan Laut Mati. Penghuni halofil ekstrem di lingkungan seperti ini sebagian besar justru Archaea (lihat materi Archaea). (Sumber: Peter Carmichael/ASPECT / Encyclopedia Britannica | Lisensi: Hak Cipta / Penggunaan Edukasional" },
+        "nutrisi": { "alt": "Cara bakteri memperoleh makanan", "caption": "Gambar 3. Contoh bakteri fototrof, yang memperoleh energi dari cahaya: kompleks protein pada membran bakteri ungu menghasilkan ATP lewat fotosintesis anoksigenik. (Sumber: Madigan, M. T., dkk. (2021). Brock Biology of Microorganisms (Edisi 16). Pearson Education | Lisensi: Copyright © 2021 Pearson Education, Inc. Ditampilkan di situs ini strictly untuk keperluan penelitian pendidikan non-komersial)" },
+        "siklus-hidup": { "alt": "Pembelahan biner pada bakteri", "caption": "Gambar 4. Pembelahan biner, cara berkembang biak kebanyakan bakteri: skema memperlihatkan tahapan dari replikasi DNA sampai terbentuk dua sel anak identik. (Sumber: Ecoddington14 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" },
+        "ekologi": { "alt": "Peran bakteri dalam siklus nitrogen dan karbon", "caption": "Gambar 5. Contoh peran bakteri sebagai mitra fiksasi nitrogen dan pengurai bahan organik dalam siklus biogeokimia: skema siklus nitrogen menampilkan fiksasi, amonifikasi, nitrifikasi, dan denitrifikasi oleh bakteri tanah. (Sumber: U.S. Environmental Protection Agency / Wikimedia Commons | Lisensi: Public Domain)" }
       },
       "challenge": {
         "question": "Sebuah isolat prokariota tidak punya dinding sel. Kesimpulan yang paling tepat adalah…",
@@ -989,42 +989,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Methanopyrus kandleri",
           "image": "../Assets/division/archaea/methanopyrus-kandleri.png",
-          "caption": "Gambar 6. Methanopyrus kandleri, metanogen yang hidup di lubang hidrotermal laut dalam pada suhu sangat tinggi. (Sumber: Morris dkk., 2013)",
+          "caption": "Gambar 6. Contoh metanogen yang hidup di lubang hidrotermal laut dalam pada suhu sangat tinggi: Methanopyrus kandleri [cek gambar: ini mikrograf atau ilustrasi? deskripsikan]. (Sumber: Morris dkk., 2013 | Lisensi: [lisensi perlu dicek])",
           "note": "Salah satu metanogen yang mampu hidup pada suhu sangat tinggi"
         },
         {
           "name": "Sulfolobus",
           "image": "../Assets/division/archaea/sulfolobus.jpg",
-          "caption": "Gambar 7. Sulfolobus. (Sumber: [isi sumber gambar])",
+          "caption": "Gambar 7. Contoh Archaea penghuni lingkungan asam dan bersuhu tinggi: mikrograf sel Sulfolobus yang terinfeksi virus STSV1, dengan virus berbentuk gelendong keluar dari sel inang. (Sumber: Xiangyux / English Wikipedia | Lisensi: Public Domain)",
           "note": "Archaea yang hidup di lingkungan asam dan bersuhu tinggi, dan menjadi model penelitian pembelahan sel Archaea"
         },
         {
           "name": "Halobacterium",
-          "image": "../Assets/division/archaea/halobacterium.jpg",
-          "caption": "Gambar 8. Halobacterium. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/archaea/halobacterium.png",
+          "caption": "Gambar 8. Contoh haloarkea penghuni lingkungan sangat asin: mikrograf elektron pemindaian (SEM) sel Halobacterium salinarum NRC-1 berbentuk batang, dengan skala 270 nm. (Sumber: Helga Stan-Lotter & Sergiu Fendrihan, foto oleh Chris Frethem, University of Minnesota | Lisensi: CC BY-SA 4.0)",
           "note": "Archaea yang hidup di lingkungan yang sangat asin dan dapat memanfaatkan cahaya sebagai sumber energi"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur sel dan S-layer Archaea",
-          "caption": "Gambar 1. Diagram struktur sel Archaea yang terdiri dari sitoplasma yang dibungkus oleh membran sel dan dinding sel, serta dilengkapi dengan pili dan flagela. (Sumber: Encyclopædia Britannica, Inc. / Britannica Kids | Lisensi: Hak Cipta Edukasional)"
+          "caption": "Gambar 1. Contoh organisasi sel Archaea: diagram memperlihatkan sitoplasma yang dibungkus membran dan dinding sel, dilengkapi pili dan flagela. Selubung selnya bukan peptidoglikan, melainkan umumnya S-layer, atau pseudomurein pada sebagian metanogen. (Sumber: Encyclopædia Britannica, Inc. / Britannica Kids | Lisensi: Hak Cipta Edukasional)"
         },
         "habitat": {
           "alt": "Habitat Archaea di lingkungan ekstrem dan biasa",
-          "caption": "Gambar 2. Lanskap termal di Midway Geyser Basin, Yellowstone National Park, Wyoming, tempat hidup komunitas mikroorganisme Archaea termofil. (Sumber: Wing-Chi Poon / Encyclopædia Britannica | Lisensi: Creative Commons Attribution-ShareAlike 2.5 Generic)"
+          "caption": "Gambar 2. Contoh habitat ekstrem Archaea berupa mata air panas dan kawasan vulkanik: lanskap termal Midway Geyser Basin, Yellowstone National Park, Wyoming, tempat hidup komunitas Archaea termofil. Archaea juga sangat banyak di lingkungan biasa seperti tanah dan lautan. (Sumber: Wing-Chi Poon / Encyclopædia Britannica | Lisensi: Creative Commons Attribution-ShareAlike 2.5 Generic)"
         },
         "nutrisi": {
           "alt": "Cara Archaea memperoleh energi",
-          "caption": "Gambar 3. Diagram mekanisme kemiosmosis bakteriorodopsin pada Halobacterium salinarum, memperlihatkan konversi energi cahaya menjadi ATP pada Archaea halofil. (Sumber: Darekk2 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   "
+          "caption": "Gambar 3. Contoh Archaea yang memanfaatkan cahaya tanpa klorofil: diagram kemiosmosis bakteriorodopsin pada Halobacterium salinarum, pompa proton penggerak cahaya yang menghasilkan ATP. (Sumber: Darekk2 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "siklus-hidup": {
           "alt": "Pembelahan sel pada Archaea",
-          "caption": "Gambar 4. Pembelahan sel pada Archaea. (Dimodifikasi dari Cezanne dkk., 2024)."
+          "caption": "Gambar 4. Contoh pembelahan sel Archaea, yang mesinnya tidak seragam: FtsZ pada banyak Euryarchaeota dan sistem Cdv berbasis ESCRT-III pada kelompok TACK seperti Sulfolobales [cek gambar: pastikan figur memuat mekanisme ini]. (Dimodifikasi dari Cezanne dkk., 2024 | Lisensi: CC BY 4.0)"
         },
         "ekologi": {
           "alt": "Peran Archaea dalam siklus metana dan nitrogen",
-          "caption": "Gambar 5. Diagram alir siklus nitrogen yang menggambarkan fungsi ekologis utama mikroorganisme dalam mendaur ulang nutrisi dan menjaga keseimbangan ekosistem. (Sumber: Entropyrider / Wikimedia Commons | Lisensi: CC0 Public Domain)  "
+          "caption": "Gambar 5. Contoh peran mikroba dalam siklus biogeokimia: diagram alir siklus nitrogen, tempat Archaea pengoksidasi amonia berperan pada tahap nitrifikasi. Archaea juga terlibat dalam siklus karbon lewat metanogen penghasil metana dan Archaea pengoksidasi metana. (Sumber: Entropyrider / Wikimedia Commons | Lisensi: CC0 Public Domain)"
         },
       },
       "challenge": {
@@ -1104,31 +1104,33 @@ const BIOSCOPE_DATA = {
           "Penyakit Tidur Afrika & Penyakit Chagas &mdash; Trypanosoma brucei ditularkan lalat tsetse dan Trypanosoma cruzi oleh kepik triatomin (Urry dkk., 2021)."
         ]
       },
-      "examples": "Paramecium caudatum, Plasmodium falciparum, Trypanosoma brucei, Entamoeba histolytica, Giardia intestinalis",
+      "examples": "Paramecium caudatum, Plasmodium falciparum, Entamoeba histolytica",
       "exampleNotes": [
-        { "name": "Paramecium caudatum", 
+        {
+          "name": "Paramecium caudatum",
           "image": "../Assets/division/protozoa/paramecium-aurelia.jpg",
-          "caption": "Gambar 6. Mikrograf Paramecium aurelia, protista mirip hewan dari kelompok Ciliata yang bergerak menggunakan silia. (Sumber: Wikipedia).", 
-          "note": "Ciliata (Alveolata) air tawar yang berukuran besar untuk sel, sering dipakai untuk mempelajari organel sel tunggal dan konjugasi" },
-        { "name": "Plasmodium falciparum", 
+          "caption": "Gambar 6. Contoh ciliata air tawar, protozoa yang permukaan selnya dipenuhi silia: mikrograf optik Paramecium aurelia, dengan vakuola tersebar di seluruh sel. (Sumber: Barfooz / English Wikipedia | Lisensi: CC BY-SA 3.0)",
+          "note": "Ciliata (Alveolata) air tawar yang berukuran besar untuk sel, sering dipakai untuk mempelajari organel sel tunggal dan konjugasi"
+        },
+        {
+          "name": "Plasmodium falciparum",
           "image": "../Assets/division/protozoa/plasmodium-falciparum.jpg",
-          "caption": "Gambar 7. Mikrograf Plasmodium, genus protozoa parasit dari filum Apicomplexa penyebab penyakit malaria. (Sumber: Wikipedia)", "note": "Apicomplexa (Alveolata) parasit penyebab malaria dengan siklus dua inang: manusia dan nyamuk Anopheles" },
-        { "name": "Trypanosoma brucei", 
-          "image": "../Assets/division/protozoa/trypanosoma-brucei.jpg",
-          "caption": "Gambar 8. Mikrograf Trypanosoma brucei, protozoa parasitik penyebab penyakit tidur (African trypanosomiasis) yang ditularkan oleh lalat tsetse. (Sumber: Wikipedia)", "note": "Euglenozoa parasit penyebab penyakit tidur Afrika yang ditularkan lalat tsetse" },
-        { "name": "Entamoeba histolytica", 
+          "caption": "Gambar 7. Contoh tahap parasit malaria dalam darah manusia yang kemudian menular ke nyamuk: apusan darah tipis memperlihatkan makrogametosit dan mikrogametosit Plasmodium falciparum di dalam sel darah merah. (Sumber: CDC/Dr. Mae Melvin / Wikimedia Commons | Lisensi: Public Domain)",
+          "note": "Apicomplexa (Alveolata) parasit penyebab malaria dengan siklus dua inang: manusia dan nyamuk Anopheles"
+        },
+        {
+          "name": "Entamoeba histolytica",
           "image": "../Assets/division/protozoa/entamoeba-histolytica.jpg",
-          "caption": "Gambar 9. Mikrograf stadium trofozoit Entamoeba histolytica, protozoa parasitik dari kelompok Amoebozoa penyebab disentri amuba (amebiasis) pada manusia. (Sumber: Wikimedia Commons)", "note": "Amoebozoa parasit usus yang menyebar lewat kista dan dapat menyebabkan disentri ameba" },
-        { "name": "Giardia intestinalis", 
-          "image": "../Assets/division/protozoa/giardia-intestinalis.jpg",
-          "caption": "Gambar 10. Citra mikroskop elektron (SEM dan TEM) trofozoit Giardia intestinalis, memperlihatkan struktur flagela, piringan ventral, serta dua nukleus sel. (Sumber: Allain & Buret, 2019)", "note": "Protista berflagela parasit usus yang menyebar lewat kista dan dapat menyebabkan diare" }
+          "caption": "Gambar 8. Contoh protista parasit usus manusia yang menyebar lewat kista dan menyebabkan amoebiasis: mikrograf trofozoit Entamoeba histolytica. (Sumber: Stefan Walkowski / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
+          "note": "Amoebozoa parasit usus yang menyebar lewat kista dan dapat menyebabkan disentri ameba"
+        }
       ],
       "sectionImages": {
-        "struktur": { "alt": "Struktur sel Protozoa", "caption": "Gambar 1. Anatomi sel Amoeba, organisme uniseluler perwakilan dari kelompok Protista mirip hewan (Protozoa). (Sumber: Vidhin Kamble / Wikimedia Commons | Lisensi: CC BY-SA 4.0)" },
-        "habitat": { "alt": "Habitat Protozoa", "caption": "Gambar 2. Pemandangan Danau Mono (Mono Lake), contoh ekosistem perairan akuatik tempat hidup mikroorganisme eukariotik uniseluler seperti Protozoa. (Sumber: Michael Gabler / Wikimedia Commons | Lisensi: CC BY 3.0)" },
+        "struktur": { "alt": "Struktur sel Protozoa", "caption": "Gambar 1. Contoh sel protozoa, protista uniseluler mirip hewan: diagram anatomi sel Amoeba. (Sumber: Vidhin Kamble / Wikimedia Commons | Lisensi: CC BY-SA 4.0" },
+        "habitat": { "alt": "Habitat Protozoa", "caption": "Gambar 2. Contoh lingkungan berair, habitat utama protozoa hidup bebas yang menjadi bagian dari plankton atau organisme dasar perairan: pemandangan Danau Mono (Mono Lake). (Sumber: Michael Gabler / Wikimedia Commons | Lisensi: CC BY 3.0)" },
         "nutrisi": { "alt": "Cara Protozoa memperoleh nutrisi", "caption": "Gambar 3. Diagram proses fagositosi (phagocytosis) pada Amoeba, memperlihatkan mekanisme penangkapan dan pencernaan partikel makanan oleh sel Protozoa. (Sumber: Kate Taylor / Wikimedia Commons | Lisensi: CC0 Public Domain)" },
-        "siklus-hidup": { "alt": "Siklus hidup Plasmodium", "caption": "Gambar 4. Diagram siklus hidup parasit Plasmodium sp., spesimen Protista mirip hewan (Sporozoa) penyebab malaria. (Sumber: CDC / Wikimedia Commons | Lisensi: Public Domain)" },
-        "ekologi": { "alt": "Peran ekologis Protozoa", "caption": "Gambar 5. Peran protozoa dalam memelihara keanekaragaman mikroba rumen sapi dan interaksi ekologis di dalamnya. (Sumber: Solomon dkk., 2022)" }
+        "siklus-hidup": { "alt": "Siklus hidup Plasmodium", "caption": "Gambar 4. Contoh siklus hidup parasit dengan dua inang: diagram siklus hidup Plasmodium sp. penyebab malaria, yang berlangsung pada manusia dan nyamuk Anopheles. (Sumber: CDC / Wikimedia Commons | Lisensi: Public Domain)" },
+        "ekologi": { "alt": "Peran ekologis Protozoa", "caption": "Gambar 5. Contoh peran ekologis protozoa dalam komunitas mikroba, di sini pada rumen sapi: memelihara keanekaragaman mikroba dan menjalin interaksi ekologis di dalamnya. (Sumber: Solomon dkk., 2022 | Lisensi: CC BY 4.0)" }
       },
       "challenge": {
         "question": "Dulu Paramecium (bersilia) dan Plasmodium (tidak memakai silia, flagela, atau pseudopodia pada sebagian besar tahap hidupnya) ditempatkan di subkelompok yang berbeda berdasarkan alat gerak. Data molekuler menempatkan keduanya di Alveolata. Apa implikasi paling tepat dari temuan ini?",
@@ -1207,22 +1209,33 @@ const BIOSCOPE_DATA = {
           "Catatan &mdash; Oomycota, meski sering disamakan dengan alga, tidak berfotosintesis dan dibahas pada materi Protista mirip jamur."
         ]
       },
-      "examples": "Laminaria, Porphyra (nori), Ulva, Caulerpa, Euglena",
+      "examples": "Laminaria, Porphyra (nori), Ulva",
       "exampleNotes": [
-        { "name": "Laminaria", 
+        {
+          "name": "Laminaria",
           "image": "../Assets/division/algae/laminaria.jpg",
-          "caption": "Gambar 6. Rumpun alga cokelat (Laminaria sp.) di lingkungan pesisir, salah satu genus makroalga dari kelompok Phaeophyceae. (Sumber: The Seaweed Network Indonesia)", "note": "Alga cokelat (Stramenopila) multiseluler besar dengan pergiliran generasi heteromorfik" },
-        { "name": "Porphyra (nori)", "image": "../Assets/division/algae/porphyra.png", "caption": "Gambar 7. Thallus alga merah (Porphyra sp.) di ekosistem laut, salah satu anggota Rhodophyta yang umum dimanfaatkan sebagai bahan pembuat nori. (Sumber: The Seaweed Network Indonesia)", "note": "Alga merah (Archaeplastida) multiseluler tipis yang dibudidayakan untuk lembaran nori" },
-        { "name": "Ulva", "image": "../Assets/division/algae/ulva.jpg", "caption": "Gambar 8. Thallus alga hijau Ulva lactuca (selada laut), makroalga dari kelompok Chlorophyta yang memiliki bentuk lembaran menyerupai daun selada. (Sumber: The Seaweed Network Indonesia)", "note": "Alga hijau (Archaeplastida) multiseluler dengan pergiliran generasi isomorfik" },
-        { "name": "Caulerpa", "image": "../Assets/division/algae/caulerpa.jpg", "caption": "Gambar 9. Thallus alga hijau Caulerpa racemosa (anggur laut), makroalga dari kelompok Chlorophyta yang memiliki bentuk cabang membulat menyerupai buah anggur. (Sumber: The Seaweed Network Indonesia)", "note": "Alga hijau dengan talus besar tanpa sekat sel, berisi banyak inti dalam satu sitoplasma bersambung" },
-        { "name": "Euglena", "image": "../Assets/division/algae/euglena.jpg", "caption": "Opsi 1 (Ringkas): Gambar 10. Mikrograf sel Euglena sp., memperlihatkan pigmen kloroplas hijau serta bintik mata (eyespot) berwarna merah. (Sumber: ThoughtCo / Gerd Guenther)   ", "note": "Euglenozoa bersel tunggal berflagela, berfotosintesis dengan plastida dari alga hijau, dan dapat juga menyerap nutrien organik" }
+          "caption": "Gambar 6. Rumpun alga cokelat (Laminaria sp.) di lingkungan pesisir, salah satu genus makroalga dari kelompok Phaeophyceae. (Sumber: The Seaweed Network Indonesia)",
+          "note": "Alga cokelat (Stramenopila) multiseluler besar dengan pergiliran generasi heteromorfik"
+        },
+        {
+          "name": "Porphyra (nori)",
+          "image": "../Assets/division/algae/porphyra.png",
+          "caption": "Gambar 7. Thallus alga merah (Porphyra sp.) di ekosistem laut, salah satu anggota Rhodophyta yang umum dimanfaatkan sebagai bahan pembuat nori. (Sumber: The Seaweed Network Indonesia)",
+          "note": "Alga merah (Archaeplastida) multiseluler tipis yang dibudidayakan untuk lembaran nori"
+        },
+        {
+          "name": "Ulva",
+          "image": "../Assets/division/algae/ulva.jpg",
+          "caption": "Gambar 8. Thallus alga hijau Ulva lactuca (selada laut), makroalga dari kelompok Chlorophyta yang memiliki bentuk lembaran menyerupai daun selada. (Sumber: The Seaweed Network Indonesia)",
+          "note": "Alga hijau (Archaeplastida) multiseluler dengan pergiliran generasi isomorfik"
+        }
       ],
       "sectionImages": {
-        "struktur": { "alt": "Struktur sel dan plastida Algae", "caption": "Gambar 1. Ilustrasi struktur sel alga hijau (Chlorophyta), organisme fotosintetik akuatik yang memiliki klorofil a dan b. (Sumber: Sharma, 2025)" },
-        "habitat": { "alt": "Habitat Algae", "caption": "Gambar 2. Pemandangan ekosistem hutan kelp (Kelp forest) di Pulau San Clemente, California, contoh perwakilan dari kelompok Protista mirip tumbuhan (alga cokelat / Phaeophyta). (Sumber: Aquaimages / Wikimedia Commons | Lisensi: CC BY-SA 2.5)" },
-        "nutrisi": { "alt": "Cara Algae memperoleh nutrisi", "caption": "Gambar 3. Diagram jaringan makanan Arktik yang melibatkan miksotrofi (Arctic food web with mixotrophy), memperlihatkan alur transfer energi dan karbon pada kelompok Protista (autotrof, heterotrof, dan miksotrof). (Sumber: Diane K. Stoecker & Peter J. Lavrentyev / Wikimedia Commons | Lisensi: CC BY-SA 4.0)" },
-        "siklus-hidup": { "alt": "Pergiliran generasi pada Laminaria", "caption": "Gambar 4. Diagram strategi siklus hidup mikroalga (Life cycle strategies of phytoplankton), memperlihatkan fase pertumbuhan vegetatif haploid dan diploid pada kelompok alga mikroskopis. (Sumber: Joost de Vries et al. / Wikimedia Commons | Lisensi: CC BY-SA 4.0)" },
-        "ekologi": { "alt": "Peran ekologis Algae", "caption": "Gambar X. Fenomena ledakan sianobakteri (Cyanobacteria bloom) di Danau Erie tahun 2009, contoh perwakilan peristiwa harmful algal bloom (HAB) pada ekosistem akuatik. (Sumber: NOAA - NASA / Wikimedia Commons | Lisensi: Public Domain)" }
+        "struktur": { "alt": "Struktur sel dan plastida Algae", "caption": "Gambar 1. Contoh sel alga, organisme fotosintetik akuatik berklorofil a dan b: ilustrasi struktur sel alga hijau (Chlorophyta). (Sumber: Sharma, 2025 | Lisensi: CC BY-SA 4.0)" },
+        "habitat": { "alt": "Habitat Algae", "caption": "Gambar 2. Contoh habitat alga cokelat besar (kelp), yang membentuk hutan kelp di pesisir berbatu bersuhu dingin: hutan kelp di Pulau San Clemente, California. (Sumber: Aquaimages / Wikimedia Commons | Lisensi: CC BY-SA 2.5)" },
+        "nutrisi": { "alt": "Cara Algae memperoleh nutrisi", "caption": "Gambar 3. Contoh bahwa protista fotosintetik tidak selalu murni fotoautotrof: diagram jaring makanan Arktik memperlihatkan alur energi dan karbon melalui protista autotrof, heterotrof, dan miksotrof. (Sumber: Diane K. Stoecker & Peter J. Lavrentyev, 2019 | Lisensi: CC BY-SA 4.0)" },
+        "siklus-hidup": { "alt": "Pergiliran generasi pada Laminaria", "caption": "Gambar 4. Contoh pergiliran generasi pada alga cokelat, yang pada Laminaria bersifat heteromorfik: diagram membandingkan beberapa tipe siklus hidup, dari diplont, sporofit, dan gametofit sampai meiosis, singami, dan partenogenesis. (Sumber: Kenny Bogaert et al. / ResearchGate | Lisensi: Edukasional / Komersial Terbatas)" },
+        "ekologi": { "alt": "Peran ekologis Algae", "caption": "Gambar 5. Contoh ledakan populasi alga di perairan hipersalin: air Danau Maharloo, danau garam musiman di Iran, tampak kemerahan akibat aktivitas alga tahan garam serta mikroba halofil lain. (Sumber: Fars Media Corporation / Wikimedia Commons | Lisensi: CC BY 4.0) " }
       },
       "challenge": {
         "question": "Laminaria (alga cokelat) dan Ulva (alga hijau) sama-sama multiseluler dan memiliki pergiliran generasi. Alga cokelat termasuk Stramenopila, sedangkan alga hijau termasuk Archaeplastida. Kesimpulan yang paling tepat adalah…",
@@ -1306,16 +1319,16 @@ const BIOSCOPE_DATA = {
       "exampleNotes": [
         { "name": "Dictyostelium discoideum", 
           "image": "../Assets/division/slime-molds/dictyostelium-discoideum.jpg",
-          "caption": "Gambar 6. Makrofotografi tubuh buah (fruiting bodies) jamur lendir seluler Dictyostelium discoideum. (Sumber: Wikimedia Commons)", "note": "Jamur lendir seluler (Dictyostelia, Amoebozoa), organisme model untuk mempelajari agregasi sel" },
-        { "name": "Phytophthora infestans", "image": "../Assets/division/slime-molds/phytophthora-infestans.jpg", "caption": "Gambar 7. Pengamatan mikroskopis struktur morfologi reproduksi aseksual dan seksual Phytophthora infestans, Oomycota penyebab penyakit busuk daun kentang. (Sumber: Al Harethi dkk., 2023)", "note": "Oomycota (Stramenopila) penyebab hawar daun kentang yang terkait kelaparan besar di Irlandia" },
-        { "name": "Phytophthora ramorum", "image": "../Assets/division/slime-molds/phytophthora-ramorum.jpg", "caption": "Gambar 8. Gejala infeksi Phytophthora ramorum pada cabang pohon konifer yang menunjukkan lesi dan keluarnya cairan eksudat (bleeding cankers). (Sumber: Forest Research)", "note": "Oomycota penyebab penyakit mati mendadak pada pohon ek (sudden oak death)" }
+          "caption": "Gambar 6. Contoh jamur lendir seluler (Dictyostelia, Amoebozoa) yang menjadi organisme model agregasi sel: Dictyostelium discoideum dengan tubuh buah bertangkai halus dan soros di ujungnya. (Sumber: Queller and Strassmann Research Group at Washington University in St. Louis (WUSTL) / Usman Bashir / Wikimedia Commons | Lisensi: CC BY-SA 4.0)", "note": "Jamur lendir seluler (Dictyostelia, Amoebozoa), organisme model untuk mempelajari agregasi sel" },
+        { "name": "Phytophthora infestans", "image": "../Assets/division/slime-molds/phytophthora-infestans.jpg", "caption": "Gambar 7. Contoh Oomycota penyebab hawar daun kentang: struktur reproduksi aseksual dan seksual Phytophthora infestans pada pengamatan mikroskopis. (Sumber: Al Harethi dkk., 2023 | Lisensi: CC BY-SA 4.0)", "note": "Oomycota (Stramenopila) penyebab hawar daun kentang yang terkait kelaparan besar di Irlandia" },
+        { "name": "Phytophthora ramorum", "image": "../Assets/division/slime-molds/phytophthora-ramorum.jpg", "caption": "Gambar 8. Contoh Oomycota patogen pohon, penyebab penyakit mati mendadak pada pohon ek (sudden oak death): Phytophthora ramorum, dengan lesi dan eksudat (bleeding cankers) pada cabang pohon konifer [cek gambar: note menyebut pohon ek, foto ini konifer]. (Sumber: Forest Research | Lisensi: [lisensi perlu dicek])", "note": "Oomycota penyebab penyakit mati mendadak pada pohon ek (sudden oak death)" }
       ],
       "sectionImages": {
-        "struktur": { "alt": "Struktur jamur lendir dan jamur air", "caption": "Gambar 1. Makrofotografi struktur tubuh buah (sporangia) bertangkai dari spesies jamur lendir Comatricha nigra pada tahap perkembangan awal. Spesies dari kelas Myxogastria ini memperlihatkan badan penghasil spora berwarna merah keemasan khas kelompok Protista mirip jamur. (Sumber: Alexis Tinker-Tsavalas / Wikimedia Commons | Lisensi: CC BY 4.0)  " },
-        "habitat": { "alt": "Habitat protista mirip jamur", "caption": "Gambar 2. Spesimen jamur lendir berwarna putih yang tumbuh di atas permukaan batang kayu lapuk yang lembap di Jyväskylä, Finlandia. Substrat organik yang basah dan terlindung dari sinar matahari langsung ini merupakan habitat ideal bagi perkembangan fase plasmodium Protista mirip jamur. (Sumber: Tiia Monto / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" },
-        "nutrisi": { "alt": "Cara protista mirip jamur memperoleh nutrisi", "caption": "Gambar 3. Penampakan fase plasmodium pada jamur lendir Physarum polycephalum, perwakilan dari kelompok Protista mirip jamur (slime molds / Myxomycetes). (Sumber: frankenstoen / Wikimedia Commons | Lisensi: CC BY 2.5)" },
-        "siklus-hidup": { "alt": "Siklus hidup jamur lendir plasmodial", "caption": "Gambar 4. Skema siklus hidup jamur lendir plasmodial (Plasmodial slime mold life cycle), memperlihatkan pergiliran fase haploid dan diploid pada kelompok Protista mirip jamur. (Sumber: Dir'a / Wikimedia Commons | Lisensi: Public Domain)" },
-        "ekologi": { "alt": "Peran ekologis protista mirip jamur", "caption": "Gambar 5. Spesimen jamur lendir (Fuligo sp.) yang tumbuh pada serasah, memperlihatkan peran ekologisnya sebagai organisme dekomposer bahan organik di ekosistem terestrial. (Sumber: Eric Guinther / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" }
+        "struktur": { "alt": "Struktur jamur lendir dan jamur air", "caption": "Gambar 1. Contoh struktur tubuh jamur lendir Myxogastria: sporangia bertangkai penghasil spora pada Comatricha nigra yang masih muda, berwarna merah keemasan. (Sumber: Alexis Tinker-Tsavalas / Wikimedia Commons | Lisensi: CC BY 4.0)" },
+        "habitat": { "alt": "Habitat protista mirip jamur", "caption": "Gambar 2. Contoh habitat jamur lendir, yaitu tempat lembap dan teduh dengan bahan organik membusuk: jamur lendir putih pada batang kayu lapuk di Jyväskylä, Finlandia. Substrat seperti ini mendukung fase plasmodium yang memangsa bakteri dan mikroba lain. (Sumber: Tiia Monto / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" },
+        "nutrisi": { "alt": "Cara protista mirip jamur memperoleh nutrisi", "caption": "Gambar 3. Contoh fase plasmodium, tahap makan jamur lendir yang bersifat fagotrof, yaitu menelan bakteri dan partikel organik: Physarum polycephalum. (Sumber: frankenstoen / Wikimedia Commons | Lisensi: CC BY 2.5)" },
+        "siklus-hidup": { "alt": "Siklus hidup jamur lendir plasmodial", "caption": "Gambar 4. Contoh siklus hidup jamur lendir plasmodial (Myxogastria): skema memperlihatkan pergiliran fase haploid dan diploid. (Sumber: Dir’a / Wikimedia Commons | Lisensi: Public Domain)" },
+        "ekologi": { "alt": "Peran ekologis protista mirip jamur", "caption": "Gambar 5. Contoh peran protista mirip jamur sebagai pengurai yang mendaur ulang bahan organik di lantai hutan: jamur lendir Fuligo sp. tumbuh pada serasah. (Sumber: Eric Guinther / Wikimedia Commons | Lisensi: CC BY-SA 3.0)" }
       },
       "challenge": {
         "question": "Seorang siswa menyimpulkan bahwa Phytophthora adalah fungi karena membentuk hifa dan menyerap nutrien. Bukti ilmiah apa yang paling kuat untuk menilai kesimpulan ini?",
@@ -1389,49 +1402,47 @@ const BIOSCOPE_DATA = {
           "Vektor Virus & Patogen Jagung &mdash; Olpidium brassicae menularkan virus big vein pada selada, sedangkan Physoderma maydis menyebabkan penyakit bercak cokelat pada jagung (Webster & Weber, 2007)."
         ]
       },
-      "examples": "Synchytrium endobioticum, Olpidium brassicae, Rhizophydium planktonicum, Neocallimastix hurleyensis",
+      "examples": "Synchytrium endobioticum, Olpidium brassicae, Neocallimastix hurleyensis",
       "exampleNotes": [
         {
           "name": "Synchytrium endobioticum",
-          "caption": "Gambar 6. Synchytrium endobioticum. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/chytridiomycota/synchytrium-endobioticum.jpg", 
+          "caption": "Gambar 6. Contoh chytrid patogen obligat penyebab penyakit kutil kentang: umbi kentang terinfeksi Synchytrium endobioticum dengan kutil yang bervariasi dari tonjolan kecil sampai percabangan kompleks. (Sumber: USDA APHIS PPQ / Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Patogen obligat penyebab penyakit kutil kentang; spora istirahatnya dapat bertahan dorman di tanah lebih dari 40 tahun"
         },
         {
           "name": "Olpidium brassicae",
-          "caption": "Gambar 7. Olpidium brassicae. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/chytridiomycota/olpidium-brassicae.jpeg",
+          "caption": "Gambar 7. Contoh chytrid parasit endobiotik yang zoosporanya menjadi vektor virus big vein pada selada: gejala infeksi yang berkaitan dengan Olpidium brassicae [cek gambar: apakah gejala big vein pada selada atau akar inang]. (Sumber: Alchetron / alchetron.com | Lisensi: Hak Cipta Edukasional)",
           "note": "Parasit endobiotik dengan talus holokarpik yang zoosporanya menjadi vektor virus big vein pada selada"
         },
         {
-          "name": "Rhizophydium planktonicum",
-          "caption": "Gambar 8. Rhizophydium planktonicum. (Sumber: [isi sumber gambar])",
-          "note": "Parasit diatom Asterionella formosa yang dapat menekan populasi fitoplankton danau"
-        },
-        {
           "name": "Neocallimastix hurleyensis",
-          "caption": "Gambar 9. Neocallimastix hurleyensis. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/chytridiomycota/neocallimastix-hurleyensis.png",
+          "caption": "Gambar 8. Contoh chytrid anaerob penghuni rumen herbivora: mikrograf Neocallimastix hurleyensis dengan talus, hifa tanpa sekat, dan sporangium penghasil zoospora. (Sumber: Natalija Atanasova-Pancevska & Djoko Kungulovski / ResearchGate | Lisensi: Hak Cipta Edukasional)",
           "note": "Chytrid anaerob dari rumen herbivora; siklus aseksualnya sekitar 29–31 jam pada 39 °C dan menghasilkan 64–128 zoospora per sporangium"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Chytridiomycota",
-          "caption": "Gambar 1. Diagram siklus hidup jamur parasit Synchytrium endobioticum pada kentang, perwakilan dari divisi Chytridiomycota. (Sumber: Prof. M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 1. Gambar diagram struktur jamur dari Bioearthworm, yang menampilkan ilustrasi sel mesofil, epidermis bawah, sel penutup, stomata, sporangium, sporangiofora, hifa, dan cabang houstoria, serta menonjolkan struktur Chytridiomycota. (Sumber: Bioearthworm.wordpress.com | Lisensi: Edukasional / Situs Web)"
         },
         "habitat": {
           "alt": "Habitat Chytridiomycota",
-          "caption": "Gambar 2. Penampakan jaringan kulit amfibi (Atelopus varius) yang menjadi habitat inang spesifik jamur parasit akuatik Batrachochytrium dendrobatidis dari divisi Chytridiomycota. (Sumber: Peter Daszak et al. / Wikimedia Commons | Lisensi: Public Domain)"
+          "caption": "Gambar 2. Contoh habitat chytrid parasit: kulit amfibi sebagai inang jamur akuatik Batrachochytrium dendrobatidis, tampak pada jaringan kulit katak Atelopus varius. Chytrid lain hidup bebas di perairan tawar, laut, dan tanah. (Sumber: Peter Daszak et al., 1999 | Lisensi: Public Domain)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Chytridiomycota",
-          "caption": "Gambar 3. Diagram mekanisme penyerapan nutrisi melalui struktur talus epibiont dan endobiont pada Chytridiomycota saat mengambil zat hara dari sel inang. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 3. Contoh cara chytrid memperoleh nutrisi secara osmotrof dari inang hidup: diagram talus epibiotik dan endobiotik yang menyerap hara dari sel inang. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Chytridiomycota",
-          "caption": "Gambar 4. Skema siklus hidup aseksual jamur Batrachochytrium dendrobatidis (Chytridiomycota) pada kulit katak, memperlihatkan tahap pembentukan talus, koloni, dan sporangium. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 4. Contoh siklus hidup chytrid parasit: skema siklus aseksual Batrachochytrium dendrobatidis pada kulit katak, dari pembentukan talus dan koloni sampai sporangium. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "ekologi": {
           "alt": "Peran ekologis Chytridiomycota",
-          "caption": "Gambar 5. Diagram konsep Mycoloop, memperlihatkan peran ekologis Chytridiomycota dalam mentransfer nutrisi dari alga berukuran besar (inedible algae) ke zooplankton melalui pelepasan zoospora. (Sumber: Kagami et al. / Frontiers in Microbiology | Lisensi: CC BY 3.0)"
+          "caption": "Gambar 5. Contoh peran chytrid dalam jaring makanan akuatik: diagram konsep Mycoloop memperlihatkan nutrisi dari alga yang sulit dimakan berpindah ke zooplankton lewat zoospora chytrid. (Sumber: Kagami et al. / Frontiers in Microbiology | Lisensi: CC BY 3.0)"
         }
       },
       "challenge": {
@@ -1511,49 +1522,47 @@ const BIOSCOPE_DATA = {
           "Hawar Bibit Padi &mdash; Rhizopus microsporus yang membawa bakteri endosimbion Burkholderia penghasil toksin rhizoxin merusak pembelahan sel akar bibit padi."
         ]
       },
-      "examples": "Rhizopus stolonifer, Mucor mucedo, Pilobolus, Rhizopus sexualis",
+      "examples": "Rhizopus stolonifer, Mucor mucedo, Pilobolus",
       "exampleNotes": [
         {
           "name": "Rhizopus stolonifer",
-          "caption": "Gambar 6. Rhizopus stolonifer. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/zygomycota/rhizopus-stolonifer.jpg",
+          "caption": "Gambar 6. Contoh saprotrof cepat tumbuh yang mengontaminasi pangan: kapang roti hitam Rhizopus stolonifer dengan jaringan hifa senositik padat dan sporangium penghasil spora berwarna hitam. (Sumber: WIKILover / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Saprotrof cepat tumbuh penyebab busuk pada ubi jalar dan kontaminan pangan; dinding sporangiumnya pecah menjadi kepingan rapuh sehingga spora keringnya mudah diterbangkan angin"
         },
         {
           "name": "Mucor mucedo",
-          "caption": "Gambar 7. Mucor mucedo. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/zygomycota/mucor-mucedo.jpg",
+          "caption": "Gambar 7. Contoh saprotrof pada kotoran hewan, yang berbuah paling awal pada kotoran herbivora segar: Mucor mucedo dengan jalinan hifa senositik putih dan sporangium bulat kecil di ujungnya. (Sumber: Jerzy Opiola / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Saprotrof yang umum pada kotoran hewan; genus Mucor biasanya berbuah paling awal pada kotoran herbivora segar"
         },
         {
           "name": "Pilobolus",
-          "caption": "Gambar 8. Pilobolus. (Sumber: [isi sumber gambar])",
+          "image": "../Assets/division/zygomycota/pilobolus.jpg",
+          "caption": "Gambar 8. Contoh Zygomycota penembak sporangium yang tumbuh di kotoran hewan: Pilobolus di atas tumpukan kotoran di alam. (Sumber: Alex Abair / iNaturalist / Wikimedia Commons | Lisensi: CC BY 4.0)",
           "note": "Penembak sporangium: sporangium hitam termelanisasi ditembakkan dengan semprotan cairan bertekanan dari vesikel subsporangial, dan sporangiofornya bersifat fototropik"
-        },
-        {
-          "name": "Rhizopus sexualis",
-          "caption": "Gambar 9. Rhizopus sexualis. (Sumber: [isi sumber gambar])",
-          "note": "Zygomycete homotalik yang dapat kawin sendiri sehingga mudah membentuk zigospora di laboratorium"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Zygomycota",
-          "caption": "Gambar 1. Visualisasi skematis anatomi hifa Rhizopus spp. (Zygomycota), menggambarkan struktur hifa horizontal (stolon) dan hifa mirip akar (rhizoids) yang berfungsi memancangkan tubuh jamur serta mengabsorpsi nutrisi dari substrat. (Sumber: Wikimedia Commons | Lisensi: Public Domain)"
+          "caption": "Gambar 1. Contoh struktur tubuh Zygomycota: skema hifa Rhizopus dengan stolon (hifa horizontal) dan rizoid yang memancangkan tubuh serta menyerap nutrisi dari substrat. (Sumber: Wikimedia Commons | Lisensi: Public Domain)"
         },
         "habitat": {
           "alt": "Habitat Zygomycota",
-          "caption": "Gambar 2. Pertumbuhan kapang jamur pada permukaan kulit buah lemon, menunjukkan habitat alami jamur saprofit kelompok Zygomycota pada substrat organik yang kaya nutrisi. (Sumber: Ali Alaswad / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 2. Contoh habitat Zygomycota berupa bahan organik kaya nutrisi, tempat Mucorales menjadi kolonisator awal: kapang tumbuh pada kulit buah lemon. (Sumber: Ali Alaswad / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Zygomycota",
-          "caption": "Gambar 3. Skema struktur hifa Rhizopus stolonifer pada roti, memperlihatkan peran rizoid dan stolon dalam proses penyerapan nutrisi secara saprofit dari substrat makanan. (Sumber: Encyclopædia Britannica | Lisensi: Hak Cipta Dilindungi)"
+          "caption": "Gambar 3. Contoh heterotrof absorptif: skema hifa Rhizopus stolonifer pada roti memperlihatkan rizoid dan stolon yang menyerap nutrisi dari substrat makanan. (Sumber: Encyclopædia Britannica | Lisensi: Hak Cipta Dilindungi)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Zygomycota",
-          "caption": "Gambar 4. Diagram siklus hidup jamur Mucor sp., memperlihatkan alur reproduksi seksual dan aseksual pada divisi Zygomycota. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 4. Contoh siklus hidup Zygomycota: diagram siklus hidup Mucor sp. memperlihatkan alur reproduksi seksual dan aseksual. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "ekologi": {
           "alt": "Peran ekologis Zygomycota",
-          "caption": "Gambar 5. Penampakan lalat kotoran kuning (Scathophaga stercoraria) yang terinfeksi jamur entomopatogen Entomophthora muscae, perwakilan parasit dari kelompok Zygomycota (Entomophthorales). (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 5. Contoh peran kelompok Zygomycota (Entomophthorales) sebagai patogen serangga yang berpotensi menjadi agen biokontrol: lalat kotoran kuning (Scathophaga stercoraria) terinfeksi Entomophthora muscae. (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         }
       },
       "challenge": {
@@ -1633,50 +1642,47 @@ const BIOSCOPE_DATA = {
           "Penyakit Tanaman & Infeksi Oportunistik &mdash; Erysiphales menyebabkan embun tepung dan Taphrina deformans menyebabkan keriting daun persik, sedangkan Candida albicans dapat menyebabkan sariawan jamur dan Pneumocystis dapat menyebabkan pneumonia pada penderita defisiensi imun (Webster & Weber, 2007)."
         ]
       },
-      "examples": "Saccharomyces cerevisiae, Penicillium chrysogenum, Claviceps purpurea, Aspergillus flavus",
+      "examples": "Saccharomyces cerevisiae, Penicillium chrysogenum, Claviceps purpurea",
       "exampleNotes": [
         {
           "name": "Saccharomyces cerevisiae",
-          "caption": "Gambar 6. Saccharomyces cerevisiae. (Sumber: [isi sumber gambar])",
+          "caption": "Gambar 6. Contoh khamir bertunas yang dipakai membuat roti, bir, dan anggur: mikrograf kontras fase pada pembesaran 100× memperlihatkan sel-sel Saccharomyces cerevisiae. (Sumber: Pilerini / Wikimedia Commons | Lisensi: CC BY 4.0)",
           "image": "../assets/division/ascomycota/saccharomyces-cerevisiae.jpg",
           "note": "Khamir bertunas yang dipakai dalam pembuatan roti, bir, dan anggur; bentuk yang paling umum pada sel vegetatifnya adalah diploid"
         },
         {
           "name": "Penicillium chrysogenum",
-          "caption": "Gambar 7. Penicillium chrysogenum. (Sumber: [isi sumber gambar])",
+          "caption": "Gambar 7. Contoh kapang penghasil antibiotik penisilin: koloni Penicillium chrysogenum pada agar di cawan petri, bertekstur kapang berwarna hijau kebiruan dengan tepi putih. (Sumber: Crulina 98 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
+          "image": "../assets/division/ascomycota/penicillium-chrysogenum.jpg",
           "note": "Kapang penghasil penisilin; penisilin pertama kali ditemukan Alexander Fleming pada kapang Penicillium"
         },
         {
           "name": "Claviceps purpurea",
-          "caption": "Gambar 8. Claviceps purpurea. (Sumber: [isi sumber gambar])",
-          "note": "Parasit bunga serealia yang membentuk sklerotium ergot beracun bagi manusia dan ternak"
-        },
-        {
-          "name": "Aspergillus flavus",
-          "caption": "Gambar 9. Aspergillus flavus. (Sumber: [isi sumber gambar])",
-          "note": "Kapang kontaminan pangan penghasil aflatoksin karsinogenik; genus Aspergillus juga dipakai dalam fermentasi kecap"
+          "caption": "Gambar 8. Contoh parasit bunga serealia yang membentuk sklerotium ergot beracun bagi manusia dan ternak: sklerotia kehitaman Claviceps purpurea menonjol keluar dari malai gandum hitam (rye). (Sumber: Dominique Jacquin / Wikimedia Commons | Lisensi: Public Domain)",
+          "image": "../assets/division/ascomycota/claviceps-purpurea.jpg",
+          "note": "Parasit bunga serealia yang membentuk sklerotium ergot beracun bagi manusia dan ternak" 
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Ascomycota",
-          "caption": "Gambar 1. Skema anatomi tubuh buah (ascocarp) dan gambaran mikroskopis kantung askus berisi 8 askospora, perwakilan dari divisi Ascomycota. (Sumber: GeeksforGeeks / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 1. Contoh struktur tubuh Ascomycota: skema ascocarp dan gambaran mikroskopis kantung askus berisi 8 askospora. (Sumber: GeeksforGeeks / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "habitat": {
           "alt": "Habitat Ascomycota",
-          "caption": "Gambar 2. Pertumbuhan tubuh buah Aleuria aurantia (jamur kulit jeruk) di atas tanah terestrial, menggambarkan habitat alami anggota divisi Ascomycota di lingkungan terbuka dan lembap. (Sumber: Holger Krisp / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 2. Contoh habitat Ascomycota di tanah terbuka yang lembap: tubuh buah Aleuria aurantia (jamur kulit jeruk) tumbuh di atas tanah. (Sumber: Holger Krisp / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Ascomycota",
-          "caption": "Gambar 3. Diagram detail anatomi talus liken (Lichenes), memperlihatkan struktur interaksi hifa Ascomycota dengan sel alga dalam menyerap nutrisi hasil fotosintesis secara simbiosis mutualisme. (Sumber: Prof. M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0"
+          "caption": "Gambar 3. Contoh cara Ascomycota memperoleh nutrisi lewat simbiosis: diagram anatomi talus liken memperlihatkan hifa Ascomycota berinteraksi dengan sel alga dan menyerap hasil fotosintesisnya. (Sumber: Prof. M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Ascomycota",
-          "caption": "Gambar 4  . Diagram siklus hidup ordo Erysiphales (Ascomycota), memperlihatkan pergiliran fase reproduksi seksual dan aseksual pada jamur embun tepung. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 4. Contoh siklus hidup Ascomycota pada jamur embun tepung (Erysiphales): diagram memperlihatkan pergiliran fase reproduksi seksual dan aseksual. (Sumber: M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "ekologi": {
           "alt": "Peran ekologis Ascomycota",
-          "caption": "Gambar 5. Penampakan tubuh buah truffle hitam (Tuber sp.) asal San Miniato, perwakilan jamur subterranean yang dimanfaatkan sebagai bahan pangan dari divisi Ascomycota. (Sumber: Stephencdickson / Wikimedia Commons | Lisensi: CC BY-SA 4.0) 5. Peran ekologis Ascomycota. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Contoh peran Ascomycota bagi manusia dan ekosistem: truffle (Tuber) membentuk mikoriza dengan akar pohon, dan tubuh buah bawah tanahnya bernilai pangan tinggi. Gambar memperlihatkan tubuh buah truffle hitam (Tuber sp.) asal San Miniato. (Sumber: Stephencdickson / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         }
       },
       "challenge": {
@@ -1756,47 +1762,47 @@ const BIOSCOPE_DATA = {
           "Keracunan & Infeksi &mdash; Amanita phalloides ('death cap') menghasilkan amatoksin yang merusak hati dan ginjal, dan Cryptococcus neoformans menyebabkan kriptokokosis pada penderita imunosupresi (Webster & Weber, 2007). Warna mencolok atau bau tidak dapat dijadikan patokan layak makan, jadi jangan mengonsumsi jamur liar tanpa identifikasi oleh ahli."
         ]
       },
-      "examples": "Agaricus bisporus, Amanita phalloides, Puccinia graminis, Pleurotus ostreatus, Armillaria mellea",
+      "examples": "Agaricus bisporus, Amanita phalloides, Puccinia graminis",
       "exampleNotes": [
         {
           "name": "Agaricus bisporus",
           "image": "../assets/division/Basidiomycota/agaricus-bisporus.jpg",
-          "caption": "Gambar 6. Spesimen jamur kancing atau jamur putih (Agaricus bisporus), contoh spesies dari divisi Basidiomycota yang paling umum dibudidayakan sebagai bahan pangan komersial. (Sumber: chris_73 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
+          "caption": "Gambar 6. Contoh Basidiomycota pangan yang paling umum dibudidayakan secara komersial: jamur kancing atau jamur putih (Agaricus bisporus). (Sumber: chris_73 / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Jamur kancing putih budidaya yang populer sebagai pangan; basidiumnya umumnya membawa dua basidiospora, bukan empat"
         },
         {
           "name": "Amanita phalloides",
           "image": "../assets/division/Basidiomycota/phalloides.jpg",
-          "caption": "Gambar 7 Penampakan spesimen Amanita phalloides (death cap) di kawasan Pegunungan Piacenza, perwakilan jamur beracun mematikan dari divisi Basidiomycota. (Sumber: Archenzo / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
+          "caption": "Gambar 7. Contoh jamur liar mematikan penghasil amatoksin perusak hati dan ginjal: Amanita phalloides (death cap) di kawasan Pegunungan Piacenza. (Sumber: Archenzo / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Jamur liar mematikan penghasil amatoksin perusak hati dan ginjal, dikenal sebagai 'death cap'"
         },
         {
           "name": "Puccinia graminis",
           "image": "../assets/division/Basidiomycota/puccinia-graminis.jpg",
-          "caption": "Gambar 8. Gejala penyakit karat batang (stem rust) akibat infeksi jamur parasit Puccinia graminis pada batang tanaman, perwakilan kelompok Basidiomycota. (Sumber: Wikimedia Commons | Lisensi: Public Domain)",
+          "caption": "Gambar 8. Contoh jamur karat obligat penyebab gagal panen gandum: gejala karat batang (stem rust) akibat Puccinia graminis pada batang tanaman. (Sumber: Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Jamur karat obligat dengan siklus hidup lima fase spora, penyebab gagal panen gandum"
-        },
+        }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Basidiomycota",
-          "caption": "Gambar 1. Skema anatomi tubuh buah (basidiocarp), hymenium, dan basidium penghasil spora pada kelompok jamur dari divisi Basidiomycota. (Sumber: Debivort / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 1. Contoh struktur tubuh Basidiomycota: skema basidiokarp, hymenium, dan basidium penghasil spora. (Sumber: Debivort / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "habitat": {
           "alt": "Habitat Basidiomycota",
-          "caption": "Gambar 2. Pertumbuhan tubuh buah jamur karang (Ramaria rugosa) di antara serasah daun, memperlihatkan habitat alami kelompok Basidiomycota di lantai hutan yang lembap. (Sumber: Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 2. Contoh habitat Basidiomycota di lantai hutan yang lembap, tempat saprotrof melapukkan serasah: tubuh buah jamur karang (Ramaria rugosa) tumbuh di antara serasah daun. (Sumber: Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Basidiomycota",
-          "caption": "Gambar 3. Ujung akar tumbuhan yang dilapisi miselium jamur genus Amanita, memperlihatkan mekanisme perolehan nutrisi Basidiomycota melalui simbiosis ektomikoriza. (Sumber: Larsson et al. / BMC Bioinformatics | Lisensi: CC BY 2.5)"
+          "caption": "Gambar 3. Contoh Basidiomycota yang memperoleh nutrisi lewat simbiosis ektomikoriza: ujung akar tumbuhan dilapisi miselium jamur genus Amanita. (Sumber: Larsson et al. / BMC Bioinformatics | Lisensi: CC BY 2.5)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Basidiomycota",
-          "caption": "Gambar 4. Skema daur hidup seksual divisi Basidiomycota, memperlihatkan tahapan somatogami, fase dikariotik, hingga pembentukan sel induk basidium dan pelepasan basidiospora. (Sumber: SiliconProphet & M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 4. Contoh siklus hidup seksual Basidiomycota: skema memperlihatkan somatogami, fase dikariotik, pembentukan sel induk basidium, sampai pelepasan basidiospora. (Sumber: SiliconProphet & M. Piepenbring / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "ekologi": {
           "alt": "Peran ekologis Basidiomycota",
-          "caption": "Gambar 5. Pertumbuhan tubuh buah jamur kuping (Auricularia auricula-judae) pada batang kayu, perwakilan kelompok Basidiomycota yang dimanfaatkan sebagai bahan pangan. (Sumber: Apus / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 5. Contoh peran Basidiomycota sebagai pengurai kayu mati: jamur kuping (Auricularia auricula-judae) tumbuh pada batang kayu. Jamur ini juga dimanfaatkan sebagai pangan. (Sumber: Apus / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         }
       },
       "challenge": {
@@ -1874,49 +1880,47 @@ const BIOSCOPE_DATA = {
           "Dampak Merugikan Terbatas &mdash; dampak merugikan langsung bagi manusia jarang dilaporkan, sehingga peran bryofita lebih menonjol sebagai penyedia jasa ekosistem."
         ]
       },
-      "examples": "Sphagnum, Marchantia, Anthoceros, Pseudocrossidium replicatum",
+      "examples": "Sphagnum, Marchantia, Anthoceros",
       "exampleNotes": [
         {
           "name": "Sphagnum",
-          "caption": "Gambar 6. Sphagnum. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Bryophyta/sphagnum.jpg",
+          "caption": "Gambar 6. Contoh lumut gambut penyimpan air dan karbon yang membentuk lahan gambut: hamparan Sphagnum di lahan basah dan upland moor Taman Nasional Drents-Friese Wold (Fochteloërveen). (Sumber: Agnes Monkelbaan / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lumut gambut penyimpan air dan karbon yang membentuk ekosistem lahan gambut di belahan bumi utara"
         },
         {
           "name": "Marchantia",
-          "caption": "Gambar 7. Marchantia. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Bryophyta/marchantia.jpg",
+          "caption": "Gambar 7. Contoh lumut hati bertalus lebar yang bereproduksi aseksual lewat mangkuk gemma: lembaran talus pipih bercabang Marchantia polymorpha di atas permukaan tanah. (Sumber: Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lumut hati bertalus lebar dengan mangkuk gemma untuk reproduksi aseksual"
         },
         {
           "name": "Anthoceros",
-          "caption": "Gambar 8. Anthoceros. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Bryophyta/anthoceros.jpg",
+          "caption": "Gambar 8. Contoh lumut tanduk dengan sporofit silindris memanjang: Anthoceros agrestis di Schwäbisch-Fränkische Waldberge, Jerman, dengan talus pipih hijau dan sporofit seperti tanduk atau jarum. (Sumber: BerndH / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Lumut tanduk dengan sporofit silindris memanjang; gametofitnya dihuni sianobakteri Nostoc secara mutualisme"
-        },
-        {
-          "name": "Pseudocrossidium replicatum",
-          "caption": "Gambar 9. Pseudocrossidium replicatum. (Sumber: [isi sumber gambar])",
-          "note": "Lumut yang toleran desikasi penuh dan mengaktifkan mekanisme molekuler induktif saat mengalami cekaman abiotik berat (Ríos-Meléndez dkk., 2021)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Bryophyta",
-          "caption": "Gambar 1. Struktur dan morfologi Bryophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Contoh struktur tubuh lumut: diagram memperlihatkan generasi gametofit (rizoid, sumbu utama, daun) dan generasi sporofit (seta dan kapsul spora). (Sumber: GeeksforGeeks | Lisensi: Edukasional / Web GeeksforGeeks)"
         },
         "habitat": {
           "alt": "Habitat Bryophyta",
-          "caption": "Gambar 2. Habitat Bryophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Contoh habitat lumut di tempat teduh dan lembap: lumut tumbuh rapat menutupi permukaan tanah dan bebatuan yang basah. (Sumber: Nativeplants garden / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Bryophyta",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Bryophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto jarak dekat thalloid of the liverwort Marchantia with gemma cups yang memperlihatkan lembaran talus hijau pada lumut hati, yang berperan langsung dalam proses fotosintesis dan perolehan nutrisi. (Sumber: Dr. Morley Read / Shutterstock.com / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Bryophyta",
-          "caption": "Gambar 4. Siklus hidup Bryophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Contoh pergiliran keturunan (metagenesis) pada lumut: diagram siklus hidup moss antara fase gametofit dan sporofit. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Bryophyta",
-          "caption": "Gambar 5. Peran ekologis Bryophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Contoh peran lumut sebagai penahan air dan penstabil tanah di lantai hutan: rumpun lebat lumut Dicranum scoparium (broom moss). (Sumber: Michael Becker / Encyclopædia Britannica | Lisensi: Creative Commons Attribution ShareAlike 3.0)"
         }
       },
       "challenge": {
@@ -2021,49 +2025,47 @@ const BIOSCOPE_DATA = {
           "Gulma Beracun Ternak &mdash; Pteridium aquilinum (bracken) bersifat invasif dan mengandung senyawa karsinogenik serta enzim thiaminase yang meracuni ternak penggembalaan."
         ]
       },
-      "examples": "Pteridium aquilinum, Selaginella lepidophylla, Equisetum hyemale, Azolla pinnata",
+      "examples": "Pteridium aquilinum, Selaginella lepidophylla, Equisetum hyemale",
       "exampleNotes": [
         {
           "name": "Pteridium aquilinum",
-          "caption": "Gambar 6. Pteridium aquilinum. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Pteridophyta/pteridium-aquilinum.jpg",
+          "caption": "Gambar 6. Contoh paku bracken yang invasif dan beracun bagi ternak: hamparan daun hijau lebat Pteridium aquilinum di Kodrąbek, Pulau Wolin, Polandia barat laut. (Sumber: Krzysztof Ziarlak, Kenraiz / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Paku bracken yang invasif dan beracun bagi ternak, salah satu tumbuhan berpembuluh dengan sebaran paling luas di dunia"
         },
         {
           "name": "Selaginella lepidophylla",
-          "caption": "Gambar 7. Selaginella lepidophylla. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Pteridophyta/selaginella-lepidophylla.jpg",
+          "caption": "Gambar 7. Contoh lycophyta heterospora yang dikenal sebagai tumbuhan kebangkitan karena mampu mengering lalu segar kembali setelah terkena air: Selaginella lepidophylla (Flor de Piedra) pada permukaan batuan. (Sumber: sergio nicbla / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Wakil lycophyta heterospora yang dikenal sebagai tumbuhan kebangkitan karena mampu mengering lalu segar kembali setelah terkena air"
         },
         {
           "name": "Equisetum hyemale",
-          "caption": "Gambar 8. Equisetum hyemale. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Pteridophyta/equisetum-hyemale.jpg",
+          "caption": "Gambar 8. Foto spesimen Rough Horsetail (Equisetum hyemale) di Arctic-Alpine Botanic Garden, Tromsø, Norwegia, yang menampilkan struktur batang beruas tegak berwarna hijau. (Sumber: Diego Delso / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Paku ekor kuda yang membentuk es di luar sel, di rongga empulur dan saluran batang, sehingga kerusakan mekanis di dalam sel dapat dicegah (Firoozi dkk., 2025)"
-        },
-        {
-          "name": "Azolla pinnata",
-          "caption": "Gambar 9. Azolla pinnata. (Sumber: [isi sumber gambar])",
-          "note": "Paku air kecil yang bersimbiosis dengan sianobakteri penambat nitrogen di rongga daunnya dan dimanfaatkan sebagai pupuk hayati"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Pteridophyta",
-          "caption": "Gambar 1. Struktur dan morfologi Pteridophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Contoh struktur tubuh paku: diagram bagian tubuh paku (Polypodium) dengan daun (frond), tangkai (stipe), helai daun (blade), rimpang (rhizome), dan akar sejati. (Sumber: Biology4ISC | Lisensi: Edukasional / Web Biology4ISC)"
         },
         "habitat": {
           "alt": "Habitat Pteridophyta",
-          "caption": "Gambar 2. Habitat Pteridophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Contoh paku epifit yang menempel pada batang pohon tanpa mengambil nutrisi dari inangnya: Platycerium bifurcatum di Mt Baldy dekat Atherton, Queensland, dengan daun steril penangkap hara dan daun fertil berbentuk tanduk. (Sumber: Steve Fitzgerald / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Pteridophyta",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Pteridophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Contoh paku sebagai autotrof vaskuler yang membuat makanan lewat fotosintesis di daunnya: rimbunan daun paku yang lebat di sebuah rumpun hutan di Bamberg. (Sumber: Reinhold Möller / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Pteridophyta",
-          "caption": "Gambar 4. Siklus hidup Pteridophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Contoh pergiliran keturunan pada paku: diagram siklus hidup dari pelepasan spora, gametofit berbentuk hati (protalium), dan fertilisasi sampai pertumbuhan sporofit baru. (Sumber: Merriam-Webster Inc. / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Pteridophyta",
-          "caption": "Gambar 5. Peran ekologis Pteridophyta. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Contoh peran paku sebagai penyedia mikroklimat lembap dan tempat bernaung bagi tumbuhan lain dan fauna kecil: hutan alami yang rimbun di Boyacá, Kolombia, dengan paku pohon dan vegetasi bawah. (Sumber: Eber Rancanciu / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -2168,54 +2170,47 @@ const BIOSCOPE_DATA = {
           "Dampak Merugikan Terbatas &mdash; dampak merugikan langsung bagi manusia atau ekosistem lain tidak menonjol dalam materi ini; nilai ekologis dan ekonomi gymnospermae lebih dominan."
         ]
       },
-      "examples": "Pinus palustris, Sequoia sempervirens, Ginkgo biloba, Welwitschia mirabilis, Cycas",
+      "examples": "Pinus palustris, Ginkgo biloba, Cycas",
       "exampleNotes": [
         {
           "name": "Pinus palustris",
-          "caption": "Gambar 6. Pinus palustris. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Gymnosperms/pinus-palustris.jpg",
+          "caption": "Gambar 6. Contoh konifer berdaun jarum panjang yang membentuk hutan pinus: lanskap hutan Pinus palustris dengan deretan batang pohon tinggi di lingkungan alaminya. (Sumber: Chuck Bargeron, University of Georgia / Wikimedia Commons | Lisensi: CC BY 3.0 US)",
           "note": "Pinus berdaun jarum panjang, wakil konifer yang membentuk hutan pinus di belahan bumi utara"
         },
         {
-          "name": "Sequoia sempervirens",
-          "caption": "Gambar 7. Sequoia sempervirens. (Sumber: [isi sumber gambar])",
-          "note": "Redwood pesisir, salah satu tumbuhan vaskular tertinggi di dunia (lebih dari 115 meter)"
-        },
-        {
           "name": "Ginkgo biloba",
-          "caption": "Gambar 8. Ginkgo biloba. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Gymnosperms/ginkgo-biloba.jpg",
+          "caption": "Gambar 7. Contoh Ginkgophyta berdaun kipas yang spermanya masih berflagela (Nigris dkk., 2021): pohon ginkgo berpercabangan lebat di Luxembourg City. (Sumber: Fischerplatz, Cayambe, Ginkgotree / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Wakil Ginkgophyta berdaun kipas; sel spermanya masih berflagela dan berenang di cairan ruang arkegonium (Nigris dkk., 2021)"
         },
         {
-          "name": "Welwitschia mirabilis",
-          "caption": "Gambar 9. Welwitschia mirabilis. (Sumber: [isi sumber gambar])",
-          "note": "Gnetofit gurun Namibia yang sepanjang hidupnya hanya menghasilkan dua daun pita raksasa"
-        },
-        {
           "name": "Cycas",
-          "caption": "Gambar 10. Cycas. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Gymnosperms/cycas.jpg",
+          "caption": "Gambar 8. Contoh cycad dengan sarkotesta berdaging pada bijinya dan akar koraloid bersimbiosis sianobakteri: Cycas revoluta di Porto Formoso, Pulau São Miguel, Azores, dengan batang tegak dan tunas daun muda tersusun melingkar. (Sumber: Krzysztof Ziarlak, Kenraiz / Wikimedia Commons | Lisensi: CC BY 4.0)",
           "note": "Cycad dengan sarkotesta berdaging pada bijinya, sperma berflagela, dan akar koraloid bersimbiosis sianobakteri (Nigris dkk., 2021; Valderrama-Martín dkk., 2024)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Gymnospermae",
-          "caption": "Gambar 1. Struktur dan morfologi Gymnospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Contoh keragaman struktur Gymnospermae: ilustrasi historis dari Brockhaus and Efron Encyclopedic Dictionary (1890–1907) yang memperlihatkan bentuk daun, percabangan, dan kerucut (strobilus) sebagai organ reproduksi. (Sumber: Wikimedia Commons | Lisensi: Domain Publik)"
         },
         "habitat": {
           "alt": "Habitat Gymnospermae",
-          "caption": "Gambar 2. Habitat Gymnospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Contoh habitat Gymnospermae berupa hutan konifer di daratan: deretan pohon pinus tinggi di hutan pinus Ferrel. Konifer mendominasi hutan boreal dan taiga, sedangkan cycad dan gnetofit tersebar dari daerah tropis sampai semi-kering. (Sumber: Alexkom000 / Wikimedia Commons | Lisensi: CC BY 4.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Gymnospermae",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Gymnospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Contoh konifer sebagai autotrof yang membuat makanan lewat fotosintesis dan memperluas serapan hara lewat ektomikoriza pada akarnya: hutan pinus dengan deretan batang pohon tinggi. (Sumber: Pinakpani / Wikimedia Commons | Lisensi: CC BY 4.0)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Gymnospermae",
-          "caption": "Gambar 4. Siklus hidup Gymnospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Contoh pergiliran keturunan pada Gymnospermae: diagram siklus hidup dari pohon dewasa, kerucut jantan dan betina, penyerbukan, pembuahan, perkembangan embrio, penyebaran biji, sampai perkecambahan. (Sumber: GeekforGeeks | Lisensi: Edukasional / Web GeekforGeeks)"
         },
         "ekologi": {
           "alt": "Peran ekologis Gymnospermae",
-          "caption": "Gambar 5. Peran ekologis Gymnospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Contoh peran konifer sebagai habitat dan tempat bertengger fauna: burung Lophophanes cristatus (European crested tit) bertengger di dahan konifer berrunjung di Taman Nasional Gran Paradiso, Italia. (Sumber: Marie-Lan Tay Pamart / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -2321,49 +2316,47 @@ const BIOSCOPE_DATA = {
           "Gulma Invasif & Alergen Serbuk Sari &mdash; sejumlah spesies menjadi gulma invasif yang menekan vegetasi asli, dan serbuk sari tumbuhan penyerbukan angin, seperti Ambrosia (ragweed), memicu alergi musiman."
         ]
       },
-      "examples": "Oryza sativa, Nymphaea sp., Rafflesia arnoldii, Dionaea muscipula",
+      "examples": "Oryza sativa, Rafflesia arnoldii, Dionaea muscipula",
       "exampleNotes": [
         {
           "name": "Oryza sativa",
-          "caption": "Gambar 6. Oryza sativa. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Angiosperms/oryza-sativa.jpg",
+          "caption": "Gambar 6. Contoh monokotil serealia yang menjadi makanan pokok sebagian besar penduduk dunia: hamparan padi (Oryza sativa) di area persawahan di Kabupaten Batang, Jawa Tengah. (Sumber: Syarful Msth / Wikimedia Commons | Lisensi: CC BY 4.0)",
           "note": "Padi, monokotil serealia yang menjadi makanan pokok bagi sebagian besar penduduk dunia"
         },
         {
-          "name": "Nymphaea sp.",
-          "caption": "Gambar 7. Nymphaea sp.. (Sumber: [isi sumber gambar])",
-          "note": "Teratai, tumbuhan air dengan daun mengapung dan bunga khas"
-        },
-        {
           "name": "Rafflesia arnoldii",
-          "caption": "Gambar 8. Rafflesia arnoldii. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Angiosperms/rafflesia-arnoldii.jpg",
+          "caption": "Gambar 7. Contoh parasit tanpa klorofil pada tumbuhan inang Tetrastigma yang menghasilkan bunga tunggal terbesar di dunia: bunga Rafflesia arnoldii berkelopak merah berbintik putih di Batang Palupuh, Sumatera Barat. (Sumber: Maizal Chaniago / Wikimedia Commons | Lisensi: CC BY 4.0)",
           "note": "Parasit tanpa klorofil pada tumbuhan inang Tetrastigma, menghasilkan bunga tunggal terbesar di dunia dengan diameter hingga sekitar satu meter"
         },
         {
           "name": "Dionaea muscipula",
-          "caption": "Gambar 9. Dionaea muscipula. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Angiosperms/dionaea-muscipula.jpg",  
+          "caption": "Gambar 8. Foto spesimen tumbuhan pemakan serangga Venus Fly Trap (VFT; Dionaea muscipula) yang menampilkan struktur daun modifikasi berbentuk perangkap rahang bergigi untuk menangkap mangsa. (Sumber: Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Venus flytrap, tumbuhan karnivor dengan daun perangkap yang menangkap serangga di tanah miskin nitrogen (Urry dkk., 2021)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Angiospermae",
-          "caption": "Gambar 1. Struktur dan morfologi Angiospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Contoh struktur tubuh angiospermae: diagram tumbuhan eudikotil dengan sistem pucuk, daun (tangkai dan helaian), serta akar utama dan akar sekunder di dalam tanah. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Angiospermae",
-          "caption": "Gambar 2. Habitat Angiospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Contoh habitat angiospermae di hutan hujan tropis yang lebat: lanskap hutan hujan Amazon di cekungan Amazon bagian atas, Loreto, Peru timur laut. Angiospermae mendominasi lebih dari 80% vegetasi darat (Jhariya dkk., 2026). (Sumber: User:Shao / Wikimedia Commons | Lisensi: CC BY 3.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Angiospermae",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Angiospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Contoh fotoautotrofi pada angiospermae: diagram jalur elektron fotosintesis memperlihatkan aliran elektron pada reaksi terang di dalam kloroplas. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Angiospermae",
-          "caption": "Gambar 4. Siklus hidup Angiospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Contoh pergiliran keturunan pada tumbuhan berbunga: diagram siklus hidup dari sporofit dewasa, organ reproduksi dalam bunga, penyerbukan, fertilisasi ganda, dan pembentukan biji serta buah sampai perkecambahan. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Angiospermae",
-          "caption": "Gambar 5. Peran ekologis Angiospermae. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Contoh angiospermae sebagai produsen primer: umbi kentang (Solanum tuberosum) menyimpan cadangan makanan hasil fotosintesis yang menjadi sumber energi bagi manusia dan fauna. (Sumber: Grant Heilman / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {
@@ -2470,49 +2463,47 @@ const BIOSCOPE_DATA = {
           "Catatan &mdash; materi sumber tidak mencantumkan dampak merugikan spesifik dari Porifera."
         ]
       },
-      "examples": "Xestospongia spp., Hexactinellida, Demospongiae, Calcarea",
+      "examples": "Hexactinellida, Demospongiae, Calcarea",
       "exampleNotes": [
         {
-          "name": "Xestospongia spp.",
-          "caption": "Gambar 6. Xestospongia spp.. (Sumber: [isi sumber gambar])",
-          "note": "Spons raksasa berbentuk tong yang kokoh sehingga mampu memompa air dalam jumlah besar hingga menjangkau kolom air di atasnya (Pawlik, 2025)"
-        },
-        {
           "name": "Hexactinellida",
-          "caption": "Gambar 7. Hexactinellida. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Porifera/hexactinellida.jpg",
+          "caption": "Gambar 6. Foto spesimen spons kaca kuning (Staurocalyptus sp. atau Yellow Picasso sponges) di kedalaman 1,330 meter di Davidson Seamount, California, yang menampilkan struktur tubuh gelas kaca khas kelompok spons kaca (Hexactinellida). (Sumber: NOAA / Monterey Bay Aquarium Research Institute / Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Kelas spons dengan spikula kaca (silika) yang khas"
         },
         {
           "name": "Demospongiae",
-          "caption": "Gambar 8. Demospongiae. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Porifera/demospongiae.jpg",
+          "caption": "Gambar 7. Foto keanekaragaman hayati dan morfotipe spons (Sponge biodiversity and morphotypes) di kedalaman 60 kaki di Laut Karibia, Kepulauan Cayman, yang menampilkan berbagai jenis Demospongiae seperti spons tabung kuning (Aplysina fistularis), spons vas merah muda (Niphates digitalis), dan spons tali abu-abu (Callyspongia sp.). (Sumber: Twilight Zone Expedition Team 2007, NOAA-OE / Wikimedia Commons | Lisensi: Public Domain)   ",
           "note": "Salah satu dari empat kelas utama Porifera (Rossi dkk., 2026)"
         },
         {
           "name": "Calcarea",
-          "caption": "Gambar 9. Calcarea. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Porifera/calcarea.jpg",
+          "caption": "Gambar 8. Foto spesimen spons kapur Clathrina clathrus dari Wikimedia Commons, yang menampilkan koloni spons dengan struktur jaring tabung berkapur yang khas di habitat perairan laut. (Sumber: Parent Géry / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Kelas spons dengan rangka spikula kalsium karbonat (Urry dkk., 2021)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Porifera",
-          "caption": "Gambar 1. Struktur dan morfologi Porifera. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram ilustrasi anatomi struktur spons (sponge anatomy) sederhana dari Encyclopædia Britannica, yang menampilkan bagian-bagian morfologi dan seluler seperti ostium, spongosol, oskulum, spikula, serta sel leher (choanocyte). (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Porifera",
-          "caption": "Gambar 2. Habitat Porifera. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen koloni spons laut (marine sponges) dari Encyclopædia Britannica, yang menampilkan komunitas hewan spons yang hidup menempel di habitat alaminya di dasar perairan laut. (Sumber: Encyclopædia Britannica, Inc. / Royalty-free/Corbis | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Porifera",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Porifera. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Diagram anatomi sponge sederhana dari Encyclopædia Britannica, yang menampilkan mekanisme aliran air, struktur sel leher berflagela (choanocytes), serta proses penangkapan partikel makanan di dalam tubuh spons. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Porifera",
-          "caption": "Gambar 4. Siklus hidup Porifera. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram ilustrasi siklus reproduksi spons (Sponge Reproduction) dari Sampoerna Academy, yang menampilkan mekanisme reproduksi secara aseksual (melalui pembentukan tunas / bud) dan seksual (pembuahan sel telur dan sperma, pembentukan embrio, fase larva planktonik, hingga menempel di dasar perairan). (Sumber: Sampoerna Academy | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Porifera",
-          "caption": "Gambar 5. Peran ekologis Porifera. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Diagram alur hipotesis daur spons (Sponge loop hypothesis) dari Wikimedia Commons, yang menampilkan tahapan transfer energi dan nutrisi mulai dari pelepasan bahan organik terlarut (DOM) oleh karang dan alga, penyerapan DOM oleh spons, pelepasan partikel organik detrital (POM) oleh spons, hingga pemanfaatannya oleh detritivor. (Sumber: Laura Rix, Jasper M. de Goeij, dkk. / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         }
       },
       "challenge": {
@@ -2592,49 +2583,47 @@ const BIOSCOPE_DATA = {
           "Ledakan Ubur-ubur (Jellyfish Blooms) &mdash; pelepasan efira serentak saat strobilasi dapat memicu ledakan populasi yang memengaruhi jaring-jaring makanan dan perikanan pesisir (Li dkk., 2024)."
         ]
       },
-      "examples": "Xenia umbellata, Botruanthus benedini, Dendronephthya sp., Hydra sp.",
+      "examples": "Xenia umbellata, Dendronephthya sp., Hydra sp.",
       "exampleNotes": [
         {
           "name": "Xenia umbellata",
-          "caption": "Gambar 6. Xenia umbellata. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Cnidaria/xenia-umbellata.jpg",
+          "caption": "Gambar 6. Foto spesimen koral lunak pulsatil (Xenia umbellata atau pulse coral) di Ras Katy, Laut Merah (Mesir), yang menampilkan polip kolonial dengan tentakel bercabang yang memiliki gerakan denyut khas. (Sumber: Diego Delso / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Oktokoral yang tentakelnya berdenyut terus-menerus dan mampu meregenerasi seluruh tubuh dari sepotong tentakel (Nadir dkk., 2023)"
         },
         {
-          "name": "Botruanthus benedini",
-          "caption": "Gambar 7. Botruanthus benedini. (Sumber: [isi sumber gambar])",
-          "note": "Spesies anemon tabung (tube anemone) yang ditemukan di Samudra Pasifik timur"
-        },
-        {
           "name": "Dendronephthya sp.",
-          "caption": "Gambar 8. Dendronephthya sp.. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Cnidaria/dendronephthya-sp.jpg",
+          "caption": "Gambar 7. Foto spesimen koral lunak (Dendronephthya sp.) di Gilli Lawa Laut dekat Komodo, Indonesia, dari Wikimedia Commons, yang menampilkan struktur koloni bercabang menyerupai pohon dengan warna merah dan putih yang khas di habitat perairan laut. (Sumber: Alexander Vasenin / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
           "note": "Polip cnidaria yang merepresentasikan simetri radial dan tingkat organisasi sel-jaringan"
         },
         {
           "name": "Hydra sp.",
-          "caption": "Gambar 9. Hydra sp.. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Cnidaria/hydra-sp.jpg",
+          "caption": "Gambar 8. Foto spesimen Hydra sp. dari Wikimedia Commons, yang menampilkan organisme air tawar kecil berbentuk polip soliter dengan tentakel halus di habitat alaminya. (Sumber: Shi Annan / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
           "note": "Contoh klasik cnidaria yang melakukan reproduksi aseksual lewat pembentukan tunas (budding)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Cnidaria",
-          "caption": "Gambar 1. Struktur dan morfologi Cnidaria. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram bentuk tubuh Cnidaria (Cnidarian body forms) dari Encyclopædia Britannica, yang menampilkan dua bentuk morfologi utama yaitu bentuk polip (polyp) yang menempel pada substrat dan bentuk medusa (medusa) yang berenang bebas, lengkap dengan lapisan ektoderm, endoderm, mesoglea, serta rongga gastrovaskular. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas"
         },
         "habitat": {
           "alt": "Habitat Cnidaria",
-          "caption": "Gambar 2. Habitat Cnidaria. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto lanskap udara Great Barrier Reef di lepas pantai Queensland, Australia, dari Encyclopædia Britannica, yang menampilkan hamparan luas ekosistem terumbu karang di perairan laut dangkal yang jernih. (Sumber: Lainet / Fotolia / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Cnidaria",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Cnidaria. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto spesimen ubur-ubur terbalik Cassiopea jellyfish dari Encyclopædia Britannica, yang menampilkan posisi tubuh terbalik di dasar perairan untuk mendukung simbiosis dengan alga fotosintetik. (Sumber: Andamanse / Dreamstime.com / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Cnidaria",
-          "caption": "Gambar 4. Siklus hidup Cnidaria. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup ubur-ubur (Jellyfish Life Cycle) dari AnimalFact, yang menampilkan tahapan reproduksi seksual medusa dewasa, pelepasan sel telur dan sperma, pembentukan larva planula, polip (scyphistoma), strobila, hingga fase ephyra yang berkembang menjadi medusa dewasa. (Sumber: AnimalFact.com | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Cnidaria",
-          "caption": "Gambar 5. Peran ekologis Cnidaria. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Diagram jaring-jaring makanan dan interaksi ekologis yang melibatkan ubur-ubur (Jellyfish), zooplankton, ikan pakan (forage fish), serta predator tingkat tinggi (piscivores) dari publikasi Jellyfish, Forage Fish, and the World's Major Fisheries di ResearchGate. (Sumber: Kelly Robinson, dkk. / ResearchGate | Lisensi: CC BY)"
         }
       },
       "challenge": {
@@ -2715,49 +2704,47 @@ const BIOSCOPE_DATA = {
           "Manipulasi Inang &mdash; infeksi larva pada invertebrata perantara sering mengubah perilaku inang sehingga peluang transmisi ke predator puncaknya meningkat (Martínez-González dkk., 2022)."
         ]
       },
-      "examples": "Planaria sp., Plagiostomum robusta, Fasciola hepatica, Taenia solium",
+      "examples": "Planaria sp., Fasciola hepatica, Taenia solium",
       "exampleNotes": [
         {
           "name": "Planaria sp.",
-          "caption": "Gambar 6. Planaria sp.. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Platyhelminthes/planaria-sp.jpg",
+          "caption": "Gambar 6. Foto spesimen cacing pipih Dugesia subtentaculata sebagai bioindikator kualitas air dari Wikipedia, yang menampilkan spesimen aseksual dari Santa Fe, Montseny, Catalonia. (Sumber: Eduard Solà / Wikipedia | Lisensi: CC BY-SA 3.0)   ",
           "note": "Cacing pipih hidup bebas yang karnivora atau pemakan bangkai dan banyak dipakai sebagai organisme model regenerasi (Urry dkk., 2021; Wang dkk., 2024)"
         },
         {
-          "name": "Plagiostomum robusta",
-          "caption": "Gambar 7. Plagiostomum robusta. (Sumber: [isi sumber gambar])",
-          "note": "Cacing laut hidup bebas dengan fototaksis negatif dan inseminasi hipodermik yang traumatis (Wang dkk., 2024)"
-        },
-        {
           "name": "Fasciola hepatica",
-          "caption": "Gambar 8. Fasciola hepatica. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Platyhelminthes/fasciola-hepatica.jpg",
+          "caption": "Gambar 7. Foto spesimen cacing hati dewasa (Fasciola hepatica) dari Wikimedia Commons, yang menampilkan morfologi cacing pipih parasit pada organ hati hewan ternak. (Sumber: L. Shyamal / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
           "note": "Cacing isap (Trematoda) dengan siklus hidup bertahap larva yang membutuhkan moluska sebagai inang perantara (Martínez-González dkk., 2022)"
         },
         {
           "name": "Taenia solium",
-          "caption": "Gambar 9. Taenia solium. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Platyhelminthes/taenia-solium.jpg",
+          "caption": "Gambar 8. Foto mikroskopik bagian kepala atau skoleks cacing pita babi (Taenia solium) dari Wikimedia Commons, yang menampilkan struktur organ pengisap dan kait (rostellum) untuk menempel pada dinding usus inang. (Sumber: Rjgalindo / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
           "note": "Cacing pita (Cestoda) yang berkembang menjadi larva sistiserkus di jaringan otot inang perantara dan menjadi cacing dewasa di usus manusia (Martínez-González dkk., 2022)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Platyhelminthes",
-          "caption": "Gambar 1. Struktur dan morfologi Platyhelminthes. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram struktur anatomi planaria (flatworm anatomy) dari Lumen Learning, yang menampilkan sistem saraf, bintik mata (eyespot), ganglion serebral, rongga gastrovaskular, serta sistem ekskresi yang dilengkapi sel api (flame cell) dan tubulus ekskresi. (Sumber: Lumen Learning | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Platyhelminthes",
-          "caption": "Gambar 2. Habitat Platyhelminthes. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen cacing pipih planaria laut (Planarian flatworm) dari One World One Ocean, yang menampilkan cacing pipih hidup bebas berwarna biru cerah yang menempel dan merayap di atas substrat karang. (Sumber: Sarah Bedolfe / One World One Ocean | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Platyhelminthes",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Platyhelminthes. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 146. Diagram struktur anatomi dorsal cacing pipih Temnosewellia semperi dari Wisconsin Pressbooks, yang menampilkan organ pencernaan dan struktur tubuh ektoparasit pada kepiting air tawar. (Sumber: Wisconsin Pressbooks / Bresslau and Reisinger, 1933 | Lisensi: CC BY)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Platyhelminthes",
-          "caption": "Gambar 4. Siklus hidup Platyhelminthes. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup cacing isap digenea Metagonimus dari CDC, yang menampilkan tahapan kompleks mulai dari telur berembrio yang keluar melalui feses, infeksi pada siput perantara (sporokista, redia, serkaria), infeksi pada ikan air tawar, hingga cacing dewasa di dalam usus manusia atau mamalia pemakan ikan. (Sumber: CDC / Wikimedia Commons | Lisensi: Public Domain)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Platyhelminthes",
-          "caption": "Gambar 5. Peran ekologis Platyhelminthes. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Foto spesimen cacing pipih Planaria torva sebagai bioindikator kualitas air dari Wikimedia Commons, yang menampilkan morfologi cacing pipih air tawar hidup bebas di bawah pencahayaan mikroskopik. (Sumber: Holger Brandl, HongKee Moon, Miquel Vila-Farré, Shang-Yun Liu, Ian Henry, dan Jochen C. Rink / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -2838,49 +2825,47 @@ const BIOSCOPE_DATA = {
           "Parasit pada Hewan dan Manusia &mdash; Nematoda seperti Ascaris dan Trichinella menjadi parasit yang siklus hidupnya melibatkan perpindahan larva di dalam tubuh inang (Urry dkk., 2021)."
         ]
       },
-      "examples": "Ascaris lumbricoides, Wuchereria bancrofti, Caenorhabditis elegans, Diplolaimella stagnosa",
+      "examples": "Ascaris lumbricoides, Wuchereria bancrofti, Caenorhabditis elegans",
       "exampleNotes": [
         {
           "name": "Ascaris lumbricoides",
-          "caption": "Gambar 6. Ascaris lumbricoides. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Nematoda/ascaris-lumbricoides.jpg",
+          "caption": "Gambar 6. Foto spesimen cacing gelang Ascaris lumbricoides dewasa, yang menampilkan deskripsi morfologi cacing betina dengan ujung meruncing, cincin genital, serta ukuran panjang tubuh antara 15 hingga 35 cm. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
           "note": "Cacing gelang parasit usus manusia. Larvanya berpindah melintasi organ tubuh inang sebelum menjadi dewasa di usus (Urry dkk., 2021)"
         },
         {
           "name": "Wuchereria bancrofti",
-          "caption": "Gambar 7. Wuchereria bancrofti. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Nematoda/wuchereria-bancrofti.jpg",
+          "caption": "Gambar 7. Foto mikroskopik spesimen Wuchereria bancrofti dari sediaan apusan darah tebal yang diwarnai dengan hematoksilin, menampilkan bentuk tubuh berselubung (sheathed) dengan ujung ekor meruncing. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
           "note": "Nematoda parasit penyebab filariasis (kaki gajah) yang ditularkan lewat gigitan nyamuk"
         },
         {
           "name": "Caenorhabditis elegans",
-          "caption": "Gambar 8. Caenorhabditis elegans. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Nematoda/caenorhabditis-elegans.jpg",
+          "caption": "Gambar 8. Foto spesimen dewasa Caenorhabditis elegans dari Wikimedia Commons, yang menampilkan morfologi cacing tanah bebas mikroskopik di bawah pengamatan laboratorium. (Sumber: Zeynep F. Altun / Wikimedia Commons | Lisensi: CC BY-SA 2.5)   ",
           "note": "Nematoda hermafrodit yang menjadi organisme model dalam riset biologi perkembangan dan genetika (Urry dkk., 2021; Zhang dkk., 2024)"
-        },
-        {
-          "name": "Diplolaimella stagnosa",
-          "caption": "Gambar 9. Diplolaimella stagnosa. (Sumber: [isi sumber gambar])",
-          "note": "Nematoda bakterivor hidup bebas di lahan basah pesisir yang embriogenesisnya selesai dalam sekitar 58 jam pada suhu optimal (Zhao dkk., 2022)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Nematoda",
-          "caption": "Gambar 1. Struktur dan morfologi Nematoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram struktur anatomi cacing gilik atau nematoda jantan dan betina dari GeeksforGeeks, yang menampilkan organ internal seperti faring, cincin saraf, sistem ekskresi, usus, serta organ reproduksi (testis, ovary, uterus, dan spikula kopulasi). (Sumber: GeeksforGeeks | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Nematoda",
-          "caption": "Gambar 2. Habitat Nematoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen cacing dari galeri Soil Bugs Massey University, yang menampilkan bentuk tubuh cacing gilik dari ordo Mermithida di atas permukaan tanah di Bledisloe Park, North Island. (Sumber: Soil Bugs Massey University | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Nematoda",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Nematoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Ilustrasi diagram dari Oregon State University yang menampilkan interaksi nematoda parasit dengan jaringan akar tanaman di bawah perbesaran lensa. (Sumber: Oregon State University | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Nematoda",
-          "caption": "Gambar 4. Siklus hidup Nematoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Tangkapan layar halaman web CDC mengenai agen penyebab dan siklus hidup cacing Trichostrongylus, yang menampilkan informasi agen kausal nematoda usus serta diagram siklus hidup infeksi pada hewan herbivora dan manusia. (Sumber: CDC | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Nematoda",
-          "caption": "Gambar 5. Peran ekologis Nematoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Diagram ekosistem tanah dari Encyclopedia.pub yang mengilustrasikan peran komunitas nematoda tanah dalam mendukung kesehatan manusia melalui pelepasan hara, regulasi iklim, serta mendukung kehidupan dan keanekaragaman terestrial. (Sumber: Encyclopedia.pub | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {
@@ -2956,49 +2941,47 @@ const BIOSCOPE_DATA = {
           "Ektoparasit &mdash; sebagian lintah menempel pada inang vertebrata dan menghisap darahnya (Urry dkk., 2021)."
         ]
       },
-      "examples": "Lumbricus terrestris, Hirudo medicinalis, Spirobranchus giganteus, Hesiolyra bergi",
+      "examples": "Lumbricus terrestris, Hirudo medicinalis, Spirobranchus giganteus",
       "exampleNotes": [
         {
           "name": "Lumbricus terrestris",
-          "caption": "Gambar 6. Lumbricus terrestris. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Annelida/lumbricus-terrestris.jpg",
+          "caption": "Gambar 6. Foto spesimen cacing tanah Lumbricus terrestris dari Wikimedia Commons, yang menampilkan morfologi detail tubuh beruas dengan area klitelum dan struktur segmen yang jelas. (Sumber: Conald Hutem / Wikimedia Commons | Lisensi: CC BY 2.0)   ",
           "note": "Cacing tanah pemakan detritus yang menelan tanah beserta bahan organiknya dan menggemburkan tanah lewat aktivitas meliangnya (Urry dkk., 2021)"
         },
         {
           "name": "Hirudo medicinalis",
-          "caption": "Gambar 7. Hirudo medicinalis. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Annelida/hirudo-medicinalis.jpg",
+          "caption": "Gambar 7. Foto spesimen lintah obat Eropa (Hirudo medicinalis) di California Academy of Sciences dari Wikimedia Commons, yang menampilkan morfologi tubuh beruas pipih dorsoventral dengan corak warna khas pada punggungnya. (Sumber: Evan Baldonado / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lintah medis air tawar yang menghisap darah inang dan menyekresikan senyawa antikoagulan hirudin (Urry dkk., 2021)"
         },
         {
           "name": "Spirobranchus giganteus",
-          "caption": "Gambar 8. Spirobranchus giganteus. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Annelida/spirobranchus-giganteus.jpg",
+          "caption": "Gambar 8. Foto spesimen Spirobranchus giganteus (cacing pohon natal merah dan putih) dari Wikimedia Commons, yang menampilkan morfologi detail struktur mahkota spiral ganda berwarna merah dan putih terang saat berada di habitat karangnya. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
           "note": "Cacing pohon natal, Polychaeta laut yang hidup menetap dalam tabung kapur di terumbu karang"
-        },
-        {
-          "name": "Hesiolyra bergi",
-          "caption": "Gambar 9. Hesiolyra bergi. (Sumber: [isi sumber gambar])",
-          "note": "Polychaeta laut yang hidup bebas di ekosistem ekstrem sekitar ventilasi hidrotermal laut dalam"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Annelida",
-          "caption": "Gambar 1. Struktur dan morfologi Annelida. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram struktur anatomi cacing Polychaeta dari Encyclopædia Britannica, menampilkan morfologi cacing beruas laut bebas dengan organ tambahan seperti parapodia, setae, insang, serta pembuluh darah segmental. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "habitat": {
           "alt": "Habitat Annelida",
-          "caption": "Gambar 2. Habitat Annelida. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen cacing tanah (earthworm) di atas permukaan tanah dan lumut, menampilkan morfologi tubuh beruas dengan organ khas klitelum. (Sumber: Wikimedia Commons | Lisensi: Domain Publik / Public Domain)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Annelida",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Annelida. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto spesimen lintah atau pacet (Hirudo medicinalis) dari Wikimedia Commons, yang menampilkan morfologi cacing penghisap darah saat mulai menempel dan menghisap pada permukaan kulit inang. (Sumber: Gleok / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   "
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Annelida",
-          "caption": "Gambar 4. Siklus hidup Annelida. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup cacing tanah (earthworm life cycle) dari AnimalFact, yang menampilkan tahapan perkembangan mulai dari perkawinan di permukaan tanah, pembentukan kokon telur, fase menetas (hatchling), cacing muda (juvenile), hingga cacing dewasa (adult). (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Annelida",
-          "caption": "Gambar 5. Peran ekologis Annelida. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Foto spesimen cacing tanah di dalam habitat alaminya di Baum Grove, Almaty, Kazakhstan dari Wikimedia Commons, yang menampilkan aktivitas cacing di atas permukaan tanah berhumus. (Sumber: Nikolai Bulykin / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   "
         }
       },
       "challenge": {
@@ -3078,54 +3061,47 @@ const BIOSCOPE_DATA = {
           "Spesies Pendatang &mdash; kerang Mytilus yang masuk ke wilayah baru dapat menimbulkan persoalan biosekuriti dan akuakultur (Ravalo, 2024)."
         ]
       },
-      "examples": "Loligo sp., Achatina fulica, Mytilus edulis, Chondrula tridens, Nautilus sp.",
+      "examples": "Loligo sp., Achatina fulica, Mytilus edulis",
       "exampleNotes": [
         {
           "name": "Loligo sp.",
-          "caption": "Gambar 6. Loligo sp.. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Mollusca/loligo-sp.jpg",
+          "caption": "Gambar 6. Foto spesimen cumi-cumi (Loligo sp.) dari Wikimedia Commons, yang menampilkan morfologi tubuh silindris memanjang dengan sirip dan tentakel di dasar perairan. (Sumber: Islands in the Sea 2002, NOAA/OER / Wikimedia Commons | Lisensi: Domain Publik)   ",
           "note": "Cumi-cumi, Cephalopoda predator laut yang bercangkang internal tereduksi dan punya paruh kitin (Urry dkk., 2021; Xavier dkk., 2022)"
         },
         {
           "name": "Achatina fulica",
-          "caption": "Gambar 7. Achatina fulica. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Mollusca/achatina-fulica.jpg",
+          "caption": "Gambar 7. Foto spesimen siput darat raksasa afrika (Achatina fulica) di Taman Nasional Ranomafana, Madagaskar dari Wikimedia Commons, yang menampilkan morfologi tubuh lunak dengan cangkang spiral besar di atas daun hijau. (Sumber: Charles J. Sharp / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
           "note": "Bekicot, Gastropoda darat yang memakai rongga mantel sebagai paru-paru (Urry dkk., 2021)"
         },
         {
           "name": "Mytilus edulis",
-          "caption": "Gambar 8. Mytilus edulis. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Mollusca/mytilus-edulis.jpg",
+          "caption": "Gambar 8. Foto spesimen kerang biru (Mytilus edulis) dari Wikimedia Commons, yang menampilkan morfologi cangkang simetris berwarna hitam kebiruan di zona intertidal. (Sumber: Olivier Dugamay / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
           "note": "Kerang laut atau remis, Bivalvia pemakan suspensi yang larvanya melewati tahap trokofor, veliger, dan pediveliger sebelum menempel (Ravalo, 2024)"
-        },
-        {
-          "name": "Chondrula tridens",
-          "caption": "Gambar 9. Chondrula tridens. (Sumber: [isi sumber gambar])",
-          "note": "Keong darat herbivor atau detritivor yang bentuk cangkangnya bervariasi mengikuti kondisi lingkungan (Koshelev dkk., 2021)"
-        },
-        {
-          "name": "Nautilus sp.",
-          "caption": "Gambar 10. Nautilus sp.. (Sumber: [isi sumber gambar])",
-          "note": "Satu-satunya genus Cephalopoda modern yang masih memiliki cangkang eksternal beruang-ruang (Urry dkk., 2021)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Mollusca",
-          "caption": "Gambar 1. Struktur dan morfologi Mollusca. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram tingkat organisasi dan struktur tubuh dari delapan kelas moluska yang bersumber dari Encyclopædia Britannica, menampilkan evolusi morfologi dari nenek moyang hipotetis umum (archi-mollusk) hingga berbagai kelas modern seperti Cephalopoda, Gastropoda, Scaphopoda, dan Bivalvia. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Mollusca",
-          "caption": "Gambar 2. Habitat Mollusca. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen gurita cincin biru (blue-ringed octopus dari genus Hapalochlaena) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh lunak dengan pola cincin biru terang di atas permukaan dasar perairan. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Mollusca",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Mollusca. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto seri (A dan B) mekanisme berburu pada siput kerucut (Conus) dari Biocyclopedia, yang menampilkan saat Conus menjulurkan belalai (proboscis) mirip cacing untuk memancing ikan, lalu menusuk dan melumpuhkan mangsanya dengan racun harpun gigi radula sebelum menelannya. (Sumber: Biocyclopedia | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Mollusca",
-          "caption": "Gambar 4. Siklus hidup Mollusca. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup tiram (life cycle of oysters) dari Biocyclopedia, yang menampilkan tahapan perkembangan mulai dari telur (egg), larva trokofor (trochophore larva), larva veliger (veliger larva), fase spat, hingga tiram dewasa (adult oyster). (Sumber: Biocyclopedia | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Mollusca",
-          "caption": "Gambar 5. Peran ekologis Mollusca. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Tampilan halaman web dan diagram adaptasi sifon pada bivalvia (Adaptations of siphons in bivalves) dari Biocyclopedia, yang menampilkan struktur sifon incurrent dan excurrent serta aktivitas kerang saat membenamkan diri di dalam lumpur atau pasir. (Sumber: Biocyclopedia | Lisensi: Edukasional / Komersial Terbatas)   "
         }
       },
       "challenge": {
@@ -3211,49 +3187,47 @@ const BIOSCOPE_DATA = {
           "Hama Pertanian dan Hutan &mdash; ledakan populasi serangga hama akibat dinamika iklim dapat merusak vegetasi dan menggagalkan panen (Benoit dkk., 2023; Chandrakumara dkk., 2023)."
         ]
       },
-      "examples": "Apis mellifera, Polypedilum vanderplanki, Armadillidium vulgare, Metopaulias depressus",
+      "examples": "Apis mellifera, Armadillidium vulgare, Metopaulias depressus",
       "exampleNotes": [
         {
           "name": "Apis mellifera",
-          "caption": "Gambar 6. Apis mellifera. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Arthropoda/apis-mellifera.jpg",
+          "caption": "Gambar 6. Foto lebah madu barat pekerja (A female western honeybee / Apis mellifera worker) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh beruas dengan bulu sensorik dan sayap. Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)",
           "note": "Lebah madu, serangga penyerbuk yang membantu reproduksi tumbuhan berbunga (Urry dkk., 2021; Chandrakumara dkk., 2023)"
         },
         {
-          "name": "Polypedilum vanderplanki",
-          "caption": "Gambar 7. Polypedilum vanderplanki. (Sumber: [isi sumber gambar])",
-          "note": "Lalat midge yang larvanya bisa kehilangan hingga 97% air tubuh dan aktif lagi setelah rehidrasi (Benoit dkk., 2023)"
-        },
-        {
           "name": "Armadillidium vulgare",
-          "caption": "Gambar 8. Armadillidium vulgare. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Arthropoda/armadillidium-vulgare.jpg",
+          "caption": "Gambar 7. Foto spesimen kutu kayu (A heap of pill bugs / Armadillidium vulgare) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh beruas dengan cangkang keras melengkung di atas permukaan tanah. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)",
           "note": "Kutu kayu (Oniscidea), krustasea darat yang bernapas dengan paru-paru pleopodal dan merawat telurnya di marsupium (Marin & Tiunov, 2023)"
         },
         {
           "name": "Metopaulias depressus",
-          "caption": "Gambar 9. Metopaulias depressus. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Arthropoda/metopaulias-depressus.jpg",
+          "caption": "Gambar 8. Foto spesimen kepiting bromeliad (Metopaulias depressus) dari iNaturalist, yang menampilkan morfologi tubuh beruas dengan karapas berwarna kemerahan di dalam cekungan tanaman. (Sumber: Rich Hoyer / iNaturalist | Lisensi: CC BY-NC-SA)   ",
           "note": "Kepiting bromelia yang menjaga kualitas air dan memberi makan larvanya di ketiak daun (Marin & Tiunov, 2023)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Arthropoda",
-          "caption": "Gambar 1. Struktur dan morfologi Arthropoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Ilustrasi struktur dan segmentasi tubuh artropoda (menampilkan spesimen Hemimerus hanseni serta diagram pembagian tagmata kepala, toraks, dan abdomen) dari Wikipedia bahasa Indonesia, yang menunjukkan pola pembagian segmen tubuh hewan beruas. (Sumber: Wikipedia Bahasa Indonesia | Lisensi: CC BY-SA)"
         },
         "habitat": {
           "alt": "Habitat Arthropoda",
-          "caption": "Gambar 2. Habitat Arthropoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen kopepoda (Copepod) dari Encyclopædia Britannica, yang menampilkan morfologi mikroskopis hewan artropoda akuatik yang hidup sebagai zooplankton. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Arthropoda",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Arthropoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto spesimen nyamuk demam berdarah kuning (Aedes aegypti) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh beruas dengan probosis yang sedang menusuk kulit manusia. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Arthropoda",
-          "caption": "Gambar 4. Siklus hidup Arthropoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup kupu-kupu raja (Monarch Butterfly life cycle) dari Britannica Kids, yang menampilkan tahapan perkembangan metamorfosis sempurna mulai dari telur (eggs), larva/ulat (larva), kepompong (chrysalis), hingga kupu-kupu dewasa (adult). (Sumber: Britannica Kids | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Arthropoda",
-          "caption": "Gambar 5. Peran ekologis Arthropoda. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Foto spesimen kaki seribu asal Afrika Selatan (A South African millipede) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh beruas silindris berwarna merah terang di atas permukaan kayu, serta menggambarkan fungsi ekologis utamanya sebagai organisme pengurai yang mendaur ulang nutrisi dan menjaga kesuburan ekosistem darat. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {
@@ -3338,54 +3312,47 @@ const BIOSCOPE_DATA = {
           "Ledakan Populasi Bulu Babi &mdash; dapat memicu bioerosi kerangka kalsium karbonat terumbu karang (Urry dkk., 2021)."
         ]
       },
-      "examples": "Acanthaster planci, Echinoidea (bulu babi), Holothuroidea (teripang), Ophiuroidea (bintang ular), Crinoidea (lilia laut)",
+      "examples": "Acanthaster planci, Echinoidea (bulu babi), Holothuroidea (teripang)",
       "exampleNotes": [
         {
           "name": "Acanthaster planci",
+          "image": "../assets/division/Echinodermata/acanthaster-planci.jpg",
           "caption": "Gambar 6. Acanthaster planci. (Sumber: [isi sumber gambar])",
           "note": "Bintang laut (Asteroidea) predator yang memengaruhi struktur komunitas terumbu lewat pemangsaan karang batu (Urry dkk., 2021)"
         },
         {
           "name": "Echinoidea (bulu babi)",
-          "caption": "Gambar 7. Echinoidea (bulu babi). (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Echinodermata/echinoidea.jpg",
+          "caption": "Gambar 7. Foto spesimen bulu babi semangka (The watermelon sea urchin / Echinus melo) dari Wikimedia Commons, yang menampilkan morfologi tubuh berduri putih terang yang difoto di Capo Caccia Alghero, Sardinia. (Sumber: Marco Busdraghi / Wikimedia Commons | Lisensi: CC BY 3.0)   ",
           "note": "Herbivora pengikis alga dengan lentera Aristoteles (Urry dkk., 2021)"
         },
         {
           "name": "Holothuroidea (teripang)",
-          "caption": "Gambar 8. Holothuroidea (teripang). (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Echinodermata/holothuroidea.jpg",
+          "caption": "Gambar 8. Foto spesimen teripang cokelat (Brown sea cucumber / Actinopyga echinites) dari Wikimedia Commons, yang menampilkan morfologi tubuh silindris memanjang dengan tekstur kulit berbintik dan tentakel di bagian ujungnya di Kosrae, Mikronesia. (Sumber: François Michonneau / Wikimedia Commons | Lisensi: CC BY 3.0)   ",
           "note": "Pemakan deposit yang dapat mengeluarkan ususnya (eviscerasi) lalu meregenerasinya (García-Arrarás & Dolmatov, 2010; Purcell dkk., 2016)"
-        },
-        {
-          "name": "Ophiuroidea (bintang ular)",
-          "caption": "Gambar 9. Ophiuroidea (bintang ular). (Sumber: [isi sumber gambar])",
-          "note": "Mampu menumbuhkan kembali lengan yang hilang melalui regenerasi dari sisi yang tertinggal pada bidang autotomi (Candia Carnevali, 2006; Perillo dkk., 2024)"
-        },
-        {
-          "name": "Crinoidea (lilia laut)",
-          "caption": "Gambar 10. Crinoidea (lilia laut). (Sumber: [isi sumber gambar])",
-          "note": "Pemakan penyaring pasif yang menangkap plankton dengan lendir di kaki tabung bersilia (Urry dkk., 2021; Novack-Gottshall dkk., 2022)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Echinodermata",
-          "caption": "Gambar 1. Struktur dan morfologi Echinodermata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram sistem vaskular air (water vascular system) pada bintang laut dari AnimalFact, yang menampilkan struktur anatomi internal seperti madreporite, saluran batu (stone canal), saluran cincin (ring canal), saluran radial (radial canals), hingga kaki tabung (tube feet / podia) yang berfungsi untuk pergerakan dan pertukaran gas. (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "habitat": {
           "alt": "Habitat Echinodermata",
-          "caption": "Gambar 2. Habitat Echinodermata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen bulu babi (sea urchin) dari Encyclopædia Britannica, yang menampilkan morfologi hewan duri kulit dengan duri-duri panjang berwarna merah yang hidup di terumbu karang di perairan Maui, Hawaii. (Sumber: David Burdick/NOAA / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Echinodermata",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Echinodermata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto bintang laut yang sedang memangsa seekor ikan kecil di dalam air, menampilkan sisi ventral dengan deretan kaki tabung (tube feet) di sepanjang lengan radialnya. (Sumber: Bubbly Diver / Dokumen Web | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Echinodermata",
-          "caption": "Gambar 4. Siklus hidup Echinodermata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup bulu babi (Sea Urchin Life Cycle) dari AnimalFact, yang menampilkan tahapan perkembangan mulai dari gamet, zigot, embrio (blastula, gastrula), fase larva Echinopluteus (dari bentuk prism, four-arm, hingga twelve-arm), individu muda (juvenile), hingga bulu babi dewasa (adult). (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Echinodermata",
-          "caption": "Gambar 5. Peran ekologis Echinodermata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Foto spesimen bulu babi di situs Lost City (sea urchin attached to a rock mass) dari Wikimedia Commons, yang menampilkan morfologi hewan duri kulit yang menempel pada massa batuan laut dalam, serta menonjolkan fungsi ekologis utamanya sebagai pengontrol populasi organisme kecil dan pembersih substrat di ekosistem dasar laut dalam yang mendukung keseimbangan jaring-jaring makanan bentik. (Sumber: Ifremer / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -3471,54 +3438,47 @@ const BIOSCOPE_DATA = {
           "Catatan &mdash; sumber yang dipakai tidak membahas dampak merugikan Chordata."
         ]
       },
-      "examples": "Branchiostoma sp., Ciona robusta, Botryllus schlosseri, salpa (Thaliacea), katak (Amphibia)",
+      "examples": "Branchiostoma sp., Ciona robusta, Katak (Amphibia)",
       "exampleNotes": [
         {
           "name": "Branchiostoma sp.",
-          "caption": "Gambar 6. Branchiostoma sp.. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Chordata/branchiostoma.jpg",
+          "caption": "Gambar 6. Foto spesimen lanset atau amphioxus (Branchiostoma lanceolatum) dari Wikimedia Commons, yang menampilkan morfologi tubuh pipih memanjang menyerupai ikan kecil tanpa rahang dan sirip berpasangan, yang dikumpulkan dari sedimen pasir kasar di landas kontinen Belgia. (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
           "note": "Lanselet (Cephalochordata), pemakan penyaring yang menyedot air ke keranjang faring berlendir dari endostil (Karaiskou dkk., 2015; Vanni dkk., 2022)"
         },
         {
           "name": "Ciona robusta",
-          "caption": "Gambar 7. Ciona robusta. (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Chordata/ciona-robusta.jpg",
+          "caption": "Gambar 7. Foto spesimen Ciona robusta dari Wikimedia Commons, yang menampilkan morfologi tubuh berbentuk silindris transparan menyerupai kantong (sea squirt) yang menempel secara berkelompok di dalam air. (Sumber: Delphine Dauga / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
           "note": "Ascidian soliter, organisme model riset yang dapat meregenerasi organ, misalnya sifon yang diamputasi (Gordon dkk., 2021; Vanni dkk., 2022)"
         },
         {
-          "name": "Botryllus schlosseri",
-          "caption": "Gambar 8. Botryllus schlosseri. (Sumber: [isi sumber gambar])",
-          "note": "Tunicata kolonial yang dapat meregenerasi tubuh utuh dari sel punca dalam pembuluh darah koloninya (Voskoboynik dkk., 2007; Vanni dkk., 2022)"
-        },
-        {
-          "name": "Salpa (Thaliacea)",
-          "caption": "Gambar 9. Salpa (Thaliacea). (Sumber: [isi sumber gambar])",
-          "note": "Tunicata pelagis dengan pergiliran generasi aseksual (oozooid) dan seksual (blastozooid), dan pelet fesesnya mempercepat pengangkutan karbon (Karaiskou dkk., 2015)"
-        },
-        {
           "name": "Katak (Amphibia)",
-          "caption": "Gambar 10. Katak (Amphibia). (Sumber: [isi sumber gambar])",
+          "image": "../assets/division/Chordata/frog.jpg",
+          "caption": "Gambar 8. Foto spesimen katak hijau (Green frog / Rana clamitans melanota) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh amfibi berkulit lembap dengan bercak totol di atas permukaan kayu. (Sumber: Tom Reichner/Shutterstock.com / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   ",
           "note": "Vertebrata anamniot yang embrionya melewati larva berinsang lalu bermetamorfosis menjadi dewasa berparu-paru (Urry dkk., 2021)"
         }
       ],  
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Chordata",
-          "caption": "Gambar 1. Struktur dan morfologi Chordata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 1. Diagram skema anatomi amphioxus (Branchiostoma lanceolatum anatomy scheme) dari Wikimedia Commons, yang menampilkan struktur anatomi internal seperti notokorda, saraf dorsal, celah insang, dan sistem sirkulasi darah. (Sumber: Piotr Michał Jaworski, PioM / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "habitat": {
           "alt": "Habitat Chordata",
-          "caption": "Gambar 2. Habitat Chordata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 2. Foto spesimen sea squirt Taman Nasional Komodo (Polycarpa aurata) dari Wikimedia Commons, yang menampilkan morfologi tubuh berbentuk kantong berlapis mantel tunika dengan pola garis ungu mencolok, serta menonjolkan aspek habitat utamanya yang hidup secara menempel (sessile) di ekosistem perairan laut terumbu karang. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Chordata",
-          "caption": "Gambar 3. Cara memperoleh nutrisi Chordata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 3. Foto singa jantan dan anaknya sedang memakan kerbau liar (Male Lion and Cub eating a Cape Buffalo) dari Wikimedia Commons, yang menampilkan cara memperoleh nutrisi dengan merobek daging mangsa menggunakan gigi taring di Cagar Alam Sabi Sand, Afrika Selatan. (Sumber: Luca Galuzzi / Wikimedia Commons | Lisensi: CC BY-SA 2.5)   "
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Chordata",
-          "caption": "Gambar 4. Siklus hidup Chordata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 4. Diagram siklus hidup katak macan (Life cycle of the leopard frog / Rana pipiens) dari Encyclopædia Britannica, yang menampilkan tahapan metamorfosis mulai dari telur, embrio, larva berudu (tadpole dengan insang luar), pertumbuhan kaki belakang, penyusutan ekor, hingga katak dewasa. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)   "
         },
         "ekologi": {
           "alt": "Peran ekologis Chordata",
-          "caption": "Gambar 5. Peran ekologis Chordata. (Sumber: [isi sumber gambar])"
+          "caption": "Gambar 5. Foto spesimen sea squirt berbintik biru (Blue spot sea squirt / Clavelina moluccensis) dari Encyclopædia Britannica, yang menampilkan morfologi koloni tunicate berwarna biru terang di atas terumbu karang, serta menonjolkan fungsi ekologis utamanya sebagai penyaring alami air laut yang membantu menjaga kejernihan perairan dan mendukung kestabilan ekosistem bentik. (Sumber: Gerard Soury / The Image Bank / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {

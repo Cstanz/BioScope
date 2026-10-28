@@ -350,9 +350,12 @@ const SP = [
 const CARD_DIR = "Assets/Card Asset/";
 const CARD_IMG = {
   eubacteria: "Nostoc sp", archaea: "Helobacterium", algae: "Euglena", "slime-molds": "Physarum",
+  protozoa: "Paramecium",          // <-- tambah ini
   chytridiomycota: "Batrachochytrium", zygomycota: "Rhizopus", ascomycota: "Saccharomyces", basidiomycota: "Pleurotus",
   bryophyta: "Bryophyta", pteridophyta: "Pteridophyta", gymnosperms: "Pinus", angiosperms: "Mangifera",
-  porifera: "Euspongia", cnidaria: "Aurelia", platyhelminthes: "Planaria", annelida: "Lumbricus",
+  porifera: "Euspongia", cnidaria: "Aurelia", platyhelminthes: "Planaria", 
+  nematoda: "Ascaris",             // <-- tambah ini
+  annelida: "Lumbricus",
   mollusca: "Helix", arthropoda: "Rhopalocera", echinodermata: "Asterias", chordata: "Rana"
 };
 SP.forEach(s => { if (CARD_IMG[s.id]) s.img = CARD_DIR + CARD_IMG[s.id] + ".svg"; });

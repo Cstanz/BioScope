@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(typeWriter, 500);
 });
 
-// Prototype role switch: student mengikuti unlock 85%, admin dapat melihat semua materi.
+// Prototype role switch: semua kingdom terbuka untuk siswa; admin hanya menambah pratinjau penuh.
 function isAdminMode() {
   return localStorage.getItem(ROLE_KEY) === "admin";
 }
@@ -217,7 +217,9 @@ function markMaterial(kingdomId, divisionId) {
   document.dispatchEvent(new CustomEvent("bioscope:progress"));
 }
 
-function markChallenge(kingdomId, divisionId) {
+// accuracy = ketepatan pengerjaan Bengkel (0-100). Inilah yang menjadi SKOR.
+// Menyelesaikan bengkel menambah PROGRES; ketepatannya menentukan SKOR.
+function markChallenge(kingdomId, divisionId, accuracy) {
   const progress = getProgress();
   const kingdom = progress.kingdoms[kingdomId];
 
@@ -225,15 +227,38 @@ function markChallenge(kingdomId, divisionId) {
     return;
   }
 
-  kingdom.divisions[divisionId].challengeCompleted = true;
-  recalcKingdom(kingdomId, progress);
+  const division = kingdom.divisions[divisionId];
+  division.challengeCompleted = true;
 
-  const all = Object.values(kingdom.divisions);
-  const pct = Math.round((all.filter((d) => d.challengeCompleted).length / all.length) * 100);
-  kingdom.score = Math.max(kingdom.score || 0, pct);
+  if (typeof accuracy === "number" && !Number.isNaN(accuracy)) {
+    const value = Math.max(0, Math.min(100, Math.round(accuracy)));
+    division.bestAccuracy = Math.max(division.bestAccuracy || 0, value);
+  }
+
+  recalcKingdom(kingdomId, progress);
+  kingdom.score = kingdomScore(kingdom) ?? 0;
 
   saveProgress(progress);
   document.dispatchEvent(new CustomEvent("bioscope:progress"));
+}
+
+// Skor kingdom = rata-rata ketepatan terbaik tiap bengkel yang sudah dikerjakan
+// (ditambah skor terbaik kuis bila ada). Mengembalikan null bila belum ada
+// satu pun hasil evaluasi, supaya "belum dinilai" tidak tampil sebagai 0%.
+function kingdomScore(kingdomProgress) {
+  const values = Object.values(kingdomProgress.divisions || {})
+    .filter((d) => d.challengeCompleted && typeof d.bestAccuracy === "number")
+    .map((d) => d.bestAccuracy);
+
+  if (typeof kingdomProgress.quizBest === "number") {
+    values.push(kingdomProgress.quizBest);
+  }
+
+  if (!values.length) {
+    return null;
+  }
+
+  return Math.round(values.reduce((a, b) => a + b, 0) / values.length);
 }
 
 // ---------- Glosarium istilah taksonomi (untuk tooltip tag di Taxonomy Tree) ----------
@@ -361,10 +386,8 @@ function renderKingdomCards() {
     .map(([id, kingdom], index) => {
       const unlocked = adminAwareUnlock(id, progress);
       const kingdomProgress = progress.kingdoms[id];
-      const mastered = (kingdomProgress.quizBest || 0) >= MASTERY_THRESHOLD;
-      const previousKingdom = index
-        ? kingdoms[index - 1][1].name
-        : "sebelumnya";
+      const cardScore = kingdomScore(kingdomProgress);
+      const mastered = kingdomProgress.completed && cardScore !== null && cardScore >= MASTERY_THRESHOLD;
 
       return `
         <article class="kingdom-card ${index === 0 ? "active" : unlocked ? "available" : "locked"}">
@@ -378,13 +401,13 @@ function renderKingdomCards() {
 
           <div class="card-footer">
             <span class="status ${unlocked ? "status-open" : "status-locked"}">
-              ${isAdminMode() ? "Admin · Akses penuh" : mastered ? "Dikuasai" : unlocked ? "Terbuka" : "Terkunci"}
+              ${isAdminMode() ? "Admin · Akses penuh" : mastered ? "Dikuasai" : "Terbuka"}
             </span>
 
             ${
               unlocked
                 ? `<a class="text-link" href="${id}.html">Jelajahi →</a>`
-                : `<span class="lock-note">Skor ${previousKingdom} ≥ 85%</span>`
+                : `<span class="lock-note">Belum tersedia</span>`
             }
           </div>
         </article>
@@ -1752,11 +1775,16 @@ function renderMcqChallenge(container, division, divisionId) {
     </div>
   `;
 
+  let mcqWrong = 0;
+
   document.querySelector("#challenge-form").addEventListener("submit", (event) => {
     event.preventDefault();
 
     const selected = new FormData(event.target).get("answer");
     const correct = selected === challenge.answer;
+    if (!correct) {
+      mcqWrong += 1;
+    }
     const feedback = document.querySelector("#challenge-feedback");
 
     feedback.className = `feedback ${correct ? "correct" : "incorrect"}`;
@@ -1766,7 +1794,7 @@ function renderMcqChallenge(container, division, divisionId) {
     `;
 
     if (correct) {
-      markChallenge(division.kingdom, divisionId);
+      markChallenge(division.kingdom, divisionId, Math.round(100 / (1 + mcqWrong)));
     }
   });
 }
@@ -2160,10 +2188,10 @@ function renderClassificationWorkbench(container, division, divisionId) {
 
       if (matchedCount === pairs.length) {
         stopTimer();
-        markChallenge(division.kingdom, divisionId);
-        completeTime.textContent = `Waktu kamu: ${formatMatchTime(elapsedSeconds)}.`;
         const attempts = matchedCount + wrongCount;
         const accuracy = Math.round((matchedCount / attempts) * 100);
+        markChallenge(division.kingdom, divisionId, accuracy);
+        completeTime.textContent = `Waktu kamu: ${formatMatchTime(elapsedSeconds)}.`;
         completeStats.textContent = wrongCount
           ? `Ketepatan: ${accuracy}% (${wrongCount} kali salah letak).`
           : "Ketepatan: 100%, tanpa salah letak.";
@@ -2707,12 +2735,14 @@ function renderProgress() {
     progressValues.reduce((total, value) => total + value, 0) /
       progressValues.length,
   );
-  const averageScore = Math.round(
-    kingdoms.reduce(
-      (total, [id]) => total + progress.kingdoms[id].score,
-      0,
-    ) / kingdoms.length,
-  );
+  // Rata-rata skor hanya dari kingdom yang sudah punya hasil evaluasi;
+  // kingdom yang belum dikerjakan tidak ikut menarik rata-rata ke 0%.
+  const scoredKingdoms = kingdoms
+    .map(([id]) => kingdomScore(progress.kingdoms[id]))
+    .filter((value) => value !== null);
+  const averageScore = scoredKingdoms.length
+    ? Math.round(scoredKingdoms.reduce((a, b) => a + b, 0) / scoredKingdoms.length)
+    : null;
   const completedKingdoms = kingdoms.filter(
     ([id]) => progress.kingdoms[id].completed,
   ).length;
@@ -2723,8 +2753,9 @@ function renderProgress() {
         <span class="eyebrow">Perjalanan belajarmu</span>
         <h1>Progres</h1>
         <p class="lede">
-          Progress menunjukkan aktivitas belajar; score menunjukkan hasil evaluasi.
-          Keduanya tidak sama.
+          Progres mengukur seberapa banyak kegiatan belajar yang sudah kamu selesaikan
+          (membaca materi + menyelesaikan bengkel). Skor mengukur seberapa tepat
+          jawabanmu di bengkel. Keduanya tidak sama.
         </p>
       </div>
     </section>
@@ -2737,10 +2768,10 @@ function renderProgress() {
         </div>
         <div class="stat">
           <span>Rata-rata skor</span>
-          <strong>${averageScore}%</strong>
+          <strong>${averageScore === null ? "&mdash;" : `${averageScore}%`}</strong>
         </div>
         <div class="stat">
-          <span>Kerajaan tuntas</span>
+          <span>Kerajaan tuntas (progres 100%)</span>
           <strong>${completedKingdoms}/${kingdoms.length}</strong>
         </div>
       </div>
@@ -2753,14 +2784,17 @@ function renderProgress() {
             .map(([id, kingdom]) => {
               const kingdomProgress = progress.kingdoms[id];
               const unlocked = adminAwareUnlock(id, progress);
-              const scoreLabel =
+              const rowScore = kingdomScore(kingdomProgress);
+              const stage =
                 kingdomProgress.progress === 0
                   ? "Belum dikerjakan"
                   : kingdomProgress.progress < 100
                     ? "Sedang dikerjakan"
-                    : kingdomProgress.score
-                      ? `Skor ${kingdomProgress.score}%`
-                      : "Materi tuntas · kuis belum dikerjakan";
+                    : "Tuntas";
+              const scoreLabel =
+                rowScore === null
+                  ? `${stage} · belum dinilai`
+                  : `${stage} · skor ${rowScore}%`;
 
               return `
                 <article class="progress-row">
@@ -2768,11 +2802,7 @@ function renderProgress() {
                     <span class="eyebrow">${kingdom.eyebrow}</span>
                     <h3>${kingdom.name}</h3>
                     <p>
-                      ${
-                        unlocked
-                          ? "Terbuka"
-                          : `Terkunci · ${kingdom.unlock_text}`
-                      }
+                      ${unlocked ? "Terbuka" : "Terkunci"}
                     </p>
                   </div>
 
@@ -2987,10 +3017,6 @@ function setupAlurNav() {
     document.body.appendChild(box);
   }
 }
-
-// ---------- Pencatat waktu belajar (materi dan bengkel) ----------
-// Mencatat detik AKTIF: tab terlihat dan ada interaksi dalam 60 detik terakhir.
-// Dikirim berkala ke Supabase (tabel activity) lewat js/api.js, memakai kode peserta.
 const ALUR_ANTRIAN = "bioscopeActivityPending";
 const ALUR_IDLE_MS = 60000;
 const alurSesi = {};

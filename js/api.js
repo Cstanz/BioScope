@@ -25,8 +25,6 @@
     };
   }
 
-  // Kirim baris dengan INSERT biasa. Mode ON CONFLICT ikut memeriksa aturan BACA (RLS), yang sengaja tertutup
-  // untuk siswa. Duplikat (409) dianggap sudah terkirim; kalau satu batch kena duplikat, kirim satu per satu.
   async function postRows(path, rows, keepalive) {
     const headers = Object.assign(
       { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" },
@@ -47,18 +45,17 @@
     if (flushing || SUPABASE_URL.includes("ISI-") || SUPABASE_ANON_KEY.includes("ISI-")) return;
     flushing = true;
     try {
-      while (true) {                                   // kirim terus sampai antrean kosong
+      while (true) {                                  
         const q = read(PENDING, []);
         if (!q.length) break;
         const batch = q.slice(0, 200);
-        if (!(await postRows(TABLE, batch.map(toRow), false))) break;   // gagal: tetap di antrean, dicoba lagi nanti
-        write(PENDING, read(PENDING, []).slice(batch.length));   // buang yang sudah terkirim
+        if (!(await postRows(TABLE, batch.map(toRow), false))) break;  
+        write(PENDING, read(PENDING, []).slice(batch.length));   
       }
     } catch (e) { /* offline: tetap di antrean */ }
     flushing = false;
   }
 
-  // ---------- Pencatat waktu belajar (tabel activity) ----------
   const ACT_PENDING = "bioscopeActivityPending";
   let flushingAct = false;
   async function flushActivity() {
