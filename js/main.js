@@ -1281,7 +1281,7 @@ function renderEditorialColumns(division, kingdom) {
 // ---------- Tempat gambar (tinggal tempel) ----------
 
 // Tiap bagian materi dan tiap contoh spesies punya "slot" gambar. Slot mencari
-// file otomatis berdasarkan nama, jadi cukup menaruh file di folder Assets
+// file otomatis berdasarkan nama, jadi cukup menaruh file di folder assets
 // tanpa mengubah kode/data. Urutan format: .svg, .jpg, .jpeg, .png, .webp.
 // Kalau file belum ada, slot tampil sebagai kotak putus-putus berisi nama
 // file yang diharapkan. Setel SHOW_EMPTY_IMAGE_SLOTS = false untuk
@@ -1405,7 +1405,7 @@ function setupImageLightbox() {
 }
 
 // Nama file gambar contoh dibuat otomatis dari nama spesies:
-//   "Escherichia coli" -> Assets/contoh/escherichia-coli.(svg|jpg|png)
+//   "Escherichia coli" -> assets/contoh/escherichia-coli.(svg|jpg|png)
 function exampleImageSlug(name) {
   return plainText(name)
     .toLowerCase()
@@ -1428,7 +1428,7 @@ function renderExamplesBlock(division, kingdom) {
           ex.caption || `Gambar ${5 + exIndex + 1}. ${label}. (Sumber: [isi sumber gambar])`;
         const slug = exampleImageSlug(ex.name);
         // `image` pada exampleNotes (opsional) menimpa nama otomatis.
-        const base = `../Assets/contoh/${slug}`;
+        const base = `../assets/contoh/${slug}`;
         const explicit = Boolean(ex.image);
         const src = explicit ? ex.image : `${base}.${IMAGE_EXTENSIONS[0]}`;
         const lastStep = explicit ? IMAGE_EXTENSIONS.length - 1 : 0;
@@ -1436,7 +1436,7 @@ function renderExamplesBlock(division, kingdom) {
         return `
           <li class="ency-example">
             <figure class="ency-thumb" data-initial="${escapeAttr(label.charAt(0).toUpperCase())}"
-              title="Tempat gambar: Assets/contoh/${escapeAttr(slug)}.svg / .jpg / .png">
+              title="Tempat gambar: assets/contoh/${escapeAttr(slug)}.svg / .jpg / .png">
               <img src="${escapeAttr(src)}" alt="${escapeAttr(label)}" loading="lazy"
                 data-caption="${escapeAttr(plainText(exCaption))}"
                 data-base="${escapeAttr(base)}" data-step="${lastStep}"
@@ -1492,14 +1492,14 @@ function escapeAttr(text) {
 // ---------- Gambar pendukung materi ----------
 
 // Slot gambar tiap bagian materi. Nama file otomatis:
-//   Assets/materi/<id-filum>-<bagian>.(svg|jpg|png)
-// contoh: Assets/materi/eubacteria-struktur.svg
+//   assets/materi/<id-filum>-<bagian>.(svg|jpg|png)
+// contoh: assets/materi/eubacteria-struktur.svg
 // Kunci bagian: struktur, habitat, nutrisi, siklus-hidup, ekologi, pengenalan.
 // Mau pakai file/lokasi lain? Isi sectionImages di data.js:
 //   sectionImages: { struktur: { src: "...", caption: "..." } }
 function renderSectionFigure(division, key) {
   const custom = division.sectionImages && division.sectionImages[key];
-  const base = `../Assets/materi/${division.id}-${key}`;
+  const base = `../assets/materi/${division.id}-${key}`;
   const explicit = Boolean(custom && custom.src);
   const src = explicit ? custom.src : `${base}.${IMAGE_EXTENSIONS[0]}`;
   const lastStep = explicit ? IMAGE_EXTENSIONS.length - 1 : 0;
@@ -1519,13 +1519,13 @@ function renderSectionFigure(division, key) {
   const caption = custom && custom.caption ? custom.caption : defaultCaption;
 
   return `
-    <figure class="ency-slot" title="Tempat gambar: Assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}">
+    <figure class="ency-slot" title="Tempat gambar: assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}">
       <img src="${escapeAttr(src)}" alt="${escapeAttr((custom && (custom.alt || custom.caption)) || "")}" loading="lazy"
         data-base="${escapeAttr(base)}" data-step="${lastStep}"
         onerror="bioscopeImgFallback(this)" />
       <div class="ency-slot-empty" style="display:none">
         <span class="ency-slot-label">Tempat gambar</span>
-        <code>Assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}</code>
+        <code>assets/materi/${escapeAttr(division.id)}-${escapeAttr(key)}</code>
         <span class="ency-slot-formats">.svg / .jpg / .png</span>
       </div>
       ${caption ? `<figcaption>${caption}</figcaption>` : ""}
