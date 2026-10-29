@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(typeWriter, 500);
 });
 
-// Prototype role switch: semua kingdom terbuka untuk siswa; admin hanya menambah pratinjau penuh.
+// Prototype role switch: siswa membuka kingdom berurutan lewat kuis; admin hanya menambah pratinjau penuh.
 function isAdminMode() {
   return localStorage.getItem(ROLE_KEY) === "admin";
 }
@@ -178,10 +178,15 @@ function kingdomUnlocked(kingdomId, progress) {
     return true;
   }
 
+  // Kingdom berikutnya terbuka setelah kingdom sebelumnya dikuasai: semua materi dibaca,
+  // semua Bengkel selesai, dan rata-rata skor Bengkel >= MASTERY_THRESHOLD.
   const previousId = order[index - 1];
-  // Kunci 85% dihapus: semua kingdom terbuka untuk dijelajahi.
-  // Penguasaan ditampilkan sebagai status (lihat MASTERY_THRESHOLD), bukan gerbang.
-  return true;
+  const previous = progress.kingdoms[previousId];
+  if (!previous || !previous.completed) {
+    return false;
+  }
+  const score = kingdomScore(previous);
+  return score !== null && score >= MASTERY_THRESHOLD;
 }
 
 function recalcKingdom(kingdomId, progress) {
@@ -232,6 +237,9 @@ function markChallenge(kingdomId, divisionId, accuracy) {
 
   if (typeof accuracy === "number" && !Number.isNaN(accuracy)) {
     const value = Math.max(0, Math.min(100, Math.round(accuracy)));
+    if (typeof division.firstAccuracy !== "number") {
+      division.firstAccuracy = value;
+    }
     division.bestAccuracy = Math.max(division.bestAccuracy || 0, value);
   }
 
@@ -401,7 +409,7 @@ function renderKingdomCards() {
 
           <div class="card-footer">
             <span class="status ${unlocked ? "status-open" : "status-locked"}">
-              ${isAdminMode() ? "Admin · Akses penuh" : mastered ? "Dikuasai" : "Terbuka"}
+              ${isAdminMode() ? "Admin · Akses penuh" : !unlocked ? "Terkunci" : mastered ? "Dikuasai" : kingdomProgress.completed ? "Tuntas" : kingdomProgress.progress > 0 ? "Sedang dikerjakan" : "Belum dimulai"}
             </span>
 
             ${
@@ -1794,7 +1802,7 @@ function renderMcqChallenge(container, division, divisionId) {
     `;
 
     if (correct) {
-      markChallenge(division.kingdom, divisionId, Math.round(100 / (1 + mcqWrong)));
+      markChallenge(division.kingdom, divisionId, Math.max(40, 100 - mcqWrong * 30));
     }
   });
 }
@@ -2188,8 +2196,8 @@ function renderClassificationWorkbench(container, division, divisionId) {
 
       if (matchedCount === pairs.length) {
         stopTimer();
-        const attempts = matchedCount + wrongCount;
-        const accuracy = Math.round((matchedCount / attempts) * 100);
+        // Nilai: 100 dikurangi 10 per salah letak, minimal 50 (selesai tetap dapat kredit).
+        const accuracy = Math.max(50, 100 - wrongCount * 10);
         markChallenge(division.kingdom, divisionId, accuracy);
         completeTime.textContent = `Waktu kamu: ${formatMatchTime(elapsedSeconds)}.`;
         completeStats.textContent = wrongCount
@@ -2708,8 +2716,8 @@ function renderQuiz(kingdomId) {
       <strong>Skor ${score}%.</strong>
       ${
         unlockedNext
-          ? `Penguasaan tercapai (skor terbaik ${kp.quizBest}%). Kingdom lain tetap bisa dijelajahi kapan saja.`
-          : `Belum mencapai ${MASTERY_THRESHOLD}% (percobaan ke-${kp.attempts}, skor terbaik ${kp.quizBest}%). Semua kingdom tetap terbuka: pelajari lagi materi yang kurang, lalu coba kuis lagi kapan saja.`
+          ? `Penguasaan tercapai (skor terbaik ${kp.quizBest}%). Kingdom berikutnya sekarang terbuka.`
+          : `Belum mencapai ${MASTERY_THRESHOLD}% (percobaan ke-${kp.attempts}, skor terbaik ${kp.quizBest}%). Kingdom berikutnya masih terkunci: pelajari lagi materinya, lalu coba kuis lagi.`
       }
     `;
 
@@ -2802,7 +2810,7 @@ function renderProgress() {
                     <span class="eyebrow">${kingdom.eyebrow}</span>
                     <h3>${kingdom.name}</h3>
                     <p>
-                      ${unlocked ? "Terbuka" : "Terkunci"}
+                      ${unlocked ? stage : "Terkunci"}
                     </p>
                   </div>
 
