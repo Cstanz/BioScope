@@ -195,9 +195,9 @@ const KEY = {
         b: ["Bertulang belakang (vertebrata)", "ya", "Animalia"] }
 };
 
-// Gambar kartu: file SVG buatanmu. Default: Assets/cards/<id>.svg (relatif terhadap folder situs).
-// Untuk nama/lokasi lain, tambahkan  img: "Assets/nama-file.svg"  pada spesimen. Jika file tidak ada, dipakai emoji.
-const ASSET = "Assets/cards/";
+// Gambar kartu: file SVG buatanmu. Default: assets/cards/<id>.svg (relatif terhadap folder situs).
+// Untuk nama/lokasi lain, tambahkan  img: "assets/nama-file.svg"  pada spesimen. Jika file tidak ada, dipakai emoji.
+const ASSET = "assets/cards/";
 
 // Warna kartu per kingdom [warna utama, warna terang]
 const KG = {
@@ -206,7 +206,7 @@ const KG = {
 };
 const RAR = ["", "Umum", "Langka", "Epik", "Legendaris"]; // rarity = kedalaman jalur kunci
 
-// Spesimen: tepat satu per filum (22 filum). id = id filum di data.js, jadi gambar default-nya Assets/cards/<id>.svg
+// Spesimen: tepat satu per filum (22 filum). id = id filum di data.js, jadi gambar default-nya assets/cards/<id>.svg
 // t = ciri aslinya (dipakai kunci), c = 4 petunjuk bahasa sehari-hari,
 // ct = ciri (kunci t) yang ditandai tiap petunjuk saat pemain salah pilih ("" = pelengkap),
 // fn = nama filum, fq = ciri khas filum (soal bonus "Ahli Filum", pilihan jawaban = filum lain sekingdom).
@@ -345,9 +345,9 @@ const SP = [
     fq: "Hewan dengan notokorda, tali saraf dorsal berongga, dan celah faring pada salah satu fase hidupnya." }
 ];
 
-// Gambar kartu terbaru: folder Assets/Card Asset/ (nama file = nama genus, bukan id filum).
-// Protozoa (Paramecium) dan Nematoda (Ascaris) belum punya file di folder itu, jadi tetap pakai Assets/cards/<id>.svg lalu emoji.
-const CARD_DIR = "Assets/Card Asset/";
+// Gambar kartu terbaru: folder assets/card-asset/ (nama file = nama genus, bukan id filum).
+// Protozoa (Paramecium) dan Nematoda (Ascaris) belum punya file di folder itu, jadi tetap pakai assets/cards/<id>.svg lalu emoji.
+const CARD_DIR = "assets/card-asset/";
 const CARD_IMG = {
   eubacteria: "Nostoc sp", archaea: "Helobacterium", algae: "Euglena", "slime-molds": "Physarum",
   protozoa: "Paramecium",          // <-- tambah ini
@@ -358,7 +358,7 @@ const CARD_IMG = {
   annelida: "Lumbricus",
   mollusca: "Helix", arthropoda: "Rhopalocera", echinodermata: "Asterias", chordata: "Rana"
 };
-SP.forEach(s => { if (CARD_IMG[s.id]) s.img = CARD_DIR + CARD_IMG[s.id] + ".svg"; });
+SP.forEach(s => { if (CARD_IMG[s.id]) s.img = CARD_DIR + CARD_IMG[s.id].toLowerCase().replace(/\s+/g, "-") + ".svg"; });
 
 // Gerakan singkat karakter di kartu (lihat keyframes mv-* di CSS):
 // wiggle = menggeliat, swim = berenang, ooze = melar, sway = bergoyang, puff = mengembang,
