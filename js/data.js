@@ -2468,42 +2468,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Hexactinellida",
           "image": "../assets/division/porifera/hexactinellida.jpg",
-          "caption": "Gambar 6. Foto spesimen spons kaca kuning (Staurocalyptus sp. atau Yellow Picasso sponges) di kedalaman 1,330 meter di Davidson Seamount, California, yang menampilkan struktur tubuh gelas kaca khas kelompok spons kaca (Hexactinellida). (Sumber: NOAA / Monterey Bay Aquarium Research Institute / Wikimedia Commons | Lisensi: Public Domain)",
+          "caption": "Gambar 6. Contoh kelas spons berspikula kaca (silika): spons kaca kuning (Staurocalyptus sp.) pada kedalaman 1.330 meter di Davidson Seamount, California. (Sumber: NOAA / Monterey Bay Aquarium Research Institute / Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Kelas spons dengan spikula kaca (silika) yang khas"
         },
         {
           "name": "Demospongiae",
           "image": "../assets/division/porifera/demospongiae.jpg",
-          "caption": "Gambar 7. Foto keanekaragaman hayati dan morfotipe spons (Sponge biodiversity and morphotypes) di kedalaman 60 kaki di Laut Karibia, Kepulauan Cayman, yang menampilkan berbagai jenis Demospongiae seperti spons tabung kuning (Aplysina fistularis), spons vas merah muda (Niphates digitalis), dan spons tali abu-abu (Callyspongia sp.). (Sumber: Twilight Zone Expedition Team 2007, NOAA-OE / Wikimedia Commons | Lisensi: Public Domain)   ",
+          "caption": "Gambar 7. Contoh Demospongiae, salah satu dari empat kelas utama Porifera (Rossi dkk., 2026): beragam morfotipe di kedalaman sekitar 60 kaki di Laut Karibia, Kepulauan Cayman, yaitu spons tabung kuning (Aplysina fistularis), spons vas merah muda (Niphates digitalis), dan spons tali abu-abu (Callyspongia sp.). (Sumber: Twilight Zone Expedition Team 2007, NOAA-OE / Wikimedia Commons | Lisensi: Public Domain)",
           "note": "Salah satu dari empat kelas utama Porifera (Rossi dkk., 2026)"
         },
         {
           "name": "Calcarea",
           "image": "../assets/division/porifera/calcarea.jpg",
-          "caption": "Gambar 8. Foto spesimen spons kapur Clathrina clathrus dari Wikimedia Commons, yang menampilkan koloni spons dengan struktur jaring tabung berkapur yang khas di habitat perairan laut. (Sumber: Parent Géry / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
+          "caption": "Gambar 8. Contoh spons kapur dengan rangka spikula kalsium karbonat: koloni Clathrina clathrus berupa jaring tabung berkapur di perairan laut. (Sumber: Parent Géry / Wikimedia Commons | Lisensi: CC BY-SA 3.0) ",
           "note": "Kelas spons dengan rangka spikula kalsium karbonat (Urry dkk., 2021)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Porifera",
-          "caption": "Gambar 1. Diagram ilustrasi anatomi struktur spons (sponge anatomy) sederhana dari Encyclopædia Britannica, yang menampilkan bagian-bagian morfologi dan seluler seperti ostium, spongosol, oskulum, spikula, serta sel leher (choanocyte). (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 1. Contoh organisasi tubuh spons: diagram anatomi spons sederhana dengan ostium, spongosol, oskulum, spikula, dan sel leher (choanocyte). (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Porifera",
-          "caption": "Gambar 2. Foto spesimen koloni spons laut (marine sponges) dari Encyclopædia Britannica, yang menampilkan komunitas hewan spons yang hidup menempel di habitat alaminya di dasar perairan laut. (Sumber: Encyclopædia Britannica, Inc. / Royalty-free/Corbis | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 2. Contoh habitat spons, hewan sesil di dasar perairan laut: koloni spons laut yang menempel di habitat alaminya. (Sumber: Encyclopædia Britannica, Inc. / Royalty-free/Corbis | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Porifera",
-          "caption": "Gambar 3. Diagram anatomi sponge sederhana dari Encyclopædia Britannica, yang menampilkan mekanisme aliran air, struktur sel leher berflagela (choanocytes), serta proses penangkapan partikel makanan di dalam tubuh spons. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 3. Contoh penyaringan makanan (filter feeding) pada spons: diagram anatomi spons memperlihatkan aliran air, sel leher berflagela (choanocyte), dan penangkapan partikel makanan di dalam tubuh. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Porifera",
-          "caption": "Gambar 4. Diagram ilustrasi siklus reproduksi spons (Sponge Reproduction) dari Sampoerna Academy, yang menampilkan mekanisme reproduksi secara aseksual (melalui pembentukan tunas / bud) dan seksual (pembuahan sel telur dan sperma, pembentukan embrio, fase larva planktonik, hingga menempel di dasar perairan). (Sumber: Sampoerna Academy | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 4. Contoh siklus bifasik pada spons: diagram reproduksi aseksual lewat tunas dan seksual lewat pembuahan, embrio, dan larva planktonik sampai menempel di dasar perairan. (Sumber: Sampoerna Academy | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Porifera",
-          "caption": "Gambar 5. Diagram alur hipotesis daur spons (Sponge loop hypothesis) dari Wikimedia Commons, yang menampilkan tahapan transfer energi dan nutrisi mulai dari pelepasan bahan organik terlarut (DOM) oleh karang dan alga, penyerapan DOM oleh spons, pelepasan partikel organik detrital (POM) oleh spons, hingga pemanfaatannya oleh detritivor. (Sumber: Laura Rix, Jasper M. de Goeij, dkk. / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
+          "caption": "Gambar 5. Contoh peran spons dalam daur karbon terumbu: diagram sponge loop memperlihatkan bahan organik terlarut (DOM) dari karang dan alga diserap spons, lalu dilepas sebagai partikel detrital (POM) yang dimanfaatkan detritivor. (Sumber: Laura Rix, Jasper M. de Goeij, dkk. / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         }
       },
       "challenge": {
@@ -2588,7 +2588,7 @@ const BIOSCOPE_DATA = {
         {
           "name": "Xenia umbellata",
           "image": "../assets/division/cnidaria/xenia-umbellata.jpg",
-          "caption": "Gambar 6. Foto spesimen koral lunak pulsatil (Xenia umbellata atau pulse coral) di Ras Katy, Laut Merah (Mesir), yang menampilkan polip kolonial dengan tentakel bercabang yang memiliki gerakan denyut khas. (Sumber: Diego Delso / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
+          "caption": "Gambar 6. Contoh oktokoral yang tentakelnya berdenyut dan dapat meregenerasi tubuh dari sepotong tentakel (Nadir dkk., 2023): koloni Xenia umbellata dengan polip bertentakel bercabang di Ras Katy, Laut Merah, Mesir. (Sumber: Diego Delso / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Oktokoral yang tentakelnya berdenyut terus-menerus dan mampu meregenerasi seluruh tubuh dari sepotong tentakel (Nadir dkk., 2023)"
         },
         {
@@ -2600,30 +2600,30 @@ const BIOSCOPE_DATA = {
         {
           "name": "Hydra sp.",
           "image": "../assets/division/cnidaria/hydra-sp.jpg",
-          "caption": "Gambar 8. Foto spesimen Hydra sp. dari Wikimedia Commons, yang menampilkan organisme air tawar kecil berbentuk polip soliter dengan tentakel halus di habitat alaminya. (Sumber: Shi Annan / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
+          "caption": "Gambar 8. Contoh Cnidaria air tawar yang berkembang biak aseksual lewat pertunasan: Hydra sp., polip soliter kecil dengan tentakel halus. (Sumber: Shi Annan / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Contoh klasik cnidaria yang melakukan reproduksi aseksual lewat pembentukan tunas (budding)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Cnidaria",
-          "caption": "Gambar 1. Diagram bentuk tubuh Cnidaria (Cnidarian body forms) dari Encyclopædia Britannica, yang menampilkan dua bentuk morfologi utama yaitu bentuk polip (polyp) yang menempel pada substrat dan bentuk medusa (medusa) yang berenang bebas, lengkap dengan lapisan ektoderm, endoderm, mesoglea, serta rongga gastrovaskular. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas"
+          "caption": "Gambar 1. Contoh dua bentuk tubuh Cnidaria: diagram polip yang menempel pada substrat dan medusa yang berenang bebas, lengkap dengan ektoderm, endoderm, mesoglea, dan rongga gastrovaskular. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Cnidaria",
-          "caption": "Gambar 2. Foto lanskap udara Great Barrier Reef di lepas pantai Queensland, Australia, dari Encyclopædia Britannica, yang menampilkan hamparan luas ekosistem terumbu karang di perairan laut dangkal yang jernih. (Sumber: Lainet / Fotolia / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 2. Contoh habitat Cnidaria di perairan tropis: foto udara hamparan terumbu karang Great Barrier Reef di perairan dangkal yang jernih di lepas pantai Queensland, Australia. (Sumber: Lainet / Fotolia / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Cnidaria",
-          "caption": "Gambar 3. Foto spesimen ubur-ubur terbalik Cassiopea jellyfish dari Encyclopædia Britannica, yang menampilkan posisi tubuh terbalik di dasar perairan untuk mendukung simbiosis dengan alga fotosintetik. (Sumber: Andamanse / Dreamstime.com / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 3. Contoh Cnidaria yang memperoleh sebagian nutrisi dari alga simbion (zooxanthellae): ubur-ubur terbalik Cassiopea berbaring dengan posisi tubuh terbalik di dasar perairan untuk mendukung simbiosis tersebut. (Sumber: Andamanse / Dreamstime.com / Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Cnidaria",
-          "caption": "Gambar 4. Diagram siklus hidup ubur-ubur (Jellyfish Life Cycle) dari AnimalFact, yang menampilkan tahapan reproduksi seksual medusa dewasa, pelepasan sel telur dan sperma, pembentukan larva planula, polip (scyphistoma), strobila, hingga fase ephyra yang berkembang menjadi medusa dewasa. (Sumber: AnimalFact.com | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 4. Contoh pergiliran polip dan medusa pada ubur-ubur: diagram siklus hidup dari medusa dewasa, pelepasan sel telur dan sperma, larva planula, polip (scyphistoma), dan strobila sampai fase efira yang tumbuh menjadi medusa dewasa. (Sumber: AnimalFact.com | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Cnidaria",
-          "caption": "Gambar 5. Diagram jaring-jaring makanan dan interaksi ekologis yang melibatkan ubur-ubur (Jellyfish), zooplankton, ikan pakan (forage fish), serta predator tingkat tinggi (piscivores) dari publikasi Jellyfish, Forage Fish, and the World's Major Fisheries di ResearchGate. (Sumber: Kelly Robinson, dkk. / ResearchGate | Lisensi: CC BY)"
+          "caption": "Gambar 5. Contoh peran ubur-ubur sebagai pemangsa zooplankton dan larva ikan di jaring makanan pelagis: diagram interaksi ubur-ubur, zooplankton, ikan pakan (forage fish), dan predator tingkat tinggi (piscivora). (Sumber: Kelly Robinson, dkk. / ResearchGate | Lisensi: CC BY)"
         }
       },
       "challenge": {
@@ -2709,42 +2709,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Planaria sp.",
           "image": "../assets/division/platyhelminthes/planaria-sp.jpg",
-          "caption": "Gambar 6. Foto spesimen cacing pipih Dugesia subtentaculata sebagai bioindikator kualitas air dari Wikipedia, yang menampilkan spesimen aseksual dari Santa Fe, Montseny, Catalonia. (Sumber: Eduard Solà / Wikipedia | Lisensi: CC BY-SA 3.0)   ",
+          "caption": "Gambar 6. Contoh cacing pipih hidup bebas yang menjadi model regenerasi dan bioindikator kualitas air: Dugesia subtentaculata, spesimen aseksual dari Santa Fe, Montseny, Catalonia. (Sumber: Eduard Solà / Wikipedia | Lisensi: CC BY-SA 3.0)",
           "note": "Cacing pipih hidup bebas yang karnivora atau pemakan bangkai dan banyak dipakai sebagai organisme model regenerasi (Urry dkk., 2021; Wang dkk., 2024)"
         },
         {
           "name": "Fasciola hepatica",
           "image": "../assets/division/platyhelminthes/fasciola-hepatica.jpg",
-          "caption": "Gambar 7. Foto spesimen cacing hati dewasa (Fasciola hepatica) dari Wikimedia Commons, yang menampilkan morfologi cacing pipih parasit pada organ hati hewan ternak. (Sumber: L. Shyamal / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
+          "caption": "Gambar 7. Contoh cacing isap (Trematoda) parasit hati ternak yang membutuhkan siput sebagai inang perantara: Fasciola hepatica dewasa. (Sumber: L. Shyamal / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Cacing isap (Trematoda) dengan siklus hidup bertahap larva yang membutuhkan moluska sebagai inang perantara (Martínez-González dkk., 2022)"
         },
         {
           "name": "Taenia solium",
           "image": "../assets/division/platyhelminthes/taenia-solium.jpg",
-          "caption": "Gambar 8. Foto mikroskopik bagian kepala atau skoleks cacing pita babi (Taenia solium) dari Wikimedia Commons, yang menampilkan struktur organ pengisap dan kait (rostellum) untuk menempel pada dinding usus inang. (Sumber: Rjgalindo / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
+          "caption": "Gambar 8. Contoh cacing pita (Cestoda) yang menempel pada dinding usus inang: mikrograf skoleks Taenia solium dengan organ pengisap dan kait (rostellum). (Sumber: Rjgalindo / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Cacing pita (Cestoda) yang berkembang menjadi larva sistiserkus di jaringan otot inang perantara dan menjadi cacing dewasa di usus manusia (Martínez-González dkk., 2022)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Platyhelminthes",
-          "caption": "Gambar 1. Diagram struktur anatomi planaria (flatworm anatomy) dari Lumen Learning, yang menampilkan sistem saraf, bintik mata (eyespot), ganglion serebral, rongga gastrovaskular, serta sistem ekskresi yang dilengkapi sel api (flame cell) dan tubulus ekskresi. (Sumber: Lumen Learning | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 1. Contoh organisasi tubuh cacing pipih: diagram anatomi planaria dengan sistem saraf, bintik mata, ganglion serebral, rongga gastrovaskular, serta sistem ekskresi berupa sel api (flame cell) dan tubulus. (Sumber: Lumen Learning | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Platyhelminthes",
-          "caption": "Gambar 2. Foto spesimen cacing pipih planaria laut (Planarian flatworm) dari One World One Ocean, yang menampilkan cacing pipih hidup bebas berwarna biru cerah yang menempel dan merayap di atas substrat karang. (Sumber: Sarah Bedolfe / One World One Ocean | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 2. Contoh cacing pipih hidup bebas di habitat laut: planaria laut berwarna biru cerah merayap di atas substrat karang. (Sumber: Sarah Bedolfe / One World One Ocean | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Platyhelminthes",
-          "caption": "Gambar 146. Diagram struktur anatomi dorsal cacing pipih Temnosewellia semperi dari Wisconsin Pressbooks, yang menampilkan organ pencernaan dan struktur tubuh ektoparasit pada kepiting air tawar. (Sumber: Wisconsin Pressbooks / Bresslau and Reisinger, 1933 | Lisensi: CC BY)"
+          "caption": "Gambar 3. Contoh sistem pencernaan cacing pipih: diagram anatomi dorsal Temnosewellia semperi, ektoparasit pada krustasea air tawar [cek gambar/sumber: inang], memperlihatkan organ pencernaan dan struktur tubuhnya. (Sumber: Wisconsin Pressbooks / Bresslau and Reisinger, 1933 | Lisensi: CC BY)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Platyhelminthes",
-          "caption": "Gambar 4. Diagram siklus hidup cacing isap digenea Metagonimus dari CDC, yang menampilkan tahapan kompleks mulai dari telur berembrio yang keluar melalui feses, infeksi pada siput perantara (sporokista, redia, serkaria), infeksi pada ikan air tawar, hingga cacing dewasa di dalam usus manusia atau mamalia pemakan ikan. (Sumber: CDC / Wikimedia Commons | Lisensi: Public Domain)   "
+          "caption": "Gambar 4. Contoh siklus hidup Trematoda yang memakai siput sebagai inang perantara: diagram siklus Metagonimus dari telur berembrio dalam feses, sporokista, redia, dan serkaria pada siput, infeksi ikan air tawar, sampai cacing dewasa di usus. Pada Fasciola hepatica, inang perantaranya juga siput, tetapi serkaria membentuk metaserkaria pada tumbuhan air, bukan masuk ke ikan. (Sumber: CDC / Wikimedia Commons | Lisensi: Public Domain)"
         },
         "ekologi": {
           "alt": "Peran ekologis Platyhelminthes",
-          "caption": "Gambar 5. Foto spesimen cacing pipih Planaria torva sebagai bioindikator kualitas air dari Wikimedia Commons, yang menampilkan morfologi cacing pipih air tawar hidup bebas di bawah pencahayaan mikroskopik. (Sumber: Holger Brandl, HongKee Moon, Miquel Vila-Farré, Shang-Yun Liu, Ian Henry, dan Jochen C. Rink / Wikimedia Commons | Lisensi: CC BY 4.0)"
+          "caption": "Gambar 5. Contoh peran cacing pipih hidup bebas sebagai predator mikro dan bioindikator kualitas air: Planaria torva, cacing pipih air tawar yang diamati di bawah mikroskop. (Sumber: Holger Brandl, HongKee Moon, Miquel Vila-Farré, Shang-Yun Liu, Ian Henry, dan Jochen C. Rink / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -2830,26 +2830,26 @@ const BIOSCOPE_DATA = {
         {
           "name": "Ascaris lumbricoides",
           "image": "../assets/division/nematoda/ascaris-lumbricoides.jpg",
-          "caption": "Gambar 6. Foto spesimen cacing gelang Ascaris lumbricoides dewasa, yang menampilkan deskripsi morfologi cacing betina dengan ujung meruncing, cincin genital, serta ukuran panjang tubuh antara 15 hingga 35 cm. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
+          "caption": "Gambar 6. Contoh cacing gelang parasit usus manusia: Ascaris lumbricoides dewasa; betinanya berujung tubuh meruncing, bercincin genital, dan panjang 15 sampai 35 cm. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
           "note": "Cacing gelang parasit usus manusia. Larvanya berpindah melintasi organ tubuh inang sebelum menjadi dewasa di usus (Urry dkk., 2021)"
         },
         {
           "name": "Wuchereria bancrofti",
           "image": "../assets/division/nematoda/wuchereria-bancrofti.jpg",
-          "caption": "Gambar 7. Foto mikroskopik spesimen Wuchereria bancrofti dari sediaan apusan darah tebal yang diwarnai dengan hematoksilin, menampilkan bentuk tubuh berselubung (sheathed) dengan ujung ekor meruncing. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
+          "caption": "Gambar 7. Contoh nematoda parasit penyebab filariasis (kaki gajah) yang ditularkan lewat nyamuk: Wuchereria bancrofti berselubung (sheathed) dengan ujung ekor meruncing pada apusan darah tebal berpewarnaan hematoksilin. (Sumber: CDC Division of Parasitic Diseases / Wikimedia Commons | Lisensi: Domain Publik / Public Domain)",
           "note": "Nematoda parasit penyebab filariasis (kaki gajah) yang ditularkan lewat gigitan nyamuk"
         },
         {
           "name": "Caenorhabditis elegans",
           "image": "../assets/division/nematoda/caenorhabditis-elegans.jpg",
-          "caption": "Gambar 8. Foto spesimen dewasa Caenorhabditis elegans dari Wikimedia Commons, yang menampilkan morfologi cacing tanah bebas mikroskopik di bawah pengamatan laboratorium. (Sumber: Zeynep F. Altun / Wikimedia Commons | Lisensi: CC BY-SA 2.5)   ",
+          "caption": "Gambar 8. Contoh nematoda hermafrodit hidup bebas yang menjadi organisme model riset biologi perkembangan dan genetika: Caenorhabditis elegans dewasa berukuran mikroskopik pada pengamatan laboratorium. (Sumber: Zeynep F. Altun / Wikimedia Commons | Lisensi: CC BY-SA 2.5)",
           "note": "Nematoda hermafrodit yang menjadi organisme model dalam riset biologi perkembangan dan genetika (Urry dkk., 2021; Zhang dkk., 2024)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Nematoda",
-          "caption": "Gambar 1. Diagram struktur anatomi cacing gilik atau nematoda jantan dan betina dari GeeksforGeeks, yang menampilkan organ internal seperti faring, cincin saraf, sistem ekskresi, usus, serta organ reproduksi (testis, ovary, uterus, dan spikula kopulasi). (Sumber: GeeksforGeeks | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "ambar 1. Contoh organisasi tubuh nematoda: diagram anatomi jantan dan betina dengan faring, cincin saraf, sistem ekskresi, usus, dan organ reproduksi (testis, ovarium, uterus, serta spikula kopulasi). (Sumber: GeeksforGeeks | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Nematoda",
@@ -2857,15 +2857,15 @@ const BIOSCOPE_DATA = {
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Nematoda",
-          "caption": "Gambar 3. Ilustrasi diagram dari Oregon State University yang menampilkan interaksi nematoda parasit dengan jaringan akar tanaman di bawah perbesaran lensa. (Sumber: Oregon State University | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 3. Contoh nematoda herbivor parasit tumbuhan yang mengambil nutrisi dari akar: ilustrasi interaksi nematoda parasit dengan jaringan akar tanaman. (Sumber: Oregon State University | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Nematoda",
-          "caption": "Gambar 4. Tangkapan layar halaman web CDC mengenai agen penyebab dan siklus hidup cacing Trichostrongylus, yang menampilkan informasi agen kausal nematoda usus serta diagram siklus hidup infeksi pada hewan herbivora dan manusia. (Sumber: CDC | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 4. Contoh siklus hidup nematoda usus yang berpindah antar inang lewat feses: diagram CDC untuk Trichostrongylus pada herbivora dan manusia. Pada Ascaris lumbricoides (materi ini), inangnya juga hanya satu, tetapi larvanya bermigrasi lewat hati dan paru-paru sebelum dewasa di usus. (Sumber: CDC | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Nematoda",
-          "caption": "Gambar 5. Diagram ekosistem tanah dari Encyclopedia.pub yang mengilustrasikan peran komunitas nematoda tanah dalam mendukung kesehatan manusia melalui pelepasan hara, regulasi iklim, serta mendukung kehidupan dan keanekaragaman terestrial. (Sumber: Encyclopedia.pub | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 5. Contoh peran komunitas nematoda tanah dalam siklus hara: diagram ekosistem tanah memperlihatkan kontribusinya pada pelepasan hara, regulasi iklim, serta dukungan kehidupan dan keanekaragaman terestrial. (Sumber: Encyclopedia.pub | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {
@@ -2946,42 +2946,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Lumbricus terrestris",
           "image": "../assets/division/annelida/lumbricus-terrestris.jpg",
-          "caption": "Gambar 6. Foto spesimen cacing tanah Lumbricus terrestris dari Wikimedia Commons, yang menampilkan morfologi detail tubuh beruas dengan area klitelum dan struktur segmen yang jelas. (Sumber: Conald Hutem / Wikimedia Commons | Lisensi: CC BY 2.0)   ",
+          "caption": "Gambar 6. Contoh cacing tanah pemakan detritus yang menggemburkan tanah lewat liangnya: Lumbricus terrestris dengan tubuh beruas, klitelum, dan segmen yang jelas. (Sumber: Conald Hutem / Wikimedia Commons | Lisensi: CC BY 2.0)",
           "note": "Cacing tanah pemakan detritus yang menelan tanah beserta bahan organiknya dan menggemburkan tanah lewat aktivitas meliangnya (Urry dkk., 2021)"
         },
         {
           "name": "Hirudo medicinalis",
           "image": "../assets/division/annelida/hirudo-medicinalis.jpg",
-          "caption": "Gambar 7. Foto spesimen lintah obat Eropa (Hirudo medicinalis) di California Academy of Sciences dari Wikimedia Commons, yang menampilkan morfologi tubuh beruas pipih dorsoventral dengan corak warna khas pada punggungnya. (Sumber: Evan Baldonado / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
+          "caption": "Gambar 7. Contoh lintah air tawar penghisap darah yang menyekresikan antikoagulan hirudin: lintah obat Eropa (Hirudo medicinalis) di California Academy of Sciences, bertubuh beruas pipih dorsoventral dengan corak khas di punggung. (Sumber: Evan Baldonado / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lintah medis air tawar yang menghisap darah inang dan menyekresikan senyawa antikoagulan hirudin (Urry dkk., 2021)"
         },
         {
           "name": "Spirobranchus giganteus",
           "image": "../assets/division/annelida/spirobranchus-giganteus.jpg",
-          "caption": "Gambar 8. Foto spesimen Spirobranchus giganteus (cacing pohon natal merah dan putih) dari Wikimedia Commons, yang menampilkan morfologi detail struktur mahkota spiral ganda berwarna merah dan putih terang saat berada di habitat karangnya. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   ",
+          "caption": "Gambar 8. Contoh Polychaeta laut yang hidup menetap dalam tabung kapur di terumbu karang: cacing pohon natal (Spirobranchus giganteus) dengan mahkota spiral ganda berwarna merah dan putih terang. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)",
           "note": "Cacing pohon natal, Polychaeta laut yang hidup menetap dalam tabung kapur di terumbu karang"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Annelida",
-          "caption": "Gambar 1. Diagram struktur anatomi cacing Polychaeta dari Encyclopædia Britannica, menampilkan morfologi cacing beruas laut bebas dengan organ tambahan seperti parapodia, setae, insang, serta pembuluh darah segmental. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 1. Contoh tubuh beruas pada Annelida laut: diagram anatomi Polychaeta bebas dengan parapodia, setae, insang, dan pembuluh darah segmental. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Annelida",
-          "caption": "Gambar 2. Foto spesimen cacing tanah (earthworm) di atas permukaan tanah dan lumut, menampilkan morfologi tubuh beruas dengan organ khas klitelum. (Sumber: Wikimedia Commons | Lisensi: Domain Publik / Public Domain)   "
+          "caption": "Gambar 2. Contoh habitat Annelida di tanah lembap di daratan: cacing tanah di atas permukaan tanah dan lumut, dengan klitelum yang khas. (Sumber: Wikimedia Commons | Lisensi: Domain Publik / Public Domain) "
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Annelida",
-          "caption": "Gambar 3. Foto spesimen lintah atau pacet (Hirudo medicinalis) dari Wikimedia Commons, yang menampilkan morfologi cacing penghisap darah saat mulai menempel dan menghisap pada permukaan kulit inang. (Sumber: Gleok / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   "
+          "caption": "Gambar 3. Contoh annelida ektoparasit pemakan darah: lintah obat (Hirudo medicinalis) yang mulai menempel dan menghisap darah pada kulit inang. (Sumber: Gleok / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Annelida",
-          "caption": "Gambar 4. Diagram siklus hidup cacing tanah (earthworm life cycle) dari AnimalFact, yang menampilkan tahapan perkembangan mulai dari perkawinan di permukaan tanah, pembentukan kokon telur, fase menetas (hatchling), cacing muda (juvenile), hingga cacing dewasa (adult). (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 4. Contoh perkembangan langsung tanpa larva: diagram siklus hidup cacing tanah dari perkawinan, pembentukan kokon telur, dan penetasan sampai cacing muda dan dewasa. (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Annelida",
-          "caption": "Gambar 5. Foto spesimen cacing tanah di dalam habitat alaminya di Baum Grove, Almaty, Kazakhstan dari Wikimedia Commons, yang menampilkan aktivitas cacing di atas permukaan tanah berhumus. (Sumber: Nikolai Bulykin / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   "
+          "caption": "Gambar 5. Contoh peran cacing tanah sebagai insinyur ekosistem yang menggemburkan dan memperkaya tanah: cacing tanah di atas permukaan tanah berhumus di Baum Grove, Almaty, Kazakhstan. (Sumber: Nikolai Bulykin / Wikimedia Commons | Lisensi: CC BY-SA 4.0)"
         }
       },
       "challenge": {
@@ -3317,42 +3317,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Acanthaster planci",
           "image": "../assets/division/echinodermata/acanthaster-planci.jpg",
-          "caption": "Gambar 6. Acanthaster planci. (Sumber: [isi sumber gambar])",
+          "caption": "Gambar 6. Contoh bintang laut (Asteroidea) predator yang memengaruhi struktur komunitas terumbu lewat pemangsaan karang batu: bintang laut mahkota duri (Acanthaster planci) dengan tubuh berlapis duri tajam di atas terumbu karang. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)",
           "note": "Bintang laut (Asteroidea) predator yang memengaruhi struktur komunitas terumbu lewat pemangsaan karang batu (Urry dkk., 2021)"
         },
         {
           "name": "Echinoidea (bulu babi)",
           "image": "../assets/division/echinodermata/echinoidea.jpg",
-          "caption": "Gambar 7. Foto spesimen bulu babi semangka (The watermelon sea urchin / Echinus melo) dari Wikimedia Commons, yang menampilkan morfologi tubuh berduri putih terang yang difoto di Capo Caccia Alghero, Sardinia. (Sumber: Marco Busdraghi / Wikimedia Commons | Lisensi: CC BY 3.0)   ",
+          "caption": "Gambar 7. Contoh bulu babi herbivora pengikis alga dengan lentera Aristoteles: bulu babi semangka (Echinus melo) berduri putih terang di Capo Caccia, Alghero, Sardinia. (Sumber: Marco Busdraghi / Wikimedia Commons | Lisensi: CC BY 3.0)",
           "note": "Herbivora pengikis alga dengan lentera Aristoteles (Urry dkk., 2021)"
         },
         {
           "name": "Holothuroidea (teripang)",
           "image": "../assets/division/echinodermata/holothuroidea.jpg",
-          "caption": "Gambar 8. Foto spesimen teripang cokelat (Brown sea cucumber / Actinopyga echinites) dari Wikimedia Commons, yang menampilkan morfologi tubuh silindris memanjang dengan tekstur kulit berbintik dan tentakel di bagian ujungnya di Kosrae, Mikronesia. (Sumber: François Michonneau / Wikimedia Commons | Lisensi: CC BY 3.0)   ",
+          "caption": "Gambar 8. Contoh teripang pemakan deposit yang dapat mengeluarkan ususnya lalu meregenerasinya: teripang cokelat (Actinopyga echinites) bertubuh silindris memanjang, berkulit berbintik, dengan tentakel di ujung tubuh, di Kosrae, Mikronesia. (Sumber: François Michonneau / Wikimedia Commons | Lisensi: CC BY 3.0)",
           "note": "Pemakan deposit yang dapat mengeluarkan ususnya (eviscerasi) lalu meregenerasinya (García-Arrarás & Dolmatov, 2010; Purcell dkk., 2016)"
         }
       ],
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Echinodermata",
-          "caption": "Gambar 1. Diagram sistem vaskular air (water vascular system) pada bintang laut dari AnimalFact, yang menampilkan struktur anatomi internal seperti madreporite, saluran batu (stone canal), saluran cincin (ring canal), saluran radial (radial canals), hingga kaki tabung (tube feet / podia) yang berfungsi untuk pergerakan dan pertukaran gas. (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 1. Contoh sistem vaskular air, ciri khas Echinodermata: diagram pada bintang laut dengan madreporit, saluran batu, saluran cincin, saluran radial, dan kaki tabung (podia) untuk gerak dan pertukaran gas. (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "habitat": {
           "alt": "Habitat Echinodermata",
-          "caption": "Gambar 2. Foto spesimen bulu babi (sea urchin) dari Encyclopædia Britannica, yang menampilkan morfologi hewan duri kulit dengan duri-duri panjang berwarna merah yang hidup di terumbu karang di perairan Maui, Hawaii. (Sumber: David Burdick/NOAA / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 2. Contoh habitat Echinodermata di dasar laut: bulu babi berduri panjang berwarna merah di terumbu karang perairan Maui, Hawaii. (Sumber: David Burdick/NOAA / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Echinodermata",
-          "caption": "Gambar 3. Foto bintang laut yang sedang memangsa seekor ikan kecil di dalam air, menampilkan sisi ventral dengan deretan kaki tabung (tube feet) di sepanjang lengan radialnya. (Sumber: Bubbly Diver / Dokumen Web | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 3. Contoh bintang laut sebagai predator aktif: bintang laut memangsa ikan kecil di dalam air, sisi ventralnya memperlihatkan deretan kaki tabung di sepanjang lengan radial. (Sumber: Bubbly Diver / Dokumen Web | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Echinodermata",
-          "caption": "Gambar 4. Diagram siklus hidup bulu babi (Sea Urchin Life Cycle) dari AnimalFact, yang menampilkan tahapan perkembangan mulai dari gamet, zigot, embrio (blastula, gastrula), fase larva Echinopluteus (dari bentuk prism, four-arm, hingga twelve-arm), individu muda (juvenile), hingga bulu babi dewasa (adult). (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 4. Contoh perkembangan Echinodermata lewat larva: diagram siklus hidup bulu babi dari gamet, zigot, embrio (blastula, gastrula), dan larva Echinopluteus (bentuk prisma, empat lengan, sampai dua belas lengan) sampai juvenil dan bulu babi dewasa. (Sumber: AnimalFact | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Echinodermata",
-          "caption": "Gambar 5. Foto spesimen bulu babi di situs Lost City (sea urchin attached to a rock mass) dari Wikimedia Commons, yang menampilkan morfologi hewan duri kulit yang menempel pada massa batuan laut dalam, serta menonjolkan fungsi ekologis utamanya sebagai pengontrol populasi organisme kecil dan pembersih substrat di ekosistem dasar laut dalam yang mendukung keseimbangan jaring-jaring makanan bentik. (Sumber: Ifremer / Wikimedia Commons | Lisensi: CC BY 4.0)"
+          "caption": "Gambar 5. Contoh bulu babi, herbivora pengikis alga yang di terumbu mengendalikan pertumbuhan alga: bulu babi menempel pada massa batuan di dasar laut dalam situs Lost City. (Sumber: Ifremer / Wikimedia Commons | Lisensi: CC BY 4.0)"
         }
       },
       "challenge": {
@@ -3443,42 +3443,42 @@ const BIOSCOPE_DATA = {
         {
           "name": "Branchiostoma sp.",
           "image": "../assets/division/chordata/branchiostoma.jpg",
-          "caption": "Gambar 6. Foto spesimen lanset atau amphioxus (Branchiostoma lanceolatum) dari Wikimedia Commons, yang menampilkan morfologi tubuh pipih memanjang menyerupai ikan kecil tanpa rahang dan sirip berpasangan, yang dikumpulkan dari sedimen pasir kasar di landas kontinen Belgia. (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
+          "caption": "Gambar 6. Contoh Cephalochordata pemakan penyaring: lanselet atau amphioxus (Branchiostoma lanceolatum) bertubuh pipih memanjang, tanpa rahang dan sirip berpasangan, dari sedimen pasir kasar di landas kontinen Belgia. (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lanselet (Cephalochordata), pemakan penyaring yang menyedot air ke keranjang faring berlendir dari endostil (Karaiskou dkk., 2015; Vanni dkk., 2022)"
         },
         {
           "name": "Ciona robusta",
           "image": "../assets/division/chordata/ciona-robusta.jpg",
-          "caption": "Gambar 7. Foto spesimen Ciona robusta dari Wikimedia Commons, yang menampilkan morfologi tubuh berbentuk silindris transparan menyerupai kantong (sea squirt) yang menempel secara berkelompok di dalam air. (Sumber: Delphine Dauga / Wikimedia Commons | Lisensi: CC BY-SA 4.0)   ",
+          "caption": "Gambar 7. Contoh tunikata soliter yang menjadi organisme model regenerasi organ: Ciona robusta bertubuh silindris transparan seperti kantong dan menempel berkelompok di dalam air. (Sumber: Delphine Dauga / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Ascidian soliter, organisme model riset yang dapat meregenerasi organ, misalnya sifon yang diamputasi (Gordon dkk., 2021; Vanni dkk., 2022)"
         },
         {
           "name": "Katak (Amphibia)",
           "image": "../assets/division/chordata/frog.jpg",
-          "caption": "Gambar 8. Foto spesimen katak hijau (Green frog / Rana clamitans melanota) dari Encyclopædia Britannica, yang menampilkan morfologi tubuh amfibi berkulit lembap dengan bercak totol di atas permukaan kayu. (Sumber: Tom Reichner/Shutterstock.com / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)   ",
+          "caption": "Gambar 8. Contoh amfibi (vertebrata anamniot) yang berkembang lewat larva berinsang sebelum menjadi dewasa berparu-paru: katak hijau (Rana clamitans melanota) berkulit lembap dengan bercak totol di atas kayu. (Sumber: Tom Reichner/Shutterstock.com / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)",
           "note": "Vertebrata anamniot yang embrionya melewati larva berinsang lalu bermetamorfosis menjadi dewasa berparu-paru (Urry dkk., 2021)"
         }
       ],  
       "sectionImages": {
         "struktur": {
           "alt": "Struktur dan morfologi Chordata",
-          "caption": "Gambar 1. Diagram skema anatomi amphioxus (Branchiostoma lanceolatum anatomy scheme) dari Wikimedia Commons, yang menampilkan struktur anatomi internal seperti notokorda, saraf dorsal, celah insang, dan sistem sirkulasi darah. (Sumber: Piotr Michał Jaworski, PioM / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
+          "caption": "Gambar 1. Contoh ciri khas Chordata: skema anatomi amphioxus (Branchiostoma lanceolatum) dengan notokorda, saraf dorsal, celah insang, dan sistem sirkulasi darah. (Sumber: Piotr Michał Jaworski, PioM / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "habitat": {
           "alt": "Habitat Chordata",
-          "caption": "Gambar 2. Foto spesimen sea squirt Taman Nasional Komodo (Polycarpa aurata) dari Wikimedia Commons, yang menampilkan morfologi tubuh berbentuk kantong berlapis mantel tunika dengan pola garis ungu mencolok, serta menonjolkan aspek habitat utamanya yang hidup secara menempel (sessile) di ekosistem perairan laut terumbu karang. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)   "
+          "caption": "Gambar 2. Contoh Chordata sesil di terumbu karang: tunikata Polycarpa aurata di Taman Nasional Komodo, bertubuh berbentuk kantong berlapis mantel tunika dengan pola garis ungu mencolok. (Sumber: Nhobgood Nick Hobgood / Wikimedia Commons | Lisensi: CC BY-SA 3.0)"
         },
         "nutrisi": {
           "alt": "Cara memperoleh nutrisi Chordata",
-          "caption": "Gambar 3. Foto singa jantan dan anaknya sedang memakan kerbau liar (Male Lion and Cub eating a Cape Buffalo) dari Wikimedia Commons, yang menampilkan cara memperoleh nutrisi dengan merobek daging mangsa menggunakan gigi taring di Cagar Alam Sabi Sand, Afrika Selatan. (Sumber: Luca Galuzzi / Wikimedia Commons | Lisensi: CC BY-SA 2.5)   "
+          "caption": "Gambar 3. Contoh vertebrata karnivor yang merobek daging mangsa dengan gigi taring: singa jantan dan anaknya memakan kerbau liar di Cagar Alam Sabi Sand, Afrika Selatan. (Sumber: Luca Galuzzi / Wikimedia Commons | Lisensi: CC BY-SA 2.5)"
         },
         "siklus-hidup": {
           "alt": "Siklus hidup Chordata",
-          "caption": "Gambar 4. Diagram siklus hidup katak macan (Life cycle of the leopard frog / Rana pipiens) dari Encyclopædia Britannica, yang menampilkan tahapan metamorfosis mulai dari telur, embrio, larva berudu (tadpole dengan insang luar), pertumbuhan kaki belakang, penyusutan ekor, hingga katak dewasa. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)   "
+          "caption": "Gambar 4. Contoh amfibi yang melewati larva berinsang lalu bermetamorfosis: diagram siklus hidup katak macan (Rana pipiens) dari telur, embrio, dan berudu berinsang luar sampai pertumbuhan kaki belakang, penyusutan ekor, dan katak dewasa. (Sumber: Encyclopædia Britannica, Inc. | Lisensi: Edukasional / Komersial Terbatas)"
         },
         "ekologi": {
           "alt": "Peran ekologis Chordata",
-          "caption": "Gambar 5. Foto spesimen sea squirt berbintik biru (Blue spot sea squirt / Clavelina moluccensis) dari Encyclopædia Britannica, yang menampilkan morfologi koloni tunicate berwarna biru terang di atas terumbu karang, serta menonjolkan fungsi ekologis utamanya sebagai penyaring alami air laut yang membantu menjaga kejernihan perairan dan mendukung kestabilan ekosistem bentik. (Sumber: Gerard Soury / The Image Bank / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
+          "caption": "Gambar 5. Contoh peran tunikata sebagai penyaring air laut yang membersihkan mikroplankton dan bakteri dari kolom air: koloni tunikata berbintik biru (Clavelina moluccensis) di atas terumbu karang. (Sumber: Gerard Soury / The Image Bank / Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)"
         }
       },
       "challenge": {
