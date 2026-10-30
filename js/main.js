@@ -1033,14 +1033,91 @@ function initDivisionPage() {
           </div>
         </div>
         <div data-detektif="${divisionId}"></div>
+        <div class="division-nav" data-division-nav></div>
       </div>
     </section>
   `;
 
   loadReferencesScript();
   loadDetektifScript();
+  setupDivisionNav(divisionId);
   alurTrack("materi", division.kingdom, divisionId);
   watchMaterialRead(division.kingdom, divisionId, division.label);
+}
+
+// ---------- Navigasi di akhir halaman filum ----------
+
+// Tombol lanjut/kembali di bawah Detektif Taksonomi. Urutan filum dan kingdom
+// dibaca dari data (division_ids dan urutan kunci BIOSCOPE_DATA.kingdoms),
+// jadi tidak perlu diatur per halaman HTML. Digambar ulang saat progres
+// berubah (mis. materi tercatat selesai dibaca) supaya status tombol akurat.
+function setupDivisionNav(divisionId) {
+  const box = document.querySelector("[data-division-nav]");
+
+  if (!box) {
+    return;
+  }
+
+  const draw = () => {
+    box.innerHTML = buildDivisionNav(divisionId);
+  };
+
+  draw();
+  document.addEventListener("bioscope:progress", draw);
+}
+
+function buildDivisionNav(divisionId) {
+  const division = BIOSCOPE_DATA.divisions[divisionId];
+  const kingdomId = division.kingdom;
+  const kingdom = BIOSCOPE_DATA.kingdoms[kingdomId];
+  const progress = getProgress();
+  const ids = kingdom.division_ids;
+  const position = ids.indexOf(divisionId);
+  const prevId = position > 0 ? ids[position - 1] : null;
+  const nextId = position < ids.length - 1 ? ids[position + 1] : null;
+  const order = Object.keys(BIOSCOPE_DATA.kingdoms);
+  const nextKingdomId = order[order.indexOf(kingdomId) + 1] || null;
+
+  let primary = "";
+  let hint = "";
+  let showBack = true;
+
+  if (nextId) {
+    // Masih ada filum berikutnya di kingdom ini.
+    primary = `<a class="btn btn-primary" href="${nextId}.html">Lanjut ke ${BIOSCOPE_DATA.divisions[nextId].label} →</a>`;
+  } else if (nextKingdomId) {
+    // Filum terakhir di kingdom: lanjut ke kingdom berikutnya kalau sudah terbuka.
+    const nextKingdom = BIOSCOPE_DATA.kingdoms[nextKingdomId];
+
+    if (adminAwareUnlock(nextKingdomId, progress)) {
+      primary = `<a class="btn btn-primary" href="../${nextKingdomId}.html">Lanjut ke kingdom ${nextKingdom.name} →</a>`;
+    } else {
+      primary = `<a class="btn btn-primary" href="../${kingdomId}.html">Kerjakan Bengkel ${kingdom.name}</a>`;
+      hint = `Kingdom ${nextKingdom.name} terbuka setelah semua materi dibaca dan rata-rata skor Bengkel ${kingdom.name} mencapai ${MASTERY_THRESHOLD}%.`;
+      showBack = false; // tombol utama sudah mengarah ke halaman kingdom
+    }
+  } else if (isAdminMode() || alurMateriSelesai()) {
+    // Filum terakhir dari kingdom terakhir: arahkan ke post-test.
+    primary = `<a class="btn btn-primary" href="../posttest.html">Lanjut ke Post-test →</a>`;
+  } else {
+    hint = "Post-test terbuka setelah semua materi selesai dibaca.";
+  }
+
+  const back = showBack
+    ? `<a class="btn btn-secondary" href="../${kingdomId}.html">← Kembali ke ${kingdom.name}</a>`
+    : "";
+  const prev = prevId
+    ? `<a class="text-link" href="${prevId}.html">← Sebelumnya: ${BIOSCOPE_DATA.divisions[prevId].label}</a>`
+    : "";
+
+  return `
+    <div class="division-nav-bar" role="navigation" aria-label="Navigasi filum">
+      <span class="eyebrow">Filum ${position + 1} dari ${ids.length} · ${kingdom.name}</span>
+      ${hint ? `<p class="division-nav-hint">${hint}</p>` : ""}
+      <div class="division-nav-actions">${back}${primary}</div>
+      ${prev}
+    </div>
+  `;
 }
 
 // Materi dihitung "dibaca" setelah pembaca sampai di ujung materi, bukan
@@ -1544,6 +1621,9 @@ function renderLifeCycle(division) {
     return "";
   }
 
+  // Label tengah diagram bisa diatur per divisi (lifeCycleCenter), mis. Archaea
+  // memakai "Pembelahan sel" karena tidak punya siklus hidup bertahap.
+  const [centerTop, centerBottom] = division.lifeCycleCenter || ["Siklus", "hidup"];
   const size = 240;
   const center = size / 2;
   const radius = 82;
@@ -1592,7 +1672,7 @@ function renderLifeCycle(division) {
     <div class="lifecycle">
       ${division.lifeCycleNote ? `<p class="lifecycle-note">${division.lifeCycleNote}</p>` : ""}
       <svg class="lifecycle-ring" viewBox="0 0 ${size} ${size}" role="img"
-        aria-label="Diagram siklus hidup ${escapeAttr(plainText(division.label))} dalam ${count} tahap">
+        aria-label="Diagram ${`${centerTop} ${centerBottom}`.toLowerCase()} ${escapeAttr(plainText(division.label))} dalam ${count} tahap">
         <defs>
           <marker id="lifecycle-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path class="lifecycle-arrow-head" d="M 0 1 L 9 5 L 0 9 z" />
@@ -1600,8 +1680,8 @@ function renderLifeCycle(division) {
         </defs>
         ${arrows}
         ${nodes}
-        <text class="lifecycle-center" x="${center}" y="${center - 2}" text-anchor="middle">Siklus</text>
-        <text class="lifecycle-center" x="${center}" y="${center + 14}" text-anchor="middle">hidup</text>
+        <text class="lifecycle-center" x="${center}" y="${center - 2}" text-anchor="middle">${centerTop}</text>
+        <text class="lifecycle-center" x="${center}" y="${center + 14}" text-anchor="middle">${centerBottom}</text>
       </svg>
       <ol class="lifecycle-steps">${list}</ol>
       <p class="lifecycle-loop">↻ Setelah tahap ${count}, siklus kembali ke tahap 1.</p>

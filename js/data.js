@@ -3508,6 +3508,7 @@ const BIOSCOPE_LIFE_CYCLES = {
   },
   "archaea": {
     note: "Pembelahan sel; Archaea tidak membentuk endospora. Mesin pembelahannya berbeda antarkelompok (FtsZ atau ESCRT-III/Cdv).",
+    center: ["Pembelahan", "sel"],
     steps: [
       ["Sel induk tumbuh", "Sel membesar dengan memanfaatkan nutrisi atau energi dari lingkungannya."],
       ["Replikasi DNA", "Kromosom sirkular digandakan. Pada Sulfolobales, sel menghabiskan sebagian besar siklusnya dengan dua salinan genom (fase G2)."],
@@ -3727,6 +3728,8 @@ for (const [divisionId, cycle] of Object.entries(BIOSCOPE_LIFE_CYCLES)) {
   if (BIOSCOPE_DATA.divisions[divisionId]) {
     BIOSCOPE_DATA.divisions[divisionId].lifeCycleNote = cycle.note || "";
     BIOSCOPE_DATA.divisions[divisionId].lifeCycleSteps = cycle.steps;
+    // Label di tengah diagram; bila kosong dipakai "Siklus hidup".
+    BIOSCOPE_DATA.divisions[divisionId].lifeCycleCenter = cycle.center || null;
   }
 }
 
