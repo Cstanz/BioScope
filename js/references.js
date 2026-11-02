@@ -1701,6 +1701,2158 @@ var referenceLibrary = [
     issue: '19',
     pages: 'R1081–R1097',
     doi: '10.1016/j.cub.2017.08.056'
+  },
+
+  {
+    id: 'britannica-deadsea',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopedia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Salt columns in the Dead Sea',
+    site: 'Encyclopedia Britannica',
+    url: 'https://www.britannica.com/place/Dead-Sea/Climate-and-hydrology'
+  },
+
+  {
+    id: 'ecoddington-binaryfission',
+    type: 'web',
+    authors: [
+      { last: 'Ecoddington14' }
+    ],
+    year: 't.t.',
+    title: 'Binary Fission',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Binary_Fission.png'
+  },
+
+  {
+    id: 'epa-nitrogencycle',
+    type: 'web',
+    authors: [
+      { last: 'U.S. Environmental Protection Agency' }
+    ],
+    year: 't.t.',
+    title: 'Nitrogen Cycle',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Nitrogen_Cycle.jpg'
+  },
+
+  {
+    id: 'britannica-ecoli',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopedia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Escherichia coli; human microbiome (foto oleh Janice Haney Carr/CDC)',
+    site: 'Encyclopedia Britannica',
+    url: 'https://www.britannica.com/science/bacteria/Classification-by-morphology-biochemistry-and-other-features#/media/1/1806911/162112'
+  },
+
+  {
+    id: 'reeve2010',
+    type: 'journal',
+    authors: [
+      { last: 'Reeve', first: 'W.' },
+      { last: 'O\'Hara', first: 'G.' },
+      { last: 'Chain', first: 'P.' },
+      { last: 'Ardley', first: 'J.' }
+    ],
+    year: 2010,
+    title: 'Complete genome sequence of Rhizobium leguminosarum bv. trifolii strain WSM2304, an effective microsymbiont of the South American clover Trifolium polymorphum',
+    journal: 'Standards in Genomic Sciences',
+    volume: '2',
+    issue: '1',
+    pages: '66–76',
+    doi: '10.4056/sigs.44642'
+  },
+
+  {
+    id: 'britannica-streptomyces',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopedia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'The bacterium Streptomyces griseus is an example of an actinomycete (foto oleh A.W. Rakosy)',
+    site: 'Encyclopedia Britannica',
+    url: 'https://www.britannica.com/science/Streptomyces-griseus#/media/1/4401/121613'
+  },
+
+  {
+    id: 'britannicakids-archaeacell',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Archaea cell',
+    site: 'Britannica Kids',
+    url: 'https://kids.britannica.com/students/article/Archaea/701133'
+  },
+
+  {
+    id: 'britannica-midway',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Archaea at Midway Geyser Basin, Yellowstone National Park, Wyoming (foto oleh Wing-Chi Poon)',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/science/archaea#/media/1/32547/117882'
+  },
+
+  {
+    id: 'darekk2-bacteriorhodopsin',
+    type: 'web',
+    authors: [
+      { last: 'Darekk2' }
+    ],
+    year: 't.t.',
+    title: 'Bacteriorhodopsin chemiosmosis',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Bacteriorhodopsin_chemiosmosis.gif'
+  },
+
+  {
+    id: 'entropyrider-nitrogen',
+    type: 'web',
+    authors: [
+      { last: 'Entropyrider' }
+    ],
+    year: 't.t.',
+    title: 'Nitrogen Cycle Diagram',
+    site: 'Wikimedia Commons',
+    url: 'https://www.albert.io/blog/nitrogen-cycle-ap-environmental-science-review/'
+  },
+
+  {
+    id: 'xiangyux-sulfolobus',
+    type: 'web',
+    authors: [
+      { last: 'Xiangyux' }
+    ],
+    year: 't.t.',
+    title: 'Cell of Sulfolobus infected by virus STSV1 observed under microscopy',
+    site: 'English Wikipedia',
+    url: 'https://commons.wikimedia.org/wiki/File:RT8-4.jpg'
+  },
+
+  {
+    id: 'morris2013',
+    type: 'journal',
+    authors: [
+      { last: 'Morris', first: 'B. E. L.' },
+      { last: 'Henneberger', first: 'R.' },
+      { last: 'Huber', first: 'H.' },
+      { last: 'Moissl-Eichinger', first: 'C.' }
+    ],
+    year: 2013,
+    title: 'Microbial syntrophy: interaction for the common good',
+    journal: 'FEMS Microbiology Reviews',
+    volume: '37',
+    issue: '3',
+    pages: '384–406',
+    doi: '10.1111/1574-6976.12019'
+  },
+
+  {
+    id: 'stanlotter2015',
+    type: 'journal',
+    authors: [
+      { last: 'Stan-Lotter', first: 'H.' },
+      { last: 'Fendrihan', first: 'S.' }
+    ],
+    year: 2015,
+    title: 'Halophilic Archaea: Life with Desiccation, Radiation and Oligotrophy over Geological Times',
+    journal: 'Life',
+    volume: '5',
+    issue: '3',
+    pages: '1487–1496',
+    doi: '10.3390/life5031487'
+  },
+
+  {
+    id: 'pohlschroder2025',
+    type: 'journal',
+    authors: [
+      { last: 'Pohlschroder', first: 'M.' },
+      { last: 'Schulze', first: 'S.' },
+      { last: 'Pfeiffer', first: 'F.' },
+      { last: 'Hong', first: 'Y.' }
+    ],
+    year: 2025,
+    title: 'Haloferax volcanii: a versatile model for studying archaeal biology',
+    journal: 'Journal of Bacteriology',
+    volume: '207',
+    issue: '6',
+    doi: '10.1128/jb.00062-25'
+  },
+
+  {
+    id: 'kamble-amoeba',
+    type: 'web',
+    authors: [
+      { last: 'Kamble', first: 'Vidhin' }
+    ],
+    year: 't.t.',
+    title: 'Protozoan Animal (Amoeba)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Protozoa-Amoeba.jpg'
+  },
+
+  {
+    id: 'gabler1999-monolake',
+    type: 'web',
+    authors: [
+      { last: 'Gäbler', first: 'Michael' }
+    ],
+    year: 1999,
+    title: 'Shore of Mono Lake with Tufa columns, in the Mono Lake Tufa State Reserve, Eastern Sierra, California, United States',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Lakeside_of_Mono_Lake.jpg'
+  },
+
+  {
+    id: 'taylor-phagocytosis',
+    type: 'web',
+    authors: [
+      { last: 'Taylor', first: 'Kate' }
+    ],
+    year: 't.t.',
+    title: 'Diagram of amoeba engulfing a particle of food by phagocytosis',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Phagocytosis_-_amoeba.jpg'
+  },
+
+  {
+    id: 'cdc-malarialifecycle',
+    type: 'web',
+    authors: [
+      { last: 'Centers for Disease Control and Prevention (CDC)' }
+    ],
+    year: 't.t.',
+    title: 'A chart showing the lifecycle of the malaria parasite',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Malaria_lifecycle-CDC.gif'
+  },
+
+  {
+    id: 'solomon2022',
+    type: 'journal',
+    // TODO: docx hanya memuat 3 penulis lalu "dkk."; lengkapi dari DOI
+    authors: [
+      { last: 'Solomon', first: 'R.' },
+      { last: 'Wein', first: 'T.' },
+      { last: 'Levy', first: 'B.' }
+    ],
+    year: 2022,
+    title: 'Protozoa populations are ecosystem engineers that shape prokaryotic community structure and function of the rumen microbial ecosystem',
+    journal: 'The ISME Journal',
+    volume: '16',
+    pages: '1187–1197',
+    doi: '10.1038/s41396-021-01170-y'
+  },
+
+  {
+    id: 'barfooz-paramecium',
+    type: 'web',
+    authors: [
+      { last: 'Barfooz' }
+    ],
+    year: 't.t.',
+    title: 'Paramecium aurelia',
+    site: 'English Wikipedia',
+    url: 'https://commons.wikimedia.org/wiki/File:Paramecium.jpg'
+  },
+
+  {
+    id: 'cdc-melvin-falciparum',
+    type: 'web',
+    authors: [
+      { last: 'CDC/Dr. Mae Melvin' }
+    ],
+    year: 't.t.',
+    title: 'Plasmodium falciparum 01.png',
+    site: 'Wikimedia Commons',
+    url: 'https://id.wikipedia.org/wiki/Berkas:Plasmodium_falciparum_01.png'
+  },
+
+  {
+    id: 'walkowski-entamoeba',
+    type: 'web',
+    authors: [
+      { last: 'Walkowski', first: 'Stefan' }
+    ],
+    year: 't.t.',
+    title: 'Entamoeba histolytica trophozoite',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Entamoeba_histolytica.jpg'
+  },
+
+  {
+    id: 'sharma2025',
+    type: 'web',
+    authors: [
+      { last: 'Sharma', first: 'N.' }
+    ],
+    year: 2025,
+    title: 'Green Algae (Chlorophyta): Characteristic, Class, Importance',
+    site: 'Microbe Notes',
+    url: 'https://microbenotes.com/green-algae-chlorophyta/'
+  },
+
+  {
+    id: 'aquaimages-kelp',
+    type: 'web',
+    authors: [
+      { last: 'Aquaimages' }
+    ],
+    year: 't.t.',
+    title: 'Kelp forest and sardines, San Clemente Island, Channel Islands, California',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Kelp_forest_and_sardines,_San_Clemente_Island,_Channel_Islands,_California.jpg'
+  },
+
+  {
+    id: 'stoecker2018',
+    type: 'journal',
+    authors: [
+      { last: 'Stoecker', first: 'D. K.' },
+      { last: 'Lavrentjev', first: 'P. J.' }
+    ],
+    year: 2018,
+    title: 'Mixotrophic Plankton in the Polar Seas: A Pan-Arctic Review',
+    journal: 'Frontiers in Marine Science',
+    volume: '5',
+    pages: '292',
+    doi: '10.3389/fmars.2018.00292'
+  },
+
+  {
+    id: 'bogaert2012',
+    type: 'journal',
+    authors: [
+      { last: 'Bogaert', first: 'K.' },
+      { last: 'Arun', first: 'A.' },
+      { last: 'Coelho', first: 'S.' },
+      { last: 'Clerck', first: 'O.' }
+    ],
+    year: 2012,
+    title: 'Brown Algae as a Model for Plant Organogenesis',
+    journal: 'Methods in Molecular Biology (Clifton, N.J.)',
+    volume: '959',
+    pages: '97–125',
+    doi: '10.1007/978-1-62703-221-6_6'
+  },
+
+  {
+    id: 'farsmedia-maharloo',
+    type: 'web',
+    authors: [
+      { last: 'Fars Media Corporation' }
+    ],
+    year: 't.t.',
+    title: 'Maharloo Lake 20190619 17.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Maharloo_Lake_20190619_17.jpg'
+  },
+
+  {
+    id: 'seaweednetwork-laminaria',
+    type: 'web',
+    authors: [
+      { last: 'The Seaweed Network Indonesia' }
+    ],
+    year: 't.t.',
+    title: 'Mengenal Rumput Laut Laminaria: Alat Kuret dan Manfaat Lainnya',
+    site: 'Seaweednetwork.id',
+    url: 'https://seaweednetwork.id/mengenal-rumput-laut-laminaria-alat-kuret-dan-manfaat-lainnya'
+  },
+
+  {
+    id: 'seaweednetwork-porphyra',
+    type: 'web',
+    authors: [
+      { last: 'The Seaweed Network Indonesia' }
+    ],
+    year: 't.t.',
+    title: 'Mengenal Rumput Laut Porphyra: Ciri dan Manfaat',
+    site: 'Seaweednetwork.id',
+    url: 'https://seaweednetwork.id/mengenal-rumput-laut-porphyra-ciri-dan-manfaat'
+  },
+
+  {
+    id: 'seaweednetwork-ulva',
+    type: 'web',
+    authors: [
+      { last: 'The Seaweed Network Indonesia' }
+    ],
+    year: 't.t.',
+    title: 'Mengenal Rumput Laut Ulva Lactuca dan Manfaatnya',
+    site: 'Seaweednetwork.id',
+    url: 'https://seaweednetwork.id/mengenal-rumput-laut-ulva-lactuca-dan-manfaatnya'
+  },
+
+  {
+    id: 'tinkertsavalas-comatricha',
+    type: 'web',
+    authors: [
+      { last: 'Tinker-Tsavalas', first: 'Alexis' }
+    ],
+    year: 't.t.',
+    title: 'Comatricha nigra',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Comatricha_nigra_176600092.jpg'
+  },
+
+  {
+    id: 'monto-slimemold',
+    type: 'web',
+    authors: [
+      { last: 'Monto', first: 'Tiia' }
+    ],
+    year: 't.t.',
+    title: 'Probably slime mold, white colored, Jyväskylä, Finland',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Slime_mold_2.jpg'
+  },
+
+  {
+    id: 'frankenstoen-physarum',
+    type: 'web',
+    authors: [
+      { last: 'Frankenstoen' }
+    ],
+    year: 't.t.',
+    title: 'Physarum polycephalum plasmodium.jpg',
+    site: 'Flickr / Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Physarum_polycephalum_plasmodium.jpg'
+  },
+
+  {
+    id: 'zilra-plasmodial',
+    type: 'web',
+    authors: [
+      { last: 'Zilra' }
+    ],
+    year: 't.t.',
+    title: 'Plasmodial slime mold life cycle',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Plasmodial_slime_mold_life_cycle_English.png'
+  },
+
+  {
+    id: 'marshman-fuligo',
+    type: 'web',
+    authors: [
+      { last: 'Marshman' },
+      { last: 'Guinther', first: 'Eric' }
+    ],
+    year: 't.t.',
+    title: 'Slime mold (Fuligo sp.) photographed on O\'ahu, Hawaii',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Slime_mold.jpg'
+  },
+
+  {
+    id: 'queller-dictyostelium',
+    type: 'web',
+    authors: [
+      { last: 'Queller and Strassmann Research Group at Washington University in St. Louis (WUSTL)' },
+      { last: 'Bashir', first: 'Usman' }
+    ],
+    year: 't.t.',
+    title: 'Dictyostelium discoideum 43.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Dictyostelium_discoideum_43.jpg'
+  },
+
+  {
+    id: 'alharethi2023',
+    type: 'journal',
+    authors: [
+      { last: 'Al Harethi', first: 'A. A.' },
+      { last: 'Abdullah', first: 'Q. Y. M.' },
+      { last: 'Al Jobory', first: 'H. J.' },
+      { last: 'Al-Moraish', first: 'F. B.' },
+      { last: 'Al-Hakimi', first: 'A. N.' }
+    ],
+    year: 2023,
+    title: 'First report of molecular identification of Phytophthora infestans causing potato late blight in Yemen',
+    journal: 'Scientific Reports',
+    volume: '13',
+    pages: '16365',
+    doi: '10.1038/s41598-023-43510-2'
+  },
+
+  {
+    id: 'forestresearch-ramorum',
+    type: 'web',
+    authors: [
+      { last: 'Forest Research UK' }
+    ],
+    year: 't.t.',
+    title: 'Identification and symptoms: P. ramorum infection on conifer trees such as larch',
+    site: 'forestresearch.gov.uk',
+    url: 'https://www.forestresearch.gov.uk/tools-and-resources/pests-and-diseases/database/ramorum-disease-phytophthora-ramorum/'
+  },
+
+  {
+    id: 'bioearthworm-fungi',
+    type: 'web',
+    authors: [
+      { last: 'Bioearthworm' }
+    ],
+    year: 't.t.',
+    title: 'Bioearthworm.wordpress.com',
+    site: 'bioearthworm.wordpress.com',
+    url: 'https://bioearthworm.wordpress.com/category/fungi/page/6/'
+  },
+
+  {
+    id: 'jeronimo2015',
+    type: 'journal',
+    authors: [
+      { last: 'Jerônimo', first: 'G. H.' },
+      { last: 'de Jesus', first: 'A. L.' },
+      { last: 'Marano', first: 'A. V.' },
+      { last: 'James', first: 'T. Y.' }
+    ],
+    year: 2015,
+    title: 'Diversidade de Blastocladiomycota e Chytridiomycota do Parque Estadual da Ilha do Cardoso, Cananéia, SP, Brasil',
+    journal: 'Hoehnea',
+    volume: '42',
+    issue: '1',
+    pages: '135–163',
+    doi: '10.1590/2236-8906-32/2014'
+  },
+
+  {
+    id: 'kagami2014',
+    type: 'journal',
+    authors: [
+      { last: 'Kagami', first: 'M.' },
+      { last: 'Miki', first: 'T.' },
+      { last: 'Takimoto', first: 'G.' }
+    ],
+    year: 2014,
+    title: 'Mycoloop: Chytrids in aquatic food webs',
+    journal: 'Frontiers in Microbiology',
+    volume: '5',
+    pages: '166',
+    doi: '10.3389/fmicb.2014.00166'
+  },
+
+  {
+    id: 'piepenbring-synchytrium',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' }
+    ],
+    year: 't.t.',
+    title: 'Life cycle of Synchytrium endobioticum on potato, Chytridiomycota',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:06_11_life_cycle,_Synchytrium_endobioticum_on_potato,_Chytridiomycota_(M._Piepenbring).png'
+  },
+
+  {
+    id: 'daszak1999',
+    type: 'journal',
+    authors: [
+      { last: 'Daszak', first: 'P.' },
+      { last: 'Berger', first: 'L.' },
+      { last: 'Cunningham', first: 'A. A.' },
+      { last: 'Hyatt', first: 'A. D.' },
+      { last: 'Green', first: 'D. E.' },
+      { last: 'Speare', first: 'R.' }
+    ],
+    year: 1999,
+    title: 'Emerging Infectious Diseases and Amphibian Population Declines',
+    journal: 'Emerging Infectious Diseases',
+    volume: '5',
+    issue: '6',
+    pages: '735–748',
+    doi: '10.3201/eid0506.990601'
+  },
+
+  {
+    id: 'piepenbring-thalli',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' },
+      { last: 'Selso' }
+    ],
+    year: 't.t.',
+    title: 'Diagram: epibiont and endobiont (Chytridiomycota)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:06_10_types_of_thalli,_Chytridiomycota_%28M._Piepenbring%29_2.png'
+  },
+
+  {
+    id: 'piepenbring-bdendrobatidis',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' }
+    ],
+    year: 't.t.',
+    title: 'Biologische Schemata: 06 12 life cycle, asexual, Batrachochytrium dendrobatidis, Chytridiomycota',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:06_12_life_cycle,_asexual,_Batrachochytrium_dendrobatidis,_Chytridiomycota_(M._Piepenbring).png'
+  },
+
+  {
+    id: 'usdaaphis-synchytrium',
+    type: 'web',
+    authors: [
+      { last: 'USDA APHIS PPQ' }
+    ],
+    year: 't.t.',
+    title: 'Synchytrium endobioticum. The warts vary from very small protuberances to large intricately branched systems',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Synchytridium_endobioticum.jpg'
+  },
+
+  {
+    id: 'atanasovapancevska2018',
+    type: 'journal',
+    authors: [
+      { last: 'Atanasova-Pancevska', first: 'N.' },
+      { last: 'Kungulovski', first: 'D.' }
+    ],
+    year: 2018,
+    title: 'Fermentative activity of five strain of Neocallimastix frontalis cultivated on a different substrates',
+    journal: 'Macedonian Journal of Animal Science',
+    volume: '8',
+    issue: '1',
+    pages: '33–40',
+    url: 'https://www.researchgate.net/publication/325988336_FERMENTATIVE_ACTIVITY_OF_FIVE_STRAIN_OF_NEOCALLIMASTIX_FRONTALIS_CULTIVATED_ON_A_DIFFERENT_SUBSTRATES'
+  },
+
+  {
+    id: 'alchetron-olpidium',
+    type: 'web',
+    authors: [
+      { last: 'Alchetron' }
+    ],
+    year: 't.t.',
+    title: 'Olpidium brassicae',
+    site: 'alchetron.com',
+    url: 'https://alchetron.com/Olpidium-brassicae'
+  },
+
+  {
+    id: 'wikimedia-rhizopusstructure',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Structure of Rhizopus spp.-english',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Structure_of_Rhizopus_spp.-english.JPG'
+  },
+
+  {
+    id: 'alaswad-lemonmold',
+    type: 'web',
+    authors: [
+      { last: 'Alaswad', first: 'Ali' }
+    ],
+    year: 't.t.',
+    title: 'Fungal mold growing on the surface of a lemon',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Fungal_mold_growing_on_the_surface_lemon.jpg'
+  },
+
+  {
+    id: 'britannica-rhizopus',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Common bread mold: Rhizopus stolonifer growing on bread (left), with enlargement showing the stolon, rhizoids, and sporangiophores',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/science/Rhizopus'
+  },
+
+  {
+    id: 'piepenbring-zygomycota',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' },
+      { last: 'Silicon Prophet' }
+    ],
+    year: 't.t.',
+    title: 'Zygomycota life cycle',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:06_07_life_cycle,_Mucor_sp.,_Mucorales,_Zygomycota_(M._Piepenbring).svg'
+  },
+
+  {
+    id: 'hillewaert-entomophthora',
+    type: 'web',
+    authors: [
+      { last: 'Hillewaert', first: 'Hans' }
+    ],
+    year: 't.t.',
+    title: 'Fly fungus on Common yellow dung fly at Oostende, Belgium',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Entomophthora_muscae_on_Scathophaga_stercoraria_(lateral_view).jpg'
+  },
+
+  {
+    id: 'abair-pilobolus',
+    type: 'web',
+    authors: [
+      { last: 'Abair', first: 'Alex' }
+    ],
+    year: 't.t.',
+    title: 'Pilobolus 348325705.jpg',
+    site: 'iNaturalist / Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Pilobolus_348325706.jpg'
+  },
+
+  {
+    id: 'opiola-mucor',
+    type: 'web',
+    authors: [
+      { last: 'Opiola', first: 'Jerzy' }
+    ],
+    year: 't.t.',
+    title: 'Mucor mucedo',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Mucor_mucedo_a1.jpg'
+  },
+
+  {
+    id: 'wdkeeper-rhizopus',
+    type: 'web',
+    authors: [
+      { last: 'WDKeeper' }
+    ],
+    year: 't.t.',
+    title: 'Rhizopus stolonifer (Black Bread Mold)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Rhizopus_stolonifer4.JPG'
+  },
+
+  {
+    id: 'geeksforgeeks-ascocarp',
+    type: 'web',
+    authors: [
+      { last: 'GeeksforGeeks' }
+    ],
+    year: 't.t.',
+    title: 'Ascocarp',
+    site: 'GeeksforGeeks',
+    url: 'https://www.geeksforgeeks.org/biology/ascocarp/'
+  },
+
+  {
+    id: 'krisp-aleuria',
+    type: 'web',
+    authors: [
+      { last: 'Krisp', first: 'Holger' }
+    ],
+    year: 't.t.',
+    title: 'Aleuria aurantia fungus orange peel (second view)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Aleuria_aurantia_fungus_orange_peel_(second_view).jpg'
+  },
+
+  {
+    id: 'piepenbring-lichens',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' }
+    ],
+    year: 't.t.',
+    title: 'Anatomy of the thallus, details, lichens, Lichenes',
+    site: 'Wikimedia Commons',
+    url: 'http://commons.wikimedia.org/wiki/File:05_10_anatomy_of_the_thallus,_details,_lichens,_Lichenes_(M._Piepenbring).png'
+  },
+
+  {
+    id: 'piepenbring-erysiphales',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' }
+    ],
+    year: 't.t.',
+    title: 'Biologische Schemata: 04 03 19 life cycle, Erysiphales, Ascomycota',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:04_03_19_life_cycle,_Erysiphales,_Ascomycota_(M._Piepenbring).png'
+  },
+
+  {
+    id: 'stephendickson-truffles',
+    type: 'web',
+    authors: [
+      { last: 'Stephendickson' }
+    ],
+    year: 't.t.',
+    title: 'Black truffles, San Miniato',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Black_truffles,_San_Miniato.jpg'
+  },
+
+  {
+    id: 'pilerini-saccharomyces',
+    type: 'web',
+    authors: [
+      { last: 'Pilerini' }
+    ],
+    year: 't.t.',
+    title: 'Saccharomyces cerevisiae imaged with phase-contrast microscopy at 100x',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Saccharomyces_cerevisiae_100x_phase-contrast_microscopy2.jpg'
+  },
+
+  {
+    id: 'crulina98-penicillium',
+    type: 'web',
+    authors: [
+      { last: 'Crulina 98' }
+    ],
+    year: 't.t.',
+    title: 'Penicillium chrysogenum, syn. Penicillium notatum',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Penicillium_notatum.jpg'
+  },
+
+  {
+    id: 'jacquin-claviceps',
+    type: 'web',
+    authors: [
+      { last: 'Jacquin', first: 'Dominique' }
+    ],
+    year: 't.t.',
+    title: 'Ergot du seigle Claviceps purpurea',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Claviceps_purpurea.JPG'
+  },
+
+  {
+    id: 'debivort-basidiocarp',
+    type: 'web',
+    authors: [
+      { last: 'Debivort' }
+    ],
+    year: 't.t.',
+    title: 'Schematic of a typical basidiocarp, the diploid reproductive structure of a basidiomycete, showing fruiting body, hymenium, and basidia',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Basidium_schematic.svg'
+  },
+
+  {
+    id: 'wikimedia-ramaria',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Ramaria rugosa var cinerea.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Ramaria_rugosa_var_cinerea.jpg'
+  },
+
+  {
+    id: 'larsson-amanita',
+    type: 'web',
+    authors: [
+      { last: 'Larsson', first: 'Ellen' }
+    ],
+    year: 't.t.',
+    title: 'Root-tip mycelia of the Amanita type',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Mycorrhizal_root_tips_(amanita).jpg'
+  },
+
+  {
+    id: 'piepenbring-basidiomycota',
+    type: 'web',
+    authors: [
+      { last: 'Piepenbring', first: 'M.' },
+      { last: 'Silicon Prophet' }
+    ],
+    year: 't.t.',
+    title: 'Basidiomycota life cycle',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:03_01_07_life_cycle_Basidiomycota_basidium_%28M._Piepenbring%29.svg'
+  },
+
+  {
+    id: 'apus-auricularia',
+    type: 'web',
+    authors: [
+      { last: 'Apus' }
+    ],
+    year: 't.t.',
+    title: 'Auricularia auricula-judae or (Jew\'s Ear Fungus)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_a.JPG'
+  },
+
+  {
+    id: 'chris73-champignon',
+    type: 'web',
+    authors: [
+      { last: 'chris_73' }
+    ],
+    year: 't.t.',
+    title: 'White mushroom',
+    site: 'Wikimedia Commons',
+    url: 'https://id.wikipedia.org/wiki/Berkas:ChampignonMushroom.jpg'
+  },
+
+  {
+    id: 'archenzo-amanita',
+    type: 'web',
+    authors: [
+      { last: 'Archenzo' }
+    ],
+    year: 't.t.',
+    title: 'Amanita phalloides, Piacenza\'s mountains',
+    site: 'Wikimedia Commons',
+    url: 'https://id.wikipedia.org/wiki/Berkas:Amanita_phalloides_1.JPG'
+  },
+
+  {
+    id: 'wikimedia-stemrust',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Stem rust close up',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Stem_rust_close_up.jpg'
+  },
+
+  {
+    id: 'nativeplants-moss9',
+    type: 'web',
+    authors: [
+      { last: 'Nativeplants garden' }
+    ],
+    year: 't.t.',
+    title: 'Moss 9.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Moss_9.jpg'
+  },
+
+  {
+    id: 'geeksforgeeks-moss',
+    type: 'web',
+    authors: [
+      { last: 'GeeksforGeeks' }
+    ],
+    year: 't.t.',
+    title: 'Moss',
+    site: 'GeeksforGeeks',
+    url: 'https://www.geeksforgeeks.org/biology/mosses/'
+  },
+
+  {
+    id: 'read-marchantia',
+    type: 'web',
+    authors: [
+      { last: 'Dr. Morley Read / Shutterstock.com' }
+    ],
+    year: 't.t.',
+    title: 'Thalloid of the liverwort Marchantia with gemma cups',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/bryophyte/'
+  },
+
+  {
+    id: 'britannica-mosslifecycle',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Moss life cycle',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/moss-plant'
+  },
+
+  {
+    id: 'becker-broommoss',
+    type: 'web',
+    authors: [
+      { last: 'Becker', first: 'Michael' }
+    ],
+    year: 't.t.',
+    title: 'Broom moss (Dicranum scoparium)',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/moss-plant'
+  },
+
+  {
+    id: 'monkelbaan-fochteloerveen',
+    type: 'web',
+    authors: [
+      { last: 'Monkelbaan', first: 'Agnes' }
+    ],
+    year: 't.t.',
+    title: 'Nationaal Park Drents-Friese Wold. Locatie Fochteloërveen 01-09-2020 (actm.) 15.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Nationaal_Park_Drents-Friese_Wold._Locatie_Fochtelo%C3%ABrveen_01-09-2020._(actm.)_15.jpg'
+  },
+
+  {
+    id: 'wikimedia-marchantiapolymorpha',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'MarchantiaPolymorpha.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:MarchantiaPolymorpha.jpg'
+  },
+
+  {
+    id: 'berndh-anthoceros',
+    type: 'web',
+    authors: [
+      { last: 'BerndH' }
+    ],
+    year: 't.t.',
+    title: 'Anthoceros agrestis, Schwäbisch-Fränkische Waldberge, Deutschland',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Anthoceros_agrestis_060910c.jpg'
+  },
+
+  {
+    id: 'biology4isc-pteridophytes',
+    type: 'web',
+    authors: [
+      { last: 'Biology4ISC' }
+    ],
+    year: 't.t.',
+    title: 'Pteridophytes: Characteristics and Examples',
+    site: 'Biology4ISC',
+    url: 'https://biology4isc.weebly.com/pteridophyta.html'
+  },
+
+  {
+    id: 'fitzgerald-platycerium',
+    type: 'web',
+    authors: [
+      { last: 'Fitzgerald', first: 'Steve' }
+    ],
+    year: 't.t.',
+    title: 'Platycerium bifurcatum on Mt Baldy near Atherton, Queensland',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Platycerium_bifurcatum_SF26224-04.jpg'
+  },
+
+  {
+    id: 'nicbla-selaginella',
+    type: 'web',
+    authors: [
+      { last: 'sergio nicbla' }
+    ],
+    year: 't.t.',
+    title: 'Sedum palmeri sobre Flor de Piedra (Selaginella lepidophylla)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Sedum_palmeri_sobre_Flor_de_Piedra_(Selaginella_lepidophylla)_(24106329309).jpg'
+  },
+
+  {
+    id: 'ziarlak-pteridium',
+    type: 'web',
+    authors: [
+      { last: 'Ziarlak', first: 'Krzysztof' },
+      { last: 'Kenraiz' }
+    ],
+    year: 't.t.',
+    title: 'Pteridium aquilinum in Kodrąbek on Wolin Island, NW Poland',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Pteridium_aquilinum_kz05.jpg'
+  },
+
+  {
+    id: 'merriamwebster-fernlifecycle',
+    type: 'web',
+    authors: [
+      { last: 'Merriam-Webster Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Fern life cycle',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/lower-vascular-plant'
+  },
+
+  {
+    id: 'moller-bamberg',
+    type: 'web',
+    authors: [
+      { last: 'Möller', first: 'Reinhold' }
+    ],
+    year: 't.t.',
+    title: 'Ferns in the Bamberg grove',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Bamberg_Hain_Farn_P4242230.jpg'
+  },
+
+  {
+    id: 'rancanciu-helecho',
+    type: 'web',
+    authors: [
+      { last: 'Rancanciu', first: 'Eber' }
+    ],
+    year: 't.t.',
+    title: 'Helecho arbóreo o arborescente. Palermo, Boyacá, Colombia',
+    site: 'Wikimedia Commons',
+    url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Helecho_arborescente%2C_Boyac%C3%A1%2C_Colombia.png/960px-Helecho_arborescente%2C_Boyac%C3%A1%2C_Colombia.png'
+  },
+
+  {
+    id: 'delso-equisetum',
+    type: 'web',
+    authors: [
+      { last: 'Delso', first: 'Diego' }
+    ],
+    year: 't.t.',
+    title: 'Rough Horsetail (Equisetum hyemale), Arctic-Alpine Botanic Garden, Tromsø, Norway',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Equiseto_de_invierno_(Equisetum_hyemale),_jard%C3%ADn_bot%C3%A1nico_alpino-%C3%A1rtico,_Troms%C3%B8,_Noruega,_2019-09-04,_DD_81.jpg'
+  },
+
+  {
+    id: 'wikimedia-gymnosperms',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Gymnosperms, Brockhaus and Efron Encyclopedic Dictionary (1890–1907)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Gymnosperms._Brockhaus_and_Efron_Encyclopedic_Dictionary_b56_048-2.jpg'
+  },
+
+  {
+    id: 'alexkom000-ferrel',
+    type: 'web',
+    authors: [
+      { last: 'Alexkom000' }
+    ],
+    year: 't.t.',
+    title: 'Pine forest in Ferrel',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:2026-08-09_Pine_forest_in_Ferrel_1.jpg'
+  },
+
+  {
+    id: 'geeksforgeeks-gymnosperm',
+    type: 'web',
+    authors: [
+      { last: 'GeeksforGeeks' }
+    ],
+    year: 't.t.',
+    title: 'Life Cycle of Gymnosperm',
+    site: 'GeeksforGeeks',
+    url: 'https://www.geeksforgeeks.org/biology/gymnosperms-characteristics-examples/'
+  },
+
+  {
+    id: 'pinakpani-rishop',
+    type: 'web',
+    authors: [
+      { last: 'Pinakpani' }
+    ],
+    year: 't.t.',
+    title: 'Rishop Pine forest at 6 mile, Rishop',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Rishop_Pine_forest_at_6_mile,_Rishop_09.jpg'
+  },
+
+  {
+    id: 'taypamart-lophophanes',
+    type: 'web',
+    authors: [
+      { last: 'Tay Pamart', first: 'Marie-Lan' }
+    ],
+    year: 't.t.',
+    title: 'European crested tit (Lophophanes cristatus) in the Gran Paradiso National Park in Aosta Valley, Italy',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Lophophanes_cristatus_Gran_Paradiso_20190908.jpg'
+  },
+
+  {
+    id: 'bargeron-pinuspalustris',
+    type: 'web',
+    authors: [
+      { last: 'Bargeron', first: 'Chuck' },
+      { last: 'University of Georgia' }
+    ],
+    year: 't.t.',
+    title: 'Pinus palustris forest',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Pinus_palustris_UGA1.jpg'
+  },
+
+  {
+    id: 'fischerplatz-ginkgo',
+    type: 'web',
+    authors: [
+      { last: 'Fischerplatz' },
+      { last: 'Cayambe' },
+      { last: 'Ginkgotree' }
+    ],
+    year: 't.t.',
+    title: 'Luxembourg City: remarkable Gingko at place Dargent',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:GINKGOBAUM-2.jpg'
+  },
+
+  {
+    id: 'ziarlak-cycas',
+    type: 'web',
+    authors: [
+      { last: 'Ziarlak', first: 'Krzysztof' },
+      { last: 'Kenraiz' }
+    ],
+    year: 't.t.',
+    title: 'Cycas revoluta in Porto Formoso on Sao Miguel Island, Azores',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Cycas_revoluta_kz04.jpg'
+  },
+
+  {
+    id: 'britannica-eudicot',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Eudicotyledonous plant',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/angiosperm'
+  },
+
+  {
+    id: 'shao-amazon',
+    type: 'web',
+    authors: [
+      { last: 'User:Shao' }
+    ],
+    year: 't.t.',
+    title: 'Amazonian rainforest — upper Amazon Basin, in the Loreto Region of northeastern Perú',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Amazonian_rainforest_2.JPG'
+  },
+
+  {
+    id: 'britannica-photoelectron',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Photosynthetic electron pathway',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/angiosperm'
+  },
+
+  {
+    id: 'britannica-angiospermlifecycle',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'angiosperm life cycle',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/angiosperm'
+  },
+
+  {
+    id: 'heilman-potato',
+    type: 'web',
+    authors: [
+      { last: 'Grant Heilman / Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'potato tubers',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/plant/angiosperm'
+  },
+
+  {
+    id: 'msth-oryza',
+    type: 'web',
+    authors: [
+      { last: 'Syarful Msth' }
+    ],
+    year: 't.t.',
+    title: 'Oryza sativa in the paddy field with the surrounding natural scenery. Located in Batang Regency, Central Java, Indonesia',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Oryza_sativa_l.jpg'
+  },
+
+  {
+    id: 'chaniago-rafflesia',
+    type: 'web',
+    authors: [
+      { last: 'Chaniago', first: 'Maizal' }
+    ],
+    year: 't.t.',
+    title: 'Rafflesia Arnoldii, the giant rare flower. Photo Location: Batang Palupuh, West Sumatra, Indonesia',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Rafflesia_Arnoldii_Batang_Palupuah_Indonesia.jpg'
+  },
+
+  {
+    id: 'wikimedia-dionaea',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Venus Fly Trap (VFT; Dionaea muscipula)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Venus_Fly_Trap_(VFT;_Dionaea_muscipula).jpg'
+  },
+
+  {
+    id: 'britannica-spongeanatomy',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Sponge - Anatomy, Form and Function',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/animal/sponge-animal/Form-and-function'
+  },
+
+  {
+    id: 'britannica-multicellularanimal',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'multicellular animal',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/animal/sponge-animal/Form-and-function'
+  },
+
+  {
+    id: 'sampoerna-spongerepro',
+    type: 'web',
+    authors: [
+      { last: 'Sampoerna Academy' }
+    ],
+    year: 't.t.',
+    title: 'Sponge Reproduction',
+    site: 'Sampoerna Academy',
+    url: 'https://www.sampoernaacademy.sch.id/id/news/porifera-adalah'
+  },
+
+  {
+    id: 'rix-spongeloop',
+    type: 'web',
+    authors: [
+      { last: 'Rix', first: 'Laura' },
+      { last: 'de Goeij', first: 'Jasper M.' },
+      { last: 'van Oevelen', first: 'Dick' },
+      { last: 'Struck', first: 'Ulrich' },
+      { last: 'Al-Horani', first: 'Fuad A.' },
+      { last: 'Wild', first: 'Christian' },
+      { last: 'Naumann', first: 'Malik S.' }
+    ],
+    year: 't.t.',
+    title: 'Sponge loop hypothesis. Steps of the sponge loop pathway',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Sponge_loop_pathway.png'
+  },
+
+  {
+    id: 'noaa-staurocalyptus',
+    type: 'web',
+    authors: [
+      { last: 'NOAA' },
+      { last: 'Monterey Bay Aquarium Research Institute' }
+    ],
+    year: 't.t.',
+    title: 'Staurocalyptus sp. (Yellow Picasso sponges) at 1330 meters water depth, Davidson Seamount',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Staurocalyptus-_noaa_photo_expl0951.jpg'
+  },
+
+  {
+    id: 'twilightzone-sponges',
+    type: 'web',
+    authors: [
+      { last: 'Twilight Zone Expedition Team 2007' },
+      { last: 'NOAA-OE' }
+    ],
+    year: 't.t.',
+    title: 'Sponges in Caribbean Sea, Cayman Islands',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Sponges_in_Caribbean_Sea,_Cayman_Islands.jpg'
+  },
+
+  {
+    id: 'parent-clathrina',
+    type: 'web',
+    authors: [
+      { last: 'Parent', first: 'Géry' }
+    ],
+    year: 't.t.',
+    title: 'Clathrina clathrus (order Clathrinida)',
+    site: 'Wikimedia Commons',
+    url: 'https://en.wikipedia.org/wiki/Calcareous_sponge'
+  },
+
+  {
+    id: 'britannica-cnidarianforms',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Cnidarian body forms',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/summary/cnidarian#/media/1/122/50/66029'
+  },
+
+  {
+    id: 'lainet-greatbarrierreef',
+    type: 'web',
+    authors: [
+      { last: 'Lainet / Fotolia / Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Great Barrier Reef, Queensland',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/animal/cnidarian'
+  },
+
+  {
+    id: 'andamanse-cassiopea',
+    type: 'web',
+    authors: [
+      { last: 'Andamanse / Dreamstime.com / Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Cassiopea',
+    site: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/animal/cnidarian/Locomotion#/media/1/122750/127877'
+  },
+
+  {
+    id: 'animalfact-jellyfish',
+    type: 'web',
+    authors: [
+      { last: 'AnimalFact' }
+    ],
+    year: 't.t.',
+    title: 'Jellyfish Life Cycle',
+    site: 'AnimalFact.com',
+    url: 'https://animalfact.com/jellyfish/'
+  },
+
+  {
+    id: 'robinson2014',
+    type: 'journal',
+    authors: [
+      { last: 'Robinson', first: 'K.' },
+      { last: 'Ruzicka', first: 'J.' },
+      { last: 'Decker', first: 'M.' },
+      { last: 'Brodeur', first: 'R.' },
+      { last: 'Hernandez', first: 'F.' },
+      { last: 'Quiñones', first: 'J.' },
+      { last: 'Acha', first: 'M.' },
+      { last: 'Uye', first: 'S.' },
+      { last: 'Mianzan', first: 'H.' },
+      { last: 'Graham', first: 'W.' }
+    ],
+    year: 2014,
+    title: 'Jellyfish, Forage Fish, and the World\'s Major Fisheries',
+    journal: 'Oceanography',
+    volume: '27',
+    issue: '4',
+    pages: '104–115',
+    doi: '10.5670/oceanog.2014.90'
+  },
+
+  {
+    id: 'delso-xenia',
+    type: 'web',
+    authors: [
+      { last: 'Delso', first: 'D.' }
+    ],
+    year: 't.t.',
+    title: 'Coral pulsante (Xenia umbellata), Ras Katy, Red Sea, Sharm el-Sheikh, Egypt',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Coral_pulsante_(Xenia_umbellata),_Ras_Katy,_Sharm_el-Sheij,_Egipto,_2022-03-26,_DD_96.jpg'
+  },
+
+  {
+    id: 'vasenin-dendronephthya',
+    type: 'web',
+    authors: [
+      { last: 'Vasenin', first: 'Alexander' }
+    ],
+    year: 't.t.',
+    title: 'Soft coral (Dendronephthya sp.) at Gilli Lawa Laut (near Komodo, Indonesia)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Dendronephthya_soft_coral_at_Gilli_Lawa_Laut.JPG'
+  },
+
+  {
+    id: 'shiannan-hydra',
+    type: 'web',
+    authors: [
+      { last: 'Shi Annan' }
+    ],
+    year: 't.t.',
+    title: 'Hydra sp. 2010',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Hydra_sp._2010.jpg'
+  },
+
+  {
+    id: 'lumen-platyhelminthes',
+    type: 'web',
+    authors: [
+      { last: 'Lumen Learning' }
+    ],
+    year: 't.t.',
+    title: 'Phylum Platyhelminthes',
+    site: 'Lumen Learning Biology for Majors',
+    url: 'https://courses.lumenlearning.com/atd-herkimer-biologyfundamentals1/chapter/phylum-platyhelminthes/'
+  },
+
+  {
+    id: 'bedolfe-planarian',
+    type: 'web',
+    authors: [
+      { last: 'Bedolfe', first: 'Sarah' }
+    ],
+    year: 't.t.',
+    title: 'Blue Zoo: Planarian Flatworm',
+    site: 'One World One Ocean',
+    url: 'https://oneworldoneocean.com/blog/blue-zoo-planarian-flatworm/'
+  },
+
+  {
+    id: 'cdc-metagonimus',
+    type: 'web',
+    authors: [
+      { last: 'Centers for Disease Control and Prevention (CDC)' }
+    ],
+    year: 't.t.',
+    title: 'Life cycle of the digeneans Metagonimus',
+    site: 'Wikimedia Commons',
+    url: 'https://en.wikipedia.org/wiki/Flatworm#/media/File:Metagonimus_LifeCycle.gif'
+  },
+
+  {
+    id: 'bresslau1933-temnosewellia',
+    type: 'web',
+    authors: [
+      { last: 'Bresslau' },
+      { last: 'Reisinger' }
+    ],
+    year: 1933,
+    title: 'Flatworm Temnosewellia semperi (Weber, 1890) (phylum Platyhelminthes: order Rhabdocoela: family Temnocephalidae)',
+    site: 'Wisconsin Pressbooks',
+    url: 'https://wisconsin.pressbooks.pub/animalparasitology/chapter/scott-l-gardner-2/'
+  },
+
+  {
+    id: 'brandl-planariatorva',
+    type: 'web',
+    authors: [
+      { last: 'Brandl', first: 'Holger' },
+      { last: 'Moon', first: 'HongKee' },
+      { last: 'Vila-Farré', first: 'Miquel' },
+      { last: 'Liu', first: 'Shang-Yun' },
+      { last: 'Henry', first: 'Ian' },
+      { last: 'Rink', first: 'Jochen C.' }
+    ],
+    year: 't.t.',
+    title: 'Planaria torva',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Planaria_torva.jpg'
+  },
+
+  {
+    id: 'shyamal-fasciola',
+    type: 'web',
+    authors: [
+      { last: 'Shyamal', first: 'L.' }
+    ],
+    year: 't.t.',
+    title: 'Adult of Fasciola hepatica',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Fasciola_hepatica.JPG'
+  },
+
+  {
+    id: 'geeksforgeeks-nematode',
+    type: 'web',
+    authors: [
+      { last: 'GeeksforGeeks' }
+    ],
+    year: 't.t.',
+    title: 'Nematode',
+    site: 'GeeksforGeeks',
+    url: 'https://www.geeksforgeeks.org/biology/nematode/'
+  },
+
+  {
+    id: 'soilbugs-nematodes',
+    type: 'web',
+    authors: [
+      { last: 'Soil Bugs Massey University' }
+    ],
+    year: 't.t.',
+    title: 'Nematodes Gallery',
+    site: 'Soil Bugs Massey University',
+    url: 'https://soilbugs.massey.ac.nz/gallery/nematodes.html'
+  },
+
+  {
+    id: 'osu-plantnematodes',
+    type: 'web',
+    authors: [
+      { last: 'Oregon State University' }
+    ],
+    year: 't.t.',
+    title: 'Plant-Parasitic Nematode Information',
+    site: 'Department of Botany and Plant Pathology, College of Agricultural Sciences',
+    url: 'https://bpp.oregonstate.edu/plant-parasitic-nematode-information'
+  },
+
+  {
+    id: 'cdc-trichostrongylosis',
+    type: 'web',
+    authors: [
+      { last: 'Centers for Disease Control and Prevention (CDC)' }
+    ],
+    year: 't.t.',
+    title: 'Trichostrongylosis - Causal Agents & Life Cycle',
+    site: 'CDC DPDx',
+    url: 'https://www.cdc.gov/dpdx/trichostrongylosis/index.html'
+  },
+
+  {
+    id: 'encyclopediapub-nematoda',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopedia.pub' }
+    ],
+    year: 't.t.',
+    title: 'Komunitas Nematoda dan Kesehatan Tanah',
+    site: 'Encyclopedia.pub',
+    url: 'https://encyclopedia.pub/entry/47443'
+  },
+
+  {
+    id: 'cdc-ascaris',
+    type: 'web',
+    authors: [
+      { last: 'Centers for Disease Control and Prevention (CDC)' }
+    ],
+    year: 't.t.',
+    title: 'Ascaris lumbricoides',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Ascaris_lumbricoides.jpeg'
+  },
+
+  {
+    id: 'cdc-wuchereria',
+    type: 'web',
+    authors: [
+      { last: 'Centers for Disease Control and Prevention (CDC)' }
+    ],
+    year: 't.t.',
+    title: 'Wuchereria bancrofti microfilaria',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Wuchereria_bancrofti_1_DPDX.JPG'
+  },
+
+  {
+    id: 'altun-celegans',
+    type: 'web',
+    authors: [
+      { last: 'Altun', first: 'Zeynep F.' }
+    ],
+    year: 't.t.',
+    title: 'Adult Caenorhabditis elegans',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Adult_Caenorhabditis_elegans.jpg'
+  },
+
+  {
+    id: 'britannica-polychaetes',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Structure of polychaetes',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/annelid'
+  },
+
+  {
+    id: 'wikimedia-regenwurm',
+    type: 'web',
+    authors: [
+      { last: 'Wikimedia Commons' }
+    ],
+    year: 't.t.',
+    title: 'Regenwurm1',
+    site: 'Wikimedia Commons',
+    url: 'https://en.wikipedia.org/wiki/Annelid#/media/File:Regenwurm1.jpg'
+  },
+
+  {
+    id: 'gleok-leech',
+    type: 'web',
+    authors: [
+      { last: 'Gleok' }
+    ],
+    year: 't.t.',
+    title: 'A leech (Hirudo medicinalis) beginning to suck',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Leech_in_the_point.jpg'
+  },
+
+  {
+    id: 'animalfact-earthworm',
+    type: 'web',
+    authors: [
+      { last: 'AnimalFact' }
+    ],
+    year: 't.t.',
+    title: 'Earthworm Life Cycle',
+    site: 'AnimalFact',
+    url: 'https://animalfact.com/earthworm/'
+  },
+
+  {
+    id: 'bulykin-earthworm',
+    type: 'web',
+    authors: [
+      { last: 'Bulykin', first: 'Nikolai' }
+    ],
+    year: 't.t.',
+    title: 'Earthworm in the Baum Grove, Almaty, Kazakhstan',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Алматы,_Роща_Баума,_дождевой_червь.jpg'
+  },
+
+  {
+    id: 'hutem-lumbricus',
+    type: 'web',
+    authors: [
+      { last: 'Hutem', first: 'Conald' }
+    ],
+    year: 't.t.',
+    title: 'Lumbricus terrestris',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Lumbricus_terrestris_(26559560801).jpg'
+  },
+
+  {
+    id: 'baldonado-hirudo',
+    type: 'web',
+    authors: [
+      { last: 'Baldonado', first: 'Evan' }
+    ],
+    year: 't.t.',
+    title: 'European medicinal leech (Hirudo medicinalis) at the California Academy of Sciences',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:European_medicinal_leech_(Hirudo_medicinalis)_at_the_California_Academy_of_Sciences_01.jpg'
+  },
+
+  {
+    id: 'hobgood-spirobranchus',
+    type: 'web',
+    authors: [
+      { last: 'Nhobgood Nick Hobgood' }
+    ],
+    year: 't.t.',
+    title: 'Spirobranchus giganteus (Red and white Christmas tree worm)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Spirobranchus_giganteus_(Red_and_white_Christmas_tree_worm).jpg'
+  },
+
+  {
+    id: 'britannica-molluskbody',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Organizational levels and body diagrams of mollusks',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/mollusk/Natural-history#/media/1/388398/2507'
+  },
+
+  {
+    id: 'britannica-blueringed',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'blue-ringed octopus',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/mollusk/Natural-history'
+  },
+
+  {
+    id: 'biocyclopedia-oysters',
+    type: 'web',
+    authors: [
+      { last: 'Biocyclopedia' }
+    ],
+    year: 't.t.',
+    title: 'Figure 16-33 Life cycle of oysters',
+    site: 'Biocyclopedia',
+    url: 'https://biocyclopedia.com/index/general_zoology/classes_of_molluscs.php'
+  },
+
+  {
+    id: 'biocyclopedia-conus',
+    type: 'web',
+    authors: [
+      { last: 'Biocyclopedia' }
+    ],
+    year: 't.t.',
+    title: 'Figure 16-16 Conus extends its long, wormlike proboscis (A)',
+    site: 'Biocyclopedia',
+    url: 'https://biocyclopedia.com/index/general_zoology/classes_of_molluscs.php'
+  },
+
+  {
+    id: 'biocyclopedia-siphons',
+    type: 'web',
+    authors: [
+      { last: 'Biocyclopedia' }
+    ],
+    year: 't.t.',
+    title: 'Figure 16-28 Adaptations of siphons in bivalves',
+    site: 'Biocyclopedia',
+    url: 'https://biocyclopedia.com/index/general_zoology/classes_of_molluscs.php'
+  },
+
+  {
+    id: 'islandsinthesea-squid',
+    type: 'web',
+    authors: [
+      { last: 'Islands in the Sea 2002' },
+      { last: 'NOAA/OER' }
+    ],
+    year: 't.t.',
+    title: 'Squid by NOAA',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Squid_by_NOAA.jpg'
+  },
+
+  {
+    id: 'dugamay-mytilus',
+    type: 'web',
+    authors: [
+      { last: 'Dugamay', first: 'Olivier' }
+    ],
+    year: 't.t.',
+    title: 'Moules (Mytilus edulis)',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Moules_(Mytilus_edulis)_(Ifremer_00562-67403_-_23060).jpg'
+  },
+
+  {
+    id: 'wikipediaid-arthropoda',
+    type: 'web',
+    authors: [
+      { last: 'Wikipedia bahasa Indonesia' }
+    ],
+    year: 't.t.',
+    title: 'Arthropoda',
+    site: 'Wikipedia bahasa Indonesia, ensiklopedia bebas',
+    url: 'https://id.wikipedia.org/wiki/Arthropoda'
+  },
+
+  {
+    id: 'britannica-copepod',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Copepod',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/arthropod/General-features#/media/1/36943/249979'
+  },
+
+  {
+    id: 'britannica-mosquito',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Mosquito',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/arthropod/General-features'
+  },
+
+  {
+    id: 'britannicakids-monarch',
+    type: 'web',
+    authors: [
+      { last: 'Britannica Kids' }
+    ],
+    year: 't.t.',
+    title: 'Monarch Butterfly life cycle',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://kids.britannica.com/students/assembly/view/342172'
+  },
+
+  {
+    id: 'britannica-millipede',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Millipede',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/arthropod/Muscles-appendages-and-locomotion#/media/1/36943/249978'
+  },
+
+  {
+    id: 'britannica-honeybee',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Western honeybee',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/western-honeybee'
+  },
+
+  {
+    id: 'britannica-pillbug',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Pill bugs',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/pill-bug#/media/1/460507/6928'
+  },
+
+  {
+    id: 'hoyer-metopaulias',
+    type: 'web',
+    authors: [
+      { last: 'Hoyer', first: 'Rich' }
+    ],
+    year: 't.t.',
+    title: 'Metopaulias depressus',
+    site: 'iNaturalist',
+    url: 'https://www.inaturalist.org/taxa/883013-Metopaulias-depressus'
+  },
+
+  {
+    id: 'bubblydiver-starfish',
+    type: 'web',
+    authors: [
+      { last: 'Bubbly Diver' }
+    ],
+    year: 't.t.',
+    title: 'How Do Starfish Eat?',
+    site: 'Bubbly Diver',
+    url: 'https://bubblydiver.com/how-do-starfish-eat/'
+  },
+
+  {
+    id: 'britannica-seaurchin',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Sea urchin',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/echinoderm/Locomotion#/media/1/1/910/250249'
+  },
+
+  {
+    id: 'animalfact-echinoderm',
+    type: 'web',
+    authors: [
+      { last: 'AnimalFact' }
+    ],
+    year: 't.t.',
+    title: 'Echinoderms - Water Vascular System',
+    site: 'AnimalFact',
+    url: 'https://animalfact.com/echinoderm/'
+  },
+
+  {
+    id: 'ifremer-oursin',
+    type: 'web',
+    authors: [
+      { last: 'Ifremer' }
+    ],
+    year: 't.t.',
+    title: 'Oursin accroché à un massif rocheux',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Oursin_accroch%C3%A9_%C3%A0_un_massif_rocheux_(Ifremer_00569-68099).jpg'
+  },
+
+  {
+    id: 'britannica-crownofthorns',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Crown-of-thorns starfish',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/crown-of-thorns-starfish'
+  },
+
+  {
+    id: 'busdraghi-riccio',
+    type: 'web',
+    authors: [
+      { last: 'Busdraghi', first: 'Marco' }
+    ],
+    year: 't.t.',
+    title: 'Riccio Melone a Capo Caccia algherodiving it',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Riccio_Melone_a_Capo_Caccia_adventurediving.it.jpg'
+  },
+
+  {
+    id: 'michonneau-actinopyga',
+    type: 'web',
+    authors: [
+      { last: 'Michonneau', first: 'François' }
+    ],
+    year: 't.t.',
+    title: 'Actinopyga echinites',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Actinopyga_echinites1.jpg'
+  },
+
+  {
+    id: 'jaworski-branchiostoma',
+    type: 'web',
+    authors: [
+      { last: 'Jaworski', first: 'Piotr Michał' },
+      { last: 'PioM' }
+    ],
+    year: 't.t.',
+    title: 'Branchiostoma lanceolatum anatomy scheme',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:BranchiostomaLanceolatum_PioM.svg'
+  },
+
+  {
+    id: 'hobgood-tunicate',
+    type: 'web',
+    authors: [
+      { last: 'Nhobgood Nick Hobgood' }
+    ],
+    year: 't.t.',
+    title: 'Tunicate komodo jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://id.wikipedia.org/wiki/Tunicata#/media/Berkas:Tunicate_komodo.jpg'
+  },
+
+  {
+    id: 'galuzzi-lion',
+    type: 'web',
+    authors: [
+      { last: 'Galuzzi', first: 'Luca' }
+    ],
+    year: 't.t.',
+    title: 'Male Lion and Cub eating a Cape Buffalo in Northern Sabi Sand Game Reserve, South Africa',
+    site: 'Wikimedia Commons',
+    url: 'https://commons.wikimedia.org/wiki/File:Male_Lion_and_Cub_Chitwa_South_Africa_Luca_Galuzzi_2004_edit1.jpg'
+  },
+
+  {
+    id: 'britannica-leopardfrog',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica, Inc.' }
+    ],
+    year: 't.t.',
+    title: 'Life cycle of the leopard frog',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/science/How-Do-Frogs-Breathe'
+  },
+
+  {
+    id: 'britannica-tunicate',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Tunicate',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/tunicate'
+  },
+
+  {
+    id: 'hillewaert-branchiostoma',
+    type: 'web',
+    authors: [
+      { last: 'Hillewaert', first: 'Hans' }
+    ],
+    year: 't.t.',
+    title: 'Branchiostoma lanceolatum.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://en.wikipedia.org/wiki/Branchiostoma'
+  },
+
+  {
+    id: 'dauga-ciona',
+    type: 'web',
+    authors: [
+      { last: 'Dauga', first: 'Delphine' }
+    ],
+    year: 't.t.',
+    title: 'Ciona_robusta.jpg',
+    site: 'Wikimedia Commons',
+    url: 'https://en.wikipedia.org/wiki/Ciona_robusta#/media/File:Ciona_robusta_jpg'
+  },
+
+  {
+    id: 'britannica-greenfrog',
+    type: 'web',
+    authors: [
+      { last: 'Encyclopædia Britannica' }
+    ],
+    year: 't.t.',
+    title: 'Green frog',
+    site: 'Encyclopædia Britannica, Inc.',
+    url: 'https://www.britannica.com/animal/amphibian'
   }
 ];
 
@@ -1709,28 +3861,28 @@ var referenceLibrary = [
   // pada <ol id="citation-list">). Isi = id sumber dari pustaka di atas.
   // Daftar otomatis diurutkan abjad. Halaman tanpa isi tampil kosong.
   var pageReferences = {
-    eubacteria: ['davies2021', 'karasz2022', 'madigan2019', 'parks2018', 'raza2023', 'razin1998', 'sheikh2024'],
-    archaea: ['cezanne2024', 'frohn2022', 'garcia2022', 'garritano2022', 'madigan2019', 'sivabalasarma2025', 'strakova2025', 'woese1977', 'woese1990', 'zaremba2017'],
-    protozoa: ['adl2019', 'antinori2012', 'burki2020', 'urry2021'],
-    algae: ['adl2019', 'archibald2015', 'burki2020', 'field1998', 'urry2021'],
-    'slime-molds': ['adl2019', 'urry2021'],
-    chytridiomycota: ['naranjo2019', 'thome2024', 'vandenwyngaert2022', 'webster2007'],
-    zygomycota: ['gidalishova2023', 'naranjo2019', 'spatafora2016', 'webster2007'],
-    ascomycota: ['coleine2022', 'martin2025', 'naranjo2019', 'webster2007'],
-    basidiomycota: ['faturrahman2024', 'he2022', 'rahmatullah2023', 'webster2007'],
-    bryophyta: ['chen2022', 'clark2018', 'cong2021', 'crandall2007', 'jassey2022', 'linde2021', 'liu2022', 'perera2022', 'riosmelendez2021', 'stanton2021', 'urry2021'],
-    pteridophyta: ['borah2022', 'farrar2022', 'firoozi2025', 'guillen2024', 'kumari2024', 'liu2022', 'perera2022', 'urry2021'],
-    gymnosperms: ['jacobsen2021', 'nigris2021', 'trueba2022', 'urry2021', 'valderrama2024', 'yang2024'],
-    angiosperms: ['jhariya2026', 'urry2021'],
-    porifera: ['diezvives2022', 'pawlik2025', 'rossi2026', 'urry2021', 'mcgrath2017', 'pisani2015', 'king2017'],
-    cnidaria: ['li2024', 'nadir2023', 'urry2021'],
-    platyhelminthes: ['caira2021', 'martinezgonzalez2022', 'martinduran2012', 'urry2021', 'wang2024'],
-    nematoda: ['martinezgonzalez2022', 'urry2021', 'zhang2024', 'zhao2022'],
-    annelida: ['glasby2021', 'purschke2023', 'urry2021', 'zanol2021'],
-    mollusca: ['koshelev2021', 'ravalo2024', 'urry2021', 'xavier2022'],
-    arthropoda: ['benoit2023', 'chandrakumara2023', 'marin2023', 'urry2021', 'sasaki2013'],
-    echinodermata: ['perillo2024', 'purcell2016', 'urry2021', 'deline2020', 'formery2023', 'wilkie2021', 'garciaarraras2010', 'candiacarnevali2006', 'novackgottshall2022', 'udagawa2022'],
-    chordata: ['delsuc2006', 'karaiskou2015', 'urry2021', 'vanni2022', 'jeffery2015', 'gordon2021', 'voskoboynik2007', 'alie2020']
+    eubacteria: ['davies2021', 'karasz2022', 'madigan2019', 'parks2018', 'raza2023', 'razin1998', 'sheikh2024', 'britannica-deadsea', 'ecoddington-binaryfission', 'epa-nitrogencycle', 'britannica-ecoli', 'reeve2010', 'britannica-streptomyces'],
+    archaea: ['cezanne2024', 'frohn2022', 'garcia2022', 'garritano2022', 'madigan2019', 'sivabalasarma2025', 'strakova2025', 'woese1977', 'woese1990', 'zaremba2017', 'britannicakids-archaeacell', 'britannica-midway', 'darekk2-bacteriorhodopsin', 'entropyrider-nitrogen', 'xiangyux-sulfolobus', 'morris2013', 'stanlotter2015', 'pohlschroder2025'],
+    protozoa: ['adl2019', 'antinori2012', 'burki2020', 'urry2021', 'kamble-amoeba', 'gabler1999-monolake', 'taylor-phagocytosis', 'cdc-malarialifecycle', 'solomon2022', 'barfooz-paramecium', 'cdc-melvin-falciparum', 'walkowski-entamoeba'],
+    algae: ['adl2019', 'archibald2015', 'burki2020', 'field1998', 'urry2021', 'sharma2025', 'aquaimages-kelp', 'stoecker2018', 'bogaert2012', 'farsmedia-maharloo', 'seaweednetwork-laminaria', 'seaweednetwork-porphyra', 'seaweednetwork-ulva'],
+    'slime-molds': ['adl2019', 'urry2021', 'tinkertsavalas-comatricha', 'monto-slimemold', 'frankenstoen-physarum', 'zilra-plasmodial', 'marshman-fuligo', 'queller-dictyostelium', 'alharethi2023', 'forestresearch-ramorum'],
+    chytridiomycota: ['naranjo2019', 'thome2024', 'vandenwyngaert2022', 'webster2007', 'bioearthworm-fungi', 'jeronimo2015', 'kagami2014', 'piepenbring-synchytrium', 'daszak1999', 'piepenbring-thalli', 'piepenbring-bdendrobatidis', 'usdaaphis-synchytrium', 'atanasovapancevska2018', 'alchetron-olpidium'],
+    zygomycota: ['gidalishova2023', 'naranjo2019', 'spatafora2016', 'webster2007', 'wikimedia-rhizopusstructure', 'alaswad-lemonmold', 'britannica-rhizopus', 'piepenbring-zygomycota', 'hillewaert-entomophthora', 'abair-pilobolus', 'opiola-mucor', 'wdkeeper-rhizopus'],
+    ascomycota: ['coleine2022', 'martin2025', 'naranjo2019', 'webster2007', 'geeksforgeeks-ascocarp', 'krisp-aleuria', 'piepenbring-lichens', 'piepenbring-erysiphales', 'stephendickson-truffles', 'pilerini-saccharomyces', 'crulina98-penicillium', 'jacquin-claviceps'],
+    basidiomycota: ['faturrahman2024', 'he2022', 'rahmatullah2023', 'webster2007', 'debivort-basidiocarp', 'wikimedia-ramaria', 'larsson-amanita', 'piepenbring-basidiomycota', 'apus-auricularia', 'chris73-champignon', 'archenzo-amanita', 'wikimedia-stemrust'],
+    bryophyta: ['chen2022', 'clark2018', 'cong2021', 'crandall2007', 'jassey2022', 'linde2021', 'liu2022', 'perera2022', 'riosmelendez2021', 'stanton2021', 'urry2021', 'nativeplants-moss9', 'geeksforgeeks-moss', 'read-marchantia', 'britannica-mosslifecycle', 'becker-broommoss', 'monkelbaan-fochteloerveen', 'wikimedia-marchantiapolymorpha', 'berndh-anthoceros'],
+    pteridophyta: ['borah2022', 'farrar2022', 'firoozi2025', 'guillen2024', 'kumari2024', 'liu2022', 'perera2022', 'urry2021', 'biology4isc-pteridophytes', 'fitzgerald-platycerium', 'nicbla-selaginella', 'ziarlak-pteridium', 'merriamwebster-fernlifecycle', 'moller-bamberg', 'rancanciu-helecho', 'delso-equisetum'],
+    gymnosperms: ['jacobsen2021', 'nigris2021', 'trueba2022', 'urry2021', 'valderrama2024', 'yang2024', 'wikimedia-gymnosperms', 'alexkom000-ferrel', 'geeksforgeeks-gymnosperm', 'pinakpani-rishop', 'taypamart-lophophanes', 'bargeron-pinuspalustris', 'fischerplatz-ginkgo', 'ziarlak-cycas'],
+    angiosperms: ['jhariya2026', 'urry2021', 'britannica-eudicot', 'shao-amazon', 'britannica-photoelectron', 'britannica-angiospermlifecycle', 'heilman-potato', 'msth-oryza', 'chaniago-rafflesia', 'wikimedia-dionaea'],
+    porifera: ['diezvives2022', 'pawlik2025', 'rossi2026', 'urry2021', 'mcgrath2017', 'pisani2015', 'king2017', 'britannica-spongeanatomy', 'britannica-multicellularanimal', 'sampoerna-spongerepro', 'rix-spongeloop', 'noaa-staurocalyptus', 'twilightzone-sponges', 'parent-clathrina'],
+    cnidaria: ['li2024', 'nadir2023', 'urry2021', 'britannica-cnidarianforms', 'lainet-greatbarrierreef', 'andamanse-cassiopea', 'animalfact-jellyfish', 'robinson2014', 'delso-xenia', 'vasenin-dendronephthya', 'shiannan-hydra'],
+    platyhelminthes: ['caira2021', 'martinezgonzalez2022', 'martinduran2012', 'urry2021', 'wang2024', 'lumen-platyhelminthes', 'bedolfe-planarian', 'cdc-metagonimus', 'bresslau1933-temnosewellia', 'brandl-planariatorva', 'shyamal-fasciola'],
+    nematoda: ['martinezgonzalez2022', 'urry2021', 'zhang2024', 'zhao2022', 'geeksforgeeks-nematode', 'soilbugs-nematodes', 'osu-plantnematodes', 'cdc-trichostrongylosis', 'encyclopediapub-nematoda', 'cdc-ascaris', 'cdc-wuchereria', 'altun-celegans'],
+    annelida: ['glasby2021', 'purschke2023', 'urry2021', 'zanol2021', 'britannica-polychaetes', 'wikimedia-regenwurm', 'gleok-leech', 'animalfact-earthworm', 'bulykin-earthworm', 'hutem-lumbricus', 'baldonado-hirudo', 'hobgood-spirobranchus'],
+    mollusca: ['koshelev2021', 'ravalo2024', 'urry2021', 'xavier2022', 'britannica-molluskbody', 'britannica-blueringed', 'biocyclopedia-oysters', 'biocyclopedia-conus', 'biocyclopedia-siphons', 'islandsinthesea-squid', 'dugamay-mytilus'],
+    arthropoda: ['benoit2023', 'chandrakumara2023', 'marin2023', 'urry2021', 'sasaki2013', 'wikipediaid-arthropoda', 'britannica-copepod', 'britannica-mosquito', 'britannicakids-monarch', 'britannica-millipede', 'britannica-honeybee', 'britannica-pillbug', 'hoyer-metopaulias'],
+    echinodermata: ['perillo2024', 'purcell2016', 'urry2021', 'deline2020', 'formery2023', 'wilkie2021', 'garciaarraras2010', 'candiacarnevali2006', 'novackgottshall2022', 'udagawa2022', 'bubblydiver-starfish', 'britannica-seaurchin', 'animalfact-echinoderm', 'ifremer-oursin', 'britannica-crownofthorns', 'busdraghi-riccio', 'michonneau-actinopyga'],
+    chordata: ['delsuc2006', 'karaiskou2015', 'urry2021', 'vanni2022', 'jeffery2015', 'gordon2021', 'voskoboynik2007', 'alie2020', 'jaworski-branchiostoma', 'hobgood-tunicate', 'galuzzi-lion', 'britannica-leopardfrog', 'britannica-tunicate', 'hillewaert-branchiostoma', 'dauga-ciona', 'britannica-greenfrog']
   };
 
 
@@ -1800,8 +3952,14 @@ var referenceLibrary = [
   }
 
   // Tautan DOI (dipertahankan di semua gaya) dan bagian opsional
+  // Tautan aktif untuk URL biasa (sumber web)
+  function urlLink(u) {
+    var safe = String(u).replace(/&/g, '&amp;').replace(/"/g, '%22');
+    return '<a href="' + safe + '" target="_blank" rel="noopener">' + safe + '</a>';
+  }
+
   function doiLink(ref) {
-    if (!ref.doi) return '';
+    if (!ref.doi) return ref.url ? ' ' + urlLink(ref.url) : '';
     var url = 'https://doi.org/' + ref.doi;
     return ' <a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
   }
@@ -1832,7 +3990,7 @@ var referenceLibrary = [
       if (ref.type === 'journal') {
         return a + ' (' + ref.year + '). ' + ref.title + '. <em>' + ref.journal + (ref.volume ? ', ' + ref.volume : '') + '</em>' + (ref.issue ? '(' + ref.issue + ')' : '') + withPages(ref, ', ') + '.' + doiLink(ref);
       }
-      return a + ' (' + ref.year + '). ' + ref.title + '. <em>' + ref.site + '</em>. ' + ref.url;
+      return a + ' (' + ref.year + '). ' + ref.title + '. <em>' + ref.site + '</em>. ' + urlLink(ref.url);
     },
     mla: function (ref) {
       var a = authorsMLA(ref.authors);
@@ -1848,7 +4006,7 @@ var referenceLibrary = [
         return a + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.journal + '</em>' + (ref.volume ? ', vol. ' + ref.volume : '') +
           (ref.issue ? ', no. ' + ref.issue : '') + ', ' + ref.year + withPages(ref, ', pp. ') + '.' + doiLink(ref);
       }
-      return a + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.site + '</em>, ' + ref.year + ', ' + ref.url + '.';
+      return a + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.site + '</em>, ' + ref.year + ', ' + urlLink(ref.url) + '.';
     },
     chicago: function (ref) {
       var a = authorsChicago(ref.authors);
@@ -1864,7 +4022,7 @@ var referenceLibrary = [
         return a + '. ' + ref.year + '. &ldquo;' + ref.title + '.&rdquo; <em>' + ref.journal + '</em>' + (ref.volume ? ' ' + ref.volume : '') +
           (ref.issue ? ' (' + ref.issue + ')' : '') + withPages(ref, ': ') + '.' + doiLink(ref);
       }
-      return a + '. ' + ref.year + '. &ldquo;' + ref.title + '.&rdquo; ' + ref.site + '. ' + ref.url + '.';
+      return a + '. ' + ref.year + '. &ldquo;' + ref.title + '.&rdquo; ' + ref.site + '. ' + urlLink(ref.url) + '.';
     },
     ieee: function (ref) {
       var a = authorsIEEE(ref.authors);
@@ -1880,7 +4038,7 @@ var referenceLibrary = [
         return a + ', &ldquo;' + ref.title + ',&rdquo; <em>' + ref.journal + '</em>' + (ref.volume ? ', vol. ' + ref.volume : '') +
           (ref.issue ? ', no. ' + ref.issue : '') + withPages(ref, ', pp. ') + ', ' + ref.year + '.' + doiLink(ref);
       }
-      return a + ', &ldquo;' + ref.title + ',&rdquo; ' + ref.site + ', ' + ref.year + '. [Online]. Available: ' + ref.url;
+      return a + ', &ldquo;' + ref.title + ',&rdquo; ' + ref.site + ', ' + ref.year + '. [Online]. Available: ' + urlLink(ref.url);
     }
   };
 

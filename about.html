@@ -1,274 +1,345 @@
 <!DOCTYPE html>
 <html lang="id">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="BioScope &mdash; platform pembelajaran klasifikasi biologi." name="description"/>
-  <link href="css/style.css" rel="stylesheet"/>
-  <script defer="" src="js/data.js">
-  </script>
-  <script defer="" src="js/main.js">
-  </script>
-  <script defer="" src="js/references.js">
-  </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BioScope: media pembelajaran interaktif untuk melatih kemampuan mengklasifikasikan makhluk hidup.">
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="js/data.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/references.js"></script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <title>
-   Tentang &mdash; BioScope
-  </title>
- </head>
- <body class="">
-    <header class="site-header">
-   <div class="container nav-wrap">
-    <div class="logo-container">
+  <title>Tentang &mdash; BioScope</title>
+
+  <style>
+    /* Gaya khusus halaman Tentang. Memakai variabel warna situs, jadi ikut mode terang/gelap. */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 40px;
+      border: 1px solid var(--line-dark);
+      background: var(--surface);
+    }
+    .about-stat { padding: 22px 24px; border-right: 1px solid var(--line-dark); }
+    .about-stat:last-child { border-right: 0; }
+    .about-stat strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 40px;
+      line-height: 1;
+      color: var(--forest);
+    }
+    .about-stat span {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .about-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+    /* .feature-card bawaan dibatasi 300px; di sini kartu diminta mengisi kolomnya. */
+    .about-feature-grid .feature-card { max-width: none; height: 100%; }
+
+    .about-data-note {
+      margin-top: 24px;
+      padding: 20px 24px;
+      border: 1px solid var(--line-dark);
+      border-left: 4px solid var(--forest);
+      background: var(--surface);
+    }
+    .about-data-note h3 { margin: 0 0 8px; }
+    .about-data-note p { margin: 0 0 10px; color: var(--ink-soft); line-height: 1.7; }
+    .about-data-note p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 900px) {
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .about-stat:nth-child(2) { border-right: 0; }
+      .about-stat:nth-child(-n+2) { border-bottom: 1px solid var(--line-dark); }
+    }
+    @media (max-width: 700px) {
+      .about-feature-grid { grid-template-columns: 1fr; }
+      .about-stat { padding: 18px; }
+      .about-stat strong { font-size: 32px; }
+    }
+  </style>
+</head>
+<body class="">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="logo-container">
         <a href="index.html" class="logo-link">
-            <img src="assets/darklogo.svg" alt="BioScope Logo" class="brand-logo-img logo-light-mode">
-            <img src="assets/lightlogo.svg" alt="BioScope Logo" class="brand-logo-img logo-dark-mode">
+          <img src="assets/darklogo.svg" alt="BioScope Logo" class="brand-logo-img logo-light-mode">
+          <img src="assets/lightlogo.svg" alt="BioScope Logo" class="brand-logo-img logo-dark-mode">
         </a>
-    </div>
-    <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">
-     Menu
-    </button>
-    <nav id="site-nav">
-     <a data-nav="" href="index.html">
-      Home
-     </a>
-     <a data-nav="" href="why-classify.html">
-      Dasar Klasifikasi
-     </a>
-     <a data-nav="" href="monera.html">
-      Materi
-     </a>
-     <a data-nav="" href="progress.html">
-      Progress
-     </a>
-     <a data-nav="" href="classification-challenge.html">
-      Challenge
-     </a>
-     <a data-nav="" href="about.html">
-      Tentang
-     </a>
-    </nav>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti mode terang/gelap">
+      </div>
+      <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">Menu</button>
+      <nav id="site-nav">
+        <a data-nav="" href="index.html">Home</a>
+        <a data-nav="" href="why-classify.html">Dasar Klasifikasi</a>
+        <a data-nav="" href="monera.html">Materi</a>
+        <a data-nav="" href="progress.html">Progress</a>
+        <a data-nav="" href="classification-challenge.html">Challenge</a>
+        <a data-nav="" href="about.html">Tentang</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti mode terang/gelap">
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"></path>
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"></path>
         </svg>
         <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"></path>
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"></path>
         </svg>
-    </button>
-   </div>
+      </button>
+    </div>
   </header>
+
   <main>
-   <section class="chapter-hero">
-    <div class="container narrow">
-     <span class="eyebrow">
-      About BioScope
-     </span>
-     <h1>
-      Belajar klasifikasi dengan alasan, bukan hafalan.
-     </h1>
-     <p class="lede">
-      BioScope adalah prototipe pembelajaran biologi yang menggabungkan pengantar konsep, halaman ensiklopedia, tantangan klasifikasi, quiz, dan progress lokal.
-     </p>
-    </div>
-   </section>
-   <section class="section section-paper">
-    <div class="container two-col">
-     <div>
-      <span class="eyebrow">
-       Mengapa BioScope
-      </span>
-      <h2>
-       Klasifikasi sering dihafal, jarang dipahami
-      </h2>
-     </div>
-     <div class="prose">
-      <p>
-       Banyak siswa mengenal takson lewat urutan nama yang harus diingat, bukan lewat ciri dan alasan di baliknya. Begitu urutan itu lupa, pemahamannya ikut hilang.
-      </p>
-      <p>
-       BioScope dibangun untuk membalik urutan itu. Setiap materi dimulai dari ciri yang bisa diamati, lalu mengarah ke kesimpulan klasifikasi &mdash; supaya jawabannya masuk akal, bukan sekadar diingat.
-      </p>
-     </div>
-    </div>
-   </section>
+    <section class="chapter-hero">
+      <div class="container narrow">
+        <span class="eyebrow">Tentang BioScope</span>
+        <h1>Belajar klasifikasi dengan alasan, bukan hafalan.</h1>
+        <p class="lede">
+          BioScope adalah media pembelajaran interaktif berbasis web untuk melatih kemampuan mengklasifikasikan makhluk hidup, mulai dari konsep dasar dan materi tiap kingdom hingga tantangan klasifikasi dan kuis.
+        </p>
+        <div class="about-stats" id="about-stats">
+          <div class="about-stat"><strong data-stat="kingdom">5</strong><span>Kingdom</span></div>
+          <div class="about-stat"><strong data-stat="filum">22</strong><span>Filum</span></div>
+          <div class="about-stat"><strong data-stat="model">20</strong><span>Model 3D</span></div>
+          <div class="about-stat"><strong data-stat="kuis">30</strong><span>Soal kuis</span></div>
+        </div>
+      </div>
+    </section>
 
-   <section class="section">
-    <div class="container two-col">
-     <div>
-      <span class="eyebrow">
-       Fitur utama
-      </span>
-      <h2>
-       Empat cara belajar, satu alur
-      </h2>
-     </div>
-     <div class="feature-grid">
-      <div class="feature-card">
-       <span class="feature-num">01</span>
-       <h3>Dasar Klasifikasi</h3>
-       <p>Pengantar konsep dan prinsip taksonomi sebelum masuk ke materi tiap kingdom.</p>
-       <a href="why-classify.html" class="text-link">Pelajari dasar &rarr;</a>
+    <section class="section section-paper">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Mengapa BioScope</span>
+          <h2>Klasifikasi sering dihafal, jarang dipahami</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Banyak siswa mengenal takson sebagai deretan nama yang harus dihafal, bukan sebagai hasil penalaran dari ciri-ciri makhluk hidup. Begitu urutannya terlupa, pemahamannya ikut hilang.
+          </p>
+          <p>
+            BioScope membalik urutan itu. Setiap materi dimulai dari ciri yang dapat diamati, lalu mengarah ke kesimpulan klasifikasi, sehingga jawaban yang dipilih punya alasan dan tidak sekadar diingat.
+          </p>
+        </div>
       </div>
-      <div class="feature-card">
-       <span class="feature-num">02</span>
-       <h3>Materi & Ensiklopedia</h3>
-       <p>Halaman per kingdom lengkap dengan model 3D interaktif dan ciri morfologis.</p>
-       <a href="monera.html" class="text-link">Lihat materi &rarr;</a>
-      </div>
-      <div class="feature-card">
-       <span class="feature-num">03</span>
-       <h3>Classification Challenge</h3>
-       <p>Tantangan mengklasifikasikan spesimen berdasarkan ciri &mdash; bukan menghafal nama.</p>
-       <a href="classification-challenge.html" class="text-link">Coba challenge &rarr;</a>
-      </div>
-      <div class="feature-card">
-       <span class="feature-num">04</span>
-       <h3>Progress</h3>
-       <p>Pantau kemajuan belajar, tersimpan otomatis di browser tanpa perlu bikin akun.</p>
-       <a href="progress.html" class="text-link">Cek progress &rarr;</a>
-      </div>
-     </div>
-    </div>
-   </section>
+    </section>
 
-   <section class="section section-paper">
-    <div class="container two-col">
-     <div>
-      <span class="eyebrow">
-       Tim & pembimbing
-      </span>
-      <h2>
-       Siapa di balik BioScope
-      </h2>
-     </div>
-     <div class="prose">
-      <div class="info-card-grid">
-        <div class="info-card">
-          <span class="info-card-label">Penyusun</span>
-          <strong class="info-card-value">Syawali Putra Hafidin</strong>
-          <span class="info-card-desc">24030204121 &middot; Pendidikan Biologi</span>
+    <section class="section" id="alur-belajar">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Alur belajar</span>
+            <h2>Lima langkah dari pre-test sampai post-test</h2>
+          </div>
         </div>
-        <div class="info-card">
-          <span class="info-card-label">Dosen Pembimbing 1</span>
-          <strong class="info-card-value">Dwi Setyo Pratiwi, S.Pd., M.Ed.</strong>
-          <span class="info-card-desc">&nbsp;</span>
-        </div>
-        <div class="info-card">
-          <span class="info-card-label">Dosen Pembimbing 2</span>
-          <strong class="info-card-value">Mochammad Ichsan, S.Si., M.Pd., M.Eng.</strong>
-          <span class="info-card-desc">&nbsp;</span>
-        </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <section class="section">
-    <div class="container two-col">
-     <div>
-      <span class="eyebrow">
-       Tools & teknologi
-      </span>
-      <h2>
-       Dibangun dengan
-      </h2>
-     </div>
-     <div class="prose">
-      <p>
-       BioScope dikembangkan sebagai antarmuka statis tanpa backend, login, maupun database eksternal. Seluruh progres belajar disimpan langsung di <em>localStorage</em> browser pengguna.
-      </p>
-      <div class="info-card-grid">
-        <div class="info-card">
-          <span class="info-card-label">Frontend</span>
-          <strong class="info-card-value">HTML5, CSS3, Vanilla JavaScript</strong>
-          <span class="info-card-desc">Tanpa framework atau library UI eksternal.</span>
-        </div>
-        <div class="info-card">
-          <span class="info-card-label">AI Assistant</span>
-          <strong class="info-card-value">Claude (Anthropic) & ChatGPT (OpenAI)</strong>
-          <span class="info-card-desc">Membantu proses pengembangan kode dan penyusunan konten.</span>
-        </div>
-        <div class="info-card">
-          <span class="info-card-label">Aset Visual</span>
-          <strong class="info-card-value">Sketchfab</strong>
-          <span class="info-card-desc">Model 3D interaktif spesimen pada halaman ensiklopedia.</span>
+        <div class="howto-grid">
+          <div class="howto-step">
+            <span class="howto-badge">1</span>
+            <h3>Kerjakan pre-test</h3>
+            <p>Masukkan kode peserta, lalu kerjakan pre-test sebelum materi terbuka. Belajar dimulai dari kingdom Monera.</p>
+          </div>
+          <div class="howto-step">
+            <span class="howto-badge">2</span>
+            <h3>Pelajari materi tiap filum</h3>
+            <p>Baca materi sampai akhir. Setelah itu Bengkel Klasifikasi untuk filum tersebut terbuka.</p>
+          </div>
+          <div class="howto-step">
+            <span class="howto-badge">3</span>
+            <h3>Capai skor Bengkel 75%</h3>
+            <p>Rata-rata skor Bengkel minimal 75% membuka kingdom berikutnya. Jika belum tercapai, Bengkel dapat diulang.</p>
+          </div>
+          <div class="howto-step">
+            <span class="howto-badge">4</span>
+            <h3>Main Detektif Taksonomi</h3>
+            <p>Selesaikan permainan di tiap filum untuk mendapatkan kartu koleksi yang terkumpul di halaman Challenge.</p>
+          </div>
+          <div class="howto-step">
+            <span class="howto-badge">5</span>
+            <h3>Kerjakan post-test</h3>
+            <p>Setelah seluruh materi sampai Animalia selesai dibaca, post-test terbuka.</p>
+          </div>
         </div>
       </div>
-     </div>
-    </div>
-   </section>
+    </section>
 
-   <section class="section" id="rujukan">
-    <div class="container two-col">
-     <div>
-      <span class="eyebrow">
-       Sumber rujukan
-      </span>
-      <h2>
-       Daftar pustaka
-      </h2>
-     </div>
-     <div class="prose">
-      <div class="cite-style-switch" role="tablist" aria-label="Format sitasi">
-       <button type="button" class="cite-style-btn is-active" data-style="apa">APA 7</button>
-       <button type="button" class="cite-style-btn" data-style="mla">MLA 9</button>
-       <button type="button" class="cite-style-btn" data-style="chicago">Chicago</button>
-       <button type="button" class="cite-style-btn" data-style="ieee">IEEE</button>
+    <section class="section section-paper">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Fitur utama</span>
+            <h2>Empat bagian, satu alur belajar</h2>
+          </div>
+        </div>
+        <div class="about-feature-grid">
+          <div class="feature-card">
+            <span class="feature-num">01</span>
+            <h3>Dasar Klasifikasi</h3>
+            <p>Pengantar konsep dan prinsip taksonomi sebelum masuk ke materi tiap kingdom.</p>
+            <a href="why-classify.html" class="text-link">Pelajari dasar &rarr;</a>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">02</span>
+            <h3>Materi dan Ensiklopedia</h3>
+            <p>Halaman tiap kingdom dan filum berisi ciri morfologis, habitat, nutrisi, reproduksi, peran ekologis, contoh organisme, dan model 3D interaktif.</p>
+            <a href="monera.html" class="text-link">Lihat materi &rarr;</a>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">03</span>
+            <h3>Classification Challenge</h3>
+            <p>Tantangan mengklasifikasikan spesimen berdasarkan ciri, bukan menghafal nama. Kartu koleksi dari Detektif Taksonomi terkumpul di sini.</p>
+            <a href="classification-challenge.html" class="text-link">Coba tantangan &rarr;</a>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">04</span>
+            <h3>Progress</h3>
+            <p>Pantau kemajuan belajar, skor terbaik, dan jumlah percobaan. Datanya tersimpan otomatis di browser tanpa perlu akun.</p>
+            <a href="progress.html" class="text-link">Cek progres &rarr;</a>
+          </div>
+        </div>
       </div>
-      <ul class="citation-list" id="citation-list">
-      </ul>
-     </div>
-    </div>
-   </section>
+    </section>
 
-   <section class="cta-band">
-    <div class="container">
-     <div>
-      <span class="eyebrow">
-       Mulai belajar
-      </span>
-      <h2>
-       Siap coba BioScope?
-      </h2>
-     </div>
-     <div class="actions">
-      <a href="why-classify.html" class="btn btn-primary">
-       Mulai dari Dasar Klasifikasi
-      </a>
-      <a href="monera.html" class="btn btn-secondary">
-       Jelajahi Materi
-      </a>
-     </div>
-    </div>
-   </section>
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Penyusun dan pembimbing</span>
+          <h2>Siapa di balik BioScope</h2>
+        </div>
+        <div class="prose">
+          <div class="info-card-grid">
+            <div class="info-card">
+              <span class="info-card-label">Penyusun</span>
+              <strong class="info-card-value">Syawali Putra Hafidin</strong>
+              <span class="info-card-desc">NIM 24030204121 &middot; S1 Pendidikan Biologi</span>
+            </div>
+            <div class="info-card">
+              <span class="info-card-label">Dosen Pembimbing 1</span>
+              <strong class="info-card-value">Dwi Setyo Pratiwi, S.Pd., M.Ed.</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-card-label">Dosen Pembimbing 2</span>
+              <strong class="info-card-value">Mochammad Ichsan, S.Si., M.Pd., M.Eng.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Teknologi dan data</span>
+          <h2>Dibangun dengan apa, dan data apa yang tersimpan</h2>
+        </div>
+        <div class="prose">
+          <div class="info-card-grid">
+            <div class="info-card">
+              <span class="info-card-label">Frontend</span>
+              <strong class="info-card-value">HTML5, CSS3, JavaScript murni</strong>
+              <span class="info-card-desc">Tanpa framework atau pustaka UI eksternal.</span>
+            </div>
+            <div class="info-card">
+              <span class="info-card-label">Asisten AI</span>
+              <strong class="info-card-value">Claude (Anthropic) dan ChatGPT (OpenAI)</strong>
+              <span class="info-card-desc">Membantu pengembangan kode dan penyusunan konten.</span>
+            </div>
+            <div class="info-card">
+              <span class="info-card-label">Aset visual</span>
+              <strong class="info-card-value">Sketchfab</strong>
+              <span class="info-card-desc">Model 3D interaktif spesimen pada halaman materi.</span>
+            </div>
+          </div>
+
+          <div class="about-data-note">
+            <h3>Data dan privasi</h3>
+            <p>
+              Progres belajar, skor, dan jumlah percobaan disimpan di <em>localStorage</em> browser pada perangkat yang kamu pakai, sehingga dapat hilang jika data browser dihapus atau jika berpindah perangkat.
+            </p>
+            <p>
+              Untuk keperluan penelitian ini, kode peserta, bagian materi yang dibuka, dan lama belajar aktif juga dikirim ke server peneliti. BioScope tidak meminta akun, kata sandi, maupun alamat email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rujukan">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Sumber rujukan</span>
+          <h2>Daftar pustaka</h2>
+        </div>
+        <div class="prose">
+          <div class="cite-style-switch" role="tablist" aria-label="Format sitasi">
+            <button type="button" class="cite-style-btn is-active" data-style="apa">APA 7</button>
+            <button type="button" class="cite-style-btn" data-style="mla">MLA 9</button>
+            <button type="button" class="cite-style-btn" data-style="chicago">Chicago</button>
+            <button type="button" class="cite-style-btn" data-style="ieee">IEEE</button>
+          </div>
+          <ul class="citation-list" id="citation-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div>
+          <span class="eyebrow">Mulai belajar</span>
+          <h2>Siap mencoba BioScope?</h2>
+        </div>
+        <div class="actions">
+          <a href="why-classify.html" class="btn btn-primary">Mulai dari Dasar Klasifikasi</a>
+          <a href="monera.html" class="btn btn-secondary">Jelajahi Materi</a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer">
-   <div class="container footer-grid">
-    <div class="footer-logo">
+    <div class="container footer-grid">
+      <div class="footer-logo">
         <a href="index.html" class="logo-link">
-            <img src="assets/logo.svg" alt="BioScope Logo" class="brand-logo-img">
+          <img src="assets/logo.svg" alt="BioScope Logo" class="brand-logo-img">
         </a>
-     <p>
-      Belajar klasifikasi biologis melalui konsep, ensiklopedia, dan tantangan penalaran.
-     </p>
-    </div>  
-    <div>
-     <span class="eyebrow">
-      BIOSCOPE
-     </span>
-     <p>
-        <a href="about.html">TENTANG BIOSCOPE</a>
-     </p>
-     <p>
-        KONTAK
-     </p>
-     <p>
-        KREDIT
-     </p>
+        <p>Belajar klasifikasi biologis melalui konsep, ensiklopedia, dan tantangan penalaran.</p>
+      </div>
+      <div>
+        <span class="eyebrow">BIOSCOPE</span>
+        <p><a href="about.html">TENTANG BIOSCOPE</a></p>
+        <p><a href="contact.html">KONTAK</a></p>
+        <p>KREDIT</p>
+      </div>
     </div>
-   </div>
   </footer>
- </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof BIOSCOPE_DATA === "undefined") { return; }
+      var kingdoms = Object.values(BIOSCOPE_DATA.kingdoms || {});
+      var divisions = Object.values(BIOSCOPE_DATA.divisions || {});
+      var counts = {
+        kingdom: kingdoms.length,
+        filum: divisions.length,
+        model: divisions.filter(function (d) { return d.embedUrl; }).length,
+        kuis: kingdoms.reduce(function (n, k) { return n + (k.quiz ? k.quiz.length : 0); }, 0)
+      };
+      Object.keys(counts).forEach(function (key) {
+        var el = document.querySelector('[data-stat="' + key + '"]');
+        if (el && counts[key] > 0) { el.textContent = counts[key]; }
+      });
+    });
+  </script>
+</body>
 </html>

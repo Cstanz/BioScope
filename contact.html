@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontak BioScope: hubungi peneliti untuk pertanyaan atau kendala saat belajar.">
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="js/data.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/references.js"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Kontak &mdash; BioScope</title>
+
+  <style>
+    /* Gaya khusus halaman kontak; memakai variabel warna situs sehingga ikut mode terang/gelap. */
+    .contact-label { display: block; margin-bottom: 8px; }
+    .contact-value { overflow-wrap: anywhere; }
+    .contact-tips { margin: 16px 0 0; padding-left: 20px; color: var(--ink-soft); line-height: 1.7; }
+    .contact-faq details {
+      margin-bottom: 10px;
+      padding: 16px 20px;
+      border: 1px solid var(--line-dark);
+      background: var(--surface);
+    }
+    .contact-faq summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+    .contact-faq details p { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.7; }
+    .contact-meta { margin: 0; padding: 0; list-style: none; line-height: 1.9; color: var(--ink-soft); }
+    .contact-meta strong { color: var(--ink); }
+  </style>
+
+  <!-- ISI DI SINI. Kosongkan (jadikan "") untuk menyembunyikan kartu yang tidak dipakai. -->
+  <script>
+    window.BIOSCOPE_CONTACT = {
+      email: "Newwop14@gmail.com",  
+      whatsapp: "6289654226439",     
+      instagram: "syawaliputrahafidin",    
+      github: "https://github.com/Cstanz/BioScope/issues",
+      emailSubject: "Pertanyaan tentang BioScope",
+      whatsappText: "Halo, saya ingin bertanya tentang BioScope."
+    };
+  </script>
+</head>
+<body class="">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <img src="assets/darklogo.svg" alt="BioScope Logo" class="brand-logo-img logo-light-mode">
+          <img src="assets/lightlogo.svg" alt="BioScope Logo" class="brand-logo-img logo-dark-mode">
+        </a>
+      </div>
+      <button aria-controls="site-nav" aria-expanded="false" class="menu-toggle">Menu</button>
+      <nav id="site-nav">
+        <a data-nav="" href="index.html">Home</a>
+        <a data-nav="" href="why-classify.html">Dasar Klasifikasi</a>
+        <a data-nav="" href="monera.html">Materi</a>
+        <a data-nav="" href="progress.html">Progress</a>
+        <a data-nav="" href="classification-challenge.html">Challenge</a>
+        <a data-nav="" href="about.html">Tentang</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti mode terang/gelap">
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="chapter-hero">
+      <div class="container narrow">
+        <span class="eyebrow">Kontak</span>
+        <h1>Ada pertanyaan atau kendala? Hubungi peneliti.</h1>
+        <p class="lede">
+          Kalau ada materi yang kurang jelas, fitur yang tidak berjalan, atau saran perbaikan untuk BioScope, kirim saja pesan lewat salah satu jalur di bawah ini.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-paper">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Hubungi langsung</span>
+          <h2>Pilih jalur yang paling nyaman</h2>
+          <ul class="contact-tips">
+            <li>Sebutkan halaman yang bermasalah.</li>
+            <li>Tulis perangkat dan browser yang dipakai.</li>
+            <li>Lampirkan tangkapan layar bila ada.</li>
+            <li>Sertakan kode peserta, bukan data pribadi lain.</li>
+          </ul>
+        </div>
+        <div class="feature-grid" id="contact-cards"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Sebelum menghubungi</span>
+          <h2>Kendala yang sering terjadi</h2>
+        </div>
+        <div class="contact-faq">
+          <details>
+            <summary>Kingdom atau materi berikutnya terkunci</summary>
+            <p>Belajarlah berurutan: Monera, Protista, Fungi, Plantae, lalu Animalia. Kingdom berikutnya terbuka setelah semua materi kingdom sebelumnya dibaca sampai akhir dan rata-rata skor Bengkel Klasifikasinya mencapai batas yang ditentukan. Jika skor belum cukup, ulangi Bengkel-nya.</p>
+          </details>
+          <details>
+            <summary>Halaman materi langsung membawa saya ke pre-test</summary>
+            <p>Pre-test wajib dikerjakan sekali sebelum membuka materi. Masukkan kode peserta yang sudah dibagikan, kerjakan soalnya sampai selesai, lalu materi akan terbuka.</p>
+          </details>
+          <details>
+            <summary>Model 3D atau gambar tidak muncul</summary>
+            <p>Model 3D membutuhkan koneksi internet yang stabil. Muat ulang halaman dengan menekan Ctrl + Shift + R (di HP, tutup lalu buka kembali tabnya). Jika masih gagal, kirim tangkapan layar dan nama halamannya.</p>
+          </details>
+          <details>
+            <summary>Progres belajar saya hilang</summary>
+            <p>Progres tersimpan di browser perangkat yang dipakai, bukan di akun. Progres bisa hilang jika memakai mode penyamaran, menghapus data browser, atau berpindah perangkat dan browser. Gunakan perangkat dan browser yang sama selama belajar.</p>
+          </details>
+          <details>
+            <summary>Post-test belum terbuka</summary>
+            <p>Post-test terbuka setelah pre-test selesai dan seluruh materi, sampai filum terakhir pada kingdom Animalia, dibaca sampai akhir. Cek halaman Progress untuk melihat bagian yang belum selesai.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Tentang peneliti</span>
+          <h2>Siapa di balik BioScope</h2>
+        </div>
+        <ul class="contact-meta">
+          <li><strong>Peneliti:</strong> Syawali Putra Hafidin</li>
+          <li><strong>Program studi:</strong> S1 Pendidikan Biologi, Fakultas Matematika dan Ilmu Pengetahuan Alam</li>
+          <li><strong>Institusi:</strong> Universitas Negeri Surabaya</li>
+          <li><strong>Tahun:</strong> 2026</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-logo">
+        <a href="index.html" class="logo-link">
+          <img src="assets/logo.svg" alt="BioScope Logo" class="brand-logo-img">
+        </a>
+        <p>Belajar klasifikasi biologis melalui konsep, ensiklopedia, dan tantangan penalaran.</p>
+      </div>
+      <div>
+        <span class="eyebrow">BIOSCOPE</span>
+        <p><a href="about.html">TENTANG BIOSCOPE</a></p>
+        <p><a href="contact.html">KONTAK</a></p>
+        <p>KREDIT</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Membuat kartu kontak dari BIOSCOPE_CONTACT (hanya yang terisi).
+    document.addEventListener("DOMContentLoaded", function () {
+      var cfg = window.BIOSCOPE_CONTACT || {};
+      var box = document.getElementById("contact-cards");
+      if (!box) { return; }
+
+      function card(label, value, note, href, cta, external) {
+        var el = document.createElement("div");
+        el.className = "feature-card";
+
+        var l = document.createElement("span");
+        l.className = "eyebrow contact-label";
+        l.textContent = label;
+
+        var h = document.createElement("h3");
+        h.className = "contact-value";
+        h.textContent = value;
+
+        var p = document.createElement("p");
+        p.textContent = note;
+
+        var a = document.createElement("a");
+        a.className = "text-link";
+        a.href = href;
+        a.textContent = cta + " \u2192";
+        if (external) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+
+        el.append(l, h, p, a);
+        box.appendChild(el);
+      }
+
+      var email = String(cfg.email || "").trim();
+      if (email) {
+        card("Email", email, "Cocok untuk pertanyaan yang butuh penjelasan atau lampiran.",
+          "mailto:" + email + "?subject=" + encodeURIComponent(cfg.emailSubject || ""), "Kirim email", false);
+      }
+
+      var wa = String(cfg.whatsapp || "").replace(/\D/g, "");
+      if (wa) {
+        if (wa.charAt(0) === "0") { wa = "62" + wa.slice(1); }
+        card("WhatsApp", "+" + wa, "Cocok untuk kendala singkat yang perlu dijawab cepat.",
+          "https://wa.me/" + wa + "?text=" + encodeURIComponent(cfg.whatsappText || ""), "Chat WhatsApp", true);
+      }
+
+      var ig = String(cfg.instagram || "").replace(/^@/, "").trim();
+      if (ig) {
+        card("Instagram", "@" + ig, "Untuk pesan singkat atau informasi pembaruan.",
+          "https://instagram.com/" + encodeURIComponent(ig), "Buka Instagram", true);
+      }
+
+      var gh = String(cfg.github || "").trim();
+      if (gh) {
+        card("GitHub", "Laporkan masalah", "Temukan bug atau punya saran fitur? Tulis di halaman Issues repositori BioScope.",
+          gh, "Buka GitHub Issues", true);
+      }
+
+      if (!box.children.length) {
+        console.warn("BIOSCOPE_CONTACT belum diisi: isi bagian <script> di bagian atas contact.html.");
+      }
+    });
+  </script>
+</body>
+</html>

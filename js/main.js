@@ -3026,7 +3026,7 @@ function setupScrollTopButton() {
 // materi (semua divisi/filum) selesai dibaca. Mode admin tidak terkena gerbang.
 const ALUR_PARTICIPANT_KEY = "bioscopeParticipant";
 const ALUR_WAJIB_WHY = false; // true = halaman Dasar Klasifikasi juga harus dibuka dulu
-const ALUR_BEBAS = ["", "index.html", "about.html", "progress.html", "pretest.html", "posttest.html", "admin.html", "dashboard.html"];
+const ALUR_BEBAS = ["", "index.html", "about.html", "progress.html", "pretest.html", "posttest.html", "admin.html", "dashboard.html", "contact.html"];
 
 function alurBase() {
   const s = [...document.scripts].find((x) => /(^|\/)js\/main\.js(\?|$)/.test(x.getAttribute("src") || ""));
