@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 :root {
   --ink: #18362b;
   --ink-soft: #486158;
@@ -18,8 +18,9 @@
   --success: #286044;
 
   --max-width: 1180px;
-  --sans: "Karla", system-ui, -apple-system, sans-serif;
-  --serif: "Newsreader", "Georgia", serif;
+  --sans: "Open Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  /* Nama --serif dipertahankan agar tidak mengubah ratusan baris; isinya kini font judul (Poppins). */
+  --serif: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 
   --radius: 4px;
   --radius-pill: 999px;
@@ -4500,5 +4501,323 @@ legend {
 
   .division-nav-actions .btn-primary {
     margin-left: 0;
+  }
+}
+
+/* ---------- Halaman Progres (jelas untuk siswa dan peninjau) ---------- */
+.pg-next {
+  max-width: 640px;
+  margin-top: 32px;
+  padding: 24px 26px;
+  border: 1px solid var(--line-dark);
+  border-left: 4px solid var(--forest);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.pg-next h2 {
+  margin: 6px 0 8px;
+  font-size: 28px;
+}
+
+.pg-next p {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.pg-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pg-stat {
+  padding: 28px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.pg-stat span {
+  display: block;
+  margin-bottom: 14px;
+  color: #cbd9d1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pg-stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.pg-stat p {
+  margin: 14px 0 0;
+  color: #cbd9d1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pg-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.pg-chip {
+  padding: 16px 18px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.pg-chip span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pg-chip strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.pg-chip-ok strong { color: var(--forest); }
+.pg-chip-ok strong::before { content: "\2713\00a0"; }
+.pg-chip-lock strong { color: var(--muted); }
+
+.pg-list {
+  display: grid;
+  gap: 14px;
+}
+
+.pg-row {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.pg-row-terkunci {
+  opacity: 0.82;
+}
+
+.pg-row-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pg-row h3 {
+  margin: 3px 0 0;
+  font-size: 26px;
+}
+
+.pg-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pg-pill-dikuasai {
+  border-color: var(--forest);
+  background: var(--sage-light);
+  color: var(--forest-dark);
+}
+
+.pg-pill-ulangi {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pg-lock {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pg-meter-wrap {
+  margin-top: 16px;
+}
+
+.pg-meter-wrap p,
+.pg-score {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.pg-meter-wrap strong,
+.pg-score strong {
+  color: var(--ink);
+}
+
+.pg-score span {
+  color: var(--muted);
+}
+
+.pg-detail {
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.pg-detail summary,
+.pg-advanced summary {
+  cursor: pointer;
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pg-detail table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.pg-detail th,
+.pg-detail td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.pg-detail th {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pg-detail td {
+  color: var(--ink-soft);
+}
+
+.pg-detail td.is-done {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.pg-advanced {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.pg-advanced p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pg-advanced .danger {
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .pg-stats,
+  .pg-chips {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .pg-next {
+    padding: 20px;
+  }
+
+  .pg-row {
+    padding: 18px;
+  }
+
+  .pg-row-head {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pg-stat strong {
+    font-size: 44px;
+  }
+}
+
+/* ---------- Tipografi: judul Poppins, teks Open Sans ---------- */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Label kecil di atas judul: huruf biasa, tidak serba kapital dan renggang. */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.stat strong,
+.pg-stat strong {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Font sans lebih lebar dan lebih tebal daripada serif lama, jadi judul besar diperkecil. */
+.chapter-hero h1,
+.ency-hero h1 {
+  font-size: clamp(32px, 4.8vw, 54px);
+  line-height: 1.15;
+}
+
+.hero-home h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.1;
+}
+
+.locked-page h1 {
+  font-size: clamp(32px, 5vw, 44px);
+}
+
+.section-heading h2,
+.cta-band h2,
+.editorial-section h2 {
+  font-size: clamp(26px, 3.2vw, 34px);
+  line-height: 1.25;
+}
+
+@media (max-width: 800px) {
+  .hero-home h1 {
+    font-size: 42px;
+  }
+
+  .chapter-hero h1,
+  .ency-hero h1 {
+    font-size: 32px;
   }
 }

@@ -2807,6 +2807,126 @@ function renderQuiz(kingdomId) {
 
 // ---------- Progress page ----------
 
+// ---------- Halaman Progres ----------
+
+// Status tiap kingdom dalam satu istilah yang konsisten dengan aturan membuka kingdom:
+// "dikuasai" = semua materi dibaca, semua Bengkel selesai, dan skor >= MASTERY_THRESHOLD.
+function kingdomState(kingdomId, progress) {
+  const k = progress.kingdoms[kingdomId];
+  const score = kingdomScore(k);
+  const unlocked = adminAwareUnlock(kingdomId, progress);
+  const mastered = k.completed && score !== null && score >= MASTERY_THRESHOLD;
+  let key = "belum";
+
+  if (!unlocked) key = "terkunci";
+  else if (mastered) key = "dikuasai";
+  else if (k.completed) key = "ulangi";
+  else if (k.progress > 0) key = "berjalan";
+
+  return { k, score, unlocked, mastered, key };
+}
+
+const PROGRES_LABEL = {
+  terkunci: "Terkunci",
+  belum: "Belum dimulai",
+  berjalan: "Sedang dikerjakan",
+  ulangi: "Skor belum cukup",
+  dikuasai: "Dikuasai",
+};
+
+// Menentukan satu langkah berikutnya yang paling jelas untuk siswa.
+function progressNextStep(progress) {
+  const base = "";
+  const order = Object.keys(BIOSCOPE_DATA.kingdoms);
+
+  if (!isAdminMode() && !alurTestDone("pre")) {
+    return {
+      title: "Kerjakan pre-test dulu",
+      text: "Materi terbuka setelah pre-test selesai.",
+      href: `${base}pretest.html`,
+      cta: "Ke pre-test",
+    };
+  }
+
+  for (const kingdomId of order) {
+    const st = kingdomState(kingdomId, progress);
+    const kingdom = BIOSCOPE_DATA.kingdoms[kingdomId];
+
+    if (!st.unlocked || st.mastered) continue;
+
+    for (const divisionId of kingdom.division_ids) {
+      const d = st.k.divisions[divisionId];
+      const label = BIOSCOPE_DATA.divisions[divisionId].label;
+
+      if (!d.materialViewed) {
+        return {
+          title: `Baca materi ${label}`,
+          text: `Kingdom ${kingdom.name}. Baca sampai akhir agar Bengkel-nya terbuka.`,
+          href: `divisions/${divisionId}.html`,
+          cta: "Buka materi",
+        };
+      }
+    }
+
+    for (const divisionId of kingdom.division_ids) {
+      const d = st.k.divisions[divisionId];
+      const label = BIOSCOPE_DATA.divisions[divisionId].label;
+
+      if (!d.challengeCompleted) {
+        return {
+          title: `Kerjakan Bengkel ${label}`,
+          text: `Kingdom ${kingdom.name}. Skor Bengkel menentukan kingdom berikutnya terbuka.`,
+          href: `${kingdomId}.html`,
+          cta: "Ke Bengkel",
+        };
+      }
+    }
+
+    // Semua kegiatan selesai tetapi skor belum mencapai ambang.
+    const lowest = kingdom.division_ids
+      .map((id) => ({ id, acc: st.k.divisions[id].bestAccuracy }))
+      .filter((x) => typeof x.acc === "number")
+      .sort((a, b) => a.acc - b.acc)[0];
+    const nextId = order[order.indexOf(kingdomId) + 1];
+    const nextName = nextId ? BIOSCOPE_DATA.kingdoms[nextId].name : "post-test";
+    const lowText = lowest
+      ? ` Mulai dari ${BIOSCOPE_DATA.divisions[lowest.id].label} (${lowest.acc}%).`
+      : "";
+
+    return {
+      title: `Ulangi Bengkel ${kingdom.name}`,
+      text: `Skor ${st.score}%, perlu minimal ${MASTERY_THRESHOLD}% untuk membuka ${nextName}.${lowText}`,
+      href: `${kingdomId}.html`,
+      cta: "Ulangi Bengkel",
+    };
+  }
+
+  if (alurTestDone("post")) {
+    return {
+      title: "Seluruh alur sudah selesai",
+      text: "Terima kasih sudah belajar dengan BioScope. Kamu tetap bisa membuka materi kapan saja.",
+      href: "monera.html",
+      cta: "Buka materi",
+    };
+  }
+
+  if (alurMateriSelesai()) {
+    return {
+      title: "Kerjakan post-test",
+      text: "Semua materi sudah dibaca, jadi post-test sudah terbuka.",
+      href: "posttest.html",
+      cta: "Ke post-test",
+    };
+  }
+
+  return {
+    title: "Selesaikan membaca semua materi",
+    text: "Post-test terbuka setelah semua filum dibaca sampai akhir.",
+    href: "monera.html",
+    cta: "Buka materi",
+  };
+}
+
 function renderProgress() {
   const container = document.querySelector("#progress-app");
 
@@ -2816,24 +2936,47 @@ function renderProgress() {
 
   const progress = getProgress();
   const kingdoms = Object.entries(BIOSCOPE_DATA.kingdoms);
-  const progressValues = kingdoms.map(
-    ([id]) => progress.kingdoms[id].progress,
+  const states = Object.fromEntries(
+    kingdoms.map(([id]) => [id, kingdomState(id, progress)]),
   );
-  const averageProgress = Math.round(
-    progressValues.reduce((total, value) => total + value, 0) /
-      progressValues.length,
-  );
+
+  // Progres keseluruhan = kegiatan selesai / seluruh kegiatan (materi + Bengkel tiap filum).
+  let doneActivities = 0;
+  let totalActivities = 0;
+  let readDivisions = 0;
+  let totalDivisions = 0;
+
+  kingdoms.forEach(([id]) => {
+    Object.values(progress.kingdoms[id].divisions).forEach((d) => {
+      totalActivities += 2;
+      totalDivisions += 1;
+      doneActivities += (d.materialViewed ? 1 : 0) + (d.challengeCompleted ? 1 : 0);
+      readDivisions += d.materialViewed ? 1 : 0;
+    });
+  });
+
+  const overall = totalActivities ? Math.round((doneActivities / totalActivities) * 100) : 0;
+
   // Rata-rata skor hanya dari kingdom yang sudah punya hasil evaluasi;
   // kingdom yang belum dikerjakan tidak ikut menarik rata-rata ke 0%.
-  const scoredKingdoms = kingdoms
-    .map(([id]) => kingdomScore(progress.kingdoms[id]))
+  const scored = kingdoms
+    .map(([id]) => states[id].score)
     .filter((value) => value !== null);
-  const averageScore = scoredKingdoms.length
-    ? Math.round(scoredKingdoms.reduce((a, b) => a + b, 0) / scoredKingdoms.length)
+  const averageScore = scored.length
+    ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length)
     : null;
-  const completedKingdoms = kingdoms.filter(
-    ([id]) => progress.kingdoms[id].completed,
-  ).length;
+  const masteredCount = kingdoms.filter(([id]) => states[id].mastered).length;
+
+  const preDone = alurTestDone("pre");
+  const postDone = alurTestDone("post");
+  const postOpen = preDone && !postDone && alurMateriSelesai();
+  const next = progressNextStep(progress);
+
+  const chip = (label, value, state) => `
+    <div class="pg-chip pg-chip-${state}">
+      <span>${label}</span>
+      <strong>${value}</strong>
+    </div>`;
 
   container.innerHTML = `
     <section class="chapter-hero">
@@ -2841,85 +2984,163 @@ function renderProgress() {
         <span class="eyebrow">Perjalanan belajarmu</span>
         <h1>Progres</h1>
         <p class="lede">
-          Progres mengukur seberapa banyak kegiatan belajar yang sudah kamu selesaikan
-          (membaca materi + menyelesaikan bengkel). Skor mengukur seberapa tepat
-          jawabanmu di bengkel. Keduanya tidak sama.
+          Progres menunjukkan seberapa banyak yang sudah kamu kerjakan. Skor menunjukkan
+          seberapa tepat jawabanmu di Bengkel. Keduanya berbeda.
         </p>
+
+        <div class="pg-next">
+          <span class="eyebrow">Langkah berikutnya</span>
+          <h2>${next.title}</h2>
+          <p>${next.text}</p>
+          <a class="btn btn-primary" href="${next.href}">${next.cta} &rarr;</a>
+        </div>
       </div>
     </section>
 
     <section class="section section-dark">
-      <div class="container stats-grid">
-        <div class="stat">
+      <div class="container pg-stats">
+        <div class="pg-stat">
           <span>Progres keseluruhan</span>
-          <strong>${averageProgress}%</strong>
+          <strong>${overall}%</strong>
+          <p>${doneActivities} dari ${totalActivities} kegiatan selesai (membaca materi dan mengerjakan Bengkel di tiap filum).</p>
         </div>
-        <div class="stat">
+        <div class="pg-stat">
           <span>Rata-rata skor</span>
           <strong>${averageScore === null ? "&mdash;" : `${averageScore}%`}</strong>
+          <p>${
+            averageScore === null
+              ? "Muncul setelah kamu menyelesaikan Bengkel pertama."
+              : "Rata-rata ketepatan Bengkel (dan kuis) pada kingdom yang sudah dinilai."
+          }</p>
         </div>
-        <div class="stat">
-          <span>Kerajaan tuntas (progres 100%)</span>
-          <strong>${completedKingdoms}/${kingdoms.length}</strong>
+        <div class="pg-stat">
+          <span>Kingdom dikuasai</span>
+          <strong>${masteredCount}/${kingdoms.length}</strong>
+          <p>Kingdom yang semua materi dan Bengkel-nya selesai dengan skor minimal ${MASTERY_THRESHOLD}%.</p>
         </div>
       </div>
     </section>
 
     <section class="section section-paper">
       <div class="container">
-        <div class="progress-list">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Status alur</span>
+            <h2>Dari pre-test sampai post-test</h2>
+          </div>
+        </div>
+        <div class="pg-chips">
+          ${chip("Pre-test", preDone ? "Selesai" : "Belum dikerjakan", preDone ? "ok" : "todo")}
+          ${chip("Materi dibaca", `${readDivisions} dari ${totalDivisions} filum`, readDivisions === totalDivisions ? "ok" : "todo")}
+          ${chip(
+            "Post-test",
+            postDone ? "Selesai" : postOpen ? "Sudah terbuka" : "Terbuka setelah semua materi dibaca",
+            postDone ? "ok" : postOpen ? "open" : "lock",
+          )}
+        </div>
+
+        <div class="section-heading" style="margin-top: 48px;">
+          <div>
+            <span class="eyebrow">Per kingdom</span>
+            <h2>Kemajuan tiap kingdom</h2>
+          </div>
+        </div>
+
+        <div class="pg-list">
           ${kingdoms
-            .map(([id, kingdom]) => {
-              const kingdomProgress = progress.kingdoms[id];
-              const unlocked = adminAwareUnlock(id, progress);
-              const rowScore = kingdomScore(kingdomProgress);
-              const stage =
-                kingdomProgress.progress === 0
-                  ? "Belum dikerjakan"
-                  : kingdomProgress.progress < 100
-                    ? "Sedang dikerjakan"
-                    : "Tuntas";
-              const scoreLabel =
-                rowScore === null
-                  ? `${stage} · belum dinilai`
-                  : `${stage} · skor ${rowScore}%`;
+            .map(([id, kingdom], index) => {
+              const st = states[id];
+              const divisions = Object.entries(st.k.divisions);
+              const acts = divisions.length * 2;
+              const done = divisions.reduce(
+                (n, [, d]) => n + (d.materialViewed ? 1 : 0) + (d.challengeCompleted ? 1 : 0),
+                0,
+              );
+              const prevId = Object.keys(BIOSCOPE_DATA.kingdoms)[index - 1];
+              const prevName = prevId ? BIOSCOPE_DATA.kingdoms[prevId].name : "";
+              const scoreText =
+                st.score === null
+                  ? "Belum dinilai"
+                  : `Skor ${st.score}%`;
+              const scoreNote =
+                st.key === "ulangi"
+                  ? `perlu minimal ${MASTERY_THRESHOLD}%`
+                  : st.key === "terkunci"
+                    ? ""
+                    : st.score === null
+                      ? "dari Bengkel"
+                      : `batas ${MASTERY_THRESHOLD}%`;
+              const lockNote =
+                st.key === "terkunci"
+                  ? `<p class="pg-lock">Terbuka setelah ${prevName} dikuasai (semua materi dan Bengkel selesai, skor minimal ${MASTERY_THRESHOLD}%).</p>`
+                  : "";
 
               return `
-                <article class="progress-row">
-                  <div>
-                    <span class="eyebrow">${kingdom.eyebrow}</span>
-                    <h3>${kingdom.name}</h3>
-                    <p>
-                      ${unlocked ? stage : "Terkunci"}
-                    </p>
+                <article class="pg-row pg-row-${st.key}">
+                  <div class="pg-row-head">
+                    <div>
+                      <span class="eyebrow">${kingdom.eyebrow}</span>
+                      <h3>${kingdom.name}</h3>
+                    </div>
+                    <span class="pg-pill pg-pill-${st.key}">${PROGRES_LABEL[st.key]}</span>
                   </div>
 
-                  <div class="progress-meter">
-                    <span style="width: ${kingdomProgress.progress}%"></span>
+                  ${lockNote}
+
+                  <div class="pg-meter-wrap">
+                    <div class="progress-meter" aria-hidden="true"><span style="width: ${st.k.progress}%"></span></div>
+                    <p><strong>${st.k.progress}%</strong> &middot; ${done} dari ${acts} kegiatan</p>
                   </div>
 
-                  <strong>${kingdomProgress.progress}%</strong>
-                  <span class="score-badge">
-                    ${scoreLabel}
-                  </span>
+                  <p class="pg-score"><strong>${scoreText}</strong>${scoreNote ? ` <span>(${scoreNote})</span>` : ""}</p>
+
+                  <details class="pg-detail">
+                    <summary>Rincian per filum</summary>
+                    <table>
+                      <thead><tr><th>Filum</th><th>Materi</th><th>Bengkel</th></tr></thead>
+                      <tbody>
+                        ${divisions
+                          .map(([divisionId, d]) => {
+                            const label = BIOSCOPE_DATA.divisions[divisionId].label;
+                            const bengkel = d.challengeCompleted
+                              ? typeof d.bestAccuracy === "number"
+                                ? `Selesai, ${d.bestAccuracy}%`
+                                : "Selesai"
+                              : "Belum";
+                            return `<tr>
+                              <td>${label}</td>
+                              <td class="${d.materialViewed ? "is-done" : ""}">${d.materialViewed ? "Dibaca" : "Belum"}</td>
+                              <td class="${d.challengeCompleted ? "is-done" : ""}">${bengkel}</td>
+                            </tr>`;
+                          })
+                          .join("")}
+                      </tbody>
+                    </table>
+                  </details>
                 </article>
               `;
             })
             .join("")}
         </div>
 
-        <button id="reset-progress" class="btn btn-secondary danger">
-          Reset Progres
-        </button>
-        <p class="meta" style="margin-top: 10px;">
-          Menghapus semua progress dan score belajarmu. Tindakan ini tidak bisa dibatalkan.
-        </p>
+        <details class="pg-advanced">
+          <summary>Opsi lanjutan</summary>
+          <p>
+            Menghapus semua progres dan skor belajar yang tersimpan di browser ini.
+            Tindakan ini tidak bisa dibatalkan.
+          </p>
+          <button id="reset-progress" class="btn btn-secondary danger" type="button">
+            Hapus progres di browser ini
+          </button>
+        </details>
       </div>
     </section>
   `;
 
   document.querySelector("#reset-progress").addEventListener("click", () => {
-    const confirmed = window.confirm("Reset semua progress dan score?");
+    const confirmed = window.confirm(
+      "Hapus semua progres dan skor di browser ini? Tindakan ini tidak bisa dibatalkan.",
+    );
 
     if (confirmed) {
       localStorage.removeItem(STORE_KEY);

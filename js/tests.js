@@ -2,8 +2,8 @@
    - status: ganti "draft" menjadi "tervalidasi" setelah validasi ahli selesai.
    - version: naikkan setiap kali isi soal berubah (disimpan bersama tiap jawaban). */
 window.BIOSCOPE_TESTS = {
- "version": "draft-1",
- "status": "draft",
+ "version": "v1",
+ "status": "tervalidasi",
  "pre": {
   "title": "Pre-test",
   "items": [
@@ -83,11 +83,11 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "C",
-      "text": "Tipe sel (ada/tidaknya struktur pembatas membran internal)"
+      "text": "Ada atau tidaknya membran inti pada sel"
      },
      {
       "id": "D",
-      "text": "Jenis zat penyusun dinding sel"
+      "text": "Ada atau tidaknya dinding sel pada sel"
      }
     ],
     "intro": [
@@ -136,7 +136,7 @@ window.BIOSCOPE_TESTS = {
     "options": [
      {
       "id": "A",
-      "text": "Protista mirip hewan"
+      "text": "Protista"
      },
      {
       "id": "B",
@@ -144,15 +144,15 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "C",
-      "text": "Monera"
+      "text": "Plantae"
      },
      {
       "id": "D",
-      "text": "Plantae"
+      "text": "Animalia"
      }
     ],
     "question": [
-     "Dina mengamati sampel air kolam di bawah mikroskop dan menemukan organisme bersel tunggal yang bergerak menggunakan silia, memiliki inti sel, dan tidak berdinding sel. Berdasarkan pengamatan tersebut, organisme yang ditemukan Dina kemungkinan besar termasuk kelompok..."
+     "Dina mengamati sampel air kolam di bawah mikroskop dan menemukan organisme bersel tunggal yang bergerak menggunakan silia, memiliki inti sel, dan tidak berdinding sel. Berdasarkan pengamatan tersebut, organisme yang ditemukan Dina kemungkinan besar termasuk kingdom..."
     ]
    },
    {
@@ -196,11 +196,11 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "C",
-      "text": "Struktur bunga yang sama dan keturunan yang subur menunjukkan keduanya satu spesies, dengan perbedaan daun akibat lingkungan"
+      "text": "Struktur bunga yang sama dan keturunan yang subur menunjukkan keduanya satu spesies yang bervariasi"
      },
      {
       "id": "D",
-      "text": "Bentuk daun paling tepat dijadikan dasar utama karena paling mudah diamati"
+      "text": "Bentuk daun paling tepat dijadikan dasar utama pengelompokan karena paling mudah diamati"
      }
     ],
     "question": [
@@ -214,23 +214,23 @@ window.BIOSCOPE_TESTS = {
     "options": [
      {
       "id": "A",
-      "text": "Kunci dikotomi disusun berdasarkan ukuran organisme dari yang terkecil hingga terbesar"
+      "text": "disusun berdasarkan ukuran organisme dari yang terkecil hingga terbesar"
      },
      {
       "id": "B",
-      "text": "Kunci dikotomi menggunakan nama ilmiah sebagai langkah pertama identifikasi"
+      "text": "memakai nama ilmiah sebagai langkah pertama identifikasi"
      },
      {
       "id": "C",
-      "text": "Kunci dikotomi menyajikan seluruh ciri organisme dalam satu tabel perbandingan"
+      "text": "menyajikan seluruh ciri organisme dalam satu tabel perbandingan"
      },
      {
       "id": "D",
-      "text": "Kunci dikotomi menyajikan dua pilihan ciri yang saling berlawanan pada setiap tahap"
+      "text": "menyajikan dua pilihan ciri yang saling berlawanan pada setiap tahap"
      }
     ],
     "question": [
-     "Ciri khas yang membedakan kunci dikotomi dari daftar deskripsi ciri organisme adalah..."
+     "Kunci dikotomi berbeda dari daftar deskripsi ciri organisme karena kunci dikotomi..."
     ]
    },
    {
@@ -261,8 +261,8 @@ window.BIOSCOPE_TESTS = {
     "steps": [
      "1a. Tidak memiliki sayap → lanjut ke 2",
      "1b. Memiliki sayap → lanjut ke 3",
-     "2a. Tubuh terbagi 3 bagian → Semut",
-     "2b. Tubuh terbagi 2 bagian → Laba-laba",
+     "2a. Memiliki pinggang sempit di antara dada dan perut → Semut",
+     "2b. Tidak memiliki pinggang sempit, tubuh pipih → Kutu busuk",
      "3a. Sayap depan keras seperti cangkang → Kumbang",
      "3b. Sayap depan lunak → lanjut ke 4",
      "4a. Memiliki satu pasang sayap → Lalat",
@@ -274,7 +274,7 @@ window.BIOSCOPE_TESTS = {
    },
    {
     "id": "pre-08",
-    "level": "C5",
+    "level": "C6",
     "key": "B",
     "options": [
      {
@@ -283,19 +283,19 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "B",
-      "text": "1a. Berambut → kucing; 1b. Tidak berambut → lanjut ke 2; 2a. Berbulu → merpati; 2b. Tidak berbulu → lanjut ke 3; 3a. Bersirip dan berinsang → ikan mas; 3b. Berkaki empat dan berkulit lembap → katak"
+      "text": "1a. Berambut → kucing; 1b. Tidak berambut → lanjut ke 2; 2a. Berbulu → merpati; 2b. Tidak berbulu → lanjut ke 3; 3a. Bersirip → ikan mas; 3b. Tidak bersirip, berkaki empat → katak"
      },
      {
       "id": "C",
-      "text": "1a. Hidup di air → lanjut ke 2; 1b. Hidup di darat → lanjut ke 3; 2a. Bersirip → ikan mas; 2b. Tidak bersirip → katak; 3a. Berambut → kucing; 3b. Dapat terbang → merpati"
+      "text": "1a. Hidup di air → ikan mas atau katak; 1b. Hidup di darat → kucing atau merpati"
      },
      {
       "id": "D",
-      "text": "1a. Berukuran besar → kucing; 1b. Berukuran kecil → lanjut ke 2; 2a. Dapat terbang → merpati; 2b. Tidak dapat terbang → lanjut ke 3; 3a. Hidup di air → ikan mas; 3b. Hidup di darat → katak"
+      "text": "1a. Berambut → kucing; 1b. Tidak berambut → lanjut ke 2; 2a. Berbulu → merpati; 2b. Tidak berbulu → lanjut ke 3; 3a. Bersirip → ikan mas; 3b. Berukuran kecil → katak"
      }
     ],
     "question": [
-     "Seorang mahasiswa akan menyusun kunci dikotomi untuk membedakan empat hewan: kucing, merpati, ikan mas, dan katak. Rancangan kunci yang paling tepat, yaitu setiap tahap memakai ciri yang konsisten dengan pilihan berlawanan dan setiap hewan berakhir pada satu hasil, adalah..."
+     "Seorang mahasiswa akan menyusun kunci dikotomi untuk membedakan empat hewan: kucing, merpati, ikan mas, dan katak. Rancangan kunci yang paling tepat, yaitu setiap tahap memakai ciri objektif yang saling berlawanan dan setiap hewan berakhir pada satu hasil, adalah..."
     ]
    },
    {
@@ -439,7 +439,7 @@ window.BIOSCOPE_TESTS = {
      }
     ],
     "intro": [
-     "Perhatikan tabel berikut."
+     "Perhatikan tabel di bawah ini"
     ],
     "table": [
      [
@@ -492,15 +492,15 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "C",
-      "text": "Monera"
+      "text": "Animalia"
      },
      {
       "id": "D",
-      "text": "Protista mirip tumbuhan"
+      "text": "Protista"
      }
     ],
     "question": [
-     "Raka mengamati sampel air sawah di bawah mikroskop dan menemukan organisme bersel tunggal yang bergerak dengan flagela, memiliki inti sel, berklorofil, dan tidak berdinding sel. Berdasarkan pengamatan tersebut, organisme yang ditemukan Raka kemungkinan besar termasuk kelompok..."
+     "Raka mengamati sampel air sawah di bawah mikroskop dan menemukan organisme bersel tunggal yang bergerak dengan flagela, memiliki inti sel, berklorofil, dan tidak berdinding sel. Berdasarkan pengamatan tersebut, organisme yang ditemukan Raka kemungkinan besar termasuk kingdom..."
     ]
    },
    {
@@ -540,15 +540,15 @@ window.BIOSCOPE_TESTS = {
      },
      {
       "id": "B",
-      "text": "Pola sisik yang sama dan keturunan yang subur menunjukkan keduanya satu spesies, dengan perbedaan tubuh akibat lingkungan"
+      "text": "Pola sisik yang sama dan keturunan yang subur menunjukkan keduanya satu spesies yang bervariasi"
      },
      {
       "id": "C",
-      "text": "Perbedaan tempat hidup yang jelas menunjukkan keduanya tidak berasal dari satu nenek moyang"
+      "text": "Perbedaan tempat hidup menunjukkan keduanya tidak berasal dari satu nenek moyang"
      },
      {
       "id": "D",
-      "text": "Bentuk tubuh paling tepat dijadikan dasar pemisahan karena paling mudah diamati dan dibandingkan"
+      "text": "Bentuk tubuh paling tepat dijadikan dasar pemisahan karena paling mudah diamati"
      }
     ],
     "question": [
@@ -562,19 +562,19 @@ window.BIOSCOPE_TESTS = {
     "options": [
      {
       "id": "A",
-      "text": "Menelusuri identitas organisme lewat pilihan ciri berpasangan hingga satu hasil"
+      "text": "Menelusuri identitas organisme melalui pilihan ciri berpasangan hingga satu nama"
      },
      {
       "id": "B",
-      "text": "Menguraikan seluruh ciri organisme dalam satu paragraf deskripsi panjang"
+      "text": "Menguraikan seluruh ciri organisme dalam satu paragraf deskripsi yang panjang"
      },
      {
       "id": "C",
-      "text": "Mengurutkan organisme dari yang berukuran terkecil sampai terbesar"
+      "text": "Mengurutkan organisme dari yang berukuran terkecil sampai yang terbesar"
      },
      {
       "id": "D",
-      "text": "Menetapkan nama ilmiah organisme berdasarkan tempat ditemukannya"
+      "text": "Menetapkan nama ilmiah organisme berdasarkan lokasi organisme tersebut ditemukan"
      }
     ],
     "question": [
@@ -620,12 +620,12 @@ window.BIOSCOPE_TESTS = {
    },
    {
     "id": "post-08",
-    "level": "C5",
+    "level": "C6",
     "key": "C",
     "options": [
      {
       "id": "A",
-      "text": "1a. Berukuran besar → ular; 1b. Berukuran kecil → lanjut ke 2; 2a. Berkaki → lanjut ke 3; 2b. Tidak berkaki → cacing tanah; 3a. Berkaki enam → belalang; 3b. Berkaki delapan → laba-laba"
+      "text": "1a. Berkaki → lanjut ke 2; 1b. Tidak berkaki → ular atau cacing tanah; 2a. Berkaki enam → belalang; 2b. Berkaki delapan → laba-laba"
      },
      {
       "id": "B",
@@ -641,7 +641,7 @@ window.BIOSCOPE_TESTS = {
      }
     ],
     "question": [
-     "Seorang mahasiswa akan menyusun kunci dikotomi untuk membedakan empat hewan: belalang, laba-laba, ular, dan cacing tanah. Rancangan kunci yang paling tepat, yaitu setiap tahap memakai ciri yang konsisten dengan pilihan berlawanan dan setiap hewan berakhir pada satu hasil, adalah..."
+     "Seorang mahasiswa akan menyusun kunci dikotomi untuk membedakan empat hewan: belalang, laba-laba, ular, dan cacing tanah. Rancangan kunci yang paling tepat, yaitu setiap tahap memakai ciri objektif yang saling berlawanan dan setiap hewan berakhir pada satu hasil, adalah..."
     ]
    },
    {
@@ -673,23 +673,23 @@ window.BIOSCOPE_TESTS = {
    {
     "id": "post-10",
     "level": "C5",
-    "key": "C",
+    "key": "B",
     "options": [
      {
       "id": "A",
-      "text": "Hidup di lingkungan yang berkadar garam sangat tinggi"
+      "text": "Memiliki ribosom sebagai tempat berlangsungnya sintesis protein"
      },
      {
       "id": "B",
-      "text": "Dinding sel tidak mengandung peptidoglikan"
+      "text": "Membran sel tersusun dari lipid bercabang dengan ikatan eter"
      },
      {
       "id": "C",
-      "text": "Lipid membran sel berikatan eter dan berantai bercabang"
+      "text": "Berukuran sangat kecil dan tersusun atas satu sel"
      },
      {
       "id": "D",
-      "text": "Tidak memiliki membran inti"
+      "text": "Tidak memiliki membran inti yang membungkus materi genetik"
      }
     ],
     "question": [

@@ -8,7 +8,7 @@
 
   // ---------- Pengaturan yang perlu kamu isi ----------
   const CONFIG = {
-    contact: "[isi kontak peneliti]",          // contoh: email atau WhatsApp peneliti
+    contact: '<a href="https://wa.me/6289654226439" target="_blank" rel="noopener">WhatsApp 0896-5422-6439</a>',   // kontak peneliti (tampil di lembar persetujuan)
     instruksiPre: "Pre-test ini mengukur pemahaman awalmu sebelum belajar di BioScope. Tidak ada nilai yang ditampilkan dan tidak ada jawaban benar-salah yang diberitahukan sekarang.",
     instruksiPost: "Post-test ini mengukur pemahamanmu setelah belajar di BioScope. Kerjakan sendiri tanpa membuka materi."
   };
@@ -207,8 +207,6 @@
       ${JENIS === "post" ? `<p>Skor post-test: <strong>${res.score} dari ${res.total}</strong>.</p>` : `<p>Pre-test selesai. Hasilnya tidak ditampilkan sekarang.</p>`}
       <div class="tes-actions">${next}</div></div>`);
   }
-
-  // ---------- Alat uji coba (hanya lewat URL) ----------
   const q = new URLSearchParams(location.search);
   if (q.has("reset") && confirm("Hapus semua data tes di perangkat ini (hanya untuk uji coba)?")) {
     Object.keys(localStorage).filter(k => /^bioscopeTest|^bioscopeParticipant$|^bioscopeResponses$/.test(k)).forEach(k => localStorage.removeItem(k));
