@@ -4821,3 +4821,84 @@ h3 {
     font-size: 32px;
   }
 }
+
+/* =========================================================
+   REVISI KETERBACAAN — materi divisi jadi satu kolom
+   (ditaruh paling bawah supaya menimpa aturan 3 kolom di atas)
+   ========================================================= */
+
+.ency-columns {
+  grid-template-columns: 1fr;
+  width: min(calc(100% - 48px), 720px);
+  margin-inline: auto;
+  gap: 0;
+}
+
+/* Tiap "kolom" lama jadi bagian vertikal, dipisah garis tipis */
+.ency-col {
+  gap: 44px;
+  padding-block: 56px;
+}
+
+.ency-col + .ency-col {
+  border-top: 1px solid var(--line);
+}
+
+.ency-block h2 {
+  font-size: 32px;
+  margin: 8px 0 20px;
+}
+
+.ency-block p {
+  font-size: 17px;
+  line-height: 1.85;
+  margin-bottom: 1.15em;
+}
+
+.ency-block p:last-child {
+  margin-bottom: 0;
+}
+
+.ency-quotes li,
+.ency-steps li,
+.ency-col .ecology-col li {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Gambar materi (figure.ency-slot dari renderSectionFigure) */
+.ency-slot {
+  margin: 0 0 28px;
+}
+
+.ency-slot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ency-slot figcaption:not(.ency-slot-file) {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.55;
+}
+
+/* Istilah berglosarium di dalam paragraf materi */
+.ency-block .term-tag {
+  cursor: help;
+  border-bottom: 1px dashed var(--accent);
+}
+
+@media (max-width: 700px) {
+  .ency-columns {
+    width: min(calc(100% - 28px), 720px);
+  }
+
+  .ency-block p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}

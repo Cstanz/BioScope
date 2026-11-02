@@ -288,6 +288,66 @@ const TAXONOMY_GLOSSARY = {
   "sel tunggal": "Organisme yang seluruh tubuhnya hanya terdiri dari satu sel saja (uniseluler).",
 };
 
+// ---------- Glosarium istilah materi (tooltip otomatis di paragraf materi) ----------
+// Tiap istilah di bawah akan otomatis diberi garis putus-putus + tooltip pada
+// kemunculan PERTAMA-nya di halaman materi. Tambah istilah baru cukup dengan
+// menambah satu baris "kunci huruf kecil": "definisi singkat".
+Object.assign(TAXONOMY_GLOSSARY, {
+  nukleoid: "Wilayah di dalam sel prokariotik tempat materi genetik (DNA) berada, tanpa dibungkus membran inti.",
+  kokus: "Bakteri berbentuk bulat.",
+  basil: "Bakteri berbentuk batang.",
+  spiral: "Bakteri berbentuk melengkung atau berpilin.",
+  flagela: "Struktur berbentuk cambuk yang diputar untuk menggerakkan sel bakteri.",
+  pili: "Benang-benang tipis di permukaan sel bakteri, dipakai untuk menempel pada permukaan atau sel lain.",
+  kemoorganotrof: "Organisme yang mendapat energi dari mengoksidasi senyawa organik, misalnya gula.",
+  kemolitotrof: "Organisme yang mendapat energi dari mengoksidasi senyawa anorganik, misalnya H\u2082S atau NH\u2084\u207a.",
+  fototrof: "Organisme yang mendapat energi dari cahaya.",
+  "fototrof anoksigenik": "Fototrof yang melakukan fotosintesis tanpa menghasilkan oksigen.",
+  "produsen primer": "Organisme yang membuat bahan organik dari CO\u2082, sehingga menjadi dasar rantai makanan.",
+  "fiksasi nitrogen": "Perubahan gas nitrogen (N\u2082) dari udara menjadi bentuk yang bisa dipakai tumbuhan.",
+  nitrifikasi: "Perubahan amonium menjadi nitrit lalu nitrat oleh bakteri tanah.",
+  denitrifikasi: "Perubahan nitrat kembali menjadi gas nitrogen yang dilepas ke atmosfer.",
+  metanogen: "Mikroba penghasil gas metana (CH\u2084) di lingkungan tanpa oksigen.",
+  karboksisom: "Struktur berselubung protein pada sianobakteri yang menampung enzim RubisCO untuk mengikat CO\u2082.",
+  sianobakteri: "Bakteri fotosintetik yang menghasilkan oksigen.",
+});
+
+function highlightGlossaryTerms() {
+  const root = document.querySelector(".ency-columns");
+  if (!root) return;
+
+  const terms = Object.keys(TAXONOMY_GLOSSARY).sort((a, b) => b.length - a.length);
+
+  // Satu istilah = satu kemunculan pertama di seluruh halaman materi.
+  terms.forEach((term) => {
+    const safe = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const pattern = new RegExp("(?<![\\p{L}])" + safe + "(?![\\p{L}])", "iu");
+
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) =>
+        n.parentElement.closest(".ency-block p") &&
+        !n.parentElement.closest("a, .term-tag, [data-term]")
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT,
+    });
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const match = pattern.exec(node.nodeValue);
+      if (!match) continue;
+
+      const hit = node.splitText(match.index);
+      hit.splitText(match[0].length);
+      const span = document.createElement("span");
+      span.className = "term-tag";
+      span.dataset.term = term;
+      span.textContent = hit.nodeValue;
+      hit.replaceWith(span);
+      break;
+    }
+  });
+}
+
 function setupTermTooltips() {
   let activeTooltip = null;
 
@@ -1249,7 +1309,7 @@ function buildEditorialSections(division) {
     {
       key: "struktur",
       eyebrow: "Struktur tubuh",
-      heading: "Struktur & morfologi",
+      heading: "Struktur dan morfologi",
       body: division.body
         ? `<p>${division.body}</p>${
             division.morphologyProfile
@@ -1261,7 +1321,7 @@ function buildEditorialSections(division) {
     {
       key: "habitat",
       eyebrow: "Habitat",
-      heading: "Habitat & distribusi",
+      heading: "Habitat dan distribusi",
       body: division.habitat
         ? `<p>${division.habitat}</p>${
             division.habitatProfile
@@ -1273,7 +1333,7 @@ function buildEditorialSections(division) {
     {
       key: "nutrisi",
       eyebrow: "Cara hidup",
-      heading: "Nutrisi & cara hidup",
+      heading: "Nutrisi dan cara hidup",
       body: division.nutrition ? `<p>${division.nutrition}</p>` : "",
     },
     {
@@ -3404,6 +3464,7 @@ function init() {
   renderKingdomCards();
   renderKingdomPage();
   initDivisionPage();
+  highlightGlossaryTerms();
   renderProgress();
   renderGlobalChallenges();
   renderDichotomousKey();
