@@ -749,6 +749,7 @@ function renderKingdomPage() {
         </div>
         <div class="bengkel-tabs" data-bengkel-tabs style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"></div>
         <div class="challenge-card" data-challenge></div>
+        <div class="kingdom-next" data-kingdom-next></div>
       </div>
     </section>
 
@@ -756,6 +757,83 @@ function renderKingdomPage() {
   `;
 
   setupBengkelTabs(kingdomId);
+  setupKingdomNext(kingdomId);
+}
+
+// Tombol "Lanjut ke kingdom berikutnya" di bawah Bengkel. Aktif otomatis setelah
+// syarat penguasaan terpenuhi (aturan yang sama dengan kingdomUnlocked): semua
+// materi dibaca, semua Bengkel selesai, dan skor rata-rata >= MASTERY_THRESHOLD.
+function setupKingdomNext(kingdomId) {
+  const box = document.querySelector("[data-kingdom-next]");
+  if (!box) {
+    return;
+  }
+
+  const draw = () => {
+    box.innerHTML = buildKingdomNext(kingdomId);
+  };
+
+  draw();
+  document.addEventListener("bioscope:progress", draw);
+}
+
+function buildKingdomNext(kingdomId) {
+  const kingdom = BIOSCOPE_DATA.kingdoms[kingdomId];
+  const progress = getProgress();
+  const kp = progress.kingdoms[kingdomId];
+  const divisions = Object.values(kp.divisions);
+  const total = divisions.length;
+  const read = divisions.filter((d) => d.materialViewed).length;
+  const done = divisions.filter((d) => d.challengeCompleted).length;
+  const score = kingdomScore(kp);
+  const scoreOk = score !== null && score >= MASTERY_THRESHOLD;
+
+  const order = Object.keys(BIOSCOPE_DATA.kingdoms);
+  const nextId = order[order.indexOf(kingdomId) + 1] || null;
+
+  let unlocked;
+  let href;
+  let label;
+  if (nextId) {
+    unlocked = adminAwareUnlock(nextId, progress);
+    href = `${nextId}.html`;
+    label = `Lanjut ke kingdom ${BIOSCOPE_DATA.kingdoms[nextId].name} →`;
+  } else {
+    unlocked = isAdminMode() || alurMateriSelesai();
+    href = "posttest.html";
+    label = "Lanjut ke Post-test →";
+  }
+
+  const item = (ok, text) =>
+    `<li class="${ok ? "is-met" : ""}"><span aria-hidden="true">${ok ? "✓" : "○"}</span> ${text}</li>`;
+
+  const action = unlocked
+    ? `<a class="btn btn-primary" href="${href}">${label}</a>`
+    : `<button type="button" class="btn btn-primary" disabled aria-disabled="true">${nextId ? `Kingdom ${BIOSCOPE_DATA.kingdoms[nextId].name} masih terkunci` : "Post-test masih terkunci"}</button>`;
+
+  const title = unlocked
+    ? `Syarat terpenuhi. ${nextId ? "Kingdom berikutnya sudah terbuka!" : "Post-test sudah terbuka!"}`
+    : "Syarat untuk lanjut";
+
+  const note = !unlocked && kp.completed && !scoreOk
+    ? `<p class="kingdom-next-note">Semua Bengkel sudah selesai, tetapi skor belum mencapai ${MASTERY_THRESHOLD}%. Ulangi Bengkel untuk menaikkan skor.</p>`
+    : "";
+
+  return `
+    <div class="kingdom-next-card ${unlocked ? "is-unlocked" : "is-locked"}" role="region" aria-label="Lanjut ke kingdom berikutnya">
+      <div class="kingdom-next-info">
+        <span class="eyebrow">${kingdom.name}</span>
+        <h3>${title}</h3>
+        <ul class="kingdom-next-list">
+          ${item(read === total, `Semua materi dibaca (${read}/${total})`)}
+          ${item(done === total, `Semua Bengkel selesai (${done}/${total})`)}
+          ${item(scoreOk, `Skor rata-rata minimal ${MASTERY_THRESHOLD}% (skor kamu: ${score === null ? "belum ada" : `${score}%`})`)}
+        </ul>
+        ${note}
+      </div>
+      <div class="kingdom-next-action">${action}</div>
+    </div>
+  `;
 }
 
 // Tab Bengkel Klasifikasi: satu tab per kelompok (filum/divisi/domain) di kingdom ini.
