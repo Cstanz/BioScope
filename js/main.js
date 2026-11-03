@@ -2003,6 +2003,34 @@ function renderMcqChallenge(container, division, divisionId) {
 
   let mcqWrong = 0;
 
+  const lockMcq = () => {
+    document
+      .querySelectorAll("#challenge-form input, #challenge-form button")
+      .forEach((el) => {
+        el.disabled = true;
+      });
+  };
+
+  const savedMcq = getProgress().kingdoms[division.kingdom]?.divisions[divisionId];
+  if (
+    !isAdminMode() &&
+    savedMcq &&
+    savedMcq.challengeCompleted &&
+    typeof savedMcq.bestAccuracy === "number" &&
+    savedMcq.bestAccuracy >= MASTERY_THRESHOLD
+  ) {
+    const right = [...document.querySelectorAll('#challenge-form input[name="answer"]')].find(
+      (input) => input.value === challenge.answer,
+    );
+    if (right) {
+      right.checked = true;
+    }
+    const feedback = document.querySelector("#challenge-feedback");
+    feedback.className = "feedback correct";
+    feedback.innerHTML = `<strong>Sudah selesai.</strong> ${challenge.explanation}`;
+    lockMcq();
+  }
+
   document.querySelector("#challenge-form").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -2020,7 +2048,11 @@ function renderMcqChallenge(container, division, divisionId) {
     `;
 
     if (correct) {
-      markChallenge(division.kingdom, divisionId, Math.max(40, 100 - mcqWrong * 30));
+      const mcqScore = Math.max(40, 100 - mcqWrong * 30);
+      markChallenge(division.kingdom, divisionId, mcqScore);
+      if (!isAdminMode() && mcqScore >= MASTERY_THRESHOLD) {
+        lockMcq();
+      }
     }
   });
 }
@@ -2417,6 +2449,7 @@ function renderClassificationWorkbench(container, division, divisionId) {
         // Nilai: 100 dikurangi 10 per salah letak, minimal 50 (selesai tetap dapat kredit).
         const accuracy = Math.max(50, 100 - wrongCount * 10);
         markChallenge(division.kingdom, divisionId, accuracy);
+        const lockedNow = !isAdminMode() && accuracy >= MASTERY_THRESHOLD;
         completeTime.textContent = `Waktu kamu: ${formatMatchTime(elapsedSeconds)}.`;
         completeStats.textContent = wrongCount
           ? `Ketepatan: ${accuracy}% (${wrongCount} kali salah letak).`
@@ -2424,6 +2457,9 @@ function renderClassificationWorkbench(container, division, divisionId) {
         root.querySelectorAll(".match-chip[data-decoy]").forEach(revealDecoy);
         completePanel.hidden = false;
         completePanel.classList.add("is-visible");
+        if (lockedNow) {
+          lockBoard();
+        }
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         completePanel.scrollIntoView({
           behavior: reduceMotion ? "auto" : "smooth",
@@ -2615,6 +2651,86 @@ function renderClassificationWorkbench(container, division, divisionId) {
   completePanel
     .querySelector("[data-match-reset]")
     .addEventListener("click", teardownAndRestart);
+
+  // ---- Papan terkunci: jawaban sudah benar & skor memenuhi syarat ----
+  // Kartu tidak bisa diseret lagi dan tombol Ulangi dihilangkan. Kalau skor
+  // belum mencapai MASTERY_THRESHOLD, Bengkel tetap bisa diulang.
+
+  function lockBoard() {
+    root.classList.add("is-solved");
+    root
+      .querySelectorAll("[data-match-reset-early], [data-match-reset]")
+      .forEach((btn) => {
+        btn.hidden = true;
+        btn.style.display = "none";
+      });
+    root.querySelectorAll(".match-chip").forEach((chip) => {
+      chip.disabled = true;
+    });
+    root.querySelectorAll(".match-slot-drop").forEach((el) => {
+      el.removeAttribute("tabindex");
+      el.setAttribute("aria-disabled", "true");
+      el.classList.remove("is-droppable");
+    });
+    if (!completePanel.querySelector(".match-locked-note")) {
+      completePanel.insertAdjacentHTML(
+        "beforeend",
+        '<p class="match-locked-note">Jawaban sudah dikunci karena skormu memenuhi syarat, jadi Bengkel ini tidak bisa dikerjakan ulang.</p>',
+      );
+    }
+  }
+
+  function restoreSolved(best) {
+    pairs.forEach((pair) => {
+      const slotEl = root.querySelector(`.match-slot[data-slot="${pair.id}"]`);
+      const dropEl = slotEl.querySelector(".match-slot-drop");
+      dropEl.innerHTML = `<span class="match-slot-value">${pair.value}</span>`;
+      dropEl.classList.add("is-filled");
+      slotEl.classList.add("is-correct");
+
+      const descEl = slotEl.querySelector("[data-slot-desc]");
+      if (pair.desc) {
+        descEl.textContent = pair.desc;
+        descEl.hidden = false;
+      }
+
+      const chip = root.querySelector(`.match-chip[data-chip="${pair.id}"]`);
+      if (chip) {
+        chip.remove();
+      }
+    });
+
+    root.querySelectorAll(".match-chip[data-decoy]").forEach(revealDecoy);
+    matchedCount = pairs.length;
+    updateProgress();
+
+    const timerEl = timerValueEl.closest("[data-match-timer]");
+    if (timerEl) {
+      timerEl.style.display = "none";
+    }
+    const intro = root.querySelector(".match-game-head p");
+    if (intro) {
+      intro.textContent =
+        "Bengkel ini sudah kamu selesaikan. Jawaban yang benar ditampilkan dan tidak bisa diubah lagi.";
+    }
+
+    completeTime.textContent = "Bengkel ini sudah selesai.";
+    completeStats.textContent = `Ketepatan terbaik: ${best}%.`;
+    completePanel.hidden = false;
+    completePanel.classList.add("is-visible");
+    lockBoard();
+  }
+
+  const savedState = getProgress().kingdoms[division.kingdom]?.divisions[divisionId];
+  if (
+    !isAdminMode() &&
+    savedState &&
+    savedState.challengeCompleted &&
+    typeof savedState.bestAccuracy === "number" &&
+    savedState.bestAccuracy >= MASTERY_THRESHOLD
+  ) {
+    restoreSolved(savedState.bestAccuracy);
+  }
 }
 
 function shuffleArray(list) {

@@ -4966,3 +4966,16 @@ h3 {
     white-space: normal;
   }
 }
+
+/* ---------- Bengkel terkunci (jawaban sudah benar) ---------- */
+.match-game.is-solved .match-slot-drop,
+.match-game.is-solved .match-chip {
+  cursor: default;
+  pointer-events: none;
+}
+
+.match-locked-note {
+  margin: 12px 0 0;
+  font-weight: 600;
+  color: var(--success);
+}
