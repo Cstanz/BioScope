@@ -200,11 +200,11 @@
 
   function screenDone(res, again) {
     const next = JENIS === "pre"
-      ? `<a class="btn btn-primary" href="monera.html">Mulai belajar</a>`
+      ? `<a class="btn btn-primary" href="why-classify.html">Lanjut ke materi pengantar</a>`
       : `<a class="btn btn-primary" href="progress.html">Lihat progress</a>`;
     $(`${title}${draftNote()}<div class="tes-card">
       <h2>${again ? "Kamu sudah mengerjakan " + SET.title : "Terima kasih, jawabanmu tersimpan"}</h2>
-      ${JENIS === "post" ? `<p>Skor post-test: <strong>${res.score} dari ${res.total}</strong>.</p>` : `<p>Pre-test selesai. Hasilnya tidak ditampilkan sekarang.</p>`}
+      ${JENIS === "post" ? `<p>Skor post-test: <strong>${res.score} dari ${res.total}</strong>.</p>` : `<p>Pre-test selesai. Hasilnya tidak ditampilkan sekarang. Lanjutkan ke materi pengantar (Dasar Klasifikasi), lalu mulai dari kingdom Monera.</p>`}
       <div class="tes-actions">${next}</div></div>`);
   }
   const q = new URLSearchParams(location.search);
