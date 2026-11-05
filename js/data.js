@@ -3316,7 +3316,7 @@ const BIOSCOPE_DATA = {
       "exampleNotes": [
         {
           "name": "Acanthaster planci",
-          "image": "../assets/division/echinodermata/acanthaster-planci.jpg",
+          "image": "../assets/division/echinodermata/Acanthaster-planci.jpg",
           "caption": "Gambar 6. Contoh bintang laut (Asteroidea) predator yang memengaruhi struktur komunitas terumbu lewat pemangsaan karang batu: bintang laut mahkota duri (Acanthaster planci) dengan tubuh berlapis duri tajam di atas terumbu karang. (Sumber: Encyclopædia Britannica | Lisensi: Edukasional / Komersial Terbatas)",
           "note": "Bintang laut (Asteroidea) predator yang memengaruhi struktur komunitas terumbu lewat pemangsaan karang batu (Urry dkk., 2021)"
         },
@@ -3442,13 +3442,13 @@ const BIOSCOPE_DATA = {
       "exampleNotes": [
         {
           "name": "Branchiostoma sp.",
-          "image": "../assets/division/chordata/branchiostoma.jpg",
+          "image": "../assets/division/chordata/Branchiostoma.jpg",
           "caption": "Gambar 6. Contoh Cephalochordata pemakan penyaring: lanselet atau amphioxus (Branchiostoma lanceolatum) bertubuh pipih memanjang, tanpa rahang dan sirip berpasangan, dari sedimen pasir kasar di landas kontinen Belgia. (Sumber: Hans Hillewaert / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Lanselet (Cephalochordata), pemakan penyaring yang menyedot air ke keranjang faring berlendir dari endostil (Karaiskou dkk., 2015; Vanni dkk., 2022)"
         },
         {
           "name": "Ciona robusta",
-          "image": "../assets/division/chordata/ciona-robusta.jpg",
+          "image": "../assets/division/chordata/Ciona-robusta.jpg",
           "caption": "Gambar 7. Contoh tunikata soliter yang menjadi organisme model regenerasi organ: Ciona robusta bertubuh silindris transparan seperti kantong dan menempel berkelompok di dalam air. (Sumber: Delphine Dauga / Wikimedia Commons | Lisensi: CC BY-SA 4.0)",
           "note": "Ascidian soliter, organisme model riset yang dapat meregenerasi organ, misalnya sifon yang diamputasi (Gordon dkk., 2021; Vanni dkk., 2022)"
         },
@@ -3942,4 +3942,4 @@ for (const [divisionId, decoys] of Object.entries(BIOSCOPE_WORKSHOP_DECOYS)) {
   if (BIOSCOPE_DATA.divisions[divisionId]) {
     BIOSCOPE_DATA.divisions[divisionId].workshopDecoys = decoys;
   }
-}
+} 
